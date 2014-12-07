@@ -1,0 +1,60 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{tikz}
+%\usepackage{listings}
+%\usepackage{xcolor}
+
+%opening
+\title{Théorème de Gabriel}
+\author{Maxime Buron, Édouard Rousseau\\
+Travail encadré par Pierre-Guy Plamondon}
+
+%Création des labels Théorème, Lemme, etc
+\newtheorem{thm}{Théorème}[section]
+\newtheorem{lm}{Lemme}[section]
+\newtheorem{defi}{Définition}[section]
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{ex}{Exemple}[section]
+
+\begin{document}
+
+\maketitle
+
+%Le résumé de l'article
+\begin{abstract}
+	Ce mémoire a été écrit dans le cadre des Travaux Encadrés de Recherche (TER) au cours du M1 Mathématiques Fondamentales et Appliquées (MFA) de l'université Paris-Sud. Nous y démontrons un théorème dû à Pierre Gabriel datant de 1972, cependant, la preuve utilisée ici n'est pas la preuve orginale de Gabriel, nous suivons la preuve de Bernstein, Gel'Fand et Ponomarev issue de \cite{BGP72}.
+\end{abstract}
+
+\tableofcontents
+
+\clearpage
+        
+\section{Notions préliminaires}
+Afin de comprendre l'énoncé, puis la preuve, du théorème de Gabriel, nous avons besoin de notions. Dans toute cette partie, nous introduirons les concepts nécessaires à la bonne compréhension du lecteur.
+
+\subsection{Carquois}
+Le théorème de Gabriel donne de très beaux résultats sur les représentations de carquois. Cette notion est donc primordiale pour toute la suite de ce document.
+\begin{defi}[Carquois]
+	\label{carquois}
+	Un carquois est un graphe orienté, où les boucles et les arêtes multiples sont autorisées.
+\end{defi}
+\begin{ex}
+~
+	\begin{center}
+	\begin{tikzpicture}
+		\draw[<->,>=latex] (0,0)--(0,1);
+	\end{tikzpicture}
+	\end{center}
+\end{ex}
+
+%Lignes à ajouter pour faire apparaître notre bibliographie
+\clearpage
+\bibliographystyle{unsrt}
+\bibliography{biblio}
+\end{document}
+
