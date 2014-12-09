@@ -59,7 +59,6 @@ docs/_build/
 *.blg
 *.pdf
 *.toc
-*.bbl
 
 # Text edition
 *~

@@ -52,6 +52,20 @@ Le théorème de Gabriel donne de très beaux résultats sur les représentation
 	\end{center}
 \end{ex}
 
+\begin{ex}
+~
+	\begin{center}
+		\begin{tikzpicture}[scale=.4]
+			\draw (-1,0) node[anchor=east]  {$A_n$};
+			\foreach \x in {0,...,5}
+			\draw[xshift=\x cm,thick] (\x cm,0) circle (.3cm);
+			\draw[dotted,thick] (0.3 cm,0) -- +(1.4 cm,0);
+			\foreach \y in {1.15,...,4.15}
+			\draw[xshift=\y cm,thick] (\y cm,0) -- +(1.4 cm,0);
+		\end{tikzpicture}
+	\end{center}
+\end{ex}
+
 %Lignes à ajouter pour faire apparaître notre bibliographie
 \clearpage
 \bibliographystyle{unsrt}
