@@ -2,7 +2,12 @@
 
 \bibitem{BGP72}
 I.N. Bernstein, I.M. Gel'fand, and V.A. Ponomarev.
-\newblock Coxeter functors and gabriel's theorem.
+\newblock Coxeter functors and Gabriel's theorem.
 \newblock Décembre 1972.
+
+\bibitem{A97}
+Ibrahim Assem.
+\newblock {\em Algèbres et modules}.
+\newblock Masson edition, 1997.
 
 \end{thebibliography}
