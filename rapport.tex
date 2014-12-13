@@ -21,6 +21,12 @@ Travail encadré par Pierre-Guy Plamondon}
 \newtheorem{prop}{Proposition}[section]
 \newtheorem{ex}{Exemple}[section]
 
+%Feuilles de styles Tikz
+\tikzset{sommet/.style={circle, draw, fill,scale=0.4}}
+\tikzset{fleche/.style={->,>=latex}}
+
+
+%Fin des paramètres globaux et début du document.
 \begin{document}
 
 \maketitle
@@ -43,45 +49,46 @@ Le théorème de Gabriel donne de très beaux résultats sur les représentation
 	\label{carquois}
 	Un carquois est un graphe orienté, où les boucles et les arêtes multiples sont autorisées.
 \end{defi}
-\begin{ex}
-~
-	\begin{center}
-	\begin{tikzpicture}
-		\draw[<->,>=latex] (0,0)--(0,1);
-	\end{tikzpicture}
-	\end{center}
-\end{ex}
-
-\begin{ex}
-~
-	\begin{center}
-		\begin{tikzpicture}[scale=.4]
-			\draw (-1,0) node[anchor=east]  {$A_n$};
-			\foreach \x in {0,...,5}
-			\draw[xshift=\x cm,thick] (\x cm,0) circle (.3cm);
-			\draw[dotted,thick] (0.3 cm,0) -- +(1.4 cm,0);
-			\foreach \y in {1.15,...,4.15}
-			\draw[xshift=\y cm,thick] (\y cm,0) -- +(1.4 cm,0);
+On considérera seulement des carquois connexes dans les exemples ci dessous.
+	\begin{ex}
+		\begin{tikzpicture}
+			\node[sommet] (A) at (0,0) {};
+			\node[sommet] (B) at (2,0) {};
+			\draw[fleche] (A) to (B);
 		\end{tikzpicture}
-	\end{center}
-\end{ex}
+	\end{ex}
+	\begin{ex}
+		\begin{tikzpicture}
+			\node[sommet] (A) at (0,0) {};
+			\node[sommet] (B) at (2,0) {};
+			\draw[fleche] (A) to[bend left] (B);
+			\draw[fleche] (B) to[bend left] (A);
+			\draw[fleche] (A.north) arc (0:348:.5);
+		\end{tikzpicture}
+	\end{ex}
+	\begin{ex}
+		\begin{tikzpicture}
+			\node[sommet] (A) at (0,0) {};
+			\node[sommet] (B) at (4,0) {};
+			\node[sommet] (C) at (2,1) {};
+			\node[sommet] (D) at (4,2) {};
+			\node[sommet] (E) at (0,2) {};
+			\draw[fleche] (A) to (C);
+			\draw[fleche] (A) to (B);
+			\draw[fleche] (E) to (A); 
+			\draw[fleche] (C) to[bend left] (D);
+			\draw[fleche] (C) to[bend right] (D);
+			\draw[fleche] (E) to[bend left] (D);
+			\draw[fleche] (B) to (C);
+			\draw[fleche] (C) to (E);
+			\draw[fleche] (B) to[bend left] (A);
+			\draw[fleche] (E) to[bend left] (A);
+			\draw[fleche] (A) to[bend left] (E);
+		\end{tikzpicture}
+	\end{ex}
 
-\begin{ex}
-~
-\begin{center}
-	\begin{tikzpicture}[scale=.4]
-		\draw (-1,0) node[anchor=east]  {$B_n$};
-		\foreach \x in {0,...,4}
-		\draw[xshift=\x cm,thick] (\x cm,0) circle (.3cm);
-		\draw[xshift=5 cm,thick,fill=black] (5 cm, 0) circle (.3 cm);
-		\draw[dotted,thick] (0.3 cm,0) -- +(1.4 cm,0);
-		\foreach \y in {1.15,...,3.15}
-		\draw[xshift=\y cm,thick] (\y cm,0) -- +(1.4 cm,0);
-		\draw[thick] (8.3 cm, .1 cm) -- +(1.4 cm,0);
-		\draw[thick] (8.3 cm, -.1 cm) -- +(1.4 cm,0);
-	\end{tikzpicture}
-\end{center}
-\end{ex}
+
+
 %Lignes à ajouter pour faire apparaître notre bibliographie
 \clearpage
 \bibliographystyle{unsrt}
