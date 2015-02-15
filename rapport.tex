@@ -108,7 +108,22 @@ Nous sommes désormais capables d'énoncer la version finale du théorème de Ga
 	\begin{proof}
 		La preuve est élémentaire.
 	\end{proof}	
-	
+
+\subsection{Foncteur image et foncteur de Coxeter}
+Soit $\Gamma$ un ensemble de sommets et $\Lambda$ une orientation de $\Gamma$. On se place dans la catégorie $\mathcal{L}(\Gamma,\Lambda)$. Nous allons construire des foncteurs images, associés aux sommets $\alpha \in \Gamma_{0}$ de $\Gamma$ pour lesquels la direction des flêches le contenant est tout le temps la même. On note $\Gamma^{\alpha}=\{ l\in \Gamma_{1} : s(l)=\alpha\text{ ou }t(s)=\alpha\}$ l'ensemble des arêtes contenant $\alpha$.
+\begin{defi}
+	On dit qu'un sommet $\alpha \in \Gamma_{0}$ est un puits, ou qu'il est (+)-accessible, si $\forall l \in \Gamma^{\alpha},\; t(s)=\alpha$, c'est-à-dire si toutes les arêtes contenant $\alpha$ arrivent en $\alpha$ et qu'il n'y a pas de boucles de $\alpha$ dans lui même.
+
+On dit de même qu'un sommet $\alpha \in \Gamma_{0}$ est une source, ou qu'il est (-)-accessible, si $\forall l \in \Gamma^{\alpha},\; s(s)=\alpha$, c'est-à-dire si toutes les arêtes contenant $\alpha$ partent de $\alpha$ et qu'il n'y a pas de boucles de $\alpha$ dans lui même.
+\end{defi}
+Supposons que le sommet $\alpha \in \Gamma_{0}$ soit un puits avec l'orientation $\Lambda$. On note $\sigma_{\alpha}\Lambda$ l'orientation obtenue à partir de $\Lambda$ en inversant le sens des flêches contenant $\alpha$. Nous allons construire une application qui à un objet $(V,f)$ de $\mathcal{L}(\Gamma,\Lambda)$ associe un objet $(W,g)$ de $\mathcal{L}(\Gamma,\sigma_{\alpha}\Lambda)$.
+\begin{defi}
+	On notera cette application $F_{\alpha}^{+}$ et on aura $F_{\alpha}^{+}(V,f)=(W,g)$. On pose, $\forall \beta\neq\alpha,\;W_{\beta}=V_{\beta}$, et $\forall l \notin \Gamma^{\alpha},\; g_{l}=f_{l}$. Ainsi on laisse inchangés tous les sommets différents de $\alpha$ et toutes les arêtes ne faisant pas intervenir $\alpha$. On considère les arêtes $l_{1},\dots,l_{n}$ qui vont en $\alpha$ et on note $h:\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}\rightarrow V_{\alpha}$ l'application qui à un vecteur $(v_{1},\dots,v_{n})$ associe la somme $f_{l_{1}}(v_{1})+\dots+f_{l_{n}}(v_{n})$. On pose alors $W_{\alpha}=\ker(h)$. On définie maintenant les applications $g_{l}$ pour $l\in\Gamma^{\alpha}$. Soit $i\in[\![1,n]\!]$, alors $g_{l_{i}}$ est la composition de l'injection de $\ker(h)$ dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}$ et de la projection de $\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}$ dans $V_{s(l_{i})}$. 
+\end{defi}
+\begin{prop}
+	L'application $F_{\alpha}^{+}:\mathcal{L}(\Gamma,\Lambda)\rightarrow\mathcal{L}(\Gamma,\sigma_{\alpha}\Lambda)$ est un foncteur.
+\end{prop}
+
 %Lignes à ajouter pour faire apparaître notre bibliographie
 \clearpage
 \bibliographystyle{unsrt}
