@@ -47,8 +47,7 @@ Afin de comprendre l'énoncé, puis la preuve, du théorème de Gabriel, nous av
 Le théorème de Gabriel donne de très beaux résultats sur les représentations de carquois. Cette notion est donc primordiale pour toute la suite de ce document.
 \begin{defi}[Carquois]
 	\label{carquois}
-	Un carquois $(\Gamma,\Lambda)$ est constitué d'un graphe quelconque non orienté $\Gamma$ et d'une orientation $\Lambda$. On note  $\Gamma_0$ l'ensemble des sommets de $\Gamma$ et $\Gamma_1$ l'ensemble des arêtes non orientées de $(\Gamma)$. L'orientation $\Lambda$ est un couple de fonctions $(s,t)$ nommées recpectivement source et destination qui définies de $\Gamma_1$ dans $\Gamma_0$. 
- 
+	Un carquois $(\Gamma,\Lambda)$ est constitué d'un graphe quelconque non orienté $\Gamma$ et d'une orientation $\Lambda$. On note  $\Gamma_0$ l'ensemble des sommets de $\Gamma$ et $\Gamma_1$ l'ensemble des arêtes non orientées de $(\Gamma)$. L'orientation $\Lambda$ est un couple de fonctions $(s,t)$ nommées recpectivement source et destination définies de $\Gamma_1$ dans $\Gamma_0$. 
 \end{defi}
 On considérera seulement des carquois connexes dans les exemples ci dessous.
 	\begin{ex}
@@ -91,6 +90,11 @@ On considérera seulement des carquois connexes dans les exemples ci dessous.
 
 \subsection{Représentations de carquois}
 Maintenant que nous connaissons la définition d'un carquois, et que nous pouvons nous représenter l'objet, nous sommes capables d'aborder le coeur du sujet : les représentations de carquois. À l'issue de cette partie, nous serons même capables d'énoncer, et comprendre, une partie du théorème de Gabriel.
+
+\begin{defi}[Représentation de carquois]
+  Une représentation de carquois d'un carquois $(\Gamma,\Lambda)$ est un couple $(V,f)$ où $V$ est une liste indexée sur $\Gamma_0$ d'espaces vectoriels de dimension finie et $f$ est une liste indexée sur $\Gamma_1$ de morphismes d'espace vectoriel tels que pour tout $l \in \Gamma_1, f_l$ est définie de $V_{s(l)}$ dans $V_{t(l)}$.
+
+\end{defi}
 
 \subsection{Théorie des catégories}
 Avant de traiter la preuve du thérorème de Gabriel, nous introduisons le langage de la théorie des catégories, celui nous aidera au court de la preuve. Les notations utilisées ici sont celle de \cite{A97}, et de plus amples détails sur les catégories peuvent y être trouvées, nous ne donnons ici qu'une brève présentation des notions qui nous serons utiles par la suite.
