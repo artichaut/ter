@@ -110,7 +110,7 @@ Nous sommes désormais capables d'énoncer la version finale du théorème de Ga
 	\end{proof}	
 
 \subsection{Foncteur image et foncteur de Coxeter}
-Soit $\Gamma$ un ensemble de sommets et $\Lambda$ une orientation de $\Gamma$. On se place dans la catégorie $\mathcal{L}(\Gamma,\Lambda)$. Nous allons construire des foncteurs images, associés aux sommets $\alpha \in \Gamma_{0}$ de $\Gamma$ pour lesquels la direction des flêches le contenant est tout le temps la même. On note $\Gamma^{\alpha}=\{ l\in \Gamma_{1} : s(l)=\alpha\text{ ou }t(s)=\alpha\}$ l'ensemble des arêtes contenant $\alpha$.
+Soit $\Gamma$ un carquois, et $\Lambda$ une orientation de $\Gamma$. On se place dans la catégorie $\mathscr{L}(\Gamma,\Lambda)$. Nous allons construire des foncteurs images, associés aux sommets $\alpha \in \Gamma_{0}$ de $\Gamma$ pour lesquels la direction des flêches le contenant est tout le temps la même. On note $\Gamma^{\alpha}=\{ l\in \Gamma_{1} : s(l)=\alpha\text{ ou }t(s)=\alpha\}$ l'ensemble des arêtes contenant $\alpha$.
 \begin{defi}
 	On dit qu'un sommet $\alpha \in \Gamma_{0}$ est un puits, ou qu'il est (+)-accessible, si $\forall l \in \Gamma^{\alpha},\; t(s)=\alpha$, c'est-à-dire si toutes les arêtes contenant $\alpha$ arrivent en $\alpha$ et qu'il n'y a pas de boucles de $\alpha$ dans lui même.
 
@@ -123,7 +123,56 @@ Supposons que le sommet $\alpha \in \Gamma_{0}$ soit un puits avec l'orientation
 \begin{prop}
 	L'application $F_{\alpha}^{+}:\mathscr{L}(\Gamma,\Lambda)\rightarrow\mathscr{L}(\Gamma,\sigma_{\alpha}\Lambda)$ est un foncteur.
 \end{prop}
+\begin{proof}
+	On se place dans le même cadre que lors des définitions, ainsi on a $(V,f)\in\mathscr{L}(\Gamma,\Lambda)$ une représentation du carquois $\Gamma$. On note toujours $F_{\alpha}^{+}(V,f)=(W,g)\in\mathscr{L}(\Gamma,\sigma_{\alpha}\Lambda)$ la représentation image de $(V,f)$ par l'application $F_{\alpha}^{+}$. On a déjà la définition de $F_{\alpha}^{+}$ sur les objets des catégories $\mathscr{L}(\Gamma,\Lambda)$ et $\mathscr{L}(\Gamma,\sigma_{\alpha}\Lambda)$, et pour tout $(\beta,l)\in\Gamma_{0}\times\Gamma_{1}$, on a bien que $W_{\beta}$ est un espace vectoriel, et que $g_{l}$ est une application linéaire. Il nous reste donc à définir $F_{\alpha}^{+}$ sur les morphismes de représentations pour obtenir son caractère fonctoriel. Ainsi, soient $(V,f)$ et $(V',f')$ deux représentations de $\Gamma$, on note encore $l_{1},\dots,l_{n}\in\Gamma^{\alpha}$ les arêtes en direction du puits $\alpha$, et soit $\varphi=(\varphi_{\beta})_{\beta\in\Gamma_{0}}$ un morphisme de représentation entre $(V,f)$ et $(V',f')$. On note $(W,g)$ et $(W',g')$ les représentations images par $F_{\alpha}^{+}$ de $(V,f)$ et $(V',f')$. On note également $\gamma=(\gamma_{\beta})_{\beta\in\Gamma_{0}}$ le morphisme image de $\varphi$ par $F_{\alpha}^{+}$, qu'il nous faut encore définir. On pose donc :
+	\[	
+		\gamma_{\alpha}(v_{1},\dots,v_{n})=(\varphi_{s(l_{1})}(v_{1}),\dots,\varphi_{s(l_{n})}(v_{n}))
+	\]
+	\[
+		\forall \beta\neq\alpha,\; \gamma_{\beta}=\varphi_{\beta}.
+	\]
+	Assurons nous tout d'abord du caractère bien défini de $\gamma$. Pour tout $\beta\neq\alpha$, on a $V_{\beta}=W_{\beta}$, $V'_{\beta}=W'_{\beta}$ et $\gamma_{\beta}=\varphi_{\beta}$, le morphisme $\gamma$ est donc bien défini pour tout sommet $\beta\neq\alpha$. Il nous reste à vérifier que $\gamma_{\alpha}$ est bien défini. Soit $(v_{1},\dots,v_{n})\in\ker(h)$, il nous faut voir que $\gamma_{\alpha}(v_{1},\dots,v_{n})\in\ker(k)$, où
+	\[
+\begin{array}{ll}
+	h : & \overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}\rightarrow V_{\alpha} \\ 
+	& (v_{1},\dots,v_{n})\mapsto \underset{i=1}{\overset{n}{\sum}}f_{l_{i}}(v_{i})\\
+\end{array}
+	\]	
+	\[
+\begin{array}{ll}
+	k : & \overset{n}{\underset{j=1}{\bigoplus}}V'_{s(l_{j})}\rightarrow V'_{\alpha} \\ 
+	& (v'_{1},\dots,v'_{n})\mapsto \underset{i=1}{\overset{n}{\sum}}f'_{l_{i}}(v'_{i}).\\
+\end{array}
+	\]
+Ainsi :
+\[
+\begin{array}{rl}
+	k(\gamma_{\alpha}(v_{1},\dots,v_{n})) & = \underset{i=1}{\overset{n}{\sum}}f'_{l_{i}}(\varphi_{s(l_{i})}(v_{i})) \\ 
+	& = \underset{i=1}{\overset{n}{\sum}} \varphi_{\alpha}(f_{l_{i}}(v_{i}))\\
+	& = \varphi_{\alpha}(\underset{i=1}{\overset{n}{\sum}}f_{l_{i}}(v_{i}))\\
+	& = \varphi_{\alpha}(0) \\
+	& = 0 \\
+\end{array}
+\]
+donc $\gamma_{\alpha}$ est bien définie. Voyons désormais que $\gamma$ est bien un morphisme de représentations entre $(W,g)$ et $(W',g')$. Comme pour tout $\beta\neq\alpha$, on a $\gamma_{\beta}=\varphi_{\beta}$, et pour tout $l\notin\Gamma^{\alpha}$, on a $g_{l}=f_{l}$ et $g'_{l}=f'_{l}$, il vient facilement que $g'_{l_{i}}\gamma_{s(l_{i})}=\gamma_{t(l_{i})}g_{l_{i}}$ dès lors que $l\notin\Gamma^{\alpha}$. Regardons maintenant le cas où $l\in\Gamma^{\alpha}$, il existe alors $i\in[\![1,n]\!]$ tel que $l=l_{i}$, et on a $t(l_{i})=\alpha$. Soit $(v_{1},\dots,v_{n})\in W_{\alpha}$, il vient, d'une part :
 
+\[
+\begin{array}{ll}
+	g'_{l_{i}}\gamma_{\alpha}(v_{1},\dots,v_{n})&=g'_{l_{i}}(\varphi_{s(l_{1})}(v_{1}),\dots,\varphi_{s(l_{n})}(v_{n}))\\
+	&=\varphi_{s(l_{i})}(v_{i})
+\end{array}
+\]
+et d'autre part :
+\[
+\begin{array}{ll}
+	\gamma_{s(l_{i})}g_{l_{i}}(v_{1},\dots,v_{n})&=\gamma_{s(l_{i})}(v_{i})\\
+	&=\varphi_{s(l_{i})}(v_{i}).
+\end{array}
+\]
+Ainsi, on a bien que $\forall l \in\Gamma_{1},\;g'_{l}\gamma_{t(l)}=\gamma_{s(l)}g_{l}$, ce qui prouve que $\gamma$ est un morphisme de représentations de $(W,g)$ vers $(W',g')$. Il nous reste donc à voir que $F_{\alpha}^{+}$ respecte la composition des morphismes et qu'il envoie l'identité sur l'identité.
+
+
+\end{proof}
 %Lignes à ajouter pour faire apparaître notre bibliographie
 \clearpage
 \bibliographystyle{unsrt}
