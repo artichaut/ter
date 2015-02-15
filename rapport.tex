@@ -47,7 +47,7 @@ Afin de comprendre l'énoncé, puis la preuve, du théorème de Gabriel, nous av
 Le théorème de Gabriel donne de très beaux résultats sur les représentations de carquois. Cette notion est donc primordiale pour toute la suite de ce document.
 \begin{defi}[Carquois]
 	\label{carquois}
-	Un carquois $(\Gamma,\Lambda)$ est constitué d'un graphe quelconque non orienté $\Gamma$ et d'une orientation $\Lambda$. On note  $\Gamma_0$ l'ensemble des sommets de $\Gamma$ et $\Gamma_1$ l'ensemble des arêtes non orientées de $(\Gamma)$. L'orientation $\Lambda$ est un couple de fonctions $(s,t)$ nommées recpectivement source et destination définies de $\Gamma_1$ dans $\Gamma_0$. 
+	Un carquois $(\Gamma,\Lambda)$ est constitué d'un graphe quelconque non orienté $\Gamma$ et d'une orientation $\Lambda$. On note  $\Gamma_0$ l'ensemble des sommets de $\Gamma$ et $\Gamma_1$ l'ensemble des arêtes non orientées de $\Gamma$. L'orientation $\Lambda$ est un couple de fonctions $(s,t)$ nommées recpectivement source et destination définies de $\Gamma_1$ dans $\Gamma_0$. 
 \end{defi}
 On considérera seulement des carquois connexes dans les exemples ci dessous.
 	\begin{ex}
@@ -115,19 +115,25 @@ Nous sommes désormais capables d'énoncer la version finale du théorème de Ga
 	\end{proof}	
 
 \subsection{Foncteur image et foncteur de Coxeter}
-Soit $\Gamma$ un carquois, et $\Lambda$ une orientation de $\Gamma$. On se place dans la catégorie $\mathscr{L}(\Gamma,\Lambda)$. Nous allons construire des foncteurs images, associés aux sommets $\alpha \in \Gamma_{0}$ de $\Gamma$ pour lesquels la direction des flêches le contenant est tout le temps la même. On note $\Gamma^{\alpha}=\{ l\in \Gamma_{1} : s(l)=\alpha\text{ ou }t(s)=\alpha\}$ l'ensemble des arêtes contenant $\alpha$.
-\begin{defi}
-	On dit qu'un sommet $\alpha \in \Gamma_{0}$ est un puits, ou qu'il est (+)-accessible, si $\forall l \in \Gamma^{\alpha},\; t(s)=\alpha$, c'est-à-dire si toutes les arêtes contenant $\alpha$ arrivent en $\alpha$ et qu'il n'y a pas de boucles de $\alpha$ dans lui même.
 
-On dit de même qu'un sommet $\alpha \in \Gamma_{0}$ est une source, ou qu'il est (-)-accessible, si $\forall l \in \Gamma^{\alpha},\; s(s)=\alpha$, c'est-à-dire si toutes les arêtes contenant $\alpha$ partent de $\alpha$ et qu'il n'y a pas de boucles de $\alpha$ dans lui même.
+Soit $\Gamma$ un carquois, et $\Lambda$ une orientation de $\Gamma$. On se place dans la catégorie $\mathscr{L}(\Gamma,\Lambda)$. Nous allons construire des foncteurs images, associés aux sommets $\alpha \in \Gamma_{0}$ de $\Gamma$ pour lesquels la direction des flèches le contenant est tout le temps la même. On note $\Gamma^{\alpha}=\{ l\in \Gamma_{1} : s(l)=\alpha\text{ ou }t(l)=\alpha\}$ l'ensemble des arêtes contenant $\alpha$.
+
+\begin{defi}
+	On dit qu'un sommet $\alpha \in \Gamma_{0}$ est un puits, ou qu'il est (+)-accessible, si $\forall l \in \Gamma^{\alpha},\; t(l)=\alpha$, c'est-à-dire si toutes les arêtes contenant $\alpha$ arrivent en $\alpha$ et qu'il n'y a pas de boucles de $\alpha$ dans lui même.
+
+On dit de même qu'un sommet $\alpha \in \Gamma_{0}$ est une source, ou qu'il est (-)-accessible, si $\forall l \in \Gamma^{\alpha},\; s(l)=\alpha$, c'est-à-dire si toutes les arêtes contenant $\alpha$ partent de $\alpha$ et qu'il n'y a pas de boucles de $\alpha$ dans lui même.
 \end{defi}
+
 Supposons que le sommet $\alpha \in \Gamma_{0}$ soit un puits avec l'orientation $\Lambda$. On note $\sigma_{\alpha}\Lambda$ l'orientation obtenue à partir de $\Lambda$ en inversant le sens des flêches contenant $\alpha$. Nous allons construire une application qui à un objet $(V,f)$ de $\mathscr{L}(\Gamma,\Lambda)$ associe un objet $(W,g)$ de $\mathscr{L}(\Gamma,\sigma_{\alpha}\Lambda)$.
+
 \begin{defi}
 	On notera cette application $F_{\alpha}^{+}$ et on aura $F_{\alpha}^{+}(V,f)=(W,g)$. On pose, $\forall \beta\neq\alpha,\;W_{\beta}=V_{\beta}$, et $\forall l \notin \Gamma^{\alpha},\; g_{l}=f_{l}$. Ainsi on laisse inchangés tous les sommets différents de $\alpha$ et toutes les arêtes ne faisant pas intervenir $\alpha$. On considère les arêtes $l_{1},\dots,l_{n}$ qui vont en $\alpha$ et on note $h:\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}\rightarrow V_{\alpha}$ l'application qui à un vecteur $(v_{1},\dots,v_{n})$ associe la somme $f_{l_{1}}(v_{1})+\dots+f_{l_{n}}(v_{n})$. On pose alors $W_{\alpha}=\ker(h)$. On définie maintenant les applications $g_{l}$ pour $l\in\Gamma^{\alpha}$. Soit $i\in[\![1,n]\!]$, alors $g_{l_{i}}$ est la composition de l'injection de $\ker(h)$ dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}$ et de la projection de $\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}$ dans $V_{s(l_{i})}$. 
 \end{defi}
+
 \begin{prop}
 	L'application $F_{\alpha}^{+}:\mathscr{L}(\Gamma,\Lambda)\rightarrow\mathscr{L}(\Gamma,\sigma_{\alpha}\Lambda)$ est un foncteur.
 \end{prop}
+
 \begin{proof}
 	On se place dans le même cadre que lors des définitions, ainsi on a $(V,f)\in\mathscr{L}(\Gamma,\Lambda)$ une représentation du carquois $\Gamma$. On note toujours $F_{\alpha}^{+}(V,f)=(W,g)\in\mathscr{L}(\Gamma,\sigma_{\alpha}\Lambda)$ la représentation image de $(V,f)$ par l'application $F_{\alpha}^{+}$. On a déjà la définition de $F_{\alpha}^{+}$ sur les objets des catégories $\mathscr{L}(\Gamma,\Lambda)$ et $\mathscr{L}(\Gamma,\sigma_{\alpha}\Lambda)$, et pour tout $(\beta,l)\in\Gamma_{0}\times\Gamma_{1}$, on a bien que $W_{\beta}$ est un espace vectoriel, et que $g_{l}$ est une application linéaire. Il nous reste donc à définir $F_{\alpha}^{+}$ sur les morphismes de représentations pour obtenir son caractère fonctoriel. Ainsi, soient $(V,f)$ et $(V',f')$ deux représentations de $\Gamma$, on note encore $l_{1},\dots,l_{n}\in\Gamma^{\alpha}$ les arêtes en direction du puits $\alpha$, et soit $\varphi=(\varphi_{\beta})_{\beta\in\Gamma_{0}}$ un morphisme de représentation entre $(V,f)$ et $(V',f')$. On note $(W,g)$ et $(W',g')$ les représentations images par $F_{\alpha}^{+}$ de $(V,f)$ et $(V',f')$. On note également $\gamma=(\gamma_{\beta})_{\beta\in\Gamma_{0}}$ le morphisme image de $\varphi$ par $F_{\alpha}^{+}$, qu'il nous faut encore définir. On pose donc :
 	\[	
