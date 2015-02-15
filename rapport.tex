@@ -132,7 +132,7 @@ Supposons que le sommet $\alpha \in \Gamma_{0}$ soit un puits avec l'orientation
 \begin{defi}
 	On notera l'application $F_{\alpha}^{+}$ et on aura $F_{\alpha}^{+}(V,f)=(W,g)$. On pose, $\forall \gamma\neq\alpha,\;W_{\gamma}=V_{\gamma}$, et $\forall l \notin \Gamma^{\alpha},\; g_{l}=f_{l}$. Ainsi on laisse inchangés tous les sommets différents de $\alpha$ et toutes les arêtes ne faisant pas intervenir $\alpha$. On considère les arêtes $l_{1},\dots,l_{n}$ qui vont en $\alpha$ et on note $h:\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}\rightarrow V_{\alpha}$ l'application qui à un vecteur $(v_{1},\dots,v_{n})$ associe la somme $f_{l_{1}}(v_{1})+\dots+f_{l_{n}}(v_{n})$. On pose alors $W_{\alpha}=\ker(h)$. On définie maintenant les applications $g_{l}$ pour $l\in\Gamma^{\alpha}$. Soit $i\in[\![1,n]\!]$, alors $g_{l_{i}}$ est la composition de l'injection de $\ker(h)$ dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}$ et de la projection de $\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}$ dans $V_{s(l_{i})}$. 
 
-On notera de même, $F^{-}_{\beta}$, l'application et on aura $F^{-}_{\beta}(V,f) = (W,g)$. On pose, $\forall \gamma \neq \alpha, W_\gamma = V_\gamma$, et $\forall l \notin \Gamma_\beta, f_l = g_l$. En considérant les arêtes $l_1, \dots, l_n$ qui partent de $\beta$, on note $\tilde{h} : V_\beta \rightarrow \overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}$ et qui à un vecteur $v \in V_\beta$ associe le vecteur $(f_1(v),\dots, f_n(v))$. On pose alors $W_\beta = \im(\tilde h)$
+	On notera de même, $F^{-}_{\beta}$, l'application et on aura $F^{-}_{\beta}(V,f) = (W,g)$. On pose, $\forall \gamma \neq \alpha, W_\gamma = V_\gamma$, et $\forall l \notin \Gamma_\beta, f_l = g_l$. En considérant les arêtes $l_1, \dots, l_n$ qui partent de $\beta$, on note $\tilde{h} : V_\beta \rightarrow \overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}$ et qui à un vecteur $v \in V_\beta$ associe le vecteur $(f_1(v),\dots, f_n(v))$. On pose alors $W_\beta = \im(\tilde{h})$
 
 \end{defi}
 
@@ -150,15 +150,15 @@ On notera de même, $F^{-}_{\beta}$, l'application et on aura $F^{-}_{\beta}(V,f
 	\]
 	Assurons nous tout d'abord du caractère bien défini de $\gamma$. Pour tout $\beta\neq\alpha$, on a $V_{\beta}=W_{\beta}$, $V'_{\beta}=W'_{\beta}$ et $\gamma_{\beta}=\varphi_{\beta}$, le morphisme $\gamma$ est donc bien défini pour tout sommet $\beta\neq\alpha$. Il nous reste à vérifier que $\gamma_{\alpha}$ est bien défini. Soit $(v_{1},\dots,v_{n})\in\ker(h)$, il nous faut voir que $\gamma_{\alpha}(v_{1},\dots,v_{n})\in\ker(k)$, où
 	\[
-\begin{array}{ll}
-	h : & \overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}\rightarrow V_{\alpha} \\ 
-	& (v_{1},\dots,v_{n})\mapsto \underset{i=1}{\overset{n}{\sum}}f_{l_{i}}(v_{i})\\
+\begin{array}{lccc}
+	h : & \overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}&\rightarrow & V_{\alpha} \\ 
+	& (v_{1},\dots,v_{n})&\mapsto & \underset{i=1}{\overset{n}{\sum}}f_{l_{i}}(v_{i})\\
 \end{array}
 	\]	
 	\[
-\begin{array}{ll}
-	k : & \overset{n}{\underset{j=1}{\bigoplus}}V'_{s(l_{j})}\rightarrow V'_{\alpha} \\ 
-	& (v'_{1},\dots,v'_{n})\mapsto \underset{i=1}{\overset{n}{\sum}}f'_{l_{i}}(v'_{i}).\\
+\begin{array}{lccc}
+	k : & \overset{n}{\underset{j=1}{\bigoplus}}V'_{s(l_{j})}&\rightarrow & V'_{\alpha} \\ 
+	& (v'_{1},\dots,v'_{n})&\mapsto & \underset{i=1}{\overset{n}{\sum}}f'_{l_{i}}(v'_{i}).\\
 \end{array}
 	\]
 Ainsi :
