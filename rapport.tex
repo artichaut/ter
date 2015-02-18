@@ -25,7 +25,9 @@ Travail encadré par Pierre-Guy Plamondon}
 \tikzset{sommet/.style={circle, draw, fill,scale=0.4}}
 \tikzset{fleche/.style={->,>=latex}}
 
+%Raccourcis pour les opérateurs mathématiques (les espaces avant-après sont modifiés pour mieux rentrer dans les codes mathématiques usuels)
 \DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\Id}{Id}
 
 %Fin des paramètres globaux et début du document.
 \begin{document}
@@ -138,8 +140,7 @@ Supposons que le sommet $\alpha \in \Gamma_{0}$ soit un puits avec l'orientation
 \end{defi}
 
 \begin{prop}
-	L'application $F_{\alpha}^{+}:\mathscr{L}(\Gamma,\Lambda)\rightarrow\mathscr{L}(\Gamma,\sigma_{\alpha}\Lambda)$ est un foncteur.
-	L'application $F_{\beta}^{-}:\mathscr{L}(\Gamma,\Lambda)\rightarrow\mathscr{L}(\Gamma,\sigma_{\beta}\Lambda)$ est un foncteur.
+	L'application $F_{\alpha}^{+}:\mathscr{L}(\Gamma,\Lambda)\rightarrow\mathscr{L}(\Gamma,\sigma_{\alpha}\Lambda)$ est un foncteur. De même l'application $F_{\beta}^{-}:\mathscr{L}(\Gamma,\Lambda)\rightarrow\mathscr{L}(\Gamma,\sigma_{\beta}\Lambda)$ est un foncteur.
 \end{prop}
 
 \begin{proof}
@@ -188,16 +189,30 @@ et d'autre part :
 	&=\varphi_{s(l_{i})}(v_{i}).
 \end{array}
 \]
-Ainsi, on a bien que $\forall l \in\Gamma_{1},\;g'_{l}\gamma_{t(l)}=\gamma_{s(l)}g_{l}$, ce qui prouve que $\gamma$ est un morphisme de représentations de $(W,g)$ vers $(W',g')$. Il nous reste donc à voir que $F_{\alpha}^{+}$ respecte la composition des morphismes et qu'il envoie l'identité sur l'identité. À cet effet, posons. 
+Ainsi, on a bien que $\forall l \in\Gamma_{1},\;g'_{l}\gamma_{t(l)}=\gamma_{s(l)}g_{l}$, ce qui prouve que $\gamma$ est un morphisme de représentations de $(W,g)$ vers $(W',g')$. Il nous reste donc à voir que $F_{\alpha}^{+}$ respecte la composition des morphismes et qu'il envoie l'identité sur l'identité. À cet effet, posons $\Id = (\Id_{V_{\beta}})_{\beta\in\Gamma_{0}}$ le morphisme idendité de $(V,f)$ dans $(V,f)$, c'est à dire que pour tout sommet $\beta\in\Gamma_{0}$, $\Id_{V_{\beta}}$ est l'application identité de $V_{\beta}$ dans lui-même. On a :
+\[
+	\forall \beta\neq\alpha,\;F_{\alpha}^{+}(\Id)_{\beta}=\Id_{V_{\beta}}
+\]
+\[
+	F_{\alpha}^{+}(\Id)=(\Id_{V_{s(l_{1})}},\dots,\Id_{V_{s(l_{n})}})=\Id_{\Ker(h)}.
+\]
+Le morphisme identité de $(V,f)$ est donc bien envoyé sur le morphisme identité de $F_{\alpha}^{+}(V,f)$. Posons désormais $(V,f)$,$(V',f')$ et $(V'',f'')$ trois représentations de $(\Gamma,\Lambda)$, $\varphi$ (respectivement $\varphi '$) un morphisme de représentation de $(V,f)$ dans $(V',f')$ (respectivement de $(V',f')$ dans $(V'',f'')$), ainsi que $(W,g)$, $(W',g')$, $(W'',g'')$, $\gamma$ et $\gamma '$ leurs images par $F_{\alpha}^{+}$. Il vient :
+\[
+	\forall \beta\neq\alpha,\;F_{\alpha}^{+}(\varphi')_{\beta}F_{\alpha}^{+}(\varphi)_{\beta}=\varphi_{\beta}'\varphi_{\beta}=F_{\alpha}^{+}(\varphi'\varphi)_{\beta}
+\]
+\[
+	\begin{array}{ll}
+		\forall (v_{1},\dots,v_{n})\in\Ker(h),& \\
+		F_{\alpha}^{+}(\varphi')_{\alpha}F_{\alpha}^{+}(\varphi)_{\alpha}(v_{1},\dots,v_{n})&=F_{\alpha}^{+}(\varphi')_{\alpha}(\varphi_{s(l_{1})}(v_{1}),\dots,\varphi_{s(l_{n})}(v_{n}))\\
+		&=(\varphi'_{s(l_{1})}(\varphi_{s(l_{1})}(v_{1})),\dots,\varphi'_{s(l_{n})}(\varphi_{s(l_{n})}(v_{n})))\\
+		&=F_{\alpha}^{+}(\varphi'\varphi)_{\alpha}(v_{1},\dots,v_{n})
 
-
+	\end{array}
+\]
+Ainsi la composition de deux morphismes est bien respectée par $F_{\alpha}^{+}$, et cela conclue la preuve pour cette application.
 \end{proof}
 
-De manières similaires, on considère une source $\beta \in \Gamma_0$ pour l'orientation $\Lambda$. On note  l'orientation  
 
-\begin{defi}
-  
-\end{defi}
 %Lignes à ajouter pour faire apparaître notre bibliographie
 \clearpage
 \bibliographystyle{unsrt}
