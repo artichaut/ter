@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
-\usepackage{amsmath,amssymb,amsthm}
+\usepackage{amsmath,amssymb,amsthm,amsopn}
 \usepackage{mathrsfs}
 \usepackage{graphicx}
 \usepackage{tikz}
@@ -25,6 +25,7 @@ Travail encadré par Pierre-Guy Plamondon}
 \tikzset{sommet/.style={circle, draw, fill,scale=0.4}}
 \tikzset{fleche/.style={->,>=latex}}
 
+\DeclareMathOperator{\Ker}{Ker}
 
 %Fin des paramètres globaux et début du document.
 \begin{document}
@@ -130,7 +131,7 @@ Si $\gamma \in \Gamma_0$ est un sommet, on note $\sigma_{\gamma}\Lambda$ l'orien
 Supposons que le sommet $\alpha \in \Gamma_{0}$ soit un puits avec l'orientation $\Lambda$.  Nous allons construire une application qui à un objet $(V,f)$ de $\mathscr{L}(\Gamma,\Lambda)$ associe un objet $(W,g)$ de $\mathscr{L}(\Gamma,\sigma_{\alpha}\Lambda)$. De même si $\beta \in \Gamma_0$ est une source, nous allons construire une autre application qui à un objet de $\mathscr L(\Gamma,\Lambda)$ associe un objet de $\mathscr L(\Gamma,\sigma_{\beta}\Lambda)$. 
 
 \begin{defi}
-	On notera l'application $F_{\alpha}^{+}$ et on aura $F_{\alpha}^{+}(V,f)=(W,g)$. On pose, $\forall \gamma\neq\alpha,\;W_{\gamma}=V_{\gamma}$, et $\forall l \notin \Gamma^{\alpha},\; g_{l}=f_{l}$. Ainsi on laisse inchangés tous les sommets différents de $\alpha$ et toutes les arêtes ne faisant pas intervenir $\alpha$. On considère les arêtes $l_{1},\dots,l_{n}$ qui vont en $\alpha$ et on note $h:\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}\rightarrow V_{\alpha}$ l'application qui à un vecteur $(v_{1},\dots,v_{n})$ associe la somme $f_{l_{1}}(v_{1})+\dots+f_{l_{n}}(v_{n})$. On pose alors $W_{\alpha}=\ker(h)$. On définie maintenant les applications $g_{l}$ pour $l\in\Gamma^{\alpha}$. Soit $i\in[\![1,n]\!]$, alors $g_{l_{i}}$ est la composition de l'injection de $\mathrm{Ker}(h)$ dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}$ et de la projection de $\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}$ dans $V_{s(l_{i})}$. 
+	On notera l'application $F_{\alpha}^{+}$ et on aura $F_{\alpha}^{+}(V,f)=(W,g)$. On pose, $\forall \gamma\neq\alpha,\;W_{\gamma}=V_{\gamma}$, et $\forall l \notin \Gamma^{\alpha},\; g_{l}=f_{l}$. Ainsi on laisse inchangés tous les sommets différents de $\alpha$ et toutes les arêtes ne faisant pas intervenir $\alpha$. On considère les arêtes $l_{1},\dots,l_{n}$ qui vont en $\alpha$ et on note $h:\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}\rightarrow V_{\alpha}$ l'application qui à un vecteur $(v_{1},\dots,v_{n})$ associe la somme $f_{l_{1}}(v_{1})+\dots+f_{l_{n}}(v_{n})$. On pose alors $W_{\alpha}=\Ker(h)$. On définie maintenant les applications $g_{l}$ pour $l\in\Gamma^{\alpha}$. Soit $i\in[\![1,n]\!]$, alors $g_{l_{i}}$ est la composition de l'injection de $\Ker(h)$ dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}$ et de la projection de $\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}$ dans $V_{s(l_{i})}$. 
 
 	On notera de même, $F^{-}_{\beta}$, l'application et on aura $F^{-}_{\beta}(V,f) = (W,g)$. On pose, $\forall \gamma \neq \alpha, W_\gamma = V_\gamma$, et $\forall l \notin \Gamma_\beta, f_l = g_l$. En considérant les arêtes $l_1, \dots, l_n$ qui partent de $\beta$, on note $\tilde{h} : V_\beta \rightarrow \overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}$ et qui à un vecteur $v \in V_\beta$ associe le vecteur $(f_1(v),\dots, f_n(v))$. On pose alors $W_\beta = \overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}/\mathrm{Im}(\tilde{h})$. On pose pour $i\in [\![1,n]\!]$, alors $g_{l_i}$ comme la composition de l'inclusion naturelle de $V_{l_i}$ dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}$ et de la projection dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}/\mathrm{Im}(\tilde h)$.
 
@@ -149,7 +150,7 @@ Supposons que le sommet $\alpha \in \Gamma_{0}$ soit un puits avec l'orientation
 	\[
 		\forall \beta\neq\alpha,\; \gamma_{\beta}=\varphi_{\beta}.
 	\]
-	Assurons nous tout d'abord du caractère bien défini de $\gamma$. Pour tout $\beta\neq\alpha$, on a $V_{\beta}=W_{\beta}$, $V'_{\beta}=W'_{\beta}$ et $\gamma_{\beta}=\varphi_{\beta}$, le morphisme $\gamma$ est donc bien défini pour tout sommet $\beta\neq\alpha$. Il nous reste à vérifier que $\gamma_{\alpha}$ est bien défini. Soit $(v_{1},\dots,v_{n})\in\ker(h)$, il nous faut voir que $\gamma_{\alpha}(v_{1},\dots,v_{n})\in\ker(k)$, où
+	Assurons nous tout d'abord du caractère bien défini de $\gamma$. Pour tout $\beta\neq\alpha$, on a $V_{\beta}=W_{\beta}$, $V'_{\beta}=W'_{\beta}$ et $\gamma_{\beta}=\varphi_{\beta}$, le morphisme $\gamma$ est donc bien défini pour tout sommet $\beta\neq\alpha$. Il nous reste à vérifier que $\gamma_{\alpha}$ est bien défini. Soit $(v_{1},\dots,v_{n})\in\Ker(h)$, il nous faut voir que $\gamma_{\alpha}(v_{1},\dots,v_{n})\in\Ker(k)$, où
 	\[
 \begin{array}{lccc}
 	h : & \overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}&\rightarrow & V_{\alpha} \\ 
@@ -187,7 +188,7 @@ et d'autre part :
 	&=\varphi_{s(l_{i})}(v_{i}).
 \end{array}
 \]
-Ainsi, on a bien que $\forall l \in\Gamma_{1},\;g'_{l}\gamma_{t(l)}=\gamma_{s(l)}g_{l}$, ce qui prouve que $\gamma$ est un morphisme de représentations de $(W,g)$ vers $(W',g')$. Il nous reste donc à voir que $F_{\alpha}^{+}$ respecte la composition des morphismes et qu'il envoie l'identité sur l'identité.
+Ainsi, on a bien que $\forall l \in\Gamma_{1},\;g'_{l}\gamma_{t(l)}=\gamma_{s(l)}g_{l}$, ce qui prouve que $\gamma$ est un morphisme de représentations de $(W,g)$ vers $(W',g')$. Il nous reste donc à voir que $F_{\alpha}^{+}$ respecte la composition des morphismes et qu'il envoie l'identité sur l'identité. À cet effet, posons. 
 
 
 \end{proof}
