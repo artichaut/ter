@@ -28,6 +28,11 @@ Travail encadré par Pierre-Guy Plamondon}
 %Raccourcis pour les opérateurs mathématiques (les espaces avant-après sont modifiés pour mieux rentrer dans les codes mathématiques usuels)
 \DeclareMathOperator{\Ker}{Ker}
 \DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\Img}{Im}
+%Nouvelles commandes
+\newcommand{\Fpm}{F_{\alpha}^{\pm}}
+\newcommand{\Fp}{F_{\alpha}^{+}}
+\newcommand{\Fm}{F_{\beta}^{-}}
 
 %Fin des paramètres globaux et début du document.
 \begin{document}
@@ -119,7 +124,7 @@ Nous sommes désormais capables d'énoncer la version finale du théorème de Ga
 
 \subsection{Foncteur image et foncteur de Coxeter}
 
-Soit $\Gamma$ un carquois, et $\Lambda$ une orientation de $\Gamma$. On se place dans la catégorie $\mathscr{L}(\Gamma,\Lambda)$. Nous allons construire des foncteurs images, associés aux sommets $\alpha \in \Gamma_{0}$ de $\Gamma$ pour lesquels la direction des flèches le contenant est tout le temps la même. On note $\Gamma^{\alpha}=\{ l\in \Gamma_{1} : s(l)=\alpha\text{ ou }t(l)=\alpha\}$ l'ensemble des arêtes contenant $\alpha$.
+Soit $\Gamma$ un carquois, et $\Lambda$ une orientation de $\Gamma$. On se place dans la catégorie $\mathscr{L}(\Gamma,\Lambda)$. Nous allons construire des foncteurs images, associés aux sommets $\alpha \in \Gamma_{0}$ de $\Gamma$ pour lesquels la direction des flèches le contenant est identique. On note $\Gamma^{\alpha}=\{ l\in \Gamma_{1} : s(l)=\alpha\text{ ou }t(l)=\alpha\}$ l'ensemble des arêtes contenant $\alpha$.
 
 \begin{defi}
 	On dit qu'un sommet $\alpha \in \Gamma_{0}$ est un puits, ou qu'il est (+)-accessible, si $\forall l \in \Gamma^{\alpha},\; t(l)=\alpha$, c'est-à-dire si toutes les arêtes contenant $\alpha$ arrivent en $\alpha$ et qu'il n'y a pas de boucles de $\alpha$ dans lui même.
@@ -135,7 +140,7 @@ Supposons que le sommet $\alpha \in \Gamma_{0}$ soit un puits avec l'orientation
 \begin{defi}
 	On notera l'application $F_{\alpha}^{+}$ et on aura $F_{\alpha}^{+}(V,f)=(W,g)$. On pose, $\forall \gamma\neq\alpha,\;W_{\gamma}=V_{\gamma}$, et $\forall l \notin \Gamma^{\alpha},\; g_{l}=f_{l}$. Ainsi on laisse inchangés tous les sommets différents de $\alpha$ et toutes les arêtes ne faisant pas intervenir $\alpha$. On considère les arêtes $l_{1},\dots,l_{n}$ qui vont en $\alpha$ et on note $h:\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}\rightarrow V_{\alpha}$ l'application qui à un vecteur $(v_{1},\dots,v_{n})$ associe la somme $f_{l_{1}}(v_{1})+\dots+f_{l_{n}}(v_{n})$. On pose alors $W_{\alpha}=\Ker(h)$. On définie maintenant les applications $g_{l}$ pour $l\in\Gamma^{\alpha}$. Soit $i\in[\![1,n]\!]$, alors $g_{l_{i}}$ est la composition de l'injection de $\Ker(h)$ dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}$ et de la projection de $\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}$ dans $V_{s(l_{i})}$. 
 
-	On notera de même, $F^{-}_{\beta}$, l'application et on aura $F^{-}_{\beta}(V,f) = (W,g)$. On pose, $\forall \gamma \neq \alpha, W_\gamma = V_\gamma$, et $\forall l \notin \Gamma_\beta, f_l = g_l$. En considérant les arêtes $l_1, \dots, l_n$ qui partent de $\beta$, on note $\tilde{h} : V_\beta \rightarrow \overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}$ et qui à un vecteur $v \in V_\beta$ associe le vecteur $(f_1(v),\dots, f_n(v))$. On pose alors $W_\beta = \overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}/\mathrm{Im}(\tilde{h})$. On pose pour $i\in [\![1,n]\!]$, alors $g_{l_i}$ comme la composition de l'inclusion naturelle de $V_{l_i}$ dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}$ et de la projection dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}/\mathrm{Im}(\tilde h)$.
+	On notera de même, $F^{-}_{\beta}$, l'application et on aura $F^{-}_{\beta}(V,f) = (W,g)$. On pose, $\forall \gamma \neq \alpha, W_\gamma = V_\gamma$, et $\forall l \notin \Gamma_\beta, f_l = g_l$. En considérant les arêtes $l_1, \dots, l_n$ qui partent de $\beta$, on note $\tilde{h} : V_\beta \rightarrow \overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}$ et qui à un vecteur $v \in V_\beta$ associe le vecteur $(f_1(v),\dots, f_n(v))$. On pose alors $W_\beta = \overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}/\Img(\tilde{h})$. On pose pour $i\in [\![1,n]\!]$, alors $g_{l_i}$ comme la composition de l'inclusion naturelle de $V_{l_i}$ dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}$ et de la projection dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}/\Img(\tilde h)$.
 
 \end{defi}
 
@@ -211,7 +216,17 @@ Le morphisme identité de $(V,f)$ est donc bien envoyé sur le morphisme identit
 \]
 Ainsi la composition de deux morphismes est bien respectée par $F_{\alpha}^{+}$, et cela conclue la preuve pour cette application.
 \end{proof}
-
+\begin{lm}
+	On a les résultats suivants :
+	\begin{enumerate}
+		\item $F_{\alpha}^{\pm}(V_{1}\oplus V_{2})=F_{\alpha}^{\pm}(V_{1})\oplus F_{\alpha}^{\pm}(V_{2})$ ;
+		\item $p_{V}^{\alpha}$ est surjectif et $i_{V}^{\beta}$ est injectif ;
+		\item dimensions ;
+		\item $\forall \gamma\neq\alpha,\;(\Ker p_{V}^{\alpha})_{\gamma}=\left\{ 0 \right\}$ et $\forall \gamma\neq\beta,\;(V/\Img i_{V}^{\beta})_{\gamma}=\left\{ 0 \right\}$ ;
+		\item si $V$ est de la forme $F_{\alpha}^{+}(W)$ (respectivement $F_{\beta}^{-}(W)$), alors $p_{V}^{\alpha}$ ($i_{V}^{\beta}$) est un isomorphisme ;
+		\item $V$ est isomorphe à $F_{\alpha}^{+}F_{\alpha}^{-}(V)\oplus V/\Img i_{V}^{\beta}$, de même $V$ est isomorphe à $F_{\alpha}^{+}F_{\alpha}^{-}(V)\oplus \Ker p_{V}^{\alpha}$.
+	\end{enumerate}
+\end{lm}
 
 %Lignes à ajouter pour faire apparaître notre bibliographie
 \clearpage
