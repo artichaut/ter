@@ -219,32 +219,32 @@ Ainsi la composition de deux morphismes est bien respectée par $F_{\alpha}^{+}$
 On a déjà définie l'action de $F_{\beta}^{-}$ sur les représentations de la catégorie $\mathscr L(\Gamma,\Lambda)$ à valeurs dans la catégorie $\mathscr L(\Gamma,\sigma_{\beta}\Lambda)$. Il s'agit maintenant de définir l'action de $F_{\beta}^{-}$ sur les morphismes de représentations. Soit $(V,f)$ et $(V',f')$ deux représentations et $(\varphi_{\gamma})_{\gamma \in \Gamma_{0}}$ un morphisme entre ces deux représentations dans $\mathscr L(\Gamma,\Lambda)$. Posons pout tout $\gamma \neq \beta, F_{\beta}^{-}(\varphi_{\gamma}) = \varphi_{\gamma}$, car $F_{\beta}^{-}$ laisse inchangé les espaces vectoriels associés aux sommets différents de $\beta$.
 \end{proof}
 \begin{defi}
-	Soit $\beta\in\Gamma_{0}$ une source suivant l'orientation $\Lambda$, alors $\beta$ est un puits suivant l'orientation $\sigma_{\beta}\Lambda$. On peut donc définir le foncteur : $F_{\beta}^{-}F_{\beta}^{+}:\mathscr{L}(\Gamma,\Lambda)\rightarrow\mathscr{L}(\Gamma,\Lambda).$ Pour tout objet $(V,f)\in\mathscr{L}(\Gamma,\Lambda)$, on construit alors une application $i_{V}^{\beta}:F_{\beta}^{-}F_{\beta}^{+}(V,f)\rightarrow (V,f)$ de la manière suivante :
+	Soit $\beta\in\Gamma_{0}$ une source suivant l'orientation $\Lambda$, alors $\beta$ est un puits suivant l'orientation $\sigma_{\beta}\Lambda$. On peut donc définir le foncteur : $F_{\beta}^{-}F_{\beta}^{+}:\mathscr{L}(\Gamma,\Lambda)\rightarrow\mathscr{L}(\Gamma,\Lambda).$ Soit $(V,f)\in\mathscr{L}(\Gamma,\Lambda)$, on note $(Z,h)=F_{\beta}^{-}F_{\beta}^{+}(V,f)$ l'image de $(V,f)$ par $F_{\beta}^{-}F_{\beta}^{+}$ et on construit alors une application $i_{V}^{\beta}:(Z,h)\rightarrow (V,f)$ de la manière suivante :
 	\[
-		\forall \gamma\neq\beta,\;F_{\beta}^{-}F_{\beta}^{+}(V,f)_{\gamma}=V_{\gamma}\text{, on pose donc : }(i_{V}^{\beta})_{\gamma}=\Id_{V_{\gamma}}.
+		\forall \gamma\neq\beta,\;Z_{\gamma}=V_{\gamma}\text{, on pose donc : }(i_{V}^{\beta})_{\gamma}=\Id_{V_{\gamma}}.
 	\]
 	Pour $(i_{V}^{\beta})_{\beta}$, on prend l'application naturelle : 
 	\[
-		F_{\beta}^{-}F_{\beta}^{+}(V,f)_{\beta}=\underset{l\in\Gamma^{\beta}}{\oplus} V_{s(l)}/\Img \tilde{h}=\underset{l\in\Gamma^{\beta}}{\oplus} V_{s(l)}/\Ker h \rightarrow V.
+		Z_{\beta}=\underset{l\in\Gamma^{\beta}}{\oplus} V_{s(l)}/\Img \tilde{h}=\underset{l\in\Gamma^{\beta}}{\oplus} V_{s(l)}/\Ker h \rightarrow V.
 	\]
 \end{defi}
 \begin{prop}
-	L'application $i_{V}^{\beta}$ est un morphisme de $F_{\beta}^{-}F_{\beta}^{+}(V,f)$ dans $(V,f)$.
+	L'application $i_{V}^{\beta}$ est un morphisme de $(Z,h)$ dans $(V,f)$.
 \end{prop}
 \begin{proof}
-	Dans la définition de $(i_{V}^{\beta})_{\beta}$, on a implicitement déclaré que $\Ker h=\Img\tilde h$, nous allons le prouver. Considérons la suite d'applications suivante :
+	Notons $(W,g)=F_{\beta}^{+}(V,f)$ l'image de $(V,f)$ par $F_{\beta}^{+}$. Dans la définition de $(i_{V}^{\beta})_{\beta}$, on a implicitement déclaré que $\Ker h=\Img\tilde h$, nous allons le prouver. Considérons la suite d'applications suivante :
 	\[
-		F_{\beta}^{+}(V)\overset{\tilde h}{\longrightarrow}\underset{l\in\Gamma^{\beta}}{\oplus}V_{s(l)}\overset{h}{\longrightarrow}V_{\beta},
+		W_{\beta}\overset{\tilde h}{\longrightarrow}\underset{l\in\Gamma^{\beta}}{\oplus}V_{s(l)}\overset{h}{\longrightarrow}V_{\beta},
 	\]
 on a alors :
 \[
 	\begin{array}{lll}
-		\Img \tilde h &=& \left\{ (g_{l_{1}}(v_{1}),\dots,g_{l_{n}}(v_{n})) \;|\; (v_{1},\dots,v_{n})\in F_{\beta}^{+} \right\}\\
+		\Img \tilde h &=& \left\{ (g_{l_{1}}(v_{1}),\dots,g_{l_{n}}(v_{n})) \;|\; (v_{1},\dots,v_{n})\in W_{\beta} \right\}\\
 		&=& \left\{ (v_{1},\dots,v_{n})\;|\;(v_{1},\dots,v_{n})\in\Ker h \right\}\\
 		&=& \Ker h.
 \end{array}
 \]
-Car $F_{\beta}^{+}=\Ker h$ par définition et pour tout $i\in[\![1,n]\!]$, $g_{l_{i}}$ est la composée de l'injection $\Ker h \hookrightarrow \oplus_{l\in\Gamma^{\beta}}V_{s(l)}$ avec la projection $\oplus_{l\in\Gamma^{\beta}}V_{s(l)}\twoheadrightarrow V_{s(l_{i})}$.
+Car $W_{\beta}=\Ker h$ par définition et pour tout $i\in[\![1,n]\!]$, $g_{l_{i}}$ est la composée de l'injection $\Ker h \hookrightarrow \oplus_{l\in\Gamma^{\beta}}V_{s(l)}$ avec la projection $\oplus_{l\in\Gamma^{\beta}}V_{s(l)}\twoheadrightarrow V_{s(l_{i})}$.
 \end{proof}
 
 \begin{lm}
