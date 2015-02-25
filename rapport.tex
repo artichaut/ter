@@ -213,10 +213,14 @@ On a déjà définie l'action de $F_{\beta}^{-}$ sur les représentations de la 
 	\[
 		\forall \gamma\neq\beta,\;Z_{\gamma}=V_{\gamma}\text{, on pose donc : }(i_{V}^{\beta})_{\gamma}=\Id_{V_{\gamma}}.
 	\]
-	Pour $(i_{V}^{\beta})_{\beta}$, on prend l'application naturelle : 
+	Pour $(i_{V}^{\beta})_{\beta}$, on prend l'application : 
 	\[
-		Z_{\beta}=\underset{l\in\Gamma^{\beta}}{\oplus} V_{s(l)}/\Img \tilde{h}=\underset{l\in\Gamma^{\beta}}{\oplus} V_{s(l)}/\Ker h \rightarrow V.
+	\begin{array}{ccc}
+		Z_{\beta}=\underset{l\in\Gamma^{\beta}}{\oplus} V_{s(l)}/\Img \tilde{h}=\underset{l\in\Gamma^{\beta}}{\oplus} V_{s(l)}/\Ker h & \rightarrow & V \\
+		(v_{1},\dots,v_{n})+\Ker h & \mapsto & \sum_{i=1}^{n}f_{l_{i}}(v_{i})
+	\end{array}
 	\]
+	où $\Gamma^{\beta}=\left\{ l_{1},\dots,l_{n} \right\}$.
 \end{defi}
 \begin{prop}
 	L'application $i_{V}^{\beta}$ est un morphisme de $(Z,h)$ dans $(V,f)$.
@@ -234,9 +238,29 @@ on a alors :
 		&=& \Ker h.
 \end{array}
 \]
-Car $W_{\beta}=\Ker h$ par définition et pour tout $i\in[\![1,n]\!]$, $g_{l_{i}}$ est la composée de l'injection $\Ker h \hookrightarrow \oplus_{l\in\Gamma^{\beta}}V_{s(l)}$ avec la projection $\oplus_{l\in\Gamma^{\beta}}V_{s(l)}\twoheadrightarrow V_{s(l_{i})}$.
-\end{proof}
+Car $W_{\beta}=\Ker h$ par définition et pour tout $i\in[\![1,n]\!]$, $g_{l_{i}}$ est la composée de l'injection $\Ker h \hookrightarrow \oplus_{l\in\Gamma^{\beta}}V_{s(l)}$ avec la projection $\oplus_{l\in\Gamma^{\beta}}V_{s(l)}\twoheadrightarrow V_{s(l_{i})}$. Prouvons désormais que $i_{V}^{\beta}$ est un morphisme, c'est-à-dire que $\forall l\in\Gamma_{1}$, on a $(i_{V}^{\beta})_{t(l)}h_{l}=f_{l}(i_{V}^{\beta})_{s(l)}$. Commençons par prendre $l\notin\Gamma^{\beta}$, on a alors $(i_{V}^{\beta})_{s(l)}=\Id_{V_{s(l)}}$, $(i_{V}^{\beta})_{t(l)}=\Id_{V_{t(l)}}$, et $h_{l}=f_{l}$, d'où l'égalité souhaitée. Voyons maintenant le cas où $l\in\Gamma^{\beta}$, on alors $t(l)=\beta$. Vérifions dans un premier temps que l'application $(i_{V}^{\beta})_{\beta}$ est bien définie. Pour cela prenons deux représentants de la même classe dans $Z_{\beta}$ : $(v_{1},\dots,v_{n})$ et $(v_{1}',\dots,v_{n}')$, et vérifions qu'ils ont la même image par $(i_{V}^{\beta})_{\beta}$. On a $(v_{1}-v_{1}',\dots,v_{n}-v_{n}')\in\Ker h$, d'où :
+\[
+\begin{array}{rll}
+	0&=&\sum_{i=1}^{n}f_{l_{i}}(v_{i}-v_{i}')\\
+	&=& \sum_{i=1}^{n}f_{l_{i}}(v_{i})-\sum_{i=1}^{n}f_{l_{i}}(v_{i}')\\
+	&=& (i_{V}^{\beta})_{\beta}((v_{1},\dots,v_{n})+\Ker h)-(i_{V}^{\beta})_{\beta}((v_{1}',\dots,v_{n}')+\Ker h)
 
+\end{array}
+\]
+Et on a bien $(i_{V}^{\beta})_{\beta}((v_{1},\dots,v_{n})+\Ker h)=(i_{V}^{\beta})_{\beta}((v_{1}',\dots,v_{n}')+\Ker h)
+$, d'où le caractère bien définie de $(i_{V}^{\beta})_{\beta}$. Notons $l=l_{j}$ pour un certain $j\in[\![1,n]\!]$ et vérifions que $f_{l_{j}}\Id_{V_{s(l_{j})}}=(i_{V}^{\beta})_{\beta}h_{l_{j}}$. Soit $v_{j}\in V_{s(l_{j})}$, on a d'une part :
+\[
+	f_{l_{j}}\Id_{V_{s(l_{j})}}(v_{j})=f_{l_{j}}(v_{j})
+\]
+et d'autre part :
+\[
+\begin{array}{rll}
+	(i_{V}^{\beta})_{\beta}h_{l_{j}}(v_{j})&=& (i_{V}^{\beta})_{\beta}((0,\dots,0,v_{j},0,\dots,0)+\Ker h)\\
+	&=& f_{l_{j}}(v_{j}).
+\end{array}
+\]
+Et on a encore l'égalité souhaitée, ainsi $i_{V}^{\beta}$ est bien un morphisme.
+\end{proof}
 \begin{lm}
 	On a les résultats suivants :
 	\begin{enumerate}
@@ -255,9 +279,3 @@ Car $W_{\beta}=\Ker h$ par définition et pour tout $i\in[\![1,n]\!]$, $g_{l_{i}
 \bibliography{biblio}
 
 \end{document}
-
-
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: t
-%%% End:
