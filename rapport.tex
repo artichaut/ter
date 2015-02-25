@@ -22,6 +22,7 @@ Travail encadré par Pierre-Guy Plamondon}
 \newtheorem{ex}{Exemple}[section]
 
 %Feuilles de styles Tikz
+\usetikzlibrary{matrix}
 \tikzset{sommet/.style={circle, draw, fill,scale=0.4}}
 \tikzset{fleche/.style={->,>=latex}}
 
@@ -238,7 +239,21 @@ on a alors :
 		&=& \Ker h.
 \end{array}
 \]
-Car $W_{\beta}=\Ker h$ par définition et pour tout $i\in[\![1,n]\!]$, $g_{l_{i}}$ est la composée de l'injection $\Ker h \hookrightarrow \oplus_{l\in\Gamma^{\beta}}V_{s(l)}$ avec la projection $\oplus_{l\in\Gamma^{\beta}}V_{s(l)}\twoheadrightarrow V_{s(l_{i})}$. Prouvons désormais que $i_{V}^{\beta}$ est un morphisme, c'est-à-dire que $\forall l\in\Gamma_{1}$, on a $(i_{V}^{\beta})_{t(l)}h_{l}=f_{l}(i_{V}^{\beta})_{s(l)}$. Commençons par prendre $l\notin\Gamma^{\beta}$, on a alors $(i_{V}^{\beta})_{s(l)}=\Id_{V_{s(l)}}$, $(i_{V}^{\beta})_{t(l)}=\Id_{V_{t(l)}}$, et $h_{l}=f_{l}$, d'où l'égalité souhaitée. Voyons maintenant le cas où $l\in\Gamma^{\beta}$, on alors $t(l)=\beta$. Vérifions dans un premier temps que l'application $(i_{V}^{\beta})_{\beta}$ est bien définie. Pour cela prenons deux représentants de la même classe dans $Z_{\beta}$ : $(v_{1},\dots,v_{n})$ et $(v_{1}',\dots,v_{n}')$, et vérifions qu'ils ont la même image par $(i_{V}^{\beta})_{\beta}$. On a $(v_{1}-v_{1}',\dots,v_{n}-v_{n}')\in\Ker h$, d'où :
+Car $W_{\beta}=\Ker h$ par définition et pour tout $i\in[\![1,n]\!]$, $g_{l_{i}}$ est la composée de l'injection $\Ker h \hookrightarrow \oplus_{l\in\Gamma^{\beta}}V_{s(l)}$ avec la projection $\oplus_{l\in\Gamma^{\beta}}V_{s(l)}\twoheadrightarrow V_{s(l_{i})}$. Prouvons désormais que $i_{V}^{\beta}$ est un morphisme, c'est-à-dire que le diagramme suivant commute :
+\[
+	\begin{tikzpicture}
+	\matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+	  {
+		  Z_{s(l)} & Z_{t(l)} \\
+		  V_{s(l)} & V_{t(l)} \\};
+	\path[-stealth]
+	(m-1-1) edge node [left] {$(i_{V}^{\beta})_{s(l)}$} (m-2-1)
+		edge node [above] {$h_{l}$} (m-1-2)
+	(m-2-1) edge node [below] {$f_{l}$} (m-2-2)
+	(m-1-2) edge node [right] {$(i_{V}^{\beta})_{t(l)}$} (m-2-2);
+	\end{tikzpicture}
+\]
+ou encore que $\forall l\in\Gamma_{1}$, on a $(i_{V}^{\beta})_{t(l)}h_{l}=f_{l}(i_{V}^{\beta})_{s(l)}$. Commençons par prendre $l\notin\Gamma^{\beta}$, on a alors $(i_{V}^{\beta})_{s(l)}=\Id_{V_{s(l)}}$, $(i_{V}^{\beta})_{t(l)}=\Id_{V_{t(l)}}$, et $h_{l}=f_{l}$, d'où l'égalité souhaitée. Voyons maintenant le cas où $l\in\Gamma^{\beta}$, on alors $t(l)=\beta$. Vérifions dans un premier temps que l'application $(i_{V}^{\beta})_{\beta}$ est bien définie. Pour cela prenons deux représentants de la même classe dans $Z_{\beta}$ : $(v_{1},\dots,v_{n})$ et $(v_{1}',\dots,v_{n}')$, et vérifions qu'ils ont la même image par $(i_{V}^{\beta})_{\beta}$. On a $(v_{1}-v_{1}',\dots,v_{n}-v_{n}')\in\Ker h$, d'où :
 \[
 \begin{array}{rll}
 	0&=&\sum_{i=1}^{n}f_{l_{i}}(v_{i}-v_{i}')\\
