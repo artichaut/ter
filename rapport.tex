@@ -99,15 +99,19 @@ On considérera seulement des carquois connexes dans les exemples ci dessous.
 
 \subsection{Représentations de carquois}
 Maintenant que nous connaissons la définition d'un carquois, et que nous pouvons nous représenter l'objet, nous sommes capables d'aborder le coeur du sujet : les représentations de carquois. À l'issue de cette partie, nous serons même capables d'énoncer, et comprendre, une partie du théorème de Gabriel.
-
 \begin{defi}[Représentation de carquois]
   Une représentation de carquois d'un carquois $(\Gamma,\Lambda)$ est un couple $(V,f)$ où $V$ est une liste indexée sur $\Gamma_0$ d'espaces vectoriels de dimension finie et $f$ est une liste indexée sur $\Gamma_1$ de morphismes d'espace vectoriel tels que pour tout $l \in \Gamma_1, f_l$ est définie de $V_{s(l)}$ dans $V_{t(l)}$.
-
 \end{defi}
-
+\begin{defi}[Somme de deux représentations de carquois]
+\end{defi}
+\begin{defi}[Représentation indécomposable]
+\end{defi}
 \subsection{Théorie des catégories}
 Avant de traiter la preuve du thérorème de Gabriel, nous introduisons le langage de la théorie des catégories, celui nous aidera au court de la preuve. Les notations utilisées ici sont celle de \cite{A97}, et de plus amples détails sur les catégories peuvent y être trouvées, nous ne donnons ici qu'une brève présentation des notions qui nous serons utiles par la suite.
-
+\begin{defi}[Catégorie]
+\end{defi}
+\begin{defi}[Foncteur]
+\end{defi}
 \subsection{Système de racines}
 Afin de faire le lien entre les diagrammes de Dynkin et les représentations de carquois, il nous sera utile de savoir ce qu'est un système de racines, l'arrivée des diagrammes de Dynkin et des groupes de Weil nous permettra même de préciser le théorème de Gabriel que nous connaissions jusqu'à maintenant.
 
@@ -152,10 +156,7 @@ Supposons que le sommet $\alpha \in \Gamma_{0}$ soit un puits avec l'orientation
 \begin{array}{lccc}
 	h : & \overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}&\rightarrow & V_{\alpha} \\ 
 	& (v_{1},\dots,v_{n})&\mapsto & \underset{i=1}{\overset{n}{\sum}}f_{l_{i}}(v_{i})\\
-\end{array}
-	\]	
-	\[
-\begin{array}{lccc}
+	&&&\\
 	k : & \overset{n}{\underset{j=1}{\bigoplus}}V'_{s(l_{j})}&\rightarrow & V'_{\alpha} \\ 
 	& (v'_{1},\dots,v'_{n})&\mapsto & \underset{i=1}{\overset{n}{\sum}}f'_{l_{i}}(v'_{i}).\\
 \end{array}
@@ -281,13 +282,61 @@ Et on a encore l'égalité souhaitée, ainsi $i_{V}^{\beta}$ est bien un morphis
 	\begin{enumerate}
 		\item $F_{\alpha}^{\pm}(V_{1}\oplus V_{2})=F_{\alpha}^{\pm}(V_{1})\oplus F_{\alpha}^{\pm}(V_{2})$ ;
 		\item $p_{V}^{\alpha}$ est surjectif et $i_{V}^{\beta}$ est injectif ;
-		\item dimensions ;
+		\item \begin{enumerate}
+				\item si $p_{V}^{\alpha}$ est un isomorphisme, alors on a les formules :
+					\[
+\begin{array}{rll}
+	\forall\gamma\neq\beta,\;\dim F_{\beta}^{+}(V,f)_{\gamma}&=& \dim V_{\gamma}\\
+	\dim F_{\beta}^{+}(V,f)_{\beta}&=& -\dim V_{\beta}+\sum_{l\in\Gamma^{\beta}}\dim V_{s(l)}
+\end{array}
+					\]
+				\item si $i_{V}^{\alpha}$ est un isomorphisme, alors on a les formules :
+	\[
+\begin{array}{rll}
+	\forall\gamma\neq\alpha,\;\dim F_{\alpha}^{-}(V,f)_{\gamma}&=& \dim V_{\gamma}\\
+	\dim F_{\alpha}^{-}(V,f)_{\alpha}&=& -\dim V_{\alpha}+\sum_{l\in\Gamma^{\alpha}}\dim V_{t(l)};
+\end{array}
+					\]
+			\end{enumerate}
 		\item $\forall \gamma\neq\alpha,\;(\Ker p_{V}^{\alpha})_{\gamma}=\left\{ 0 \right\}$ et $\forall \gamma\neq\beta,\;(V/\Img i_{V}^{\beta})_{\gamma}=\left\{ 0 \right\}$ ;
 		\item si $V$ est de la forme $F_{\alpha}^{+}(W)$ (respectivement $F_{\beta}^{-}(W)$), alors $p_{V}^{\alpha}$ ($i_{V}^{\beta}$) est un isomorphisme ;
 		\item $V$ est isomorphe à $F_{\alpha}^{+}F_{\alpha}^{-}(V)\oplus V/\Img i_{V}^{\beta}$, de même $V$ est isomorphe à $F_{\alpha}^{+}F_{\alpha}^{-}(V)\oplus \Ker p_{V}^{\alpha}$.
 	\end{enumerate}
 \end{lm}
+\begin{proof}
+	Prouvons le point $1$. Soit $\alpha\in\Gamma_{0}$ un puits de $\Gamma$ suivant l'orientation $\Lambda$, soient de plus $(V,f)$ et $(V',f')$ deux représentations de $(\Gamma,\Lambda)$. On veut montrer que $F_{\alpha}^{+}((V,f)\oplus(V',f'))=F_{\alpha}^{+}(V,f)\oplus F_{\alpha}^{+}(V',f')$. Il vient :
+	\[
+\begin{array}{rll}
+	\forall\gamma\neq\alpha,\;F_{\alpha}^{+}((V,f)\oplus(V',f'))_{\gamma}&=&((V,f)\oplus(V',f'))_{\gamma}\\
+	&=& V_{\gamma}\oplus V_{\gamma}'\\
+	&=&  F_{\alpha}^{+}(V,f)_{\gamma}\oplus F_{\alpha}^{+}(V',f')_{\gamma}\\
+	&&\\
+	F_{\alpha}^{+}((V,f)\oplus(V',f'))_{\alpha}&=&\Ker(h\oplus h')\\
+	&=& \Ker h \oplus \Ker h'\\
+	&=&  F_{\alpha}^{+}(V,f)_{\alpha}\oplus F_{\alpha}^{+}(V',f')_{\alpha},
+\end{array}
+	\]
+où :
+\[
+\begin{array}{lccc}
+	h : & \overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}&\rightarrow & V_{\alpha} \\ 
+	& (v_{1},\dots,v_{n})&\mapsto & \underset{i=1}{\overset{n}{\sum}}f_{l_{i}}(v_{i})\\
+	&&&\\
+	h : & \overset{n}{\underset{j=1}{\bigoplus}}V'_{s(l_{j})}&\rightarrow & V'_{\alpha} \\ 
+	& (v'_{1},\dots,v'_{n})&\mapsto & \underset{i=1}{\overset{n}{\sum}}f'_{l_{i}}(v'_{i}).\\
+\end{array}
+	\]
+	et où $\Gamma^{\alpha}=\left\{ l_{1},\dots,l_{n} \right\}$. Ainsi on a bien l'égalité annoncée.
 
+	Prouvons désormais le point $2$. Dire que le morphisme $i_{V}^{\beta}$ est injectif signifie que pour tout $\gamma\in\Gamma_{0}$, l'application $(i_{V}^{\beta})_{\gamma}$ est injective. Comme $\forall\gamma\neq\beta,\;(i_{V}^{\beta})_{\gamma}=\Id_{V_{\gamma}}$, l'injectivité de $(i_{V}^{\beta})_{\gamma}$ est assurée pour tout $\gamma\neq\beta$. Regardons maintenant le cas $\gamma=\beta$. Soient $a=(v_{1},\dots,v_{n})+\Ker h$ et $b=(v_{1}',\dots,v_{n}')+\Ker h$ tels que $(i_{V}^{\beta})_{\beta}(a)=(i_{V}^{\beta})_{\beta}(b)$. On alors :
+	\[
+\begin{array}{rll}
+	\sum_{i=1}^{n}f_{l_{i}}(v_{i})&=&\sum_{i=1}^{n}f_{l_{i}}(v'_{i})\\
+	\sum_{i=1}^{n}f_{l_{i}}(v_{i}-v_{i}')&=&0
+\end{array}
+	\]
+	d'où $(v_{1}-v_{1}',\dots,v_{n}-v_{n}')\in\Ker h$, donc $a=b$, et on a l'injectivité de $(i_{V}^{\beta})_{\beta}$ puis de $i_{V}^{\beta}$.
+\end{proof}
 %Lignes à ajouter pour faire apparaître notre bibliographie
 \clearpage
 \bibliographystyle{unsrt}
