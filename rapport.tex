@@ -208,8 +208,37 @@ Le morphisme identité de $(V,f)$ est donc bien envoyé sur le morphisme identit
 \]
 Ainsi la composition de deux morphismes est bien respectée par $F_{\alpha}^{+}$, et cela conclue la preuve pour cette application.
 
-On a déjà définie l'action de $F_{\beta}^{-}$ sur les représentations de la catégorie $\mathscr L(\Gamma,\Lambda)$ à valeurs dans la catégorie $\mathscr L(\Gamma,\sigma_{\beta}\Lambda)$. Il s'agit maintenant de définir l'action de $F_{\beta}^{-}$ sur les morphismes de représentations. Soit $(V,f)$ et $(V',f')$ deux représentations et $(\varphi_{\gamma})_{\gamma \in \Gamma_{0}}$ un morphisme entre ces deux représentations dans $\mathscr L(\Gamma,\Lambda)$. Posons pout tout $\gamma \neq \beta, F_{\beta}^{-}(\varphi_{\gamma}) = \varphi_{\gamma}$, car $F_{\beta}^{-}$ laisse inchangé les espaces vectoriels associés aux sommets différents de $\beta$.
+On a déjà défini l'action de $F_{\beta}^{-}$ sur les représentations de la catégorie $\mathscr L(\Gamma,\Lambda)$ à valeurs dans la catégorie $\mathscr L(\Gamma,\sigma_{\beta}\Lambda)$. Il s'agit maintenant de définir l'action de $F_{\beta}^{-}$ sur les morphismes de représentations. Soit $(V,f)$ et $(V',f')$ deux représentations et $\varphi = (\varphi_{\gamma})_{\gamma \in \Gamma_{0}}$ un morphisme entre ces deux représentations dans $\mathscr L(\Gamma,\Lambda)$. Posons pout tout $\gamma \neq \beta, F_{\beta}^{-}(\varphi)_{\gamma} = \varphi_{\gamma}$, car $F_{\beta}^{-}$ laisse inchangé les espaces vectoriels associés aux sommets différents de $\beta$. On définie alors l'action de  $F^{-}_{\beta}(\varphi)_{\beta}$ sur $\oplus_{l \in \Gamma^{\beta}} V_{t(l)} / \Img \tilde{h}$  dans $\oplus_{l \in \Gamma^{\beta}} V'_{t(l)} / \Img \tilde{h'}$ avec $\tilde{h'}$ la fonction de $V_{\beta}$ dans  $\oplus_{l \in \Gamma^{\beta}} V'_{t(l)}$ qui à $v$ associe $(f'_{1}(v), \dots , f'_{n}(v))$ par : 
+\[
+\forall \overline{(y_{1}, \dots, y_{n})} \in  \oplus_{ i=1}^{n} V_{t(l_{i})} / \Img \tilde{h},  F_{\beta}^{-}(\varphi)_{\beta}(\overline{(y_{1}, \dots, y_{n})}) = \overline{(\varphi_{t(l_{1})}(y_{1}), \dots , \varphi_{t(l_{n})}(y_{n}))}
+\]
+où $\overline{x}$ représente la classe de $x$ dans $\oplus_{l \in \Gamma^{\beta}} V_{t(l)} / \Img \tilde{h}$ ou $\oplus_{l \in \Gamma^{\beta}} V'_{t(l)} / \Img \tilde{h'}$.
+
+Vérifions alors que cette définition a un sens, soit $(y_{1}, \dots, y_{n})$ et $(z_{1}, \dots , z_{n})$ deux éléments de $\oplus_{i=1}^{n} V_{t(l_{i})}$ ayant la même classe dans $\oplus_{i=1}^{n} V_{t(l_{i})} / \Img \tilde{h}$ c'est à dire qu'il existe $v \in V_{\beta}$ tel que  $(y_{1}, \dots, y_{n}) = (z_{1}, \dots , z_{n}) + (f_{t(l_{1})}(v), \dots, f_{t(l_{n})}(v))$.
+\[
+\begin{array}{ll}
+  \left(\varphi_{t(l_{1})}(y_{1}), \dots, \varphi_{t(l_{n})}(y_{n}) \right) &= \left((\varphi_{t(l_{1})}(z_{1} + f_{t(l_{1})}(v)), \dots, \varphi_{t(l_{n})}(z_{n} + f_{t(l_{n})}(v))\right) \\
+  &= \left(\varphi_{t(l_{1})}(z_{1}), \dots, \varphi_{t(l_{n})}(z_{n})\right) + \left(\varphi_{t(l_{1})}(f_{t(l_{1})}(v)), \dots, \varphi_{t(l_{n})}(f_{t(l_{n})}(v)) \right)\\
+&= \left(\varphi_{t(l_{1})}(z_{1}), \dots, \varphi_{t(l_{n})}(z_{n})\right) + \left(f'_{t(l_{1})}((\varphi_{\beta}(v)), \dots, f'_{t(l_{n})}((\varphi_{\beta}(v)) \right)
+\end{array}
+\]
+
+ car pour tout $i \in [\![1,n]\!]$, on a $\varphi_{t(l_{i})} \circ f_{l_{i}} = f'_{l_{i}} \circ \varphi_{\beta} $, donc finalement $F_{\beta}^{-}(\varphi_{\beta})$ est bien définie.
+
+
+Soit $g_{t(l_{i})}$ comme définie ci-dessus et  pour tout  $i\in[\![1,n]\!],g'_{l_{i}}$ la composition de l'inclusion naturelle de $V'_{t(l_{i})}$ dans $\oplus_{i = 1}^{n} V'_{t(l_{i})}$ avec la projection de $\oplus_{l \in \Gamma^{\beta}} V'_{t(l)}$ dans $\oplus_{l \in \Gamma^{\beta}} V'_{t(l)} / \Img \tilde{h'}$. Montrons alors que pour tout $i \in [\![1,n]\!]$ et $x \in V_{t(l_{i})}$, on ait $F^{-}_{\beta}(\varphi_{\beta}) \circ g_{l_{i}}(x)  = g'_{l_{i}} \circ \varphi_{l_{i}}(x)$ pour vérifer que $F_{\beta}^{-}(\varphi)$ est bien un morphisme de représentation dans $\mathscr L(\Gamma,\sigma_{\beta}\Lambda)$. Et en effet, 
+\[
+\begin{array}{ll}
+  F^{-}_{\beta}(\varphi_{\beta}) \circ g_{l_{i}}(x) &= F^{-}_{\beta}(\varphi_{\beta})(\overline{(0, \dots, x, \dots, 0)}) \\
+                                                    &= \overline{(0, \dots, \varphi_{t(l_{i})}(x),\dots,0)} \\
+                                                    &= g'_{l_{i}} \circ \varphi_{t(l_{i})}(x)
+\end{array}
+\] 
+
+
+ 
 \end{proof}
+
 \begin{defi}
 	Soit $\beta\in\Gamma_{0}$ une source suivant l'orientation $\Lambda$, alors $\beta$ est un puits suivant l'orientation $\sigma_{\beta}\Lambda$. On peut donc définir le foncteur : $F_{\beta}^{-}F_{\beta}^{+}:\mathscr{L}(\Gamma,\Lambda)\rightarrow\mathscr{L}(\Gamma,\Lambda).$ Soit $(V,f)\in\mathscr{L}(\Gamma,\Lambda)$, on note $(Z,h)=F_{\beta}^{-}F_{\beta}^{+}(V,f)$ l'image de $(V,f)$ par $F_{\beta}^{-}F_{\beta}^{+}$ et on construit alors une application $i_{V}^{\beta}:(Z,h)\rightarrow (V,f)$ de la manière suivante :
 	\[
@@ -343,3 +372,8 @@ où :
 \bibliography{biblio}
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
