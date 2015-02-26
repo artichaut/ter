@@ -193,9 +193,11 @@ Ainsi, on a bien que $\forall l \in\Gamma_{1},\;g'_{l}\gamma_{t(l)}=\gamma_{s(l)
 	\forall \beta\neq\alpha,\;F_{\alpha}^{+}(\Id)_{\beta}=\Id_{V_{\beta}}
 \]
 \[
-	F_{\alpha}^{+}(\Id)=(\Id_{V_{s(l_{1})}},\dots,\Id_{V_{s(l_{n})}})=\Id_{\Ker(h)}.
+	F_{\alpha}^{+}(\Id)_{\alpha}=(\Id_{V_{s(l_{1})}},\dots,\Id_{V_{s(l_{n})}})=\Id_{\Ker(h)}.
 \]
-Le morphisme identité de $(V,f)$ est donc bien envoyé sur le morphisme identité de $F_{\alpha}^{+}(V,f)$. Posons désormais $(V,f)$,$(V',f')$ et $(V'',f'')$ trois représentations de $(\Gamma,\Lambda)$, $\varphi$ (respectivement $\varphi '$) un morphisme de représentation de $(V,f)$ dans $(V',f')$ (respectivement de $(V',f')$ dans $(V'',f'')$), ainsi que $(W,g)$, $(W',g')$, $(W'',g'')$, $\gamma$ et $\gamma '$ leurs images par $F_{\alpha}^{+}$. Il vient :
+Le morphisme identité de $(V,f)$ est donc bien envoyé sur le morphisme identité de $F_{\alpha}^{+}(V,f)$. Posons désormais $(V,f)$,$(V',f')$ et $(V'',f'')$ trois représentations de $(\Gamma,\Lambda)$, $\varphi$ (respectivement $\varphi '$) un morphisme de représentation de $(V,f)$ dans $(V',f')$ (respectivement de $(V',f')$ dans $(V'',f'')$), ainsi que $(W,g)$, $(W',g')$, $(W'',g'')$, 
+%% à mon avis c'est une erreur de les nommer gamma et gamma'
+ $\gamma$ et $\gamma '$ leurs images par $F_{\alpha}^{+}$. Il vient :
 \[
 	\forall \beta\neq\alpha,\;F_{\alpha}^{+}(\varphi')_{\beta}F_{\alpha}^{+}(\varphi)_{\beta}=\varphi_{\beta}'\varphi_{\beta}=F_{\alpha}^{+}(\varphi'\varphi)_{\beta}
 \]
@@ -212,9 +214,9 @@ Ainsi la composition de deux morphismes est bien respectée par $F_{\alpha}^{+}$
 
 On a déjà défini l'action de $F_{\beta}^{-}$ sur les représentations de la catégorie $\mathscr L(\Gamma,\Lambda)$ à valeurs dans la catégorie $\mathscr L(\Gamma,\sigma_{\beta}\Lambda)$. Il s'agit maintenant de définir l'action de $F_{\beta}^{-}$ sur les morphismes de représentations. Soit $(V,f)$ et $(V',f')$ deux représentations et $\varphi = (\varphi_{\gamma})_{\gamma \in \Gamma_{0}}$ un morphisme entre ces deux représentations dans $\mathscr L(\Gamma,\Lambda)$. Posons pout tout $\gamma \neq \beta, F_{\beta}^{-}(\varphi)_{\gamma} = \varphi_{\gamma}$, car $F_{\beta}^{-}$ laisse inchangé les espaces vectoriels associés aux sommets différents de $\beta$. On définie alors l'action de  $F^{-}_{\beta}(\varphi)_{\beta}$ sur $\oplus_{l \in \Gamma^{\beta}} V_{t(l)} / \Img \tilde{h}$  dans $\oplus_{l \in \Gamma^{\beta}} V'_{t(l)} / \Img \tilde{h'}$ avec $\tilde{h'}$ la fonction de $V_{\beta}$ dans  $\oplus_{l \in \Gamma^{\beta}} V'_{t(l)}$ qui à $v$ associe $(f'_{1}(v), \dots , f'_{n}(v))$ par : 
 \[
-\forall \overline{(y_{1}, \dots, y_{n})} \in  \oplus_{ i=1}^{n} V_{t(l_{i})} / \Img \tilde{h},  F_{\beta}^{-}(\varphi)_{\beta}(\overline{(y_{1}, \dots, y_{n})}) = \overline{(\varphi_{t(l_{1})}(y_{1}), \dots , \varphi_{t(l_{n})}(y_{n}))}
+\forall(y_{1}, \dots, y_{n})+ \Img \tilde{h} \in  \oplus_{ i=1}^{n} V_{t(l_{i})} / \Img \tilde{h}, \\ 
+F_{\beta}^{-}(\varphi)_{\beta}((y_{1}, \dots, y_{n}) +\Img \tilde{h}) = (\varphi_{t(l_{1})}(y_{1}), \dots , \varphi_{t(l_{n})}(y_{n})) + \Img \tilde{h'}
 \]
-où $\overline{x}$ représente la classe de $x$ dans $\oplus_{l \in \Gamma^{\beta}} V_{t(l)} / \Img \tilde{h}$ ou $\oplus_{l \in \Gamma^{\beta}} V'_{t(l)} / \Img \tilde{h'}$.
 
 Vérifions alors que cette définition a un sens, soit $(y_{1}, \dots, y_{n})$ et $(z_{1}, \dots , z_{n})$ deux éléments de $\oplus_{i=1}^{n} V_{t(l_{i})}$ ayant la même classe dans $\oplus_{i=1}^{n} V_{t(l_{i})} / \Img \tilde{h}$ c'est à dire qu'il existe $v \in V_{\beta}$ tel que  $(y_{1}, \dots, y_{n}) = (z_{1}, \dots , z_{n}) + (f_{t(l_{1})}(v), \dots, f_{t(l_{n})}(v))$.
 \[
@@ -231,14 +233,32 @@ Vérifions alors que cette définition a un sens, soit $(y_{1}, \dots, y_{n})$ e
 Soit $g_{t(l_{i})}$ comme définie ci-dessus et  pour tout  $i\in[\![1,n]\!],g'_{l_{i}}$ la composition de l'inclusion naturelle de $V'_{t(l_{i})}$ dans $\oplus_{i = 1}^{n} V'_{t(l_{i})}$ avec la projection de $\oplus_{l \in \Gamma^{\beta}} V'_{t(l)}$ dans $\oplus_{l \in \Gamma^{\beta}} V'_{t(l)} / \Img \tilde{h'}$. Montrons alors que pour tout $i \in [\![1,n]\!]$ et $x \in V_{t(l_{i})}$, on ait $F^{-}_{\beta}(\varphi_{\beta}) \circ g_{l_{i}}(x)  = g'_{l_{i}} \circ \varphi_{l_{i}}(x)$ pour vérifer que $F_{\beta}^{-}(\varphi)$ est bien un morphisme de représentation dans $\mathscr L(\Gamma,\sigma_{\beta}\Lambda)$. Et en effet, 
 \[
 \begin{array}{ll}
-  F^{-}_{\beta}(\varphi_{\beta}) \circ g_{l_{i}}(x) &= F^{-}_{\beta}(\varphi_{\beta})(\overline{(0, \dots, x, \dots, 0)}) \\
-                                                    &= \overline{(0, \dots, \varphi_{t(l_{i})}(x),\dots,0)} \\
+  F^{-}_{\beta}(\varphi_{\beta}) \circ g_{l_{i}}(x) &= F^{-}_{\beta}(\varphi_{\beta})((0, \dots, x, \dots, 0) + \Img \tilde{h}) \\
+                                                    &= (0, \dots, \varphi_{t(l_{i})}(x),\dots,0) +\Img \tilde{h'} \\
                                                     &= g'_{l_{i}} \circ \varphi_{t(l_{i})}(x)
 \end{array}
 \] 
 
+Montrons dès à présent que la composition des morphismes de représentations est respectée par $F^{-}_{\beta}$. Soit $(V,f)$, $(V',f')$ et $(V'',f'')$ trois représentations de $\mathscr L(\Gamma,\Lambda)$ et $(W,g)$, $(W',g')$ et $(W'',g'')$ leur image par $F^{-}_{\beta}$, et $\varphi$ ( respectivement $\varphi'$) un morphisme de $(V,f)$ dans $(V',f')$ (respectivement $(V',f')$ dans $(V'',f'')$). Ainsi, pour tout $\gamma \neq \beta$, on a par définition de $F^{-}_{\beta}$, $F^{-}_{\beta}(\varphi' \varphi)_{\gamma} = (\varphi' \varphi)_{\gamma} = \varphi'_{\gamma} \varphi_{\gamma} = F^{-}_{\beta}(\varphi')_{\gamma}  F^{-}_{\beta}(\varphi)_{\gamma}$.
 
- 
+\[
+\begin{array}{rl}
+  \forall (y_{1}, \dots, y_{n}) + \Img \tilde{h} \in \oplus_{i=1}^{n} V_{t(l_{i})} / \Img \tilde{h},& \\
+  F^{-}_{\beta}(\varphi' \varphi)_{\beta}((y_{1}, \dots, y_{n} + \Img \tilde{h}) &= ((\varphi' \varphi)_{t(l_{1})}(y_{1}), \dots, (\varphi' \varphi)_{t(l_{n})}(y_{n})) + \Img \tilde{h''} \\
+                                                                                                    &= F^{-}_{\beta}(\varphi')_{\beta} F^{-}_{\beta}(\varphi)_{\beta}((y_{1}, \dots, y_{n}) + \Img \tilde{h})
+\end{array}
+\]
+ On a bien montré que $F^{-}_{\beta}(\varphi' \varphi) = F^{-}_{\beta}(\varphi') F^{-}_{\beta}(\varphi)$.
+
+ Il reste à voir $\Id$ le morphisme identité d'une représentation $(V,f)$ est envoyé sur le morphisme identité de $F^{-}_{\beta}((V,f))$ par $F^{-}_{\beta}$. Pour tout $\gamma \neq \beta$, on a $F^{-}_{\beta}(\Id)_{\gamma} = Id_{\gamma}$ et : 
+
+\[
+\begin{array}{rl}
+  \forall (y_{1}, \dots, y_{n}) + \Img \tilde{h} \in \oplus_{i=1}^{n} V_{t(l_{i})} / \Img \tilde{h},& \\
+F^{-}_{\beta}(\Id)_{\beta}((y_{1}, \dots, y_{n}) + \Img \tilde{h}) &= (y_{1}, \dots, y_{n}) + \Img \tilde{h}
+\end{array}
+\]
+Donc on a le résultat.
 \end{proof}
 
 \begin{defi}
@@ -254,7 +274,7 @@ Soit $g_{t(l_{i})}$ comme définie ci-dessus et  pour tout  $i\in[\![1,n]\!],g'_
 	\end{array}
 	\]
 	où $\Gamma^{\beta}=\left\{ l_{1},\dots,l_{n} \right\}$.
-\end{defi}
+v\end{defi}
 \begin{prop}
 	L'application $i_{V}^{\beta}$ est un morphisme de $(Z,h)$ dans $(V,f)$.
 \end{prop}
@@ -389,3 +409,8 @@ où :
 \bibliography{biblio}
 
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
