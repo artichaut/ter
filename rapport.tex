@@ -311,17 +311,17 @@ Et on a encore l'égalité souhaitée, ainsi $i_{V}^{\beta}$ est bien un morphis
 \begin{lm}
 	On a les résultats suivants :
 	\begin{enumerate}
-		\item $F_{\alpha}^{\pm}(V_{1}\oplus V_{2})=F_{\alpha}^{\pm}(V_{1})\oplus F_{\alpha}^{\pm}(V_{2})$ ;
+		\item $F_{\alpha}^{\pm}((V_{1},f)\oplus (V_{2},g))=F_{\alpha}^{\pm}(V_{1},f)\oplus F_{\alpha}^{\pm}(V_{2},g)$ ;
 		\item $p_{V}^{\alpha}$ est surjectif et $i_{V}^{\beta}$ est injectif ;
 		\item \begin{enumerate}
-				\item si $p_{V}^{\alpha}$ est un isomorphisme, alors on a les formules :
+				\item si $i_{V}^{\beta}$ est un isomorphisme, alors on a les formules :
 					\[
 \begin{array}{rll}
 	\forall\gamma\neq\beta,\;\dim F_{\beta}^{+}(V,f)_{\gamma}&=& \dim V_{\gamma}\\
 	\dim F_{\beta}^{+}(V,f)_{\beta}&=& -\dim V_{\beta}+\sum_{l\in\Gamma^{\beta}}\dim V_{s(l)}
 \end{array}
 					\]
-				\item si $i_{V}^{\alpha}$ est un isomorphisme, alors on a les formules :
+				\item si $p_{V}^{\alpha}$ est un isomorphisme, alors on a les formules :
 	\[
 \begin{array}{rll}
 	\forall\gamma\neq\alpha,\;\dim F_{\alpha}^{-}(V,f)_{\gamma}&=& \dim V_{\gamma}\\
@@ -330,8 +330,8 @@ Et on a encore l'égalité souhaitée, ainsi $i_{V}^{\beta}$ est bien un morphis
 					\]
 			\end{enumerate}
 		\item $\forall \gamma\neq\alpha,\;(\Ker p_{V}^{\alpha})_{\gamma}=\left\{ 0 \right\}$ et $\forall \gamma\neq\beta,\;(V/\Img i_{V}^{\beta})_{\gamma}=\left\{ 0 \right\}$ ;
-		\item si $V$ est de la forme $F_{\alpha}^{+}(W)$ (respectivement $F_{\beta}^{-}(W)$), alors $p_{V}^{\alpha}$ ($i_{V}^{\beta}$) est un isomorphisme ;
-		\item $V$ est isomorphe à $F_{\alpha}^{+}F_{\alpha}^{-}(V)\oplus V/\Img i_{V}^{\beta}$, de même $V$ est isomorphe à $F_{\alpha}^{+}F_{\alpha}^{-}(V)\oplus \Ker p_{V}^{\alpha}$.
+		\item si $V$ est de la forme $F_{\alpha}^{+}(W,g)$ (respectivement $F_{\beta}^{-}(W,g)$), alors $p_{V}^{\alpha}$ ($i_{V}^{\beta}$) est un isomorphisme ;
+		\item $V$ est isomorphe à $F_{\beta}^{-}F_{\beta}^{+}(V,f)\oplus V/\Img i_{V}^{\beta}$, de même $V$ est isomorphe à $F_{\alpha}^{+}F_{\alpha}^{-}(V,f)\oplus \Ker p_{V}^{\alpha}$.
 	\end{enumerate}
 \end{lm}
 \begin{proof}
@@ -367,6 +367,21 @@ où :
 \end{array}
 	\]
 	d'où $(v_{1}-v_{1}',\dots,v_{n}-v_{n}')\in\Ker h$, donc $a=b$, et on a l'injectivité de $(i_{V}^{\beta})_{\beta}$ puis de $i_{V}^{\beta}$.
+
+	Prouvons maintenant le point $3$. Supposons que $i_{V}^{\beta}$ est un isomorphisme, en particulier, $(i_{V}^{\beta})_{\beta}$ est un isomoprhisme et on a $\oplus_{l\in\Gamma^{\beta}}V_{s(l)}/\Ker h\approx V_{\beta}$. On a égalité entre les dimensions d'espaces vectoriels isomorphes, et ainsi il vient :
+	\[
+\begin{array}{rll}
+	\dim(\oplus_{l\in\Gamma^{\beta}}V_{s(l)}/\Ker h) &=& \dim V_{\beta}\\
+	\sum_{l\in\Gamma^{\beta}}\dim V_{s(l)}-\dim\Ker h &=& \dim V_{\beta}\\
+	\sum_{l\in\Gamma^{\beta}}\dim V_{s(l)}-\dim V_{\beta} &=& \dim\Ker h\\
+	\sum_{l\in\Gamma^{\beta}}\dim V_{s(l)}-\dim V_{\beta} &=& \dim F_{\beta}^{+}(V,f)_{\beta}.\\
+\end{array}
+	\]
+	Comme $\forall \gamma\neq\beta,\;F_{\beta}^{+}(V,f)_{\gamma}=V_{\gamma}$, on a immédiatement $\forall \gamma\neq\beta,\;\dim F_{\beta}^{+}(V,f)_{\gamma}=\dim V_{\gamma}$.
+
+	Prouvons à présent le point $4$. Pour tout $\gamma\neq\beta$, on a $(V/\Img i_{V}^{\beta})_{\gamma}=V_{\gamma}/\Img((i_{V}^{\beta})_{\gamma})$ et $(i_{V}^{\beta})_{\gamma}=\Id_{V_{\gamma}}$, d'où $\Img((i_{V}^{\beta})_{\gamma})=V_{\gamma}$ et ainsi $V_{\gamma}/V_{\gamma}=\left\{ 0 \right\}$.
+
+	Passons à la preuve du point 5. Pour cela, supposons que $(V,f)$ est de la forme $F_{\beta}^{-}(W,g)$
 \end{proof}
 %Lignes à ajouter pour faire apparaître notre bibliographie
 \clearpage
@@ -374,8 +389,3 @@ où :
 \bibliography{biblio}
 
 \end{document}
-
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: t
-%%% End:
