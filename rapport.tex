@@ -381,7 +381,29 @@ où :
 
 	Prouvons à présent le point $4$. Pour tout $\gamma\neq\beta$, on a $(V/\Img i_{V}^{\beta})_{\gamma}=V_{\gamma}/\Img((i_{V}^{\beta})_{\gamma})$ et $(i_{V}^{\beta})_{\gamma}=\Id_{V_{\gamma}}$, d'où $\Img((i_{V}^{\beta})_{\gamma})=V_{\gamma}$ et ainsi $V_{\gamma}/V_{\gamma}=\left\{ 0 \right\}$.
 
-	Passons à la preuve du point 5. Pour cela, supposons que $(V,f)$ est de la forme $F_{\beta}^{-}(W,g)$
+	Passons à la preuve du point 5. Pour cela, supposons que $(V,f)\in\mathscr{L}(\Gamma,\Lambda)$ est de la forme $F_{\beta}^{-}(W,g)$, il nous faut alors voir que $i_{V}^{\beta}$ est surjectif. Pour tout $\gamma\neq\beta$, on a $(i_{V}^{\beta})_{\gamma}=\Id_{V_{\gamma}}$, l'injectivité de $(i_{V}^{\beta})_{\gamma}$ est donc immédiate. Intéressons-nous maintenant au cas où $\gamma=\beta$. On se place dans l'orientation $\Lambda$ où $\beta$ est un puits et on note $\Gamma^{\beta}=\left\{ l_{1},\dots,l_{n} \right\}$, on a alors $V_{\beta}=\oplus_{i=1}^{n}V_{s(l_{i})}/\Img \tilde{h}$. On a aussi :
+	\[
+\begin{array}{rccc}
+	h: & \oplus_{i=1}^{n}V_{s(l_{i})} & \rightarrow & V_{\beta} \\
+	& (v_{1},\dots,v_{n}) & \mapsto & \sum_{i=1}^{n}f_{l_{i}}(v_{i})\\
+	&&&\\
+	\text{où, pour tout }i\in[\![1,n]\!] : &&&\\
+	f_{l_{i}}:& V_{s(l_{i})} & \rightarrow & V_{\beta} \\
+	& v_{i} & \mapsto & (0,\dots,0,v_{i},0,\dots,0)+\Img \tilde{h}\\
+	&&&\\
+	\text{d'où :} &&&\\
+	h: & \oplus_{i=1}^{n}V_{s(l_{i})} & \rightarrow & V_{\beta} \\
+	& (v_{1},\dots,v_{n}) & \mapsto & (v_{1},\dots,v_{n}) + \Img \tilde{h}\\
+\end{array}
+	\]
+	On a alors immédiatement que $\Ker h = \Img \tilde{h}$, et on a
+	\[
+		\begin{array}{rccc}
+			(i_{V}^{\beta})_{\beta} : & \oplus_{i=1}^{n}V_{s(l_{i})}/\Ker h & \rightarrow & V_{\beta}\\
+			& (v_{1},\dots,v_{n})+\Ker h & \mapsto & (v_{1},\dots,v_{n})+\Img \tilde{h},\\
+		\end{array}
+	\]
+	la surjectivité de $(i_{V}^{\beta})_{\beta}$ est donc prouvée. Ainsi $i_{V}^{\beta}$ est surjectif, puis bijectif, donc est un isomorphisme.
 \end{proof}
 %Lignes à ajouter pour faire apparaître notre bibliographie
 \clearpage
