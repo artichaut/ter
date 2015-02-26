@@ -263,7 +263,8 @@ Donc on a le résultat.
 
 \begin{defi}
 %% j'aurais mis beta un puit perso et j'aurais utiliser alpha ^^
-	Soit $\beta\in\Gamma_{0}$ une source suivant l'orientation $\Lambda$, alors $\beta$ est un puit suivant l'orientation $\sigma_{\beta}\Lambda$. On peut donc définir le foncteur : $F_{\beta}^{-}F_{\beta}^{+}:\mathscr{L}(\Gamma,\Lambda)\rightarrow\mathscr{L}(\Gamma,\Lambda).$ Soit $(V,f)\in\mathscr{L}(\Gamma,\Lambda)$, on note $(Z,h)=F_{\beta}^{-}F_{\beta}^{+}(V,f)$ l'image de $(V,f)$ par $F_{\beta}^{-}F_{\beta}^{+}$ et on construit alors une application $i_{V}^{\beta}:(Z,h)\rightarrow (V,f)$ de la manière suivante :
+% En fait je voulais mettre un puits au début, je me suis planté, mais du coup c'est bien beta si on veut être raccord avec les notations des russes !
+	Soit $\beta\in\Gamma_{0}$ un puits suivant l'orientation $\Lambda$, alors $\beta$ est une source suivant l'orientation $\sigma_{\beta}\Lambda$. On peut donc définir le foncteur : $F_{\beta}^{-}F_{\beta}^{+}:\mathscr{L}(\Gamma,\Lambda)\rightarrow\mathscr{L}(\Gamma,\Lambda).$ Soit $(V,f)\in\mathscr{L}(\Gamma,\Lambda)$, on note $(Z,e)=F_{\beta}^{-}F_{\beta}^{+}(V,f)$ l'image de $(V,f)$ par $F_{\beta}^{-}F_{\beta}^{+}$ et on construit alors une application $i_{V}^{\beta}:(Z,e)\rightarrow (V,f)$ de la manière suivante :
 	\[
 		\forall \gamma\neq\beta,\;Z_{\gamma}=V_{\gamma}\text{, on pose donc : }(i_{V}^{\beta})_{\gamma}=\Id_{V_{\gamma}}.
 	\]
@@ -276,7 +277,7 @@ Donc on a le résultat.
 	\]
 	où $\Gamma^{\beta}=\left\{ l_{1},\dots,l_{n} \right\}$.
 
-        Soit $\beta\in\Gamma_{0}$ une source suivant l'orientation $\Lambda$, alors $\beta$ est un puit suivant l'orientation $\sigma_{\beta}\Lambda$. On peut donc définir le foncteur : $F_{\beta}^{+}F_{\beta}^{-}:\mathscr{L}(\Gamma,\Lambda)\rightarrow\mathscr{L}(\Gamma,\Lambda).$ Soit $(V,f)\in\mathscr{L}(\Gamma,\Lambda)$, on note $(Z,g)=F_{\beta}^{+}F_{\beta}^{-}(V,f)$ l'image de $(V,f)$ par $F_{\beta}^{+}F_{\beta}^{-}$ et on construit alors une application $p_{V}^{\beta}:  (V,f)\rightarrow (Z,g)$ de la manière suivante :
+        Soit $\beta\in\Gamma_{0}$ une source suivant l'orientation $\Lambda$, alors $\beta$ est un puits suivant l'orientation $\sigma_{\beta}\Lambda$. On peut donc définir le foncteur : $F_{\beta}^{+}F_{\beta}^{-}:\mathscr{L}(\Gamma,\Lambda)\rightarrow\mathscr{L}(\Gamma,\Lambda).$ Soit $(V,f)\in\mathscr{L}(\Gamma,\Lambda)$, on note $(Z,e)=F_{\beta}^{+}F_{\beta}^{-}(V,f)$ l'image de $(V,f)$ par $F_{\beta}^{+}F_{\beta}^{-}$ et on construit alors une application $p_{V}^{\beta}:  (V,f)\rightarrow (Z,e)$ de la manière suivante :
 	\[
 		\forall \gamma\neq\beta,\;Z_{\gamma}=V_{\gamma}\text{, on pose donc : }(p_{V}^{\beta})_{\gamma}=\Id_{Z_{\gamma}}.
 	\]
@@ -284,13 +285,13 @@ Donc on a le résultat.
 	\[
 	\begin{array}{ccc}
 		 V_{\beta} & \rightarrow & Z_{\beta}=\Img \tilde{h}=\Ker h  \\
-		v & \mapsto & (f_{l_{1}}(v), \dots, f_{l_{n}}}(v))
+		v & \mapsto & (f_{l_{1}}(v), \dots, f_{l_{n}}(v))
 	\end{array}
 	\]
 	où $\Gamma^{\beta}=\left\{ l_{1},\dots,l_{n} \right\}$.
 \end{defi}
 \begin{prop}
-	L'application $i_{V}^{\beta}$ est un morphisme de $(Z,h)$ dans $(V,f)$.
+	L'application $i_{V}^{\beta}$ est un morphisme de $(Z,e)$ dans $(V,f)$.
 \end{prop}
 \begin{proof}
 	Notons $(W,g)=F_{\beta}^{+}(V,f)$ l'image de $(V,f)$ par $F_{\beta}^{+}$. Dans la définition de $(i_{V}^{\beta})_{\beta}$, on a implicitement déclaré que $\Ker h=\Img\tilde h$, nous allons le prouver. Considérons la suite d'applications suivante :
@@ -314,12 +315,12 @@ Car $W_{\beta}=\Ker h$ par définition et pour tout $i\in[\![1,n]\!]$, $g_{l_{i}
 		  V_{s(l)} & V_{t(l)} \\};
 	\path[-stealth]
 	(m-1-1) edge node [left] {$(i_{V}^{\beta})_{s(l)}$} (m-2-1)
-		edge node [above] {$h_{l}$} (m-1-2)
+		edge node [above] {$e_{l}$} (m-1-2)
 	(m-2-1) edge node [below] {$f_{l}$} (m-2-2)
 	(m-1-2) edge node [right] {$(i_{V}^{\beta})_{t(l)}$} (m-2-2);
 	\end{tikzpicture}
 \]
-ou encore que $\forall l\in\Gamma_{1}$, on a $(i_{V}^{\beta})_{t(l)}h_{l}=f_{l}(i_{V}^{\beta})_{s(l)}$. Commençons par prendre $l\notin\Gamma^{\beta}$, on a alors $(i_{V}^{\beta})_{s(l)}=\Id_{V_{s(l)}}$, $(i_{V}^{\beta})_{t(l)}=\Id_{V_{t(l)}}$, et $h_{l}=f_{l}$, d'où l'égalité souhaitée. Voyons maintenant le cas où $l\in\Gamma^{\beta}$, on alors $t(l)=\beta$. Vérifions dans un premier temps que l'application $(i_{V}^{\beta})_{\beta}$ est bien définie. Pour cela prenons deux représentants de la même classe dans $Z_{\beta}$ : $(v_{1},\dots,v_{n})$ et $(v_{1}',\dots,v_{n}')$, et vérifions qu'ils ont la même image par $(i_{V}^{\beta})_{\beta}$. On a $(v_{1}-v_{1}',\dots,v_{n}-v_{n}')\in\Ker h$, d'où :
+ou encore que $\forall l\in\Gamma_{1}$, on a $(i_{V}^{\beta})_{t(l)}e_{l}=f_{l}(i_{V}^{\beta})_{s(l)}$. Commençons par prendre $l\notin\Gamma^{\beta}$, on a alors $(i_{V}^{\beta})_{s(l)}=\Id_{V_{s(l)}}$, $(i_{V}^{\beta})_{t(l)}=\Id_{V_{t(l)}}$, et $e_{l}=f_{l}$, d'où l'égalité souhaitée. Voyons maintenant le cas où $l\in\Gamma^{\beta}$, on alors $t(l)=\beta$. Vérifions dans un premier temps que l'application $(i_{V}^{\beta})_{\beta}$ est bien définie. Pour cela prenons deux représentants de la même classe dans $Z_{\beta}$ : $(v_{1},\dots,v_{n})$ et $(v_{1}',\dots,v_{n}')$, et vérifions qu'ils ont la même image par $(i_{V}^{\beta})_{\beta}$. On a $(v_{1}-v_{1}',\dots,v_{n}-v_{n}')\in\Ker h$, d'où :
 \[
 \begin{array}{rll}
 	0&=&\sum_{i=1}^{n}f_{l_{i}}(v_{i}-v_{i}')\\
@@ -329,14 +330,14 @@ ou encore que $\forall l\in\Gamma_{1}$, on a $(i_{V}^{\beta})_{t(l)}h_{l}=f_{l}(
 \end{array}
 \]
 Et on a bien $(i_{V}^{\beta})_{\beta}((v_{1},\dots,v_{n})+\Ker h)=(i_{V}^{\beta})_{\beta}((v_{1}',\dots,v_{n}')+\Ker h)
-$, d'où le caractère bien définie de $(i_{V}^{\beta})_{\beta}$. Notons $l=l_{j}$ pour un certain $j\in[\![1,n]\!]$ et vérifions que $f_{l_{j}}\Id_{V_{s(l_{j})}}=(i_{V}^{\beta})_{\beta}h_{l_{j}}$. Soit $v_{j}\in V_{s(l_{j})}$, on a d'une part :
+$, d'où le caractère bien définie de $(i_{V}^{\beta})_{\beta}$. Notons $l=l_{j}$ pour un certain $j\in[\![1,n]\!]$ et vérifions que $f_{l_{j}}\Id_{V_{s(l_{j})}}=(i_{V}^{\beta})_{\beta}e_{l_{j}}$. Soit $v_{j}\in V_{s(l_{j})}$, on a d'une part :
 \[
 	f_{l_{j}}\Id_{V_{s(l_{j})}}(v_{j})=f_{l_{j}}(v_{j})
 \]
 et d'autre part :
 \[
 \begin{array}{rll}
-	(i_{V}^{\beta})_{\beta}h_{l_{j}}(v_{j})&=& (i_{V}^{\beta})_{\beta}((0,\dots,0,v_{j},0,\dots,0)+\Ker h)\\
+	(i_{V}^{\beta})_{\beta}e_{l_{j}}(v_{j})&=& (i_{V}^{\beta})_{\beta}((0,\dots,0,v_{j},0,\dots,0)+\Ker h)\\
 	&=& f_{l_{j}}(v_{j}).
 \end{array}
 \]
