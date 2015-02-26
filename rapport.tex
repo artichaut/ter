@@ -284,7 +284,7 @@ Donc on a le résultat.
 	\[
 	\begin{array}{ccc}
 		 V_{\beta} & \rightarrow & Z_{\beta}=\Img \tilde{h}=\Ker h  \\
-		v & \mapsto & (f_{l_{1}}(v), \dots, f_{l_{n}}}(v))
+		v & \mapsto & (f_{l_{1}}(v), \dots, f_{l_{n}}(v))
 	\end{array}
 	\]
 	où $\Gamma^{\beta}=\left\{ l_{1},\dots,l_{n} \right\}$.
@@ -393,6 +393,34 @@ où :
 	\]
 	et où $\Gamma^{\alpha}=\left\{ l_{1},\dots,l_{n} \right\}$. Ainsi on a bien l'égalité annoncée.
 
+Supposons maintenant que $\beta$ est un puit dans $(\Gamma,\Lambda)$, $(V,f)$ et $(V',f')$ deux représentations de $\mathscr L(\Gamma,\Lambda)$, on a : 
+
+\[
+\begin{array}{rll}
+	\forall\gamma\neq\beta,\;F_{\beta}^{-}((V,f)\oplus(V',f'))_{\gamma}&=&((V,f)\oplus(V',f'))_{\gamma}\\
+	&=& V_{\gamma}\oplus V_{\gamma}'\\
+	&=&  F_{\beta}^{-}(V,f)_{\gamma}\oplus F_{\beta}^{-}(V',f')_{\gamma}\\
+	&&\\
+	F_{\beta}^{-}((V,f)\oplus(V',f'))_{\beta}&=&\oplus_{i=1}^{n}\left(V_{l_{i}} \oplus V'_{l_{i}}\right)/ \Img \tilde{h}_{\oplus} \\
+	&\simeq& \left( \oplus_{i=1}^{n}V_{t(l_{i})} / \Img \tilde{h} \right) \oplus  \left( \oplus_{i=1}^{n}V'_{t(l_{i})} / \Img \tilde{h'} \right)\\
+	&=&  F_{\beta}^{-}(V,f)_{\beta}\oplus F_{\beta}^{-}(V',f')_{\beta}\\
+\end{array}
+\] 
+où :
+\[
+\begin{array}{lccc}
+	\tilde{h} : & V_{\beta} &\rightarrow & \overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})} \\ 
+	& v&\mapsto & \left(f_{l_{1}}(v), \dots, f_{l_{n}}\right)\\
+	&&&\\
+	\tilde{h'} : & V'_{\beta} &\rightarrow & \overset{n}{\underset{j=1}{\bigoplus}}V'_{t(l_{j})} \\ 
+	& v'&\mapsto & \left(f'_{l_{1}}(v'), \dots, f'_{l_{n}}(v')\right)\\
+	&&&\\
+	\tilde{h}_{\oplus} : &V_{\beta} \oplus V'_{\beta} &\rightarrow & \overset{n}{\underset{j=1}{\bigoplus}}(V_{t(l_{j})} \oplus V'_{t(l_{j})}) \\ 
+	& (v,v') &\mapsto & \left((f_{l_{1}}(v),f'_{l_{1}}(v')), \dots, (f_{l_{n}}(v),f'_{l_{n}}(v'))\right)\\
+\end{array}
+	\]
+
+
 	Prouvons désormais le point $2$. Dire que le morphisme $i_{V}^{\beta}$ est injectif signifie que pour tout $\gamma\in\Gamma_{0}$, l'application $(i_{V}^{\beta})_{\gamma}$ est injective. Comme $\forall\gamma\neq\beta,\;(i_{V}^{\beta})_{\gamma}=\Id_{V_{\gamma}}$, l'injectivité de $(i_{V}^{\beta})_{\gamma}$ est assurée pour tout $\gamma\neq\beta$. Regardons maintenant le cas $\gamma=\beta$. Soient $a=(v_{1},\dots,v_{n})+\Ker h$ et $b=(v_{1}',\dots,v_{n}')+\Ker h$ tels que $(i_{V}^{\beta})_{\beta}(a)=(i_{V}^{\beta})_{\beta}(b)$. On alors :
 	\[
 \begin{array}{rll}
@@ -401,6 +429,9 @@ où :
 \end{array}
 	\]
 	d'où $(v_{1}-v_{1}',\dots,v_{n}-v_{n}')\in\Ker h$, donc $a=b$, et on a l'injectivité de $(i_{V}^{\beta})_{\beta}$ puis de $i_{V}^{\beta}$.
+
+
+Le morphisme $p_{V}^{\beta}$ est quant à lui surjectif, car pour tout $\gamma \neq \beta, (p_{V}^{\beta})_{\gamma} = \Id_{V_{\gamma}}$ est surjective et $ \Img (p_{V}^{\beta})_{\beta} = \Img \tilde{h}$ donc $ (p_{V}^{\beta})_{\beta}$ est surjective.  
 
 	Prouvons maintenant le point $3$. Supposons que $i_{V}^{\beta}$ est un isomorphisme, en particulier, $(i_{V}^{\beta})_{\beta}$ est un isomoprhisme et on a $\oplus_{l\in\Gamma^{\beta}}V_{s(l)}/\Ker h\approx V_{\beta}$. On a égalité entre les dimensions d'espaces vectoriels isomorphes, et ainsi il vient :
 	\[
