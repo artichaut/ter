@@ -227,15 +227,15 @@ Vérifions alors que cette définition a un sens, soit $(y_{1}, \dots, y_{n})$ e
 \end{array}
 \]
 
- car pour tout $i \in [\![1,n]\!]$, on a $\varphi_{t(l_{i})} \circ f_{l_{i}} = f'_{l_{i}} \circ \varphi_{\beta} $, donc finalement $F_{\beta}^{-}(\varphi_{\beta})$ est bien définie.
+ car pour tout $i \in [\![1,n]\!]$, on a $\varphi_{t(l_{i})}  f_{l_{i}} = f'_{l_{i}}  \varphi_{\beta} $, donc finalement $F_{\beta}^{-}(\varphi_{\beta})$ est bien définie.
 
 
-Soit $g_{t(l_{i})}$ comme définie ci-dessus et  pour tout  $i\in[\![1,n]\!],g'_{l_{i}}$ la composition de l'inclusion naturelle de $V'_{t(l_{i})}$ dans $\oplus_{i = 1}^{n} V'_{t(l_{i})}$ avec la projection de $\oplus_{l \in \Gamma^{\beta}} V'_{t(l)}$ dans $\oplus_{l \in \Gamma^{\beta}} V'_{t(l)} / \Img \tilde{h'}$. Montrons alors que pour tout $i \in [\![1,n]\!]$ et $x \in V_{t(l_{i})}$, on ait $F^{-}_{\beta}(\varphi_{\beta}) \circ g_{l_{i}}(x)  = g'_{l_{i}} \circ \varphi_{l_{i}}(x)$ pour vérifer que $F_{\beta}^{-}(\varphi)$ est bien un morphisme de représentation dans $\mathscr L(\Gamma,\sigma_{\beta}\Lambda)$. Et en effet, 
+Soit $g_{t(l_{i})}$ comme définie ci-dessus et  pour tout  $i\in[\![1,n]\!],g'_{l_{i}}$ la composition de l'inclusion naturelle de $V'_{t(l_{i})}$ dans $\oplus_{i = 1}^{n} V'_{t(l_{i})}$ avec la projection de $\oplus_{l \in \Gamma^{\beta}} V'_{t(l)}$ dans $\oplus_{l \in \Gamma^{\beta}} V'_{t(l)} / \Img \tilde{h'}$. Montrons alors que pour tout $i \in [\![1,n]\!]$ et $x \in V_{t(l_{i})}$, on ait $F^{-}_{\beta}(\varphi_{\beta})  g_{l_{i}}(x)  = g'_{l_{i}}  \varphi_{l_{i}}(x)$ pour vérifer que $F_{\beta}^{-}(\varphi)$ est bien un morphisme de représentation dans $\mathscr L(\Gamma,\sigma_{\beta}\Lambda)$. Et en effet, 
 \[
 \begin{array}{ll}
-  F^{-}_{\beta}(\varphi_{\beta}) \circ g_{l_{i}}(x) &= F^{-}_{\beta}(\varphi_{\beta})((0, \dots, x, \dots, 0) + \Img \tilde{h}) \\
+  F^{-}_{\beta}(\varphi_{\beta})  g_{l_{i}}(x) &= F^{-}_{\beta}(\varphi_{\beta})((0, \dots, x, \dots, 0) + \Img \tilde{h}) \\
                                                     &= (0, \dots, \varphi_{t(l_{i})}(x),\dots,0) +\Img \tilde{h'} \\
-                                                    &= g'_{l_{i}} \circ \varphi_{t(l_{i})}(x)
+                                                    &= g'_{l_{i}}  \varphi_{t(l_{i})}(x)
 \end{array}
 \] 
 
@@ -262,19 +262,33 @@ Donc on a le résultat.
 \end{proof}
 
 \begin{defi}
-	Soit $\beta\in\Gamma_{0}$ une source suivant l'orientation $\Lambda$, alors $\beta$ est un puits suivant l'orientation $\sigma_{\beta}\Lambda$. On peut donc définir le foncteur : $F_{\beta}^{-}F_{\beta}^{+}:\mathscr{L}(\Gamma,\Lambda)\rightarrow\mathscr{L}(\Gamma,\Lambda).$ Soit $(V,f)\in\mathscr{L}(\Gamma,\Lambda)$, on note $(Z,h)=F_{\beta}^{-}F_{\beta}^{+}(V,f)$ l'image de $(V,f)$ par $F_{\beta}^{-}F_{\beta}^{+}$ et on construit alors une application $i_{V}^{\beta}:(Z,h)\rightarrow (V,f)$ de la manière suivante :
+%% j'aurais mis beta un puit perso et j'aurais utiliser alpha ^^
+	Soit $\beta\in\Gamma_{0}$ une source suivant l'orientation $\Lambda$, alors $\beta$ est un puit suivant l'orientation $\sigma_{\beta}\Lambda$. On peut donc définir le foncteur : $F_{\beta}^{-}F_{\beta}^{+}:\mathscr{L}(\Gamma,\Lambda)\rightarrow\mathscr{L}(\Gamma,\Lambda).$ Soit $(V,f)\in\mathscr{L}(\Gamma,\Lambda)$, on note $(Z,h)=F_{\beta}^{-}F_{\beta}^{+}(V,f)$ l'image de $(V,f)$ par $F_{\beta}^{-}F_{\beta}^{+}$ et on construit alors une application $i_{V}^{\beta}:(Z,h)\rightarrow (V,f)$ de la manière suivante :
 	\[
 		\forall \gamma\neq\beta,\;Z_{\gamma}=V_{\gamma}\text{, on pose donc : }(i_{V}^{\beta})_{\gamma}=\Id_{V_{\gamma}}.
 	\]
 	Pour $(i_{V}^{\beta})_{\beta}$, on prend l'application : 
 	\[
 	\begin{array}{ccc}
-		Z_{\beta}=\underset{l\in\Gamma^{\beta}}{\oplus} V_{s(l)}/\Img \tilde{h}=\underset{l\in\Gamma^{\beta}}{\oplus} V_{s(l)}/\Ker h & \rightarrow & V \\
+		Z_{\beta}=\underset{l\in\Gamma^{\beta}}{\oplus} V_{s(l)}/\Img \tilde{h}=\underset{l\in\Gamma^{\beta}}{\oplus} V_{s(l)}/\Ker h & \rightarrow & V_{\beta} \\
 		(v_{1},\dots,v_{n})+\Ker h & \mapsto & \sum_{i=1}^{n}f_{l_{i}}(v_{i})
 	\end{array}
 	\]
 	où $\Gamma^{\beta}=\left\{ l_{1},\dots,l_{n} \right\}$.
-v\end{defi}
+
+        Soit $\beta\in\Gamma_{0}$ une source suivant l'orientation $\Lambda$, alors $\beta$ est un puit suivant l'orientation $\sigma_{\beta}\Lambda$. On peut donc définir le foncteur : $F_{\beta}^{+}F_{\beta}^{-}:\mathscr{L}(\Gamma,\Lambda)\rightarrow\mathscr{L}(\Gamma,\Lambda).$ Soit $(V,f)\in\mathscr{L}(\Gamma,\Lambda)$, on note $(Z,g)=F_{\beta}^{+}F_{\beta}^{-}(V,f)$ l'image de $(V,f)$ par $F_{\beta}^{+}F_{\beta}^{-}$ et on construit alors une application $p_{V}^{\beta}:  (V,f)\rightarrow (Z,g)$ de la manière suivante :
+	\[
+		\forall \gamma\neq\beta,\;Z_{\gamma}=V_{\gamma}\text{, on pose donc : }(p_{V}^{\beta})_{\gamma}=\Id_{Z_{\gamma}}.
+	\]
+	Pour $(p_{V}^{\beta})_{\beta}$, on prend l'application : 
+	\[
+	\begin{array}{ccc}
+		 V_{\beta} & \rightarrow & Z_{\beta}=\Img \tilde{h}=\Ker h  \\
+		v & \mapsto & (f_{l_{1}}(v), \dots, f_{l_{n}}}(v))
+	\end{array}
+	\]
+	où $\Gamma^{\beta}=\left\{ l_{1},\dots,l_{n} \right\}$.
+\end{defi}
 \begin{prop}
 	L'application $i_{V}^{\beta}$ est un morphisme de $(Z,h)$ dans $(V,f)$.
 \end{prop}
@@ -373,7 +387,7 @@ où :
 	h : & \overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}&\rightarrow & V_{\alpha} \\ 
 	& (v_{1},\dots,v_{n})&\mapsto & \underset{i=1}{\overset{n}{\sum}}f_{l_{i}}(v_{i})\\
 	&&&\\
-	h : & \overset{n}{\underset{j=1}{\bigoplus}}V'_{s(l_{j})}&\rightarrow & V'_{\alpha} \\ 
+	h' : & \overset{n}{\underset{j=1}{\bigoplus}}V'_{s(l_{j})}&\rightarrow & V'_{\alpha} \\ 
 	& (v'_{1},\dots,v'_{n})&\mapsto & \underset{i=1}{\overset{n}{\sum}}f'_{l_{i}}(v'_{i}).\\
 \end{array}
 	\]
