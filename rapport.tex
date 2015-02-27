@@ -8,7 +8,7 @@
 \usepackage{tikz}
 %\usepackage{listings}
 %\usepackage{xcolor}
-%essais
+
 %opening
 \title{Théorème de Gabriel}
 \author{Maxime Buron, Édouard Rousseau\\
@@ -102,12 +102,42 @@ Maintenant que nous connaissons la définition d'un carquois, et que nous pouvon
 \begin{defi}[Représentation de carquois]
   Une représentation de carquois d'un carquois $(\Gamma,\Lambda)$ est un couple $(V,f)$ où $V$ est une liste indexée sur $\Gamma_0$ d'espaces vectoriels de dimension finie et $f$ est une liste indexée sur $\Gamma_1$ de morphismes d'espace vectoriel tels que pour tout $l \in \Gamma_1, f_l$ est définie de $V_{s(l)}$ dans $V_{t(l)}$.
 \end{defi}
+\begin{ex}[Une représentation]
+\end{ex}
+\begin{ex}[Une deuxième]
+\end{ex}
+\begin{defi}[Représentation nulle]
+	Soit $(\Gamma,\Lambda)$ un carquois, la représentation nulle de $(\Gamma,\Lambda)$ est la représentation $(V,f)$ où $\forall\gamma\in\Gamma^{0},\;V_{\gamma}=\left\{ 0 \right\}$ et où $\forall l \in\Gamma_{1},\;f_{l}$ est l'application linéaire nulle. On note $(V,f)=0$.
+\end{defi}
 \begin{defi}[Somme de deux représentations de carquois]
+	Soit $(\Gamma,\Lambda)$ un carquois, $(V,f)$ et $(V',f')$ deux représentations de ce carquois. La somme de $(V,f)$ et $(V',f')$ est la représentation $(W,g)$ définie par $\forall\gamma\in\Gamma_{0},\;W_{\gamma}=V_{\gamma}\oplus V_{\gamma}'$ et $\forall l \in\Gamma_{1},\;g_{l}=f_{l}\oplus f_{l}'$. On note $(W,g)=(V,f)\oplus (V',f')$.
 \end{defi}
 \begin{defi}[Représentation indécomposable]
+	Soit $(\Gamma,\Lambda)$ un carquois et $(V,f)$ une représentation non nulle de ce carquois. On dit que $(V,f)$ est une représentation indécomposable si on ne peut pas l'écrire comme somme de deux représentations non nulles. De manière équivalente, on dit que $(V,f)$ est une représentation indécomposable si pour toutes représentations $(V^{1},f^{1})$, $(V^{2},f^{2})$, $(V,f)=(V^{1},f^{1})\oplus(V^{2},f^{2})$ implique $(V^{1},f^{1})=0$ ou $(V^{2},f^{2})=0$.
 \end{defi}
+\begin{ex}[Plus petite représentation indécomposable]
+\end{ex}
+\begin{ex}[Une représentation indécomposable plus grosse]
+\end{ex}
 \begin{defi}[Morphisme de représentation]
+	Soit $(\Gamma,\Lambda)$ un carquois et $(V,f)$,$(W,g)$ deux représentations de ce carquois. On dit que $\varphi=(\varphi_{\gamma})_{\gamma\in\Gamma_{0}}$ est un morphisme de représentations de $(V,f)$ dans $(W,g)$ si, pour tout $l\in\Gamma_{1}$, le diagramme suivant commute :
+	\[
+	\begin{tikzpicture}
+	\matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+	  {
+		  V_{s(l)} & V_{t(l)} \\
+		  W_{s(l)} & W_{t(l)} \\};
+	\path[-stealth]
+	(m-1-1) edge node [left] {$\varphi_{s(l)}$} (m-2-1)
+		edge node [above] {$f_{l}$} (m-1-2)
+	(m-2-1) edge node [below] {$g_{l}$} (m-2-2)
+	(m-1-2) edge node [right] {$\varphi_{t(l)}$} (m-2-2);
+	\end{tikzpicture}
+\]
+c'est-à-dire si $\forall l \in\Gamma_{1},\;\varphi_{t(l)}f_{l}=g_{l}\varphi_{s(l)}$.
 \end{defi}
+\begin{ex}[Morphisme de représentation]
+\end{ex}
 \subsection{Théorie des catégories}
 Avant de traiter la preuve du thérorème de Gabriel, nous introduisons le langage de la théorie des catégories, celui nous aidera au court de la preuve. Les notations utilisées ici sont celle de \cite{A97}, et de plus amples détails sur les catégories peuvent y être trouvées, nous ne donnons ici qu'une brève présentation des notions qui nous serons utiles par la suite.
 \begin{defi}[Catégorie]
@@ -491,8 +521,3 @@ Le morphisme $p_{V}^{\alpha}$ est quant à lui surjectif, car pour tout $\gamma 
 \bibliography{biblio}
 
 \end{document}
-
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: t
-%%% End:
