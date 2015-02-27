@@ -35,7 +35,6 @@ Travail encadré par Pierre-Guy Plamondon}
 \newcommand{\Fp}{F_{\alpha}^{+}}
 \newcommand{\Fm}{F_{\beta}^{-}}
 
-%try
 %Fin des paramètres globaux et début du document.
 \begin{document}
 
@@ -49,6 +48,8 @@ Travail encadré par Pierre-Guy Plamondon}
 \tableofcontents
 
 \clearpage
+\section*{Quelques notations}
+Rassemblons ici quelques notations que nous utiliserons sans rappel dans la suite du document. Nous noterons $fg$ plutôt que $f\circ g$, la composition entre les fonctions $f$ et $g$, $fg$ ne sera jamais un produit point par point. Nous utiliserons l'abus de notation $x=0$ où $x$ peut représenter des objets de natures diverses, $0$ désignera alors l'élément nulle correspondant à la nature de l'objet $x$. Lorsqu'il n'y a pas d'ambigüité, ou par souci de simplification, nous noterons $V$ plutôt que $(V,f)$ pour une représentation de carquois. Si $V$ et $V'$ sont deux espaces vectoriels, on note $V\oplus V'$ leur somme directe. Si $f$ et $g$ sont deux applications linéaires, on note $f\oplus g$ leur somme directe. Si $A$ et $B$ sont deux objets, on note $A/B$ leur quotient, la définition de quotient varie alors en fonction de la nature de $A$ et $B$. Si $X$ est un ensemble, on note $\Id_X$ l'application identité de $X$ dans lui-même. Si $f$ est une application, on note $\Img f$ son image et $\Ker f$ son noyau. On utilise la flêche $\hookrightarrow$ pour désigner une injection, et la flêche $\twoheadrightarrow$ pour désigner une surjection. On note $[\![1,n]\!]$ l'ensemble des entiers naturels compris entre $1$ et $n$. 
         
 \section{Notions préliminaires}
 Afin de comprendre l'énoncé, puis la preuve, du théorème de Gabriel, nous avons besoin de notions. Dans toute cette partie, nous introduirons les concepts nécessaires à la bonne compréhension du lecteur.
@@ -139,6 +140,8 @@ c'est-à-dire si $\forall l \in\Gamma_{1},\;\varphi_{t(l)}f_{l}=g_{l}\varphi_{s(
 \end{defi}
 \begin{ex}[Morphisme de représentation]
 \end{ex}
+\begin{defi}[Représentation quotient]
+\end{defi}
 \subsection{Théorie des catégories}
 Avant de traiter la preuve du thérorème de Gabriel, nous introduisons le langage de la théorie des catégories, celui nous aidera au court de la preuve. Les notations utilisées ici sont celle de \cite{A97}, et de plus amples détails sur les catégories peuvent y être trouvées, nous ne donnons ici qu'une brève présentation des notions qui nous serons utiles par la suite.
 \begin{defi}[Catégorie]
@@ -168,7 +171,7 @@ Supposons que le sommet $\alpha \in \Gamma_{0}$ soit un puits avec l'orientation
 \begin{defi}
 	On notera l'application $F_{\beta}^{+}$ et on aura $F_{\beta}^{+}(V,f)=(W,g)$. On pose, $\forall \gamma\neq\beta,\;W_{\gamma}=V_{\gamma}$, et $\forall l \notin \Gamma^{\beta},\; g_{l}=f_{l}$. Ainsi on laisse inchangés tous les sommets différents de $\beta$ et toutes les arêtes ne faisant pas intervenir $\beta$. On considère les arêtes $l_{1},\dots,l_{n}$ qui vont en $\beta$ et on note $h:\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}\rightarrow V_{\beta}$ l'application qui à un vecteur $(v_{1},\dots,v_{n})$ associe la somme $f_{l_{1}}(v_{1})+\dots+f_{l_{n}}(v_{n})$. On pose alors $W_{\beta}=\Ker(h)$. On définie maintenant les applications $g_{l}$ pour $l\in\Gamma^{\beta}$. Soit $i\in[\![1,n]\!]$, alors $g_{l_{i}}$ est la composition de l'injection de $\Ker(h)$ dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}$ et de la projection de $\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}$ dans $V_{s(l_{i})}$. 
 
-	On notera de même, $F^{-}_{\alpha}$, l'application et on aura $F^{-}_{\alpha}(V,f) = (W,g)$. On pose, $\forall \gamma \neq \alpha, W_\gamma = V_\gamma$, et $\forall l \notin \Gamma_\alpha, f_l = g_l$. En considérant les arêtes $l_1, \dots, l_n$ qui partent de $\alpha$, on note $\tilde{h} : V_\alpha \rightarrow \overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}$ et qui à un vecteur $v \in V_\alpha$ associe le vecteur $(f_1(v),\dots, f_n(v))$. On pose alors $W_\alpha = \overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}/\Img(\tilde{h})$. On pose pour $i\in [\![1,n]\!]$, alors $g_{l_i}$ comme la composition de l'inclusion naturelle de $V_{l_i}$ dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}$ et de la projection dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}/\Img(\tilde h)$.
+	On notera de même, $F^{-}_{\alpha}$, l'application et on aura $F^{-}_{\alpha}(V,f) = (W,g)$. On pose, $\forall \gamma \neq \alpha, W_\gamma = V_\gamma$, et $\forall l \notin \Gamma_\alpha, f_l = g_l$. En considérant les arêtes $l_1, \dots, l_n$ qui partent de $\alpha$, on note $\widetilde{h} : V_\alpha \rightarrow \overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}$ et qui à un vecteur $v \in V_\alpha$ associe le vecteur $(f_1(v),\dots, f_n(v))$. On pose alors $W_\alpha = \overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}/\Img(\widetilde{h})$. On pose pour $i\in [\![1,n]\!]$, alors $g_{l_i}$ comme la composition de l'inclusion naturelle de $V_{l_i}$ dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}$ et de la projection dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}/\Img(\widetilde h)$.
 
 \end{defi}
 
@@ -243,13 +246,13 @@ Le morphisme identité de $(V,f)$ est donc bien envoyé sur le morphisme identit
 \]
 Ainsi la composition de deux morphismes est bien respectée par $F_{\beta}^{+}$, et cela conclue la preuve pour cette application.
 
-On a déjà défini l'action de $F_{\alpha}^{-}$ sur les représentations de la catégorie $\mathscr L(\Gamma,\Lambda)$ à valeurs dans la catégorie $\mathscr L(\Gamma,\sigma_{\alpha}\Lambda)$. Il s'agit maintenant de définir l'action de $F_{\alpha}^{-}$ sur les morphismes de représentations. Soit $(V,f)$ et $(V',f')$ deux représentations et $\varphi = (\varphi_{\gamma})_{\gamma \in \Gamma_{0}}$ un morphisme entre ces deux représentations dans $\mathscr L(\Gamma,\Lambda)$. Posons pout tout $\gamma \neq \alpha, F_{\alpha}^{-}(\varphi)_{\gamma} = \varphi_{\gamma}$, car $F_{\alpha}^{-}$ laisse inchangé les espaces vectoriels associés aux sommets différents de $\alpha$. On définie alors l'action de  $F^{-}_{\alpha}(\varphi)_{\alpha}$ sur $\oplus_{l \in \Gamma^{\alpha}} V_{t(l)} / \Img \tilde{h}$  dans $\oplus_{l \in \Gamma^{\alpha}} V'_{t(l)} / \Img \tilde{h'}$ avec $\tilde{h'}$ la fonction de $V_{\alpha}$ dans  $\oplus_{l \in \Gamma^{\alpha}} V'_{t(l)}$ qui à $v$ associe $(f'_{1}(v), \dots , f'_{n}(v))$ par : 
+On a déjà défini l'action de $F_{\alpha}^{-}$ sur les représentations de la catégorie $\mathscr L(\Gamma,\Lambda)$ à valeurs dans la catégorie $\mathscr L(\Gamma,\sigma_{\alpha}\Lambda)$. Il s'agit maintenant de définir l'action de $F_{\alpha}^{-}$ sur les morphismes de représentations. Soit $(V,f)$ et $(V',f')$ deux représentations et $\varphi = (\varphi_{\gamma})_{\gamma \in \Gamma_{0}}$ un morphisme entre ces deux représentations dans $\mathscr L(\Gamma,\Lambda)$. Posons pout tout $\gamma \neq \alpha, F_{\alpha}^{-}(\varphi)_{\gamma} = \varphi_{\gamma}$, car $F_{\alpha}^{-}$ laisse inchangé les espaces vectoriels associés aux sommets différents de $\alpha$. On définie alors l'action de  $F^{-}_{\alpha}(\varphi)_{\alpha}$ sur $\oplus_{l \in \Gamma^{\alpha}} V_{t(l)} / \Img \widetilde{h}$  dans $\oplus_{l \in \Gamma^{\alpha}} V'_{t(l)} / \Img \widetilde{h'}$ avec $\widetilde{h'}$ la fonction de $V_{\alpha}$ dans  $\oplus_{l \in \Gamma^{\alpha}} V'_{t(l)}$ qui à $v$ associe $(f'_{1}(v), \dots , f'_{n}(v))$ par : 
 \[
-\forall(y_{1}, \dots, y_{n})+ \Img \tilde{h} \in  \oplus_{ i=1}^{n} V_{t(l_{i})} / \Img \tilde{h}, \\ 
-F_{\alpha}^{-}(\varphi)_{\alpha}((y_{1}, \dots, y_{n}) +\Img \tilde{h}) = (\varphi_{t(l_{1})}(y_{1}), \dots , \varphi_{t(l_{n})}(y_{n})) + \Img \tilde{h'}
+\forall(y_{1}, \dots, y_{n})+ \Img \widetilde{h} \in  \oplus_{ i=1}^{n} V_{t(l_{i})} / \Img \widetilde{h}, \\ 
+F_{\alpha}^{-}(\varphi)_{\alpha}((y_{1}, \dots, y_{n}) +\Img \widetilde{h}) = (\varphi_{t(l_{1})}(y_{1}), \dots , \varphi_{t(l_{n})}(y_{n})) + \Img \widetilde{h'}
 \]
 
-Vérifions alors que cette définition a un sens, soit $(y_{1}, \dots, y_{n})$ et $(z_{1}, \dots , z_{n})$ deux éléments de $\oplus_{i=1}^{n} V_{t(l_{i})}$ ayant la même classe dans $\oplus_{i=1}^{n} V_{t(l_{i})} / \Img \tilde{h}$ c'est à dire qu'il existe $v \in V_{\alpha}$ tel que  $(y_{1}, \dots, y_{n}) = (z_{1}, \dots , z_{n}) + (f_{t(l_{1})}(v), \dots, f_{t(l_{n})}(v))$.
+Vérifions alors que cette définition a un sens, soit $(y_{1}, \dots, y_{n})$ et $(z_{1}, \dots , z_{n})$ deux éléments de $\oplus_{i=1}^{n} V_{t(l_{i})}$ ayant la même classe dans $\oplus_{i=1}^{n} V_{t(l_{i})} / \Img \widetilde{h}$ c'est à dire qu'il existe $v \in V_{\alpha}$ tel que  $(y_{1}, \dots, y_{n}) = (z_{1}, \dots , z_{n}) + (f_{t(l_{1})}(v), \dots, f_{t(l_{n})}(v))$.
 \[
 \begin{array}{ll}
   \left(\varphi_{t(l_{1})}(y_{1}), \dots, \varphi_{t(l_{n})}(y_{n}) \right) &= \left((\varphi_{t(l_{1})}(z_{1} + f_{t(l_{1})}(v)), \dots, \varphi_{t(l_{n})}(z_{n} + f_{t(l_{n})}(v))\right) \\
@@ -261,11 +264,11 @@ Vérifions alors que cette définition a un sens, soit $(y_{1}, \dots, y_{n})$ e
  car pour tout $i \in [\![1,n]\!]$, on a $\varphi_{t(l_{i})}  f_{l_{i}} = f'_{l_{i}}  \varphi_{\alpha} $, donc finalement $F_{\alpha}^{-}(\varphi_{\alpha})$ est bien définie.
 
 
-Soit $g_{t(l_{i})}$ comme définie ci-dessus et  pour tout  $i\in[\![1,n]\!],g'_{l_{i}}$ la composition de l'inclusion naturelle de $V'_{t(l_{i})}$ dans $\oplus_{i = 1}^{n} V'_{t(l_{i})}$ avec la projection de $\oplus_{l \in \Gamma^{\alpha}} V'_{t(l)}$ dans $\oplus_{l \in \Gamma^{\alpha}} V'_{t(l)} / \Img \tilde{h'}$. Montrons alors que pour tout $i \in [\![1,n]\!]$ et $x \in V_{t(l_{i})}$, on ait $F^{-}_{\alpha}(\varphi_{\alpha})  g_{l_{i}}(x)  = g'_{l_{i}}  \varphi_{l_{i}}(x)$ pour vérifer que $F_{\alpha}^{-}(\varphi)$ est bien un morphisme de représentation dans $\mathscr L(\Gamma,\sigma_{\alpha}\Lambda)$. Et en effet, 
+Soit $g_{t(l_{i})}$ comme définie ci-dessus et  pour tout  $i\in[\![1,n]\!],g'_{l_{i}}$ la composition de l'inclusion naturelle de $V'_{t(l_{i})}$ dans $\oplus_{i = 1}^{n} V'_{t(l_{i})}$ avec la projection de $\oplus_{l \in \Gamma^{\alpha}} V'_{t(l)}$ dans $\oplus_{l \in \Gamma^{\alpha}} V'_{t(l)} / \Img \widetilde{h'}$. Montrons alors que pour tout $i \in [\![1,n]\!]$ et $x \in V_{t(l_{i})}$, on ait $F^{-}_{\alpha}(\varphi_{\alpha})  g_{l_{i}}(x)  = g'_{l_{i}}  \varphi_{l_{i}}(x)$ pour vérifer que $F_{\alpha}^{-}(\varphi)$ est bien un morphisme de représentation dans $\mathscr L(\Gamma,\sigma_{\alpha}\Lambda)$. Et en effet, 
 \[
 \begin{array}{ll}
-  F^{-}_{\alpha}(\varphi_{\alpha})  g_{l_{i}}(x) &= F^{-}_{\alpha}(\varphi_{\alpha})((0, \dots, x, \dots, 0) + \Img \tilde{h}) \\
-                                                    &= (0, \dots, \varphi_{t(l_{i})}(x),\dots,0) +\Img \tilde{h'} \\
+  F^{-}_{\alpha}(\varphi_{\alpha})  g_{l_{i}}(x) &= F^{-}_{\alpha}(\varphi_{\alpha})((0, \dots, x, \dots, 0) + \Img \widetilde{h}) \\
+                                                    &= (0, \dots, \varphi_{t(l_{i})}(x),\dots,0) +\Img \widetilde{h'} \\
                                                     &= g'_{l_{i}}  \varphi_{t(l_{i})}(x)
 \end{array}
 \] 
@@ -274,9 +277,9 @@ Montrons dès à présent que la composition des morphismes de représentations 
 
 \[
 \begin{array}{rl}
-  \forall (y_{1}, \dots, y_{n}) + \Img \tilde{h} \in \oplus_{i=1}^{n} V_{t(l_{i})} / \Img \tilde{h},& \\
-  F^{-}_{\alpha}(\varphi' \varphi)_{\alpha}((y_{1}, \dots, y_{n} + \Img \tilde{h}) &= ((\varphi' \varphi)_{t(l_{1})}(y_{1}), \dots, (\varphi' \varphi)_{t(l_{n})}(y_{n})) + \Img \tilde{h''} \\
-                                                                                                    &= F^{-}_{\alpha}(\varphi')_{\alpha} F^{-}_{\alpha}(\varphi)_{\alpha}((y_{1}, \dots, y_{n}) + \Img \tilde{h})
+  \forall (y_{1}, \dots, y_{n}) + \Img \widetilde{h} \in \oplus_{i=1}^{n} V_{t(l_{i})} / \Img \widetilde{h},& \\
+  F^{-}_{\alpha}(\varphi' \varphi)_{\alpha}((y_{1}, \dots, y_{n} + \Img \widetilde{h}) &= ((\varphi' \varphi)_{t(l_{1})}(y_{1}), \dots, (\varphi' \varphi)_{t(l_{n})}(y_{n})) + \Img \widetilde{h''} \\
+                                                                                                    &= F^{-}_{\alpha}(\varphi')_{\alpha} F^{-}_{\alpha}(\varphi)_{\alpha}((y_{1}, \dots, y_{n}) + \Img \widetilde{h})
 \end{array}
 \]
  On a bien montré que $F^{-}_{\alpha}(\varphi' \varphi) = F^{-}_{\alpha}(\varphi') F^{-}_{\alpha}(\varphi)$.
@@ -285,8 +288,8 @@ Montrons dès à présent que la composition des morphismes de représentations 
 
 \[
 \begin{array}{rl}
-  \forall (y_{1}, \dots, y_{n}) + \Img \tilde{h} \in \oplus_{i=1}^{n} V_{t(l_{i})} / \Img \tilde{h},& \\
-F^{-}_{\alpha}(\Id)_{\alpha}((y_{1}, \dots, y_{n}) + \Img \tilde{h}) &= (y_{1}, \dots, y_{n}) + \Img \tilde{h}
+  \forall (y_{1}, \dots, y_{n}) + \Img \widetilde{h} \in \oplus_{i=1}^{n} V_{t(l_{i})} / \Img \widetilde{h},& \\
+F^{-}_{\alpha}(\Id)_{\alpha}((y_{1}, \dots, y_{n}) + \Img \widetilde{h}) &= (y_{1}, \dots, y_{n}) + \Img \widetilde{h}
 \end{array}
 \]
 Donc on a le résultat.
@@ -302,7 +305,7 @@ Donc on a le résultat.
 	Pour $(i_{V}^{\beta})_{\beta}$, on prend l'application : 
 	\[
 	\begin{array}{ccc}
-		Z_{\beta}=\underset{l\in\Gamma^{\beta}}{\oplus} V_{s(l)}/\Img \tilde{h}=\underset{l\in\Gamma^{\beta}}{\oplus} V_{s(l)}/\Ker h & \rightarrow & V_{\beta} \\
+		Z_{\beta}=\underset{l\in\Gamma^{\beta}}{\oplus} V_{s(l)}/\Img \widetilde{h}=\underset{l\in\Gamma^{\beta}}{\oplus} V_{s(l)}/\Ker h & \rightarrow & V_{\beta} \\
 		(v_{1},\dots,v_{n})+\Ker h & \mapsto & \sum_{i=1}^{n}f_{l_{i}}(v_{i})
 	\end{array}
 	\]
@@ -315,7 +318,7 @@ Donc on a le résultat.
 	Pour $(p_{V}^{\alpha})_{\alpha}$, on prend l'application : 
 	\[
 	\begin{array}{ccc}
-		 V_{\alpha} & \rightarrow & Z_{\alpha}=\Img \tilde{h}=\Ker h  \\
+		 V_{\alpha} & \rightarrow & Z_{\alpha}=\Img \widetilde{h}=\Ker h  \\
 		v & \mapsto & (f_{l_{1}}(v), \dots, f_{l_{n}}(v))
 	\end{array}
 	\]
@@ -325,14 +328,14 @@ Donc on a le résultat.
 	L'application $i_{V}^{\beta}$ est un morphisme de $(Z,e)$ dans $(V,f)$.
 \end{prop}
 \begin{proof}
-	Notons $(W,g)=F_{\beta}^{+}(V,f)$ l'image de $(V,f)$ par $F_{\beta}^{+}$. Dans la définition de $(i_{V}^{\beta})_{\beta}$, on a implicitement déclaré que $\Ker h=\Img\tilde h$, nous allons le prouver. Considérons la suite d'applications suivante :
+	Notons $(W,g)=F_{\beta}^{+}(V,f)$ l'image de $(V,f)$ par $F_{\beta}^{+}$. Dans la définition de $(i_{V}^{\beta})_{\beta}$, on a implicitement déclaré que $\Ker h=\Img\widetilde h$, nous allons le prouver. Considérons la suite d'applications suivante :
 	\[
-		W_{\beta}\overset{\tilde h}{\longrightarrow}\underset{l\in\Gamma^{\beta}}{\oplus}V_{s(l)}\overset{h}{\longrightarrow}V_{\beta},
+		W_{\beta}\overset{\widetilde h}{\longrightarrow}\underset{l\in\Gamma^{\beta}}{\oplus}V_{s(l)}\overset{h}{\longrightarrow}V_{\beta},
 	\]
 on a alors :
 \[
 	\begin{array}{lll}
-		\Img \tilde h &=& \left\{ (g_{l_{1}}(v_{1}),\dots,g_{l_{n}}(v_{n})) \;|\; (v_{1},\dots,v_{n})\in W_{\beta} \right\}\\
+		\Img \widetilde h &=& \left\{ (g_{l_{1}}(v_{1}),\dots,g_{l_{n}}(v_{n})) \;|\; (v_{1},\dots,v_{n})\in W_{\beta} \right\}\\
 		&=& \left\{ (v_{1},\dots,v_{n})\;|\;(v_{1},\dots,v_{n})\in\Ker h \right\}\\
 		&=& \Ker h.
 \end{array}
@@ -401,31 +404,31 @@ Et on a encore l'égalité souhaitée, ainsi $i_{V}^{\beta}$ est bien un morphis
 	\end{enumerate}
 \end{lm}
 \begin{proof}
-	Prouvons le point $1$. Soit $\alpha\in\Gamma_{0}$ un puits de $\Gamma$ suivant l'orientation $\Lambda$, soient de plus $(V,f)$ et $(V',f')$ deux représentations de $(\Gamma,\Lambda)$. On veut montrer que $F_{\alpha}^{+}((V,f)\oplus(V',f'))=F_{\alpha}^{+}(V,f)\oplus F_{\alpha}^{+}(V',f')$. Il vient :
+	Prouvons le point $1$. Soit $\beta\in\Gamma_{0}$ un puits de $\Gamma$ suivant l'orientation $\Lambda$, soient de plus $(V,f)$ et $(V',f')$ deux représentations de $(\Gamma,\Lambda)$. On veut montrer que $F_{\beta}^{+}((V,f)\oplus(V',f'))=F_{\beta}^{+}(V,f)\oplus F_{\beta}^{+}(V',f')$. Il vient :
 	\[
 \begin{array}{rll}
-	\forall\gamma\neq\alpha,\;F_{\alpha}^{+}((V,f)\oplus(V',f'))_{\gamma}&=&((V,f)\oplus(V',f'))_{\gamma}\\
+	\forall\gamma\neq\beta,\;F_{\beta}^{+}((V,f)\oplus(V',f'))_{\gamma}&=&((V,f)\oplus(V',f'))_{\gamma}\\
 	&=& V_{\gamma}\oplus V_{\gamma}'\\
-	&=&  F_{\alpha}^{+}(V,f)_{\gamma}\oplus F_{\alpha}^{+}(V',f')_{\gamma}\\
+	&=&  F_{\beta}^{+}(V,f)_{\gamma}\oplus F_{\beta}^{+}(V',f')_{\gamma}\\
 	&&\\
-	F_{\alpha}^{+}((V,f)\oplus(V',f'))_{\alpha}&=&\Ker(h\oplus h')\\
+	F_{\beta}^{+}((V,f)\oplus(V',f'))_{\beta}&=&\Ker(h\oplus h')\\
 	&=& \Ker h \oplus \Ker h'\\
-	&=&  F_{\alpha}^{+}(V,f)_{\alpha}\oplus F_{\alpha}^{+}(V',f')_{\alpha},
+	&=&  F_{\beta}^{+}(V,f)_{\beta}\oplus F_{\beta}^{+}(V',f')_{\beta},
 \end{array}
 	\]
 où :
 \[
 \begin{array}{lccc}
-	h : & \overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}&\rightarrow & V_{\alpha} \\ 
+	h : & \overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}&\rightarrow & V_{\beta} \\ 
 	& (v_{1},\dots,v_{n})&\mapsto & \underset{i=1}{\overset{n}{\sum}}f_{l_{i}}(v_{i})\\
 	&&&\\
-	h' : & \overset{n}{\underset{j=1}{\bigoplus}}V'_{s(l_{j})}&\rightarrow & V'_{\alpha} \\ 
+	h' : & \overset{n}{\underset{j=1}{\bigoplus}}V'_{s(l_{j})}&\rightarrow & V'_{\beta} \\ 
 	& (v'_{1},\dots,v'_{n})&\mapsto & \underset{i=1}{\overset{n}{\sum}}f'_{l_{i}}(v'_{i}).\\
 \end{array}
 	\]
-	et où $\Gamma^{\alpha}=\left\{ l_{1},\dots,l_{n} \right\}$. Ainsi on a bien l'égalité annoncée.
+	et où $\Gamma^{\beta}=\left\{ l_{1},\dots,l_{n} \right\}$. Ainsi on a bien l'égalité annoncée.
 
-Supposons maintenant que $\alpha$ est un puit dans $(\Gamma,\Lambda)$, $(V,f)$ et $(V',f')$ deux représentations de $\mathscr L(\Gamma,\Lambda)$, on a : 
+Supposons maintenant que $\alpha$ est un source dans $(\Gamma,\Lambda)$, $(V,f)$ et $(V',f')$ deux représentations de $\mathscr L(\Gamma,\Lambda)$, on a : 
 
 \[
 \begin{array}{rll}
@@ -433,21 +436,21 @@ Supposons maintenant que $\alpha$ est un puit dans $(\Gamma,\Lambda)$, $(V,f)$ e
 	&=& V_{\gamma}\oplus V_{\gamma}'\\
 	&=&  F_{\alpha}^{-}(V,f)_{\gamma}\oplus F_{\alpha}^{-}(V',f')_{\gamma}\\
 	&&\\
-	F_{\alpha}^{-}((V,f)\oplus(V',f'))_{\alpha}&=&\oplus_{i=1}^{n}\left(V_{l_{i}} \oplus V'_{l_{i}}\right)/ \Img \tilde{h}_{\oplus} \\
-	&\simeq& \left( \oplus_{i=1}^{n}V_{t(l_{i})} / \Img \tilde{h} \right) \oplus  \left( \oplus_{i=1}^{n}V'_{t(l_{i})} / \Img \tilde{h'} \right)\\
+	F_{\alpha}^{-}((V,f)\oplus(V',f'))_{\alpha}&=&\oplus_{i=1}^{n}\left(V_{l_{i}} \oplus V'_{l_{i}}\right)/ \Img \widetilde{h}_{\oplus} \\
+	&\simeq& \left( \oplus_{i=1}^{n}V_{t(l_{i})} / \Img \widetilde{h} \right) \oplus  \left( \oplus_{i=1}^{n}V'_{t(l_{i})} / \Img \widetilde{h'} \right)\\
 	&=&  F_{\alpha}^{-}(V,f)_{\alpha}\oplus F_{\alpha}^{-}(V',f')_{\alpha}\\
 \end{array}
 \] 
 où :
 \[
 \begin{array}{lccc}
-	\tilde{h} : & V_{\alpha} &\rightarrow & \overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})} \\ 
+	\widetilde{h} : & V_{\alpha} &\rightarrow & \overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})} \\ 
 	& v&\mapsto & \left(f_{l_{1}}(v), \dots, f_{l_{n}}\right)\\
 	&&&\\
-	\tilde{h'} : & V'_{\alpha} &\rightarrow & \overset{n}{\underset{j=1}{\bigoplus}}V'_{t(l_{j})} \\ 
+	\widetilde{h'} : & V'_{\alpha} &\rightarrow & \overset{n}{\underset{j=1}{\bigoplus}}V'_{t(l_{j})} \\ 
 	& v'&\mapsto & \left(f'_{l_{1}}(v'), \dots, f'_{l_{n}}(v')\right)\\
 	&&&\\
-	\tilde{h}_{\oplus} : &V_{\alpha} \oplus V'_{\alpha} &\rightarrow & \overset{n}{\underset{j=1}{\bigoplus}}(V_{t(l_{j})} \oplus V'_{t(l_{j})}) \\ 
+	\widetilde{h}_{\oplus} : &V_{\alpha} \oplus V'_{\alpha} &\rightarrow & \overset{n}{\underset{j=1}{\bigoplus}}(V_{t(l_{j})} \oplus V'_{t(l_{j})}) \\ 
 	& (v,v') &\mapsto & \left((f_{l_{1}}(v),f'_{l_{1}}(v')), \dots, (f_{l_{n}}(v),f'_{l_{n}}(v'))\right)\\
 \end{array}
 	\]
@@ -463,7 +466,7 @@ où :
 	d'où $(v_{1}-v_{1}',\dots,v_{n}-v_{n}')\in\Ker h$, donc $a=b$, et on a l'injectivité de $(i_{V}^{\beta})_{\beta}$ puis de $i_{V}^{\beta}$.
 
 
-Le morphisme $p_{V}^{\alpha}$ est quant à lui surjectif, car pour tout $\gamma \neq \alpha, (p_{V}^{\alpha})_{\gamma} = \Id_{V_{\gamma}}$ est surjective et $ \Img (p_{V}^{\alpha})_{\alpha} = \Img \tilde{h}$ donc $ (p_{V}^{\alpha})_{\alpha}$ est surjective.  
+Le morphisme $p_{V}^{\alpha}$ est quant à lui surjectif, car pour tout $\gamma \neq \alpha, (p_{V}^{\alpha})_{\gamma} = \Id_{V_{\gamma}}$ est surjective et $ \Img (p_{V}^{\alpha})_{\alpha} = \Img \widetilde{h}$ donc $ (p_{V}^{\alpha})_{\alpha}$ est surjective.  
 
 	Prouvons maintenant le point $3$. Supposons que $i_{V}^{\beta}$ est un isomorphisme, en particulier, $(i_{V}^{\beta})_{\beta}$ est un isomoprhisme et on a $\oplus_{l\in\Gamma^{\beta}}V_{s(l)}/\Ker h\approx V_{\beta}$. On a égalité entre les dimensions d'espaces vectoriels isomorphes, et ainsi il vient :
 	\[
@@ -480,10 +483,10 @@ Le morphisme $p_{V}^{\alpha}$ est quant à lui surjectif, car pour tout $\gamma 
         \[
         \forall \gamma \neq \beta, \dim F_{\alpha}^{-}(V)_{\gamma} = \dim V_{\gamma}
         \]
-        Comme on a $V_{\alpha} \simeq \Img \tilde{h}$,
+        Comme on a $V_{\alpha} \simeq \Img \widetilde{h}$,
         \[
         \begin{array}{rl}
-        \dim F_{\alpha}^{-}(V)_{\alpha} &= \dim\left( \oplus_{i=1}^{n} V_{l_{i}} / \Img \tilde{h} \right) \\ \\
+        \dim F_{\alpha}^{-}(V)_{\alpha} &= \dim\left( \oplus_{i=1}^{n} V_{l_{i}} / \Img \widetilde{h} \right) \\ \\
                                         &= \dim\left( \oplus_{i=1}^{n} V_{l_{i}} / V_{\alpha} \right) \\
                                         &= \sum_{i=1}^{n} \dim V_{l_{i}} - \dim V_{\alpha}
 \end{array}
@@ -492,7 +495,7 @@ Le morphisme $p_{V}^{\alpha}$ est quant à lui surjectif, car pour tout $\gamma 
 
 	Prouvons à présent le point $4$. Pour tout $\gamma\neq\beta$, on a $(V/\Img i_{V}^{\beta})_{\gamma}=V_{\gamma}/\Img((i_{V}^{\beta})_{\gamma})$ et $(i_{V}^{\beta})_{\gamma}=\Id_{V_{\gamma}}$, d'où $\Img((i_{V}^{\beta})_{\gamma})=V_{\gamma}$ et ainsi $V_{\gamma}/V_{\gamma}=\left\{ 0 \right\}$.
 
-	Passons à la preuve du point 5. Pour cela, supposons que $(V,f)\in\mathscr{L}(\Gamma,\Lambda)$ est de la forme $F_{\beta}^{-}(W,g)$, il nous faut alors voir que $i_{V}^{\beta}$ est surjectif. Pour tout $\gamma\neq\beta$, on a $(i_{V}^{\beta})_{\gamma}=\Id_{V_{\gamma}}$, l'injectivité de $(i_{V}^{\beta})_{\gamma}$ est donc immédiate. Intéressons-nous maintenant au cas où $\gamma=\beta$. On se place dans l'orientation $\Lambda$ où $\beta$ est un puits et on note $\Gamma^{\beta}=\left\{ l_{1},\dots,l_{n} \right\}$, on a alors $V_{\beta}=\oplus_{i=1}^{n}V_{s(l_{i})}/\Img \tilde{h}$. On a aussi :
+	Passons à la preuve du point 5. Pour cela, supposons que $(V,f)\in\mathscr{L}(\Gamma,\Lambda)$ est de la forme $F_{\beta}^{-}(W,g)$, il nous faut alors voir que $i_{V}^{\beta}$ est surjectif. Pour tout $\gamma\neq\beta$, on a $(i_{V}^{\beta})_{\gamma}=\Id_{V_{\gamma}}$, l'injectivité de $(i_{V}^{\beta})_{\gamma}$ est donc immédiate. Intéressons-nous maintenant au cas où $\gamma=\beta$. On se place dans l'orientation $\Lambda$ où $\beta$ est un puits et on note $\Gamma^{\beta}=\left\{ l_{1},\dots,l_{n} \right\}$, on a alors $V_{\beta}=\oplus_{i=1}^{n}V_{s(l_{i})}/\Img \widetilde{h}$. On a aussi :
 	\[
 \begin{array}{rccc}
 	h: & \oplus_{i=1}^{n}V_{s(l_{i})} & \rightarrow & V_{\beta} \\
@@ -500,21 +503,75 @@ Le morphisme $p_{V}^{\alpha}$ est quant à lui surjectif, car pour tout $\gamma 
 	&&&\\
 	\text{où, pour tout }i\in[\![1,n]\!] : &&&\\
 	f_{l_{i}}:& V_{s(l_{i})} & \rightarrow & V_{\beta} \\
-	& v_{i} & \mapsto & (0,\dots,0,v_{i},0,\dots,0)+\Img \tilde{h}\\
+	& v_{i} & \mapsto & (0,\dots,0,v_{i},0,\dots,0)+\Img \widetilde{h}\\
 	&&&\\
 	\text{d'où :} &&&\\
 	h: & \oplus_{i=1}^{n}V_{s(l_{i})} & \rightarrow & V_{\beta} \\
-	& (v_{1},\dots,v_{n}) & \mapsto & (v_{1},\dots,v_{n}) + \Img \tilde{h}\\
+	& (v_{1},\dots,v_{n}) & \mapsto & (v_{1},\dots,v_{n}) + \Img \widetilde{h}\\
 \end{array}
 	\]
-	On a alors immédiatement que $\Ker h = \Img \tilde{h}$, et on a
+	On a alors immédiatement que $\Ker h = \Img \widetilde{h}$, et on a
 	\[
 		\begin{array}{rccc}
 			(i_{V}^{\beta})_{\beta} : & \oplus_{i=1}^{n}V_{s(l_{i})}/\Ker h & \rightarrow & V_{\beta}\\
-			& (v_{1},\dots,v_{n})+\Ker h & \mapsto & (v_{1},\dots,v_{n})+\Img \tilde{h},\\
+			& (v_{1},\dots,v_{n})+\Ker h & \mapsto & (v_{1},\dots,v_{n})+\Img \widetilde{h},\\
 		\end{array}
 	\]
 	la surjectivité de $(i_{V}^{\beta})_{\beta}$ est donc prouvée. Ainsi $i_{V}^{\beta}$ est surjectif, puis bijectif, donc est un isomorphisme.
+
+	Enfin, prouvons le point 6. Notons $\widetilde V=V/\Img i_{V}^{\beta}$, il nous faut alors prouver que $V$ est isomorphe à $F_{\beta}^{-}F_{\beta}^{+}(V)\oplus\widetilde V$. Notons également $\varphi_{\beta}':V_\beta\twoheadrightarrow \widetilde V_\beta$ la projection de $V_\beta$ dans $\widetilde V_\beta$. Cette représentation admet une section, c'est-à-dire une application $\varphi_\beta:\widetilde V_\beta\rightarrow V_\beta$ telle que $\varphi_\beta'\varphi_\beta=\Id_{\widetilde V_\beta}$ : en effet il suffit d'envoyer chaque classe d'équivalence dans $\widetilde V_\beta$ sur un unique représentant de cette classe dans $V_\beta$. On posera également, pour tout $\gamma\neq\beta,\;\varphi_\gamma=0$, ce qui fait de $\varphi=(\varphi_\gamma)_{\gamma\in\Gamma_{0}}$ un morphisme de $V/\Img i_{V}^{\beta}$ dans $V$. En effet, le diagramme suivant commute :
+	\[
+	\begin{tikzpicture}
+	\matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+	  {
+		  \widetilde V_{s(l)} & \widetilde V_{t(l)} \\
+		  V_{s(l)} & V_{t(l)} \\};
+	\path[-stealth]
+	(m-1-1) edge node [left] {$\varphi_{s(l)}$} (m-2-1)
+		edge node [above] {$\widetilde f_{l}$} (m-1-2)
+	(m-2-1) edge node [below] {$f_{l}$} (m-2-2)
+	(m-1-2) edge node [right] {$\varphi_{t(l)}$} (m-2-2);
+	\end{tikzpicture}
+\]
+car on a d'une part $\forall l\in\Gamma_0,\;s(l)\neq\beta$ ($\beta$ étant un puits) et ainsi $\varphi_{s(l)}=0$ d'où $f_l\varphi_{s(l)}=0$. Et d'autre part, comme on a :
+\[
+\begin{array}{rccc}
+	\widetilde f_{l}:&\widetilde V_{s(l)}&\rightarrow&\widetilde V_{t(l)}\\
+	&v+\Img\left[(i_{V}^{\beta})_{s(l)}\right]&\mapsto&f_l(v)+\Img\left[(i_{V}^{\beta})_{t(l)}\right]
+\end{array}
+\]
+où $\widetilde V_{s(l)}=\left\{ 0 \right\}$ car $\forall l\in\Gamma_0,\;s(l)\neq\beta$, il vient $\widetilde f_l=0$ puis $\varphi_{t(l)}\widetilde f_l=0$. Ainsi $\varphi$ est bien un morphisme. On pose désormais $\xi=(\xi_\gamma)_{\gamma\in\Gamma_0}$ où $\forall\gamma\neq\beta,\;\xi_\gamma=\Id_{V_\gamma}$ et $\xi_\beta$ est définie par :
+\[
+\begin{array}{rccc}
+\xi_\beta:&\widetilde V_\beta\oplus F_\beta^-F_\beta^+(V,f)_\beta&\rightarrow&V_\beta\\	
+&(x,y)&\mapsto&\varphi_\beta(x)+(i_V^\beta)_\beta(y).\\
+\end{array}
+\]
+Nous allons prouver que $\xi$ est un isomorphisme. Tout d'abord, $\xi$ est bien est définie car $\forall\gamma\neq\beta,\;\xi_\gamma=\Id_{V_\gamma}$, et comme $\varphi_\beta$ et $(i_V^\beta)_\beta$ sont bien définies, on a que $\xi_\beta$ est bien définie également. Prouvons maintenant que $\xi$ est un morphisme, c'est-à-dire que le diagramme suivant commute :
+\[
+	\begin{tikzpicture}
+	\matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+	  {
+		  \left[ \widetilde V\oplus F_\beta^-F_\beta^+(V,f) \right]_{s(l)} & \left[ \widetilde V\oplus F_\beta^-F_\beta^+(V,f) \right]_{t(l)} \\
+		  V_{s(l)} & V_{t(l)} \\};
+	\path[-stealth]
+	(m-1-1) edge node [left] {$\xi_{s(l)}$} (m-2-1)
+		edge node [above] {$\widetilde f_{l}\oplus e_l$} (m-1-2)
+	(m-2-1) edge node [below] {$f_{l}$} (m-2-2)
+	(m-1-2) edge node [right] {$\xi_{t(l)}$} (m-2-2);
+	\end{tikzpicture}
+\]
+où les $e_l$ sont les morphismes de $F_\beta^-F_\beta^+(V,f)$. Soit $(x,y)\in\left[ \widetilde V\oplus F_\beta^-F_\beta^+(V,f) \right]_{s(l)}$ :
+\[
+\begin{array}{rll}
+	\xi_{t(l)}(\widetilde f_l\oplus e_l(x,y))&=&\xi_{t(l)}(\widetilde f_{l}(x),e_l(y))\\ 	
+	&=& \varphi_{t(l)}\widetilde f_{l}(x)+(i_V^\beta)_{t(l)} e_l(y)\\
+	&=& f_l\varphi_{s(l)}(x)+f_l(i_V^\beta)_{s(l)}(y)\text{ car $\varphi$ et $i_V^\beta$ sont des morphismes}\\
+	&=& f_l(\varphi_{s(l)}(x)+(i_v^\beta)_{s(l)}(y))\\
+	&=& f_l\xi_{s(l)}(x,y)\\
+\end{array}
+\]
+ainsi $\xi$ est bien un morphisme. Prouvons son injectivité. Celle-ci est immédiatement vérifiée dans le cas où $\gamma\neq\beta$, vérifions qu'elle l'est aussi pour $\gamma=\beta$. Soient $(x,y),(x',y')\in\widetilde V_\beta\oplus F_\beta^-F_\beta^+(V,f)_\beta$ tels que $\xi_\beta(x,y)=\xi_\beta(x',y')$, a fortiori on $\varphi_\beta(\xi_\beta(x,y))=\varphi_\beta(\xi_\beta(x',y'))$, d'où $x=y$. Ainsi $(i_V^\beta)_\beta(y)=(i_V^\beta)_\beta(y')$, mais par injectivité de $i_V^\beta$, il vient $y=y'$. Ainsi $(x,y)=(x',y')$ et $\xi$ est injective. Prouvons donc la sujectivité de $\xi$, une fois encore, elle est immédiate dès que $\gamma\neq\beta$, nous nous intéressons donc au cas $\gamma=\beta$. Soit donc $v\in V_\beta$, on a alors $v=\varphi_\beta\varphi_\beta'(v)+v-\varphi_\beta\varphi_\beta'(v)$, d'où il vient immédiatement que $\varphi_\beta\varphi_\beta'(v)\in\Img \varphi_\beta$. Il nous reste donc à voir que . De plus, comme $\varphi_\beta'\varphi_\beta=\Id_{\widetilde V_\beta}$, on sait que $\varphi_\beta'(v)=\varphi_\beta'\varphi_\beta\varphi_\beta'(v)$ d'où $v-\varphi_\beta\varphi_\beta'(v)\in\Img\left[ (i_V^\beta)_\beta \right]$. On a donc la surjectivité de $xi_\beta$, donc la surjectivité de $\xi$ et la bijectivité de $\xi$, qui est un morphisme. On a donc prouvé que $\xi$ est un isomorphisme, et ainsi $(V,f)$ est isomorphe à $F_\beta^-F_\beta^+(V,f)\oplus V/\Img i_V^\beta$.
 \end{proof}
 %Lignes à ajouter pour faire apparaître notre bibliographie
 \clearpage
