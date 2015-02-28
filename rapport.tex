@@ -20,6 +20,7 @@ Travail encadré par Pierre-Guy Plamondon}
 \newtheorem{defi}[]{Définition}[section]
 \newtheorem{prop}[]{Proposition}[section]
 \newtheorem{ex}[]{Exemple}[section]
+\newtheorem{cor}{Corollaire}[section]
 
 %Feuilles de styles Tikz
 \usetikzlibrary{matrix}
@@ -380,6 +381,7 @@ et d'autre part :
 Et on a encore l'égalité souhaitée, ainsi $i_{V}^{\beta}$ est bien un morphisme.
 \end{proof}
 \begin{lm}
+\label{lemmecrucial}
 	On a les résultats suivants :
 	\begin{enumerate}
 		\item $F_{\alpha}^{\pm}((V_{1},f)\oplus (V_{2},g))=F_{\alpha}^{\pm}(V_{1},f)\oplus F_{\alpha}^{\pm}(V_{2},g)$ ;
@@ -603,6 +605,14 @@ ainsi $\xi$ est bien un morphisme. Prouvons son injectivité. Celle-ci est immé
 	
 	\end{enumerate}
 \end{thm}
+\begin{proof}
+	Soit $(\Gamma,\Lambda)$ un carquois et $(V,f)\in\mathscr L(\Gamma,\Lambda)$ une représentation indécomposable de ce carquois. Supposons que $\beta$ est un puits suivant l'orientation $\Lambda$. D'après le point $6$ du lemme \ref{lemmecrucial}, on a $V\approx F_\beta^-F_\beta^+(V,f)\oplus V/\Img i_v^\beta$, or $V$ est indécomposable, donc $V$ est isomorphe à l'un des deux termes.
+	\begin{itemize}
+		\item Cas $1$. $V\approx V/\Img i_V^\beta$ : alors $\forall \gamma\neq\beta,\;V_\gamma=\left\{ 0 \right\}$, $\forall l\in\Gamma_1,\;f_l=0$ et $V_\beta=\mathbb K$, car $(V,f)$ est indécomposable, et si on avait $\dim V_\beta>1$, on pourrait décomposer $(V,f)$ en $\dim V_\beta$ copies de $L_\beta$. Ainsi $V\approx L_\beta$.
+		\item Cas $2$. $V\approx F_\beta^-F_\beta^+(V,f)$ : autrement dit, $i_V^\beta$ est un isomorphisme. Ainsi, d'après le point $3$ du lemme \ref{lemmecrucial}, on a les égalités sur les dimensions des espaces vectoriels. Montrons à présent que $(W,g)=F_\beta^+(V,f)$ est indécomposable, pour cela supposons qu'il existe $(W_1,g_1)$ et $(W_2,g_2)$ des représentations telles que $(W,g)=(W_1,g_1)\oplus(W_2,g_2)$. On a alors, d'après le point $1$ du lemme \ref{lemmecrucial} que $(V,f)\approx F_\beta^-(W_1,g_1)\oplus F_\beta^-(W_2,g_2)$. Comme $(V,f)$ est indécomposable, un des termes est la représentation nulle, supposons, sans perte de généralité, que $F_\beta^-(W_2,g_2)=0$. D'après la forme de $W$ et le point $5$ du lemme \ref{lemmecrucial}, on sait que $p_V^\beta:(W,g)\rightarrow F_\beta^+F_\beta^-(W,g)$ est un isomorphisme, or $p_V^\beta(W_2,g_2)\subset F_\beta^+F_\beta^-(W_2,g_2)=0$, d'où $(W_2,g_2)=0$. Ainsi $F_\beta^+(V)$ est indécomposable. 
+	\end{itemize}
+Cela termine la démonstration dans le cas où $\beta$ est un puits.
+\end{proof}
 %Lignes à ajouter pour faire apparaître notre bibliographie
 \clearpage
 \bibliographystyle{unsrt}
