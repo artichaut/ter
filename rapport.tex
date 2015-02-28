@@ -321,14 +321,14 @@ Donc on a le résultat.
 	Pour $(p_{V}^{\alpha})_{\alpha}$, on prend l'application : 
 	\[
 	\begin{array}{ccc}
-		 V_{\alpha} & \rightarrow & Z_{\alpha}=\Img \widetilde{h}=\Ker h  \\
+		 V_{\alpha} & \rightarrow & Z_{\alpha} \\
 		v & \mapsto & (f_{l_{1}}(v), \dots, f_{l_{n}}(v))
 	\end{array}
 	\]
 	où $\Gamma^{\alpha}=\left\{ l_{1},\dots,l_{n} \right\}$.
 \end{defi}
 \begin{prop}
-	L'application $i_{V}^{\beta}$ est un morphisme de $(Z,e)$ dans $(V,f)$.
+	L'application $i_{V}^{\beta}$ est un morphisme de $(Z,e)$ dans $(V,f)$ et l'application $p_{V}^{\alpha}$ est un morphisme de $(V,f)$ dans $(Z,e)$.
 \end{prop}
 \begin{proof}
 	Notons $(W,g)=F_{\beta}^{+}(V,f)$ l'image de $(V,f)$ par $F_{\beta}^{+}$. Dans la définition de $(i_{V}^{\beta})_{\beta}$, on a implicitement déclaré que $\Ker h=\Img\widetilde h$, nous allons le prouver. Considérons la suite d'applications suivante :
@@ -379,6 +379,45 @@ et d'autre part :
 \end{array}
 \]
 Et on a encore l'égalité souhaitée, ainsi $i_{V}^{\beta}$ est bien un morphisme.
+
+Montrons de même que $p_{V}^{\alpha}$ est un morphisme. Commençons par montrer que $(p_{V}^{\alpha})_{\alpha}$ est bien définie, c'est à dire que son image est contenue dans $F_{\alpha}^{+}F_{\alpha}^{-}(V)$. Notons $(W,g) = F_{\alpha}^{-}(V,f)$, alors si $\Gamma^{\alpha} = \{l_{1}, \dots, l_{n}\}$, on sait pour tout $j\in[\![1,n]\!], g_{l_{j}}$ est la composition de l'inclusion naturelle de $W_{t(l_j)}$ dans $\overset{n}{\underset{i=1}{\bigoplus}}W_{t(l_{i})}$ et de la projection dans $\overset{n}{\underset{i=1}{\bigoplus}}W_{t(l_{i})}/\Img(\widetilde h)$.
+\[
+\begin{array}{rl}
+\Ker h &= \left\{ \sum_{j=1}^{n}g_{l_{j}}(w_{j}) = 0, (w_{1}, \dots, w_{n}) \in \overset{n}{\underset{i=1}{\bigoplus}}W_{t(l_{i})} \right\} \\
+       &= \left\{ (v_{1}, \dots, v_{n}) + \Img \widetilde{h} = 0, (v_{1}, \dots, v_{n}) \in \overset{n}{\underset{i=1}{\bigoplus}}V_{t(l_{i})} \right\} \\
+       &= \Img \widetilde{h}\\
+       &= \left\{ (f_{l_{1}(v)},\dots,f_{l_{n}}(v)), v \in V_{\alpha} \right\} \\
+\end{array}
+\]
+Donc $p_{V}^{\alpha}$ est bien définie, on peut alors montrer que c'est un morphisme.
+
+Soit $l \in \Gamma_{1}$, on souhaite que le diagramme suivant commute.
+
+\[
+	\begin{tikzpicture}
+	\matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+	  {
+		  V_{s(l)} & V_{t(l)} \\
+		  Z_{s(l)} & Z_{t(l)} \\};
+	\path[-stealth]
+	(m-1-1) edge node [left] {$(p_{V}^{\alpha})_{s(l)}$} (m-2-1)
+		edge node [above] {$f_{l}$} (m-1-2)
+	(m-2-1) edge node [below] {$e_{l}$} (m-2-2)
+	(m-1-2) edge node [right] {$(p_{V}^{\alpha})_{t(l)}$} (m-2-2);
+	\end{tikzpicture}
+\]  
+Si $l \notin \Gamma^{\alpha}$ alors $(p_{V}^{\alpha})_{s(l)} = \Id_{Z_{s(l)}}$, $(p_{V}^{\alpha})_{t(l)} = \Id_{Z_{t(l)}}$ et $e_{l} = f_{l}$ donc $e_{l}(p_{V}^{\alpha})_{s(l)} = (p_{V}^{\alpha})_{t(l)}f_{l}$.
+Si $l \in \Gamma^{\alpha}$ alors $s(l) = \alpha $, $(p_{V}^{\alpha})_{t(l)} = \Id_{Z_{t(l)}}$ et pour tout $v \in V_{\alpha}$,
+
+\[
+\begin{array}{rl}
+  e_{l}(p_{V}^{\alpha})_{\alpha}(v)&= e_{l}(f_{l_{1}}(v), \dots, f_{l_{n}}(v)) \\
+                                   &= f_{l}(v)
+\end{array}
+\]
+Car on sait que pour tout  $e_{l}$ est  la composition de l'inclusion naturelle de $\Ker h$ dans $\overset{n}{\underset{i=1}{\bigoplus}}Z_{t(l_{i})}$ et de la projection dans $Z_{t(l)}$.
+
+
 \end{proof}
 \begin{lm}
 \label{lemmecrucial}
