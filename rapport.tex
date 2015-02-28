@@ -538,6 +538,8 @@ Le morphisme $p_{V}^{\alpha}$ est quant à lui surjectif, car pour tout $\gamma 
 
 	Prouvons à présent le point $4$. Pour tout $\gamma\neq\beta$, on a $(V/\Img i_{V}^{\beta})_{\gamma}=V_{\gamma}/\Img((i_{V}^{\beta})_{\gamma})$ et $(i_{V}^{\beta})_{\gamma}=\Id_{V_{\gamma}}$, d'où $\Img((i_{V}^{\beta})_{\gamma})=V_{\gamma}$ et ainsi $V_{\gamma}/V_{\gamma}=\left\{ 0 \right\}$.
 
+        De même, pour tout $\gamma\neq\beta$, on a $(\Ker p_{V}^{\alpha})_{\gamma}=\Ker((p_{V}^{\alpha})_{\gamma})$ et $(p_{V}^{\alpha})_{\gamma}=\Id_{V_{\gamma}}$, d'où $\Ker((p_{V}^{\alpha})_{\gamma})=\{0\}$.
+
 	Passons à la preuve du point 5. Pour cela, supposons que $(V,f)\in\mathscr{L}(\Gamma,\Lambda)$ est de la forme $F_{\beta}^{-}(W,g)$, il nous faut alors voir que $i_{V}^{\beta}$ est surjectif. Pour tout $\gamma\neq\beta$, on a $(i_{V}^{\beta})_{\gamma}=\Id_{V_{\gamma}}$, l'injectivité de $(i_{V}^{\beta})_{\gamma}$ est donc immédiate. Intéressons-nous maintenant au cas où $\gamma=\beta$. On se place dans l'orientation $\Lambda$ où $\beta$ est un puits et on note $\Gamma^{\beta}=\left\{ l_{1},\dots,l_{n} \right\}$, on a alors $V_{\beta}=\oplus_{i=1}^{n}V_{s(l_{i})}/\Img \widetilde{h}$. On a aussi :
 	\[
 \begin{array}{rccc}
@@ -561,6 +563,9 @@ Le morphisme $p_{V}^{\alpha}$ est quant à lui surjectif, car pour tout $\gamma 
 		\end{array}
 	\]
 	la surjectivité de $(i_{V}^{\beta})_{\beta}$ est donc prouvée. Ainsi $i_{V}^{\beta}$ est surjectif, puis bijectif, donc est un isomorphisme.
+
+        De manière similaire, montrons que $p_{V}^{\alpha}$ est un isomorphisme c'est à dire que $(p_{V}^{\alpha})_{\alpha}$ est injective, dans le cas où $(V,f) = F_{\alpha}^{+}(W,g)$. Écrivons $\Gamma^{\alpha} = \{l_{1}, \dots, l_{n}\}$, on sait que $V_{\alpha} = \left\{ (v_{1}, \dots, v_{n}) \in \oplus_{i=1}^{n}  V_{t(l_{i})}\right\}$, et que $\forall j \in [\![1,n]\!] , f_{l(j)}$ est la composition de l'inclusion de $V_{\alpha}$ dans $\oplus_{i=1}^{n}V_{t(l_{i})}$ et la projection sur $V_{t(l_{j})}$. Donc soit $v= (v_{1}, \dots, v_{n}) \in V_{\alpha}$, on a $ f_{l_{j}}(v) = v_{j}$. Or si $(p_{V}^{\alpha})_{\alpha}(v) = 0 $ c'est à dire $(f_{l_{1}}(v), \dots, f_{l_{n}}(v)) = 0 $ alors $v = 0$ donc $(p_{V}^{\alpha})_{\alpha}$ est injective.
+
 
 	Enfin, prouvons le point 6. Notons $\widetilde V=V/\Img i_{V}^{\beta}$, il nous faut alors prouver que $V$ est isomorphe à $F_{\beta}^{-}F_{\beta}^{+}(V)\oplus\widetilde V$. Notons également $\varphi_{\beta}':V_\beta\twoheadrightarrow \widetilde V_\beta$ la projection de $V_\beta$ dans $\widetilde V_\beta$. Cette représentation admet une section, c'est-à-dire une application $\varphi_\beta:\widetilde V_\beta\rightarrow V_\beta$ telle que $\varphi_\beta'\varphi_\beta=\Id_{\widetilde V_\beta}$ : en effet il suffit d'envoyer chaque classe d'équivalence dans $\widetilde V_\beta$ sur un unique représentant de cette classe dans $V_\beta$. On posera également, pour tout $\gamma\neq\beta,\;\varphi_\gamma=0$, ce qui fait de $\varphi=(\varphi_\gamma)_{\gamma\in\Gamma_{0}}$ un morphisme de $V/\Img i_{V}^{\beta}$ dans $V$. En effet, le diagramme suivant commute :
 	\[
@@ -615,6 +620,11 @@ où les $e_l$ sont les morphismes de $F_\beta^-F_\beta^+(V,f)$. Soit $(x,y)\in\l
 \end{array}
 \]
 ainsi $\xi$ est bien un morphisme. Prouvons son injectivité. Celle-ci est immédiatement vérifiée dans le cas où $\gamma\neq\beta$, vérifions qu'elle l'est aussi pour $\gamma=\beta$. Soient $(x,y),(x',y')\in\widetilde V_\beta\oplus F_\beta^-F_\beta^+(V,f)_\beta$ tels que $\xi_\beta(x,y)=\xi_\beta(x',y')$, a fortiori on $\varphi_\beta(\xi_\beta(x,y))=\varphi_\beta(\xi_\beta(x',y'))$, d'où $x=y$. Ainsi $(i_V^\beta)_\beta(y)=(i_V^\beta)_\beta(y')$, mais par injectivité de $i_V^\beta$, il vient $y=y'$. Ainsi $(x,y)=(x',y')$ et $\xi$ est injective. Prouvons donc la sujectivité de $\xi$, une fois encore, elle est immédiate dès que $\gamma\neq\beta$, nous nous intéressons donc au cas $\gamma=\beta$. Soit donc $v\in V_\beta$, on a alors $v=\varphi_\beta\varphi_\beta'(v)+v-\varphi_\beta\varphi_\beta'(v)$, d'où il vient immédiatement que $\varphi_\beta\varphi_\beta'(v)\in\Img \varphi_\beta$. Il nous reste donc à voir que . De plus, comme $\varphi_\beta'\varphi_\beta=\Id_{\widetilde V_\beta}$, on sait que $\varphi_\beta'(v)=\varphi_\beta'\varphi_\beta\varphi_\beta'(v)$ d'où $v-\varphi_\beta\varphi_\beta'(v)\in\Img\left[ (i_V^\beta)_\beta \right]$. On a donc la surjectivité de $xi_\beta$, donc la surjectivité de $\xi$ et la bijectivité de $\xi$, qui est un morphisme. On a donc prouvé que $\xi$ est un isomorphisme, et ainsi $(V,f)$ est isomorphe à $F_\beta^-F_\beta^+(V,f)\oplus V/\Img i_V^\beta$.
+
+
+Considérons la représentation $(\widetilde V, \widetilde f)$ où $\widetilde V = \Ker p_{V}^{\alpha}$ et $\widetilde{f}$ est trivialement constituées de fonctions nulles. On nomme $\varphi$, le morphisme de $(V,f)$ dans $(\widetilde{V},\widetilde{f})$ défini tel que $\forall \gamma \in \Gamma_{0} \setminus \{\alpha\} $, on ait $\varphi_{\gamma}(V_{\gamma}) = \widetilde{V}_{\gamma} = \{0\}$ et $\varphi_{\alpha}(V_{\alpha}) = \widetilde{V}_{\alpha}$.    
+
+
 \end{proof}
 \begin{thm}
 	\begin{enumerate}
