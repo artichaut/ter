@@ -652,6 +652,18 @@ ainsi $\xi$ est bien un morphisme. Prouvons son injectivité. Celle-ci est immé
 	\end{itemize}
 Cela termine la démonstration dans le cas où $\beta$ est un puits.
 \end{proof}
+\begin{defi}
+	On dit qu'une suite de sommets $\beta_1,\beta_2,\dots\beta_k$ est une suite (+)-accessible, ou une suite de puits, suivant l'orientation $\Lambda$, si $\beta_1$ est un puits suivant l'orientation $\Lambda$, $\beta_2$ est un puits suivant l'orientation $\sigma_{\beta_1}\Lambda$, $\beta_3$ est un puits suivant l'orientation $\sigma_{\beta_2}\sigma_{\beta_1}\Lambda$, et ainsi de suite.
+
+	On dit qu'une suite de sommets $\alpha_1,\alpha_2,\dots\alpha_k$ est une suite (-)-accessible, ou une suite de sources, suivant l'orientation $\Lambda$, si $\alpha_1$ est une source suivant l'orientation $\Lambda$, $\alpha_2$ est une source suivant l'orientation $\sigma_{\alpha_1}\Lambda$, $\alpha_3$ est une source suivant l'orientation $\sigma_{\alpha_2}\sigma_{\alpha_1}\Lambda$, et ainsi de suite.
+\end{defi}
+\begin{cor}
+Soit $(\Gamma,\Lambda)$ un carquois et $\beta_1,\dots,\beta_k$ une suite de puits.
+\begin{enumerate}
+	\item $\forall i\in [\![1,k]\!],\;F_{\beta_1}^-\dots F_{\beta_{i-1}^-}(L_{\beta_{i}})$ est soit la représentation nulle, soit une représentation indécomposable de $\mathscr L(\Gamma,\Lambda)$ (ici $L_{\beta_i}\in\mathscr L(\Gamma,\sigma_{\beta_{i-1}}\sigma_{\beta_{i-2}}\dots\sigma_{\beta_{1}}\Lambda)$).
+	\item Soit $(V,f)\in\mathscr L(\Gamma,\Lambda)$ une représentation indécomposable, et telle que $F_{\beta_k}^+F_{\beta_{k-1}}^{+}\dots F_{\beta_1}^+(V,f)=0$, alors il existe $i\in[\![1,k]\!]$ tel que $V\approx F_{\beta_{1}}^-F_{\beta_2}^-\dots F_{\beta_{i-1}}^-(L_{\beta_i})$.
+\end{enumerate}
+\end{cor}
 %Lignes à ajouter pour faire apparaître notre bibliographie
 \clearpage
 \bibliographystyle{unsrt}
