@@ -622,7 +622,31 @@ où les $e_l$ sont les morphismes de $F_\beta^-F_\beta^+(V,f)$. Soit $(x,y)\in\l
 ainsi $\xi$ est bien un morphisme. Prouvons son injectivité. Celle-ci est immédiatement vérifiée dans le cas où $\gamma\neq\beta$, vérifions qu'elle l'est aussi pour $\gamma=\beta$. Soient $(x,y),(x',y')\in\widetilde V_\beta\oplus F_\beta^-F_\beta^+(V,f)_\beta$ tels que $\xi_\beta(x,y)=\xi_\beta(x',y')$, a fortiori on $\varphi_\beta(\xi_\beta(x,y))=\varphi_\beta(\xi_\beta(x',y'))$, d'où $x=y$. Ainsi $(i_V^\beta)_\beta(y)=(i_V^\beta)_\beta(y')$, mais par injectivité de $i_V^\beta$, il vient $y=y'$. Ainsi $(x,y)=(x',y')$ et $\xi$ est injective. Prouvons donc la sujectivité de $\xi$, une fois encore, elle est immédiate dès que $\gamma\neq\beta$, nous nous intéressons donc au cas $\gamma=\beta$. Soit donc $v\in V_\beta$, on a alors $v=\varphi_\beta\varphi_\beta'(v)+v-\varphi_\beta\varphi_\beta'(v)$, d'où il vient immédiatement que $\varphi_\beta\varphi_\beta'(v)\in\Img \varphi_\beta$. Il nous reste donc à voir que . De plus, comme $\varphi_\beta'\varphi_\beta=\Id_{\widetilde V_\beta}$, on sait que $\varphi_\beta'(v)=\varphi_\beta'\varphi_\beta\varphi_\beta'(v)$ d'où $v-\varphi_\beta\varphi_\beta'(v)\in\Img\left[ (i_V^\beta)_\beta \right]$. On a donc la surjectivité de $xi_\beta$, donc la surjectivité de $\xi$ et la bijectivité de $\xi$, qui est un morphisme. On a donc prouvé que $\xi$ est un isomorphisme, et ainsi $(V,f)$ est isomorphe à $F_\beta^-F_\beta^+(V,f)\oplus V/\Img i_V^\beta$.
 
 
-Considérons la représentation $(\widetilde V, \widetilde f)$ où $\widetilde V = \Ker p_{V}^{\alpha}$ et $\widetilde{f}$ est trivialement constituées de fonctions nulles. On nomme $\varphi$, le morphisme de $(V,f)$ dans $(\widetilde{V},\widetilde{f})$ défini tel que $\forall \gamma \in \Gamma_{0} \setminus \{\alpha\} $, on ait $\varphi_{\gamma}(V_{\gamma}) = \widetilde{V}_{\gamma} = \{0\}$ et $\varphi_{\alpha}(V_{\alpha}) = \widetilde{V}_{\alpha}$.    
+Considérons la représentation $(\widetilde V, \widetilde f)$ où $\widetilde V = \Ker p_{V}^{\alpha}$ et $\widetilde{f}$ est formée :
+\begin{itemize}
+\item pour tout $l \notin \Gamma^{\alpha}$, $f_{l}$ est un morphisme de l'espace nul dans l'espace nul;
+\item pout tout $l \in \Gamma^{\alpha}$, $f_{l}$ est un morphisme de $\widetilde V _{\alpha}$ dans l'espace nul. 
+\end{itemize}
+
+ On construit $\varphi$, le morphisme de $(V,f)$ dans $(\widetilde{V},\widetilde{f})$ défini tel que $\forall \gamma \in \Gamma_{0} \setminus \{\alpha\} $, on ait $\varphi_{\gamma}(V_{\gamma}) = \widetilde{V}_{\gamma} = \{0\}$ et $\varphi_{\alpha}(V_{\alpha}) = \widetilde{V}_{\alpha}$ c'est à dire que $\varphi_{\alpha}$ est la projection de $\widetilde{V}_{\alpha} $ dans $V_{\alpha}$. On vérifie alors que le diagramme suivant commute quel que soit $l \in \Gamma_{1}$.
+\[
+	\begin{tikzpicture}
+	\matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+	  {
+		   V_{s(l)} &  V_{t(l)} \\
+		  \widetilde V_{s(l)} & \widetilde V_{t(l)} \\};
+	\path[-stealth]
+	(m-1-1) edge node [left] {$\varphi_{s(l)}$} (m-2-1)
+		edge node [above] {$ f_{l}$} (m-1-2)
+	(m-2-1) edge node [below] {$\widetilde f_{l}$} (m-2-2)
+	(m-1-2) edge node [right] {$\varphi_{t(l)}$} (m-2-2);
+	\end{tikzpicture}
+\]
+
+
+On construit alors le morphisme $\xi$ de $(V,f)$ dans $(Z,e) \oplus (\widetilde{V},\widetilde{f})$ en sommant l'action des morphismes $p^{V}_{\alpha}$ et $\varphi$, c'est à dire que pour tout $\gamma \in \Gamma_{0}, \xi_{\gamma}(V,f) = (p_{V}^{\alpha}(V,f) \oplus \varphi_{\gamma}(V,f)$. Comme $p_{V}^{\alpha}$ et $\varphi$ sont respectivement  des morphismes de $(V,f)$ dans $(Z,e)$ et de $(V,f)$ dans $(\widetilde V, \widetilde f)$, alors $\xi$ est un morphisme de $(V,f)$ dans $(Z,e) \oplus (\widetilde V, \widetilde f)$.
+
+Il s'agit maintenant de montrer que $\xi$ est un isomorphisme c'est à dire que pour tout $\gamma \in \Gamma_{0}$, $\xi_{\gamma}$ est un isomorphisme d'espace vectoriel. Lorsque $\gamma \in \Gamma_{0} \setminus {\alpha}, (p_{V}^{\alpha})_{\gamma} = \Id_{V_{\gamma}}$ et $\varphi_{\gamma}$ est l'application nulle donc $\xi_{\gamma}$ est un isomorphime de $V_{\gamma}$ dans $V_{\gamma}\oplus \{0\}$. $\xi_{\alpha}$ est un isomorphisme, en effet il est surjectif car $p_{V}^{\alpha}$ et $\varphi_{\alpha}$ sont surjectifs d'après ce qui précède et parce que $\varphi_{\alpha}$ est une projection. $\xi_{\alpha}$ est injectif, soit $v \in V_{\alpha}$ tel que $((p_{V}^{\alpha})_{\alpha}(v),\varphi_{\alpha}(v)) = 0$ alors $v$ appartient  à $(\Ker p_{V}^{\alpha})_{\alpha}$ donc $\varphi_{\alpha}(v) =v$ d'où $v= 0$. Donc $\xi$ est bien un isomorphisme et $(V,f) \simeq (Z,e) \oplus (\widetilde V, \widetilde f)$.
 
 
 \end{proof}
