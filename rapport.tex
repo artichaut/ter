@@ -651,6 +651,7 @@ Il s'agit maintenant de montrer que $\xi$ est un isomorphisme c'est à dire que 
 
 \end{proof}
 \begin{thm}
+	\label{thm1}
 	\begin{enumerate}
 		Soit $(\Gamma,\Lambda)$ un carquois.
 	\item Soit $\beta\in\Gamma_0 $ un puits suivant l'orientation $\Lambda$. Soit $(V,f)\in\mathscr L(\Gamma,\Lambda)$ une représentation indécomposable. On a alors deux cas possibles :
@@ -694,11 +695,20 @@ Cela termine la démonstration dans le cas où $\beta$ est un puits.
 \begin{cor}
 Soit $(\Gamma,\Lambda)$ un carquois et $\beta_1,\dots,\beta_k$ une suite de puits.
 \begin{enumerate}
-	\item $\forall i\in [\![1,k]\!],\;F_{\beta_1}^-\dots F_{\beta_{i-1}^-}(L_{\beta_{i}})$ est soit la représentation nulle, soit une représentation indécomposable de $\mathscr L(\Gamma,\Lambda)$ (ici $L_{\beta_i}\in\mathscr L(\Gamma,\sigma_{\beta_{i-1}}\sigma_{\beta_{i-2}}\dots\sigma_{\beta_{1}}\Lambda)$).
+	\item $\forall i\in [\![1,k]\!],\;F_{\beta_1}^-\dots F_{\beta_{i-1}}^-(L_{\beta_{i}})$ est soit la représentation nulle, soit une représentation indécomposable de $\mathscr L(\Gamma,\Lambda)$ (ici $L_{\beta_i}\in\mathscr L(\Gamma,\sigma_{\beta_{i-1}}\sigma_{\beta_{i-2}}\dots\sigma_{\beta_{1}}\Lambda)$).
 	\item Soit $(V,f)\in\mathscr L(\Gamma,\Lambda)$ une représentation indécomposable, et telle que $F_{\beta_k}^+F_{\beta_{k-1}}^{+}\dots F_{\beta_1}^+(V,f)=0$, alors il existe $i\in[\![1,k]\!]$ tel que $V\approx F_{\beta_{1}}^-F_{\beta_2}^-\dots F_{\beta_{i-1}}^-(L_{\beta_i})$.
 \end{enumerate}
 \end{cor}
 \begin{proof}
+	Soit, comme dans l'énoncé, $(\Gamma,\Lambda)$ un carquois et $\beta_1,\dots,\beta_k$ une suite de puits. Soit $i\in[\![1,n]\!]$, alors $L_{\beta_i}$ est une représentation indécomposable. D'après le théorème \ref{thm1}, on sait donc que $F_{\beta_{i-1}}^-(L_{\beta_{i}})$ est une représentation indécomposable. Par récurrence, il vient que $F_{\beta_1}^-\dots F_{\beta_{i-1}}^-(L_{\beta_{i}})$ est soit nulle, soit une représentation indécomposable de $\mathscr L(\Gamma,\Lambda)$. Prenons maintenant $(V,f)\in\mathscr L(\Gamma,\Lambda)$ une représentation indécomposable, et telle que $F_{\beta_i}^+F_{\beta_{i-1}}^{+}\dots F_{\beta_1}^+(V,f)=0$. Soit $i\in[\![1,k]\!]$ le plus petit entier tel que $F_{\beta_i}^+\dots F_{\beta_1}^+(V,f)=0$, alors d'après le théorème \ref{thm1} on a $F_{\beta_{i-1}}^+\dots F_{\beta_1}^+(V,f)\approx L_{\beta_i}$, et de plus, on a que $\forall j\leq i,\;F_{\beta_{j-1}}^+\dots F_{\beta_1}^+(V,f)$ est une représentation indécomposable non nulle. D'après le théorème \ref{thm1}, on a ainsi :
+	\[
+		\begin{array}{rll}
+		F_{\beta_{i-1}}^-F_{\beta_{i-1}}^+F_{\beta_{i-2}}^+\dots F_{\beta_1}^+(V,f)&\approx& F_{\beta_{i-2}}^{+}\dots F_{\beta_1}^+(V,f)\\
+		 F_{\beta_{i-1}}^-F_{\beta_{i-1}}^+F_{\beta_{i-2}}^+\dots F_{\beta_1}^+(V,f)&\approx& F_{\beta_{i-1}}^-(L_{\beta_i})
+		\end{array}
+	\]
+	D'où $F_{\beta_{i-2}}^{+}\dots F_{\beta_{1}}^{+}(V,f)\approx F_{\beta_{i-1}^-}(L_{\beta_{i}})$, et en itérant ce raisonnement : $V\approx F_{\beta_{1}}^-F_{\beta_2}^-\dots F_{\beta_{i-1}}^-(L_{\beta_i})$.
+
 \end{proof}
 \begin{thm}
 Soit $\Gamma$ un graphe ne contenant pas de cycle, et soient $\Lambda,\Lambda'$ deux orientations de ce graphe. 
