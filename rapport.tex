@@ -32,9 +32,9 @@ Travail encadré par Pierre-Guy Plamondon}
 \DeclareMathOperator{\Id}{Id}
 \DeclareMathOperator{\Img}{Im}
 %Nouvelles commandes
-\newcommand{\Fpm}{F_{\alpha}^{\pm}}
-\newcommand{\Fp}{F_{\alpha}^{+}}
-\newcommand{\Fm}{F_{\beta}^{-}}
+\newcommand{\F}[3]{F_{#1}^{#2}(#3)}
+\newcommand{\ps}[2]{\left\langle#1,#2\right\rangle}
+\newcommand{\EG}{\mathscr{E}_\Gamma}
 
 %Fin des paramètres globaux et début du document.
 \begin{document}
@@ -716,6 +716,45 @@ Soit $\Gamma$ un graphe ne contenant pas de cycle, et soient $\Lambda,\Lambda'$ 
 	\item Soit $\mathscr M$, (respectivement $\mathscr M'$) l'ensemble des représentations indécomposables (à isomorphisme près) de $\mathscr L(\Gamma,\Lambda)$ (respectivement de $\mathscr L(\Gamma,\Lambda)$). 
 \end{enumerate}
 \end{thm}
+
+\clearpage
+\section{Graphes, groupe de Weyl et transformation de Coxeter}
+Dans cette section nous définirons un système de racine utile, ainsi que des résultats qui nous permettrons dans la dernière partie de prouver le théorème de Gabriel.
+\begin{defi}
+Soit $\Gamma$ un graphe ne possédant pas de boucles.
+\begin{enumerate}
+	\item On note $\mathscr E_{\Gamma}$ le $\mathbb Q$-espace vectoriel $\mathbb Q^{\Gamma_0}$ composé des familles de rationnels $x=(x_\gamma)_{\gamma\in\Gamma_0}$. On associe à chaque sommet $\gamma\in\Gamma_0$, le vecteur $\bar{\gamma}\in\mathscr E_\Gamma$ tel que $(\bar\gamma)_\gamma=1$ et $\forall \delta\neq\gamma,\;(\bar\gamma)_\delta=0$. On dit qu'un vecteur $x$ est entier si $\forall\gamma\in\Gamma_{0},\;x_\gamma\in\mathbb Z$. On dit qu'un vecteur $x$ est positif, et l'on note $x>0$, si $x\neq0$ et si $\forall\gamma\in\Gamma_0,\;x_\gamma\geq0$.
+	\item On pose :
+		\[
+		\begin{array}{rccc}
+			B:&\mathscr E_{\Gamma}&\rightarrow&\mathbb Q\\
+			&x&\mapsto&\underset{\gamma\in\Gamma_0}{\sum} x_\gamma^2-\underset{l\in\Gamma_1}{\sum}x_{e_1(l)}x_{e_2(l)}\\
+		\end{array}
+	\]
+	où $e_1(l)$ et $e_2(l)$ sont les extrémités de $l$.
+\item Pour chaque sommet $\gamma\in\Gamma_0$, on pose l'application $\sigma_\gamma$ de $\mathscr E_\Gamma$ à valeurs dans $\mathscr E_\Gamma$ définie par $\forall\delta\neq\gamma,\; (\sigma_\gamma x)_\delta=x_\delta$ et $(\sigma_\gamma x)\gamma=-x_\gamma+\sum_{l\in\Gamma^\gamma}x_{e(l)}$, où $e(l)$ est l'extrémité de $l$ différente de $\gamma$.
+\end{enumerate}
+\end{defi}
+\begin{prop}
+	L'application $B$ est une forme quadratique, dont on notera $\ps{}{}$ la forme bilinéaire symétrique associée. Pour tout sommet $\gamma\in\Gamma_0$, l'application $\sigma_\gamma$ est linéaire.
+\end{prop}
+\begin{proof}
+	Soient $x,y\in\EG$, $\lambda\in\mathbb{Q}$, on remarque tout d'abord que $B(\lambda x)=\sum_{\gamma\in\Gamma_0}(\lambda x_\gamma)^2-\sum_{l\in\Gamma_1}\lambda x_{e_1(l)}\lambda x_{e_2(l)}=\lambda^2B(x)$. On pose $\ps{x}{y}=\frac{1}{2}(B(x+y)-B(x)-B(y))$, on a donc bien $\ps{x}{x}=\frac{1}{2}(B(2x)-2B(x))=B(x)$, et il vient :
+	\[
+\begin{array}{rll}
+	2\ps{x}{y}&=& \underset{\gamma\in\Gamma_0}{\sum}(x+y)_\gamma^2 -\underset{l\in\Gamma_1}{\sum}(x+y)_{e_1(l)}(x+y)_{e_2(l)}\\
+&&-\underset{\gamma\in\Gamma_0}{\sum}x_\gamma^2 +\underset{l\in\Gamma_1}{\sum}x_{e_1(l)}x_{e_2(l)}-\underset{\gamma\in\Gamma_0}{\sum}y_\gamma^2 +\underset{l\in\Gamma_1}{\sum}y_{e_1(l)}y_{e_2(l)}\\
+\text{d'où }\ps{x}{y}&=&  \underset{\gamma\in\Gamma_0}{\sum}x_\gamma y_\gamma -\frac{1}{2}(\underset{l\in\Gamma_1}{\sum}x_{e_1(l)} y_{e_2(l)}+\underset{l\in\Gamma_1}{\sum}y_{e_1(l)} x_{e_2(l)})
+\end{array}
+	\]
+	De cette dernière égalité on tire immédiatement :
+	\begin{itemize}
+			\item $\forall x,y\in\EG,\; \ps{x}{y}=\ps{y}{x}$
+			\item $\forall x,y,z\in\EG,\; \ps{x+y}{z}=\ps{x}{z}+\ps{y}{z}$
+			\item $\forall x,y\in\EG,\lambda\in\mathbb Q,\;\ps{\lambda x}{y}=\lambda\ps{x}{y}$
+	\end{itemize}
+	Ainsi, l'application $\ps{}{}$ est bilinéaire et symétrique, l'application $B$ est donc une forme quadratique. Prouvons maintenant la seconde partie de la proposition, à cet effet, soient $\gamma\in\Gamma_0$, $x,y\in\EG$ et $a,b\in\mathbb Q$. On a $\forall\delta\neq\gamma,\;(\sigma_\gamma(ax+by))_\delta=ax_\delta+by_\delta=a(\sigma_\gamma x)_\delta+b(\sigma_\gamma y)_\delta$ et $(\sigma_\gamma (ax+by))\gamma=-(ax_\gamma+by_\gamma)+\sum_{l\in\Gamma^\gamma}(ax_{e(l)+}+by_{e(l)})=a(\sigma_\gamma x)_\gamma+b(\sigma_\gamma y)_\gamma$. On a donc bien $\sigma_\gamma(ax+by)=a\sigma_\gamma x+b\sigma_\gamma y$, or le sommet $\gamma\in\Gamma_{0}$ est arbitraire, cela conclut donc la démonstration.
+\end{proof}
 %Lignes à ajouter pour faire apparaître notre bibliographie
 \clearpage
 \bibliographystyle{unsrt}
