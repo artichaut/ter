@@ -151,6 +151,70 @@ Avant de traiter la preuve du thérorème de Gabriel, nous introduisons le langa
 \end{defi}
 \begin{defi}[Foncteur]
 \end{defi}
+\subsection{Diagrammes de Dynkin}
+Nous faisons ici un inventaire de certaines catégories de graphes non orientés et sans boucles, qui joueront un rôle fondamental dans le théorème de Gabriel. L'indice de ces graphes correspond au nombre de sommets qu'ils contiennent. 
+\begin{center}
+  \begin{tikzpicture}[scale=.4]
+    \draw (-1,0) node[anchor=east]  {$A_n$};
+    \foreach \x in {0,...,5}
+    \draw[xshift=\x cm,thick] (\x cm,0) circle (.3cm);
+    \draw[dotted,thick] (0.3 cm,0) -- +(1.4 cm,0);
+    \foreach \y in {1.15,...,4.15}
+    \draw[xshift=\y cm,thick] (\y cm,0) -- +(1.4 cm,0);
+  \end{tikzpicture}
+\end{center}
+
+\begin{center}
+  \begin{tikzpicture}[scale=.4]
+    \draw (-1,0) node[anchor=east]  {$D_n$};
+    \foreach \x in {0,...,4}
+    \draw[xshift=\x cm,thick] (\x cm,0) circle (.3cm);
+    \draw[xshift=8 cm,thick] (30: 17 mm) circle (.3cm);
+    \draw[xshift=8 cm,thick] (-30: 17 mm) circle (.3cm);
+    \draw[dotted,thick] (0.3 cm,0) -- +(1.4 cm,0);
+    \foreach \y in {1.15,...,3.15}
+    \draw[xshift=\y cm,thick] (\y cm,0) -- +(1.4 cm,0);
+    \draw[xshift=8 cm,thick] (30: 3 mm) -- (30: 14 mm);
+    \draw[xshift=8 cm,thick] (-30: 3 mm) -- (-30: 14 mm);
+  \end{tikzpicture}
+\end{center}
+
+\begin{center}
+  \begin{tikzpicture}[scale=.4]
+    \draw (-1,1) node[anchor=east]  {$E_6$};
+    \foreach \x in {0,...,4}
+    \draw[thick,xshift=\x cm] (\x cm,0) circle (3 mm);
+    \foreach \y in {0,...,3}
+    \draw[thick,xshift=\y cm] (\y cm,0) ++(.3 cm, 0) -- +(14 mm,0);
+    \draw[thick] (4 cm,2 cm) circle (3 mm);
+    \draw[thick] (4 cm, 3mm) -- +(0, 1.4 cm);
+  \end{tikzpicture}
+\end{center}
+
+\begin{center}
+  \begin{tikzpicture}[scale=.4]
+    \draw (-1,1) node[anchor=east]  {$E_7$};
+    \foreach \x in {0,...,5}
+    \draw[thick,xshift=\x cm] (\x cm,0) circle (3 mm);
+    \foreach \y in {0,...,4}
+    \draw[thick,xshift=\y cm] (\y cm,0) ++(.3 cm, 0) -- +(14 mm,0);
+    \draw[thick] (4 cm,2 cm) circle (3 mm);
+    \draw[thick] (4 cm, 3mm) -- +(0, 1.4 cm);
+  \end{tikzpicture}
+\end{center}
+
+\begin{center}
+  \begin{tikzpicture}[scale=.4]
+    \draw (-1,1) node[anchor=east]  {$E_8$};
+    \foreach \x in {0,...,6}
+    \draw[thick,xshift=\x cm] (\x cm,0) circle (3 mm);
+    \foreach \y in {0,...,5}
+    \draw[thick,xshift=\y cm] (\y cm,0) ++(.3 cm, 0) -- +(14 mm,0);
+    \draw[thick] (4 cm,2 cm) circle (3 mm);
+    \draw[thick] (4 cm, 3mm) -- +(0, 1.4 cm);
+  \end{tikzpicture}
+\end{center}
+On appelle ces graphes les diagrammes de Dynkin de type $A_n,D_n,E_6,E_7$ et $E_8$.
 \subsection{Système de racines}
 Afin de faire le lien entre les diagrammes de Dynkin et les représentations de carquois, il nous sera utile de savoir ce qu'est un système de racines, l'arrivée des diagrammes de Dynkin et des groupes de Weil nous permettra même de préciser le théorème de Gabriel que nous connaissions jusqu'à maintenant.
 
@@ -732,7 +796,7 @@ Soit $\Gamma$ un graphe ne possédant pas de boucles.
 		\end{array}
 	\]
 	où $e_1(l)$ et $e_2(l)$ sont les extrémités de $l$.
-\item Pour chaque sommet $\gamma\in\Gamma_0$, on pose l'application $\sigma_\gamma$ de $\mathscr E_\Gamma$ à valeurs dans $\mathscr E_\Gamma$ définie par $\forall\delta\neq\gamma,\; (\sigma_\gamma x)_\delta=x_\delta$ et $(\sigma_\gamma x)\gamma=-x_\gamma+\sum_{l\in\Gamma^\gamma}x_{e(l)}$, où $e(l)$ est l'extrémité de $l$ différente de $\gamma$.
+\item Pour chaque sommet $\gamma\in\Gamma_0$, on pose l'application $\sigma_\gamma$ de $\mathscr E_\Gamma$ à valeurs dans $\mathscr E_\Gamma$ définie par $\forall\delta\neq\gamma,\; (\sigma_\gamma x)_\delta=x_\delta$ et $(\sigma_\gamma x)\gamma=-x_\gamma+\sum_{l\in\Gamma^\gamma}x_{e(l)}$, où $e(l)$ est l'extrémité de $l$ différente de $\gamma$. On note $W$ l'ensemble engendré par les applications $\sigma_\gamma$.
 \end{enumerate}
 \end{defi}
 \begin{prop}
@@ -755,6 +819,21 @@ Soit $\Gamma$ un graphe ne possédant pas de boucles.
 	\end{itemize}
 	Ainsi, l'application $\ps{}{}$ est bilinéaire et symétrique, l'application $B$ est donc une forme quadratique. Prouvons maintenant la seconde partie de la proposition, à cet effet, soient $\gamma\in\Gamma_0$, $x,y\in\EG$ et $a,b\in\mathbb Q$. On a $\forall\delta\neq\gamma,\;(\sigma_\gamma(ax+by))_\delta=ax_\delta+by_\delta=a(\sigma_\gamma x)_\delta+b(\sigma_\gamma y)_\delta$ et $(\sigma_\gamma (ax+by))\gamma=-(ax_\gamma+by_\gamma)+\sum_{l\in\Gamma^\gamma}(ax_{e(l)+}+by_{e(l)})=a(\sigma_\gamma x)_\gamma+b(\sigma_\gamma y)_\gamma$. On a donc bien $\sigma_\gamma(ax+by)=a\sigma_\gamma x+b\sigma_\gamma y$, or le sommet $\gamma\in\Gamma_{0}$ est arbitraire, cela conclut donc la démonstration.
 \end{proof}
+\begin{lm}
+Soit $\Gamma$ un graphe sans boucle, $\gamma,\delta\in\Gamma_0$, $x\in\EG$ :
+\begin{enumerate}
+	\item $\ps{\bar\gamma,\bar\gamma}=1$, et si $\gamma\neq\delta$, alors $-2\ps{\bar\gamma}{\bar\delta}$ est le nombre d'arêtes liant $\gamma$ et $\delta$;
+	\item on a $\sigma_\gamma(x)=x-2\ps{\bar\gamma}{x}\bar\gamma$ et $\sigma_\gamma^2=\Id$, en particulier $W$ est un groupe ;
+	\item le groupe $W$ préserve les éléments entiers de $\EG$ et la forme quadratique $B$ ;
+	\item si la forme $B$ est définie positive, alors le groupe $W$ est fini.
+\end{enumerate}
+\begin{proof}
+Tout est immédiat.
+\end{proof}
+\begin{prop}
+La forme quadratique $B$ est définie positive si et seulement si $\Gamma$ est de la forme $A_n,D_n,E_6,E_7$ ou $E_8$.
+\end{prop}
+\end{lm}
 %Lignes à ajouter pour faire apparaître notre bibliographie
 \clearpage
 \bibliographystyle{unsrt}
