@@ -35,6 +35,7 @@ Travail encadré par Pierre-Guy Plamondon}
 \newcommand{\F}[3]{F_{#1}^{#2}(#3)}
 \newcommand{\ps}[2]{\left\langle#1,#2\right\rangle}
 \newcommand{\EG}{\mathscr{E}_\Gamma}
+\newcommand{\ent}[2]{[\![#1,#2]\!]}
 
 %Fin des paramètres globaux et début du document.
 \begin{document}
@@ -828,7 +829,16 @@ Soit $\Gamma$ un graphe sans boucle, $\gamma,\delta\in\Gamma_0$, $x\in\EG$ :
 	\item si la forme $B$ est définie positive, alors le groupe $W$ est fini.
 \end{enumerate}
 \begin{proof}
-Tout est immédiat.
+	Commençons par prouver le point $1$. Soient $\gamma,\delta\in\Gamma_0$, avec $\gamma\neq\delta$, alors $\ps{\bar\gamma}{\bar\gamma}=B(\bar\gamma)=1$, en effet la somme sur les arêtes vaut 0, et dans la somme sur les sommets, seul le terme en $\gamma$ est non nul et il vaut $1$. Calculons maintenant $\ps{\bar\gamma}{\bar\delta}$, comme $\gamma\neq\delta$, on a $\forall\varepsilon\in\Gamma_0,\;\bar\gamma_\varepsilon\bar\delta_\varepsilon=0$. Ainsi $-2\ps{\bar\gamma}{\bar\delta}=\sum_{l\in\Gamma_1}(\bar\gamma_{e_1(l)}\bar\delta_{e_2(l)}+\bar\gamma_{e_2(l)}\bar\delta_{e_1(l)})$. Notons $\Gamma^\gamma\cap\Gamma^\delta=\left\{ l_1,\dots,l_n \right\}$ les arêtes liant les sommets $\gamma$ et $\delta$. Alors $\forall l\notin\left\{ l_1,\dots,l_n \right\},\;\bar\gamma_{e_1(l)}=\bar\gamma_{e_2(l)}=0$ ou $\bar\delta_{e_1(l)}=\bar\delta_{e_2(l)}=0$, d'où $\bar\gamma_{e_1(l)}\bar\delta_{e_2(l)}+\bar\gamma_{e_2(l)}\bar\delta_{e_1(l)}=0$. Et, $\forall i \in\ent{1}{n}$, soit $\bar\gamma_{e_1(l_i)}\bar\delta_{e_2(l_i)}=1$ et $\bar\gamma_{e_2(l_i)}\bar\delta_{e_1(l_i)}=0$, soit $\bar\gamma_{e_1(l_i)}\bar\delta_{e_2(l_i)}=0$ et $\bar\gamma_{e_2(l_i)}\bar\delta_{e_1(l_i)}=1$. D'où :
+	\[
+\begin{array}{rll}
+	-2\ps{\bar\gamma}{\bar\delta}&=& \sum_{l\in\Gamma_1}(\bar\gamma_{e_1(l)}\bar\delta_{e_2(l)}+\bar\gamma_{e_2(l)}\bar\delta_{e_1(l)})\\
+	&=& \sum_{i=1}^n(\bar\gamma_{e_1(l_i)}\bar\delta_{e_2(l_i)}+\bar\gamma_{e_2(l_i)}\bar\delta_{e_1(l_i)})\\
+	&=& \sum_{i=1}^n 1\\
+	&=& n
+\end{array}
+	\]
+	ce qui termine la démonstration du premier point, passons au deuxième.
 \end{proof}
 \begin{prop}
 La forme quadratique $B$ est définie positive si et seulement si $\Gamma$ est de la forme $A_n,D_n,E_6,E_7$ ou $E_8$.
@@ -840,8 +850,3 @@ La forme quadratique $B$ est définie positive si et seulement si $\Gamma$ est d
 \bibliography{biblio}
 
 \end{document}
-
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: t
-%%% End:
