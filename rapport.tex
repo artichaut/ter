@@ -31,6 +31,7 @@ Travail encadré par Pierre-Guy Plamondon}
 \DeclareMathOperator{\Ker}{Ker}
 \DeclareMathOperator{\Id}{Id}
 \DeclareMathOperator{\Img}{Im}
+\DeclareMathOperator{\Card}{Card}
 %Nouvelles commandes
 \newcommand{\F}[3]{F_{#1}^{#2}(#3)}
 \newcommand{\ps}[2]{\left\langle#1,#2\right\rangle}
@@ -797,7 +798,7 @@ Soit $\Gamma$ un graphe ne possédant pas de boucles.
 		\end{array}
 	\]
 	où $e_1(l)$ et $e_2(l)$ sont les extrémités de $l$.
-\item Pour chaque sommet $\gamma\in\Gamma_0$, on pose l'application $\sigma_\gamma$ de $\mathscr E_\Gamma$ à valeurs dans $\mathscr E_\Gamma$ définie par $\forall\delta\neq\gamma,\; (\sigma_\gamma x)_\delta=x_\delta$ et $(\sigma_\gamma x)\gamma=-x_\gamma+\sum_{l\in\Gamma^\gamma}x_{e(l)}$, où $e(l)$ est l'extrémité de $l$ différente de $\gamma$. On note $W$ l'ensemble engendré par les applications $\sigma_\gamma$.
+\item Pour chaque sommet $\gamma\in\Gamma_0$, on pose l'application $\sigma_\gamma$ de $\mathscr E_\Gamma$ à valeurs dans $\mathscr E_\Gamma$ définie par $\forall\delta\neq\gamma,\; (\sigma_\gamma x)_\delta=x_\delta$ et $(\sigma_\gamma x)\gamma=-x_\gamma+\sum_{l\in\Gamma^\gamma}x_{e(l)}$, où $e(l)$ est l'extrémité de $l$ différente de $\gamma$. On note $W$ l'ensemble engendré en composant les applications $\sigma_\gamma$.
 \end{enumerate}
 \end{defi}
 \begin{prop}
@@ -838,7 +839,36 @@ Soit $\Gamma$ un graphe sans boucle, $\gamma,\delta\in\Gamma_0$, $x\in\EG$ :
 	&=& n
 \end{array}
 	\]
-	ce qui termine la démonstration du premier point, passons au deuxième.
+	ce qui termine la démonstration du premier point, passons au deuxième. Soient $x\in\EG,\gamma\in\Gamma_0$, on a $x=\sum_{\delta\in\Gamma_0}x_\delta\bar\delta$. Ainsi on a $(\sigma_\gamma x)_\delta=x_\delta=(x-2\ps{\bar\gamma}{x}\bar\gamma)_\delta$, dès que $\gamma\neq\delta$ car $\bar\gamma_\delta=0$, et :
+	\[
+\begin{array}{rll}
+	(x-2\ps{\bar\gamma}{x}\bar\gamma)_{\gamma}&=& x_\gamma-2\ps{\bar\gamma}{x}\\
+	&=& x_\gamma-2\ps{\bar\gamma}{\sum_{\delta\in\Gamma_0}x_\delta\bar\delta}\\
+	&=& x_\gamma-2\ps{\bar\gamma}{\bar\gamma}x_\gamma+\sum_{\delta\in\Gamma_0,\delta\neq\gamma}-2\ps{\bar\gamma}{\bar\delta}x_\delta\\
+	&=& -x_\gamma+\sum_{\delta\in\Gamma,\delta\neq\gamma}\Card(\Gamma^\gamma\cap\Gamma^\delta) x_\delta\\
+	&=& -x_\gamma+\sum_{\delta\in \mathscr V_\gamma}\sum_{l\in\Gamma^\delta\cap\Gamma^\gamma}x_{e(l)}\\
+	&=& -x_\gamma+\sum_{l\in\Gamma^\gamma}x_{e(l)}\\
+	&=& (\sigma_\gamma x)_\gamma
+\end{array}
+	\]
+	où $\mathscr V_\gamma$ est l'ensemble des sommets voisins de $\gamma$. Ainsi on a $\sigma_\gamma x=x-2\ps{\bar\gamma}{x}\bar\gamma$. Calculons maintenant $\sigma_\gamma^2$ :
+	\[
+\begin{array}{rll}
+	\sigma_\gamma(\sigma_\gamma(x))&=& \sigma_\gamma(x)-2\ps{\bar\gamma}{\sigma_\gamma(x)}\bar\gamma\\
+	&=& \sigma_\gamma(x)-2\ps{\bar\gamma}{x-2\ps{\bar\gamma}{x}\bar\gamma}\bar\gamma\\
+	&=& x-2\ps{\bar\gamma}{x}\bar\gamma-2\ps{\bar\gamma}{x}\bar\gamma+4\ps{\bar\gamma}{x}\bar\gamma\\
+	&=& x\\
+\end{array}
+	\]
+	d'où $\sigma_\gamma^2=\Id$. Ainsi $\Id\in W$, la composition est associative, et tous les éléments de $W$ sont symétrisables. En effet soit $\omega\in W$, alors $\omega$ s'écrit $\omega=\prod_{i=1}^n \sigma_{\gamma_i}$ avec $\gamma_i\in\Gamma_0$ et ainsi $\omega'=\prod_{i=1}^n \sigma_{\gamma_{n+1-i}}$ est l'inverse de $\omega$, les termes s'annulant deux à deux. On a donc que $W$ est un groupe et ceci conclut la preuve du point $2$. Pour prouver le point $3$, soit $x\in\EG$ un vecteur entier et $\gamma\in\Gamma_0$ un sommet de $\Gamma$. On a $(\sigma_\gamma(x))_\delta=x_\delta\in\mathbb Z$ dès que $\delta\neq\gamma$ et $(\sigma_\gamma(x))_\gamma=-x_\gamma+\sum_{l\in\Gamma^\gamma}x_{e(l)}\in\mathbb Z$ car $\forall \delta\in\Gamma_0,\;x_\delta\in\mathbb Z$. Comme les éléments de $W$ sont des compositions des applications $\sigma_\gamma$, on a immédiatement que $W$ préserve les éléments entiers de $\EG$. Voyons maintenant que $W$ préserve $B$ :
+	\[
+\begin{array}{rll}
+	B(\sigma_\gamma(x))&=& B(x-2\ps{\bar\gamma}{x}\bar\gamma)\\
+	&=& B(x)+4\ps{\bar\gamma}{x}^2B(\bar\gamma)-2\ps{x}{2\ps{\bar\gamma}{x}\bar\gamma}\\
+	&=& B(x).
+\end{array}
+	\]
+Or $W$ est engendré par les applications $\sigma_\gamma$, on a donc que $W$ préserve la forme quadratique $B$. Le point 3 suit du point 4, nous l'admettrons dans la suite du document.
 \end{proof}
 \begin{prop}
 La forme quadratique $B$ est définie positive si et seulement si $\Gamma$ est de la forme $A_n,D_n,E_6,E_7$ ou $E_8$.
