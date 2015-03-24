@@ -876,7 +876,7 @@ Or $W$ est engendré par les applications $\sigma_\gamma$, on a donc que $W$ pr�
 La forme quadratique $B$ est définie positive si et seulement si $\Gamma$ est de la forme $A_n,D_n,E_6,E_7$ ou $E_8$.
 \end{prop}
 \begin{proof}
-	Début de preuve.
+	Soit $\Gamma$ un graphe. On va d'abord prouver que $\Gamma$ est nécessairement de la forme $A_n,D_n,E_6,E_7$ ou $E_8$. Tout d'abord, remarquons que $\Gamma$ ne peut contenir de sous-graphe d'une des formes suivantes : $\widetilde A_n$ ou $\widetilde D_n$.
 
 
 	\begin{tikzpicture}
@@ -890,6 +890,7 @@ La forme quadratique $B$ est définie positive si et seulement si $\Gamma$ est d
 			\draw[thick] (\y) -- +(1cm,0);
 			\draw[dotted, thick] (2) -- (3);
 			\draw (0) to[bend left] (5);
+			\node (t) at (2.5,-1) {$\widetilde A_n$};
 	\end{tikzpicture}
 	\begin{tikzpicture}
     			\foreach \x in {0,...,5}
@@ -911,6 +912,7 @@ La forme quadratique $B$ est définie positive si et seulement si $\Gamma$ est d
 			\draw[thick] (-0.5,\y) to (0);
 			\foreach \y in {-0.5,.5}
 			\draw[thick] (5.5,\y) to (5);
+			\node (t) at (2.5,-1) {$\widetilde D_n$};
 	\end{tikzpicture}
 \end{proof}
 \end{lm}
