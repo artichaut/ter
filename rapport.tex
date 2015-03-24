@@ -24,8 +24,10 @@ Travail encadré par Pierre-Guy Plamondon}
 
 %Feuilles de styles Tikz
 \usetikzlibrary{matrix}
+\usetikzlibrary{calc}
 \tikzset{sommet/.style={circle, draw, fill,scale=0.4}}
 \tikzset{fleche/.style={->,>=latex}}
+\tikzset{trait/.style={thick}}
 
 %Raccourcis pour les opérateurs mathématiques (les espaces avant-après sont modifiés pour mieux rentrer dans les codes mathématiques usuels)
 \DeclareMathOperator{\Ker}{Ker}
@@ -868,11 +870,49 @@ Soit $\Gamma$ un graphe sans boucle, $\gamma,\delta\in\Gamma_0$, $x\in\EG$ :
 	&=& B(x).
 \end{array}
 	\]
-Or $W$ est engendré par les applications $\sigma_\gamma$, on a donc que $W$ préserve la forme quadratique $B$. Le point 3 suit du point 4, nous l'admettrons dans la suite du document.
+Or $W$ est engendré par les applications $\sigma_\gamma$, on a donc que $W$ préserve la forme quadratique $B$. Le point 4 suit du point 3, nous l'admettrons dans la suite du document.
 \end{proof}
 \begin{prop}
 La forme quadratique $B$ est définie positive si et seulement si $\Gamma$ est de la forme $A_n,D_n,E_6,E_7$ ou $E_8$.
 \end{prop}
+\begin{proof}
+	Début de preuve.
+
+
+	\begin{tikzpicture}
+    			\foreach \x in {0,...,5}
+			\node[sommet] (\x) at (\x,0) {};
+    			\foreach \z in {0,...,5}
+			\node (\z') at (\z,-0.3cm) {$1$};
+    			\foreach \y in {0,...,1}
+			\draw[thick] (\y) -- +(1cm,0);
+			\foreach \y in {3,...,4}
+			\draw[thick] (\y) -- +(1cm,0);
+			\draw[dotted, thick] (2) -- (3);
+			\draw (0) to[bend left] (5);
+	\end{tikzpicture}
+	\begin{tikzpicture}
+    			\foreach \x in {0,...,5}
+			\node[sommet] (\x) at (\x,0) {};
+    			\foreach \z in {0,...,5}
+			\node (\z') at (\z,-0.3cm) {$2$};
+    			\foreach \y in {0,...,1}
+			\draw[thick] (\y) -- +(1cm,0);
+			\foreach \y in {3,...,4}
+			\draw[thick] (\y) -- +(1cm,0);
+			\draw[dotted, thick] (2) -- (3);
+			\foreach \x in {-.5,5.5}
+			\foreach \y in {-0.5,.5}
+			\node[sommet] (\x\y) at (\x,\y) {};
+			\foreach \x in {-.5,5.5}
+			\foreach \y in {-0.8,.2}
+			\node (\x..\y) at (\x,\y) {$1$};
+			\foreach \y in {-0.5,.5}
+			\draw[thick] (-0.5,\y) to (0);
+			\foreach \y in {-0.5,.5}
+			\draw[thick] (5.5,\y) to (5);
+	\end{tikzpicture}
+\end{proof}
 \end{lm}
 %Lignes à ajouter pour faire apparaître notre bibliographie
 \clearpage
