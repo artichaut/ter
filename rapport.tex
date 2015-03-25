@@ -6,6 +6,7 @@
 \usepackage{mathrsfs}
 \usepackage{graphicx}
 \usepackage{tikz}
+\usepackage{array}
 %\usepackage{listings}
 %\usepackage{xcolor}
 
@@ -39,6 +40,7 @@ Travail encadré par Pierre-Guy Plamondon}
 \newcommand{\ps}[2]{\left\langle#1,#2\right\rangle}
 \newcommand{\EG}{\mathscr{E}_\Gamma}
 \newcommand{\ent}[2]{[\![#1,#2]\!]}
+\newcommand{\dps}{\displaystyle}
 
 %Fin des paramètres globaux et début du document.
 \begin{document}
@@ -427,7 +429,7 @@ Car $W_{\beta}=\Ker h$ par définition et pour tout $i\in[\![1,n]\!]$, $g_{l_{i}
 \]
 ou encore que $\forall l\in\Gamma_{1}$, on a $(i_{V}^{\beta})_{t(l)}e_{l}=f_{l}(i_{V}^{\beta})_{s(l)}$. Commençons par prendre $l\notin\Gamma^{\beta}$, on a alors $(i_{V}^{\beta})_{s(l)}=\Id_{V_{s(l)}}$, $(i_{V}^{\beta})_{t(l)}=\Id_{V_{t(l)}}$, et $e_{l}=f_{l}$, d'où l'égalité souhaitée. Voyons maintenant le cas où $l\in\Gamma^{\beta}$, on alors $t(l)=\beta$. Vérifions dans un premier temps que l'application $(i_{V}^{\beta})_{\beta}$ est bien définie. Pour cela prenons deux représentants de la même classe dans $Z_{\beta}$ : $(v_{1},\dots,v_{n})$ et $(v_{1}',\dots,v_{n}')$, et vérifions qu'ils ont la même image par $(i_{V}^{\beta})_{\beta}$. On a $(v_{1}-v_{1}',\dots,v_{n}-v_{n}')\in\Ker h$, d'où :
 \[
-\begin{array}{rll}
+\begin{array}{>{\dps}r>{\dps}l>{\dps}l}
 	0&=&\sum_{i=1}^{n}f_{l_{i}}(v_{i}-v_{i}')\\
 	&=& \sum_{i=1}^{n}f_{l_{i}}(v_{i})-\sum_{i=1}^{n}f_{l_{i}}(v_{i}')\\
 	&=& (i_{V}^{\beta})_{\beta}((v_{1},\dots,v_{n})+\Ker h)-(i_{V}^{\beta})_{\beta}((v_{1}',\dots,v_{n}')+\Ker h).
@@ -441,7 +443,7 @@ $, d'où le caractère bien définie de $(i_{V}^{\beta})_{\beta}$. Notons $l=l_{
 \]
 et d'autre part :
 \[
-\begin{array}{rll}
+\begin{array}{>{\dps}r>{\dps}l>{\dps}l}
 	(i_{V}^{\beta})_{\beta}e_{l_{j}}(v_{j})&=& (i_{V}^{\beta})_{\beta}((0,\dots,0,v_{j},0,\dots,0)+\Ker h)\\
 	&=& f_{l_{j}}(v_{j}).
 \end{array}
@@ -496,14 +498,14 @@ Car on sait que pour tout  $e_{l}$ est  la composition de l'inclusion naturelle 
 		\item \begin{enumerate}
 				\item si $i_{V}^{\beta}$ est un isomorphisme, alors on a les formules :
 					\[
-\begin{array}{rll}
+\begin{array}{>{\dps}r>{\dps}l>{\dps}l}
 	\forall\gamma\neq\beta,\;\dim F_{\beta}^{+}(V,f)_{\gamma}&=& \dim V_{\gamma}\\
 	\dim F_{\beta}^{+}(V,f)_{\beta}&=& -\dim V_{\beta}+\sum_{l\in\Gamma^{\beta}}\dim V_{s(l)}
 \end{array}
 					\]
 				\item si $p_{V}^{\alpha}$ est un isomorphisme, alors on a les formules :
 	\[
-\begin{array}{rll}
+\begin{array}{>{\dps}r>{\dps}l>{\dps}l}
 	\forall\gamma\neq\alpha,\;\dim F_{\alpha}^{-}(V,f)_{\gamma}&=& \dim V_{\gamma}\\
 	\dim F_{\alpha}^{-}(V,f)_{\alpha}&=& -\dim V_{\alpha}+\sum_{l\in\Gamma^{\alpha}}\dim V_{t(l)};
 \end{array}
@@ -517,7 +519,7 @@ Car on sait que pour tout  $e_{l}$ est  la composition de l'inclusion naturelle 
 \begin{proof}
 	Prouvons le point $1$. Soit $\beta\in\Gamma_{0}$ un puits de $\Gamma$ suivant l'orientation $\Lambda$, soient de plus $(V,f)$ et $(V',f')$ deux représentations de $(\Gamma,\Lambda)$. On veut montrer que $F_{\beta}^{+}((V,f)\oplus(V',f'))=F_{\beta}^{+}(V,f)\oplus F_{\beta}^{+}(V',f')$. Il vient :
 	\[
-\begin{array}{rll}
+\begin{array}{>{\dps}r>{\dps}l>{\dps}l}
 	\forall\gamma\neq\beta,\;F_{\beta}^{+}((V,f)\oplus(V',f'))_{\gamma}&=&((V,f)\oplus(V',f'))_{\gamma}\\
 	&=& V_{\gamma}\oplus V_{\gamma}'\\
 	&=&  F_{\beta}^{+}(V,f)_{\gamma}\oplus F_{\beta}^{+}(V',f')_{\gamma}\\
@@ -542,7 +544,7 @@ où :
 Supposons maintenant que $\alpha$ est un source dans $(\Gamma,\Lambda)$, $(V,f)$ et $(V',f')$ deux représentations de $\mathscr L(\Gamma,\Lambda)$, on a : 
 
 \[
-\begin{array}{rll}
+\begin{array}{>{\dps}r>{\dps}l>{\dps}l}
 	\forall\gamma\neq\alpha,\;F_{\alpha}^{-}((V,f)\oplus(V',f'))_{\gamma}&=&((V,f)\oplus(V',f'))_{\gamma}\\
 	&=& V_{\gamma}\oplus V_{\gamma}'\\
 	&=&  F_{\alpha}^{-}(V,f)_{\gamma}\oplus F_{\alpha}^{-}(V',f')_{\gamma}\\
@@ -569,7 +571,7 @@ où :
 
 	Prouvons désormais le point $2$. Dire que le morphisme $i_{V}^{\beta}$ est injectif signifie que pour tout $\gamma\in\Gamma_{0}$, l'application $(i_{V}^{\beta})_{\gamma}$ est injective. Comme $\forall\gamma\neq\beta,\;(i_{V}^{\beta})_{\gamma}=\Id_{V_{\gamma}}$, l'injectivité de $(i_{V}^{\beta})_{\gamma}$ est assurée pour tout $\gamma\neq\beta$. Regardons maintenant le cas $\gamma=\beta$. Soient $a=(v_{1},\dots,v_{n})+\Ker h$ et $b=(v_{1}',\dots,v_{n}')+\Ker h$ tels que $(i_{V}^{\beta})_{\beta}(a)=(i_{V}^{\beta})_{\beta}(b)$. On alors :
 	\[
-\begin{array}{rll}
+\begin{array}{>{\dps}r>{\dps}l>{\dps}l}
 	\sum_{i=1}^{n}f_{l_{i}}(v_{i})&=&\sum_{i=1}^{n}f_{l_{i}}(v'_{i})\\
 	\sum_{i=1}^{n}f_{l_{i}}(v_{i}-v_{i}')&=&0
 \end{array}
@@ -581,7 +583,7 @@ Le morphisme $p_{V}^{\alpha}$ est quant à lui surjectif, car pour tout $\gamma 
 
 	Prouvons maintenant le point $3$. Supposons que $i_{V}^{\beta}$ est un isomorphisme, en particulier, $(i_{V}^{\beta})_{\beta}$ est un isomorphisme et on a $\oplus_{l\in\Gamma^{\beta}}V_{s(l)}/\Ker h\approx V_{\beta}$. On a égalité entre les dimensions d'espaces vectoriels isomorphes, et ainsi il vient :
 	\[
-\begin{array}{rll}
+\begin{array}{>{\dps}r>{\dps}l>{\dps}l}
 	\dim(\oplus_{l\in\Gamma^{\beta}}V_{s(l)}/\Ker h) &=& \dim V_{\beta}\\
 	\sum_{l\in\Gamma^{\beta}}\dim V_{s(l)}-\dim\Ker h &=& \dim V_{\beta}\\
 	\sum_{l\in\Gamma^{\beta}}\dim V_{s(l)}-\dim V_{\beta} &=& \dim\Ker h\\
@@ -679,7 +681,7 @@ Nous allons prouver que $\xi$ est un isomorphisme. Tout d'abord, $\xi$ est bien 
 \]
 où les $e_l$ sont les morphismes de $F_\beta^-F_\beta^+(V,f)$. Soit $(x,y)\in\left[ \widetilde V\oplus F_\beta^-F_\beta^+(V,f) \right]_{s(l)}$ :
 \[
-\begin{array}{rll}
+\begin{array}{>{\dps}r>{\dps}l>{\dps}l}
 	\xi_{t(l)}(\widetilde f_l\oplus e_l(x,y))&=&\xi_{t(l)}(\widetilde f_{l}(x),e_l(y))\\ 	
 	&=& \varphi_{t(l)}\widetilde f_{l}(x)+(i_V^\beta)_{t(l)} e_l(y)\\
 	&=& f_l\varphi_{s(l)}(x)+f_l(i_V^\beta)_{s(l)}(y)\text{ car $\varphi$ et $i_V^\beta$ sont des morphismes}\\
@@ -727,7 +729,7 @@ Il s'agit maintenant de montrer que $\xi$ est un isomorphisme c'est à dire que 
 				\item $V\approx L_\beta$ (où $L_\beta$ a été défini à l'exemple \ref{irreductible}) ;
 				\item $F_\beta^+(V,f)$ est indécomposable, $F_\beta^-F_\beta^+(V,f)=(V,f)$ et les dimensions des espaces $F_\beta^+(V,f)_\gamma$ sont données par :
 					\[
-\begin{array}{rll}
+\begin{array}{>{\dps}r>{\dps}l>{\dps}l}
 	\forall\gamma\neq\beta,\;\dim F_\beta^+(V,f)_\gamma&=& \dim V_\gamma\\
 	\dim F_\beta^+(V,f)_\beta&=& -\dim V_\beta+\sum_{l\in\Gamma^{\beta}}\dim V_{s(l)}.
 \end{array}
@@ -738,7 +740,7 @@ Il s'agit maintenant de montrer que $\xi$ est un isomorphisme c'est à dire que 
 				\item $V\approx L_\alpha$ (où $L_\alpha$ a été défini à l'exemple \ref{irreductible}) ;
 				\item $F_\alpha^-(V,f)$ est indécomposable, $F_\alpha^+F_\alpha^-(V,f)=(V,f)$ et les dimensions des espaces $F_\alpha^-(V,f)_\gamma$ sont données par :
 					\[
-\begin{array}{rll}
+\begin{array}{>{\dps}r>{\dps}l>{\dps}l}
 	\forall\gamma\neq\alpha,\;\dim F_\alpha^-(V,f)_\gamma&=& \dim V_\gamma\\
 	\dim F_\alpha^-(V,f)_\alpha&=& -\dim V_\alpha+\sum_{l\in\Gamma^{\alpha}}\dim V_{t(l)}.
 \end{array}
@@ -770,7 +772,7 @@ Soit $(\Gamma,\Lambda)$ un carquois et $\beta_1,\dots,\beta_k$ une suite de puit
 \begin{proof}
 	Soit, comme dans l'énoncé, $(\Gamma,\Lambda)$ un carquois et $\beta_1,\dots,\beta_k$ une suite de puits. Soit $i\in[\![1,n]\!]$, alors $L_{\beta_i}$ est une représentation indécomposable. D'après le théorème \ref{thm1}, on sait donc que $F_{\beta_{i-1}}^-(L_{\beta_{i}})$ est une représentation indécomposable. Par récurrence, il vient que $F_{\beta_1}^-\dots F_{\beta_{i-1}}^-(L_{\beta_{i}})$ est soit nulle, soit une représentation indécomposable de $\mathscr L(\Gamma,\Lambda)$. Prenons maintenant $(V,f)\in\mathscr L(\Gamma,\Lambda)$ une représentation indécomposable, et telle que $F_{\beta_i}^+F_{\beta_{i-1}}^{+}\dots F_{\beta_1}^+(V,f)=0$. Soit $i\in[\![1,k]\!]$ le plus petit entier tel que $F_{\beta_i}^+\dots F_{\beta_1}^+(V,f)=0$, alors d'après le théorème \ref{thm1} on a $F_{\beta_{i-1}}^+\dots F_{\beta_1}^+(V,f)\approx L_{\beta_i}$, et ainsi :
 	\[
-		\begin{array}{rll}
+		\begin{array}{>{\dps}r>{\dps}l>{\dps}l}
 		F_{\beta_{i-1}}^-F_{\beta_{i-1}}^+F_{\beta_{i-2}}^+\dots F_{\beta_1}^+(V,f)&\approx& F_{\beta_{i-2}}^{+}\dots F_{\beta_1}^+(V,f)\\
 		 F_{\beta_{i-1}}^-F_{\beta_{i-1}}^+F_{\beta_{i-2}}^+\dots F_{\beta_1}^+(V,f)&\approx& F_{\beta_{i-1}}^-(L_{\beta_i})
 		\end{array}
@@ -784,99 +786,98 @@ Soit $\Gamma$ un graphe ne contenant pas de cycle, et soient $\Lambda,\Lambda'$ 
 	\item Soit $\mathscr M$, (respectivement $\mathscr M'$) l'ensemble des représentations indécomposables (à isomorphisme près) de $\mathscr L(\Gamma,\Lambda)$ (respectivement de $\mathscr L(\Gamma,\Lambda)$). 
 \end{enumerate}
 \end{thm}
-
-\clearpage
-\section{Graphes, groupe de Weyl et transformation de Coxeter}
-Dans cette section nous définirons un système de racine utile, ainsi que des résultats qui nous permettrons dans la dernière partie de prouver le théorème de Gabriel.
-\begin{defi}
-Soit $\Gamma$ un graphe ne possédant pas de boucles.
-\begin{enumerate}
-	\item On note $\mathscr E_{\Gamma}$ le $\mathbb Q$-espace vectoriel $\mathbb Q^{\Gamma_0}$ composé des familles de rationnels $x=(x_\gamma)_{\gamma\in\Gamma_0}$. On associe à chaque sommet $\gamma\in\Gamma_0$, le vecteur $\bar{\gamma}\in\mathscr E_\Gamma$ tel que $(\bar\gamma)_\gamma=1$ et $\forall \delta\neq\gamma,\;(\bar\gamma)_\delta=0$. On dit qu'un vecteur $x$ est entier si $\forall\gamma\in\Gamma_{0},\;x_\gamma\in\mathbb Z$. On dit qu'un vecteur $x$ est positif, et l'on note $x>0$, si $x\neq0$ et si $\forall\gamma\in\Gamma_0,\;x_\gamma\geq0$.
-	\item On pose :
-		\[
-		\begin{array}{rccc}
-			B:&\mathscr E_{\Gamma}&\rightarrow&\mathbb Q\\
-			&x&\mapsto&\underset{\gamma\in\Gamma_0}{\sum} x_\gamma^2-\underset{l\in\Gamma_1}{\sum}x_{e_1(l)}x_{e_2(l)}\\
+		\clearpage
+	\section{Graphes, groupe de Weyl et transformation de Coxeter}
+		Dans cette section nous définirons un système de racine utile, ainsi que des résultats qui nous permettrons dans la dernière partie de prouver le théorème de Gabriel.
+		\begin{defi}
+		Soit $\Gamma$ un graphe ne possédant pas de boucles.
+		\begin{enumerate}
+			\item On note $\mathscr E_{\Gamma}$ le $\mathbb Q$-espace vectoriel $\mathbb Q^{\Gamma_0}$ composé des familles de rationnels $x=(x_\gamma)_{\gamma\in\Gamma_0}$. On associe à chaque sommet $\gamma\in\Gamma_0$, le vecteur $\bar{\gamma}\in\mathscr E_\Gamma$ tel que $(\bar\gamma)_\gamma=1$ et $\forall \delta\neq\gamma,\;(\bar\gamma)_\delta=0$. On dit qu'un vecteur $x$ est entier si $\forall\gamma\in\Gamma_{0},\;x_\gamma\in\mathbb Z$. On dit qu'un vecteur $x$ est positif, et l'on note $x>0$, si $x\neq0$ et si $\forall\gamma\in\Gamma_0,\;x_\gamma\geq0$.
+			\item On pose :
+				\[
+				\begin{array}{rccc}
+					B:&\mathscr E_{\Gamma}&\rightarrow&\mathbb Q\\
+					&x&\mapsto&\underset{\gamma\in\Gamma_0}{\sum} x_\gamma^2-\underset{l\in\Gamma_1}{\sum}x_{e_1(l)}x_{e_2(l)}\\
+				\end{array}
+			\]
+			où $e_1(l)$ et $e_2(l)$ sont les extrémités de $l$.
+		\item Pour chaque sommet $\gamma\in\Gamma_0$, on pose l'application $\sigma_\gamma$ de $\mathscr E_\Gamma$ à valeurs dans $\mathscr E_\Gamma$ définie par $\forall\delta\neq\gamma,\; (\sigma_\gamma x)_\delta=x_\delta$ et $(\sigma_\gamma x)\gamma=-x_\gamma+\sum_{l\in\Gamma^\gamma}x_{e(l)}$, où $e(l)$ est l'extrémité de $l$ différente de $\gamma$. On note $W$ l'ensemble engendré en composant les applications $\sigma_\gamma$.
+		\end{enumerate}
+		\end{defi}
+		\begin{prop}
+			L'application $B$ est une forme quadratique, dont on notera $\ps{}{}$ la forme bilinéaire symétrique associée. Pour tout sommet $\gamma\in\Gamma_0$, l'application $\sigma_\gamma$ est linéaire.
+		\end{prop}
+		\begin{proof}
+			Soient $x,y\in\EG$, $\lambda\in\mathbb{Q}$, on remarque tout d'abord que $B(\lambda x)=\sum_{\gamma\in\Gamma_0}(\lambda x_\gamma)^2-\sum_{l\in\Gamma_1}\lambda x_{e_1(l)}\lambda x_{e_2(l)}=\lambda^2B(x)$. On pose $\ps{x}{y}=\frac{1}{2}(B(x+y)-B(x)-B(y))$, on a donc bien $\ps{x}{x}=\frac{1}{2}(B(2x)-2B(x))=B(x)$, et il vient :
+			\[
+		\begin{array}{>{\dps}r>{\dps}l>{\dps}l}
+			2\ps{x}{y}&=& \underset{\gamma\in\Gamma_0}{\sum}(x+y)_\gamma^2 -\underset{l\in\Gamma_1}{\sum}(x+y)_{e_1(l)}(x+y)_{e_2(l)}\\
+		&&-\underset{\gamma\in\Gamma_0}{\sum}x_\gamma^2 +\underset{l\in\Gamma_1}{\sum}x_{e_1(l)}x_{e_2(l)}-\underset{\gamma\in\Gamma_0}{\sum}y_\gamma^2 +\underset{l\in\Gamma_1}{\sum}y_{e_1(l)}y_{e_2(l)}\\
+		\text{d'où }\ps{x}{y}&=&  \underset{\gamma\in\Gamma_0}{\sum}x_\gamma y_\gamma -\frac{1}{2}(\underset{l\in\Gamma_1}{\sum}x_{e_1(l)} y_{e_2(l)}+\underset{l\in\Gamma_1}{\sum}y_{e_1(l)} x_{e_2(l)})
 		\end{array}
-	\]
-	où $e_1(l)$ et $e_2(l)$ sont les extrémités de $l$.
-\item Pour chaque sommet $\gamma\in\Gamma_0$, on pose l'application $\sigma_\gamma$ de $\mathscr E_\Gamma$ à valeurs dans $\mathscr E_\Gamma$ définie par $\forall\delta\neq\gamma,\; (\sigma_\gamma x)_\delta=x_\delta$ et $(\sigma_\gamma x)\gamma=-x_\gamma+\sum_{l\in\Gamma^\gamma}x_{e(l)}$, où $e(l)$ est l'extrémité de $l$ différente de $\gamma$. On note $W$ l'ensemble engendré en composant les applications $\sigma_\gamma$.
-\end{enumerate}
-\end{defi}
-\begin{prop}
-	L'application $B$ est une forme quadratique, dont on notera $\ps{}{}$ la forme bilinéaire symétrique associée. Pour tout sommet $\gamma\in\Gamma_0$, l'application $\sigma_\gamma$ est linéaire.
-\end{prop}
-\begin{proof}
-	Soient $x,y\in\EG$, $\lambda\in\mathbb{Q}$, on remarque tout d'abord que $B(\lambda x)=\sum_{\gamma\in\Gamma_0}(\lambda x_\gamma)^2-\sum_{l\in\Gamma_1}\lambda x_{e_1(l)}\lambda x_{e_2(l)}=\lambda^2B(x)$. On pose $\ps{x}{y}=\frac{1}{2}(B(x+y)-B(x)-B(y))$, on a donc bien $\ps{x}{x}=\frac{1}{2}(B(2x)-2B(x))=B(x)$, et il vient :
-	\[
-\begin{array}{rll}
-	2\ps{x}{y}&=& \underset{\gamma\in\Gamma_0}{\sum}(x+y)_\gamma^2 -\underset{l\in\Gamma_1}{\sum}(x+y)_{e_1(l)}(x+y)_{e_2(l)}\\
-&&-\underset{\gamma\in\Gamma_0}{\sum}x_\gamma^2 +\underset{l\in\Gamma_1}{\sum}x_{e_1(l)}x_{e_2(l)}-\underset{\gamma\in\Gamma_0}{\sum}y_\gamma^2 +\underset{l\in\Gamma_1}{\sum}y_{e_1(l)}y_{e_2(l)}\\
-\text{d'où }\ps{x}{y}&=&  \underset{\gamma\in\Gamma_0}{\sum}x_\gamma y_\gamma -\frac{1}{2}(\underset{l\in\Gamma_1}{\sum}x_{e_1(l)} y_{e_2(l)}+\underset{l\in\Gamma_1}{\sum}y_{e_1(l)} x_{e_2(l)})
-\end{array}
-	\]
-	De cette dernière égalité on tire immédiatement :
-	\begin{itemize}
-			\item $\forall x,y\in\EG,\; \ps{x}{y}=\ps{y}{x}$
-			\item $\forall x,y,z\in\EG,\; \ps{x+y}{z}=\ps{x}{z}+\ps{y}{z}$
-			\item $\forall x,y\in\EG,\lambda\in\mathbb Q,\;\ps{\lambda x}{y}=\lambda\ps{x}{y}$
-	\end{itemize}
-	Ainsi, l'application $\ps{}{}$ est bilinéaire et symétrique, l'application $B$ est donc une forme quadratique. Prouvons maintenant la seconde partie de la proposition, à cet effet, soient $\gamma\in\Gamma_0$, $x,y\in\EG$ et $a,b\in\mathbb Q$. On a $\forall\delta\neq\gamma,\;(\sigma_\gamma(ax+by))_\delta=ax_\delta+by_\delta=a(\sigma_\gamma x)_\delta+b(\sigma_\gamma y)_\delta$ et $(\sigma_\gamma (ax+by))\gamma=-(ax_\gamma+by_\gamma)+\sum_{l\in\Gamma^\gamma}(ax_{e(l)+}+by_{e(l)})=a(\sigma_\gamma x)_\gamma+b(\sigma_\gamma y)_\gamma$. On a donc bien $\sigma_\gamma(ax+by)=a\sigma_\gamma x+b\sigma_\gamma y$, or le sommet $\gamma\in\Gamma_{0}$ est arbitraire, cela conclut donc la démonstration.
-\end{proof}
-\begin{lm}
-Soit $\Gamma$ un graphe sans boucle, $\gamma,\delta\in\Gamma_0$, $x\in\EG$ :
-\begin{enumerate}
-	\item $\ps{\bar\gamma,\bar\gamma}=1$, et si $\gamma\neq\delta$, alors $-2\ps{\bar\gamma}{\bar\delta}$ est le nombre d'arêtes liant $\gamma$ et $\delta$;
-	\item on a $\sigma_\gamma(x)=x-2\ps{\bar\gamma}{x}\bar\gamma$ et $\sigma_\gamma^2=\Id$, en particulier $W$ est un groupe ;
-	\item le groupe $W$ préserve les éléments entiers de $\EG$ et la forme quadratique $B$ ;
-	\item si la forme $B$ est définie positive, alors le groupe $W$ est fini.
-\end{enumerate}
-\begin{proof}
-	Commençons par prouver le point $1$. Soient $\gamma,\delta\in\Gamma_0$, avec $\gamma\neq\delta$, alors $\ps{\bar\gamma}{\bar\gamma}=B(\bar\gamma)=1$, en effet la somme sur les arêtes vaut 0, et dans la somme sur les sommets, seul le terme en $\gamma$ est non nul et il vaut $1$. Calculons maintenant $\ps{\bar\gamma}{\bar\delta}$, comme $\gamma\neq\delta$, on a $\forall\varepsilon\in\Gamma_0,\;\bar\gamma_\varepsilon\bar\delta_\varepsilon=0$. Ainsi $-2\ps{\bar\gamma}{\bar\delta}=\sum_{l\in\Gamma_1}(\bar\gamma_{e_1(l)}\bar\delta_{e_2(l)}+\bar\gamma_{e_2(l)}\bar\delta_{e_1(l)})$. Notons $\Gamma^\gamma\cap\Gamma^\delta=\left\{ l_1,\dots,l_n \right\}$ les arêtes liant les sommets $\gamma$ et $\delta$. Alors $\forall l\notin\left\{ l_1,\dots,l_n \right\},\;\bar\gamma_{e_1(l)}=\bar\gamma_{e_2(l)}=0$ ou $\bar\delta_{e_1(l)}=\bar\delta_{e_2(l)}=0$, d'où $\bar\gamma_{e_1(l)}\bar\delta_{e_2(l)}+\bar\gamma_{e_2(l)}\bar\delta_{e_1(l)}=0$. Et, $\forall i \in\ent{1}{n}$, soit $\bar\gamma_{e_1(l_i)}\bar\delta_{e_2(l_i)}=1$ et $\bar\gamma_{e_2(l_i)}\bar\delta_{e_1(l_i)}=0$, soit $\bar\gamma_{e_1(l_i)}\bar\delta_{e_2(l_i)}=0$ et $\bar\gamma_{e_2(l_i)}\bar\delta_{e_1(l_i)}=1$. D'où :
-	\[
-\begin{array}{rll}
-	-2\ps{\bar\gamma}{\bar\delta}&=& \sum_{l\in\Gamma_1}(\bar\gamma_{e_1(l)}\bar\delta_{e_2(l)}+\bar\gamma_{e_2(l)}\bar\delta_{e_1(l)})\\
-	&=& \sum_{i=1}^n(\bar\gamma_{e_1(l_i)}\bar\delta_{e_2(l_i)}+\bar\gamma_{e_2(l_i)}\bar\delta_{e_1(l_i)})\\
-	&=& \sum_{i=1}^n 1\\
-	&=& n
-\end{array}
-	\]
-	ce qui termine la démonstration du premier point, passons au deuxième. Soient $x\in\EG,\gamma\in\Gamma_0$, on a $x=\sum_{\delta\in\Gamma_0}x_\delta\bar\delta$. Ainsi on a $(\sigma_\gamma x)_\delta=x_\delta=(x-2\ps{\bar\gamma}{x}\bar\gamma)_\delta$, dès que $\gamma\neq\delta$ car $\bar\gamma_\delta=0$, et :
-	\[
-\begin{array}{rll}
-	(x-2\ps{\bar\gamma}{x}\bar\gamma)_{\gamma}&=& x_\gamma-2\ps{\bar\gamma}{x}\\
-	&=& x_\gamma-2\ps{\bar\gamma}{\sum_{\delta\in\Gamma_0}x_\delta\bar\delta}\\
-	&=& x_\gamma-2\ps{\bar\gamma}{\bar\gamma}x_\gamma+\sum_{\delta\in\Gamma_0,\delta\neq\gamma}-2\ps{\bar\gamma}{\bar\delta}x_\delta\\
-	&=& -x_\gamma+\sum_{\delta\in\Gamma,\delta\neq\gamma}\Card(\Gamma^\gamma\cap\Gamma^\delta) x_\delta\\
-	&=& -x_\gamma+\sum_{\delta\in \mathscr V_\gamma}\sum_{l\in\Gamma^\delta\cap\Gamma^\gamma}x_{e(l)}\\
-	&=& -x_\gamma+\sum_{l\in\Gamma^\gamma}x_{e(l)}\\
-	&=& (\sigma_\gamma x)_\gamma
-\end{array}
-	\]
-	où $\mathscr V_\gamma$ est l'ensemble des sommets voisins de $\gamma$. Ainsi on a $\sigma_\gamma x=x-2\ps{\bar\gamma}{x}\bar\gamma$. Calculons maintenant $\sigma_\gamma^2$ :
-	\[
-\begin{array}{rll}
-	\sigma_\gamma(\sigma_\gamma(x))&=& \sigma_\gamma(x)-2\ps{\bar\gamma}{\sigma_\gamma(x)}\bar\gamma\\
-	&=& \sigma_\gamma(x)-2\ps{\bar\gamma}{x-2\ps{\bar\gamma}{x}\bar\gamma}\bar\gamma\\
-	&=& x-2\ps{\bar\gamma}{x}\bar\gamma-2\ps{\bar\gamma}{x}\bar\gamma+4\ps{\bar\gamma}{x}\bar\gamma\\
-	&=& x\\
-\end{array}
-	\]
-	d'où $\sigma_\gamma^2=\Id$. Ainsi $\Id\in W$, la composition est associative, et tous les éléments de $W$ sont symétrisables. En effet soit $\omega\in W$, alors $\omega$ s'écrit $\omega=\prod_{i=1}^n \sigma_{\gamma_i}$ avec $\gamma_i\in\Gamma_0$ et ainsi $\omega'=\prod_{i=1}^n \sigma_{\gamma_{n+1-i}}$ est l'inverse de $\omega$, les termes s'annulant deux à deux. On a donc que $W$ est un groupe et ceci conclut la preuve du point $2$. Pour prouver le point $3$, soit $x\in\EG$ un vecteur entier et $\gamma\in\Gamma_0$ un sommet de $\Gamma$. On a $(\sigma_\gamma(x))_\delta=x_\delta\in\mathbb Z$ dès que $\delta\neq\gamma$ et $(\sigma_\gamma(x))_\gamma=-x_\gamma+\sum_{l\in\Gamma^\gamma}x_{e(l)}\in\mathbb Z$ car $\forall \delta\in\Gamma_0,\;x_\delta\in\mathbb Z$. Comme les éléments de $W$ sont des compositions des applications $\sigma_\gamma$, on a immédiatement que $W$ préserve les éléments entiers de $\EG$. Voyons maintenant que $W$ préserve $B$ :
-	\[
-\begin{array}{rll}
-	B(\sigma_\gamma(x))&=& B(x-2\ps{\bar\gamma}{x}\bar\gamma)\\
-	&=& B(x)+4\ps{\bar\gamma}{x}^2B(\bar\gamma)-2\ps{x}{2\ps{\bar\gamma}{x}\bar\gamma}\\
-	&=& B(x).
-\end{array}
-	\]
-Or $W$ est engendré par les applications $\sigma_\gamma$, on a donc que $W$ préserve la forme quadratique $B$. Le point 4 suit du point 3, nous l'admettrons dans la suite du document.
-\end{proof}
-\begin{prop}
-La forme quadratique $B$ est définie positive si et seulement si $\Gamma$ est de la forme $A_n,D_n,E_6,E_7$ ou $E_8$.
-\end{prop}
-\begin{proof}
-	Soit $\Gamma$ un graphe. On va d'abord prouver que $\Gamma$ est nécessairement de la forme $A_n,D_n,E_6,E_7$ ou $E_8$. Tout d'abord, remarquons que $\Gamma$ ne peut contenir de sous-graphe d'une des formes suivantes : $\widetilde A_n$ ou $\widetilde D_n$.
+			\]
+			De cette dernière égalité on tire immédiatement :
+			\begin{itemize}
+					\item $\forall x,y\in\EG,\; \ps{x}{y}=\ps{y}{x}$
+					\item $\forall x,y,z\in\EG,\; \ps{x+y}{z}=\ps{x}{z}+\ps{y}{z}$
+					\item $\forall x,y\in\EG,\lambda\in\mathbb Q,\;\ps{\lambda x}{y}=\lambda\ps{x}{y}$
+			\end{itemize}
+			Ainsi, l'application $\ps{}{}$ est bilinéaire et symétrique, l'application $B$ est donc une forme quadratique. Prouvons maintenant la seconde partie de la proposition, à cet effet, soient $\gamma\in\Gamma_0$, $x,y\in\EG$ et $a,b\in\mathbb Q$. On a $\forall\delta\neq\gamma,\;(\sigma_\gamma(ax+by))_\delta=ax_\delta+by_\delta=a(\sigma_\gamma x)_\delta+b(\sigma_\gamma y)_\delta$ et $(\sigma_\gamma (ax+by))\gamma=-(ax_\gamma+by_\gamma)+\sum_{l\in\Gamma^\gamma}(ax_{e(l)+}+by_{e(l)})=a(\sigma_\gamma x)_\gamma+b(\sigma_\gamma y)_\gamma$. On a donc bien $\sigma_\gamma(ax+by)=a\sigma_\gamma x+b\sigma_\gamma y$, or le sommet $\gamma\in\Gamma_{0}$ est arbitraire, cela conclut donc la démonstration.
+		\end{proof}
+		\begin{lm}
+		Soit $\Gamma$ un graphe sans boucle, $\gamma,\delta\in\Gamma_0$, $x\in\EG$ :
+		\begin{enumerate}
+			\item $\ps{\bar\gamma,\bar\gamma}=1$, et si $\gamma\neq\delta$, alors $-2\ps{\bar\gamma}{\bar\delta}$ est le nombre d'arêtes liant $\gamma$ et $\delta$;
+			\item on a $\sigma_\gamma(x)=x-2\ps{\bar\gamma}{x}\bar\gamma$ et $\sigma_\gamma^2=\Id$, en particulier $W$ est un groupe ;
+			\item le groupe $W$ préserve les éléments entiers de $\EG$ et la forme quadratique $B$ ;
+			\item si la forme $B$ est définie positive, alors le groupe $W$ est fini.
+		\end{enumerate}
+		\begin{proof}
+			Commençons par prouver le point $1$. Soient $\gamma,\delta\in\Gamma_0$, avec $\gamma\neq\delta$, alors $\ps{\bar\gamma}{\bar\gamma}=B(\bar\gamma)=1$, en effet la somme sur les arêtes vaut 0, et dans la somme sur les sommets, seul le terme en $\gamma$ est non nul et il vaut $1$. Calculons maintenant $\ps{\bar\gamma}{\bar\delta}$, comme $\gamma\neq\delta$, on a $\forall\varepsilon\in\Gamma_0,\;\bar\gamma_\varepsilon\bar\delta_\varepsilon=0$. Ainsi $-2\ps{\bar\gamma}{\bar\delta}=\sum_{l\in\Gamma_1}(\bar\gamma_{e_1(l)}\bar\delta_{e_2(l)}+\bar\gamma_{e_2(l)}\bar\delta_{e_1(l)})$. Notons $\Gamma^\gamma\cap\Gamma^\delta=\left\{ l_1,\dots,l_n \right\}$ les arêtes liant les sommets $\gamma$ et $\delta$. Alors $\forall l\notin\left\{ l_1,\dots,l_n \right\},\;\bar\gamma_{e_1(l)}=\bar\gamma_{e_2(l)}=0$ ou $\bar\delta_{e_1(l)}=\bar\delta_{e_2(l)}=0$, d'où $\bar\gamma_{e_1(l)}\bar\delta_{e_2(l)}+\bar\gamma_{e_2(l)}\bar\delta_{e_1(l)}=0$. Et, $\forall i \in\ent{1}{n}$, soit $\bar\gamma_{e_1(l_i)}\bar\delta_{e_2(l_i)}=1$ et $\bar\gamma_{e_2(l_i)}\bar\delta_{e_1(l_i)}=0$, soit $\bar\gamma_{e_1(l_i)}\bar\delta_{e_2(l_i)}=0$ et $\bar\gamma_{e_2(l_i)}\bar\delta_{e_1(l_i)}=1$. D'où :
+			\[
+		\begin{array}{>{\dps}r>{\dps}l>{\dps}l}
+			-2\ps{\bar\gamma}{\bar\delta}&=& \sum_{l\in\Gamma_1}(\bar\gamma_{e_1(l)}\bar\delta_{e_2(l)}+\bar\gamma_{e_2(l)}\bar\delta_{e_1(l)})\\
+			&=& \sum_{i=1}^n(\bar\gamma_{e_1(l_i)}\bar\delta_{e_2(l_i)}+\bar\gamma_{e_2(l_i)}\bar\delta_{e_1(l_i)})\\
+			&=& \sum_{i=1}^n 1\\
+			&=& n
+		\end{array}
+			\]
+			ce qui termine la démonstration du premier point, passons au deuxième. Soient $x\in\EG,\gamma\in\Gamma_0$, on a $x=\sum_{\delta\in\Gamma_0}x_\delta\bar\delta$. Ainsi on a $(\sigma_\gamma x)_\delta=x_\delta=(x-2\ps{\bar\gamma}{x}\bar\gamma)_\delta$, dès que $\gamma\neq\delta$ car $\bar\gamma_\delta=0$, et :
+			\[
+		\begin{array}{>{\dps}r>{\dps}l>{\dps}l}
+			(x-2\ps{\bar\gamma}{x}\bar\gamma)_{\gamma}&=& x_\gamma-2\ps{\bar\gamma}{x}\\
+			&=& x_\gamma-2\ps{\bar\gamma}{\sum_{\delta\in\Gamma_0}x_\delta\bar\delta}\\
+			&=& x_\gamma-2\ps{\bar\gamma}{\bar\gamma}x_\gamma+\sum_{\delta\in\Gamma_0,\delta\neq\gamma}-2\ps{\bar\gamma}{\bar\delta}x_\delta\\
+			&=& -x_\gamma+\sum_{\delta\in\Gamma,\delta\neq\gamma}\Card(\Gamma^\gamma\cap\Gamma^\delta) x_\delta\\
+			&=& -x_\gamma+\sum_{\delta\in \mathscr V_\gamma}\sum_{l\in\Gamma^\delta\cap\Gamma^\gamma}x_{e(l)}\\
+			&=& -x_\gamma+\sum_{l\in\Gamma^\gamma}x_{e(l)}\\
+			&=& (\sigma_\gamma x)_\gamma
+		\end{array}
+			\]
+			où $\mathscr V_\gamma$ est l'ensemble des sommets voisins de $\gamma$. Ainsi on a $\sigma_\gamma x=x-2\ps{\bar\gamma}{x}\bar\gamma$. Calculons maintenant $\sigma_\gamma^2$ :
+			\[
+		\begin{array}{>{\dps}r>{\dps}l>{\dps}l}
+			\sigma_\gamma(\sigma_\gamma(x))&=& \sigma_\gamma(x)-2\ps{\bar\gamma}{\sigma_\gamma(x)}\bar\gamma\\
+			&=& \sigma_\gamma(x)-2\ps{\bar\gamma}{x-2\ps{\bar\gamma}{x}\bar\gamma}\bar\gamma\\
+			&=& x-2\ps{\bar\gamma}{x}\bar\gamma-2\ps{\bar\gamma}{x}\bar\gamma+4\ps{\bar\gamma}{x}\bar\gamma\\
+			&=& x\\
+		\end{array}
+			\]
+			d'où $\sigma_\gamma^2=\Id$. Ainsi $\Id\in W$, la composition est associative, et tous les éléments de $W$ sont symétrisables. En effet soit $\omega\in W$, alors $\omega$ s'écrit $\omega=\prod_{i=1}^n \sigma_{\gamma_i}$ avec $\gamma_i\in\Gamma_0$ et ainsi $\omega'=\prod_{i=1}^n \sigma_{\gamma_{n+1-i}}$ est l'inverse de $\omega$, les termes s'annulant deux à deux. On a donc que $W$ est un groupe et ceci conclut la preuve du point $2$. Pour prouver le point $3$, soit $x\in\EG$ un vecteur entier et $\gamma\in\Gamma_0$ un sommet de $\Gamma$. On a $(\sigma_\gamma(x))_\delta=x_\delta\in\mathbb Z$ dès que $\delta\neq\gamma$ et $(\sigma_\gamma(x))_\gamma=-x_\gamma+\sum_{l\in\Gamma^\gamma}x_{e(l)}\in\mathbb Z$ car $\forall \delta\in\Gamma_0,\;x_\delta\in\mathbb Z$. Comme les éléments de $W$ sont des compositions des applications $\sigma_\gamma$, on a immédiatement que $W$ préserve les éléments entiers de $\EG$. Voyons maintenant que $W$ préserve $B$ :
+			\[
+		\begin{array}{>{\dps}r>{\dps}l>{\dps}l}
+			B(\sigma_\gamma(x))&=& B(x-2\ps{\bar\gamma}{x}\bar\gamma)\\
+			&=& B(x)+4\ps{\bar\gamma}{x}^2B(\bar\gamma)-2\ps{x}{2\ps{\bar\gamma}{x}\bar\gamma}\\
+			&=& B(x).
+		\end{array}
+			\]
+		Or $W$ est engendré par les applications $\sigma_\gamma$, on a donc que $W$ préserve la forme quadratique $B$. Le point 4 suit du point 3, nous l'admettrons dans la suite du document.
+		\end{proof}
+		\begin{prop}
+		La forme quadratique $B$ est définie positive si et seulement si $\Gamma$ est de la forme $A_n,D_n,E_6,E_7$ ou $E_8$.
+		\end{prop}
+		\begin{proof}
+			Soit $\Gamma$ un graphe. On va d'abord prouver que si $B$ est définie positive, $\Gamma$ est nécessairement de la forme $A_n,D_n,E_6,E_7$ ou $E_8$. Tout d'abord, remarquons que $\Gamma$ ne peut contenir de sous-graphe d'une des formes suivantes : $\widetilde A_n$ ou $\widetilde D_n$, où $n$ représente le nombre de sommets. $\widetilde A_n$ est défini pour $n\geq 2$ et $\widetilde D_n$ est défini pour $n\geq 5$.
 
 
 	\begin{tikzpicture}
@@ -914,6 +915,54 @@ La forme quadratique $B$ est définie positive si et seulement si $\Gamma$ est d
 			\draw[thick] (5.5,\y) to (5);
 			\node (t) at (2.5,-1) {$\widetilde D_n$};
 	\end{tikzpicture}
+	Pour cela, supposons par l'absurde que $\Gamma$ contient un sous-graphe de la forme $\widetilde A_n$ ou $\widetilde D_n$. Si $\Gamma$ contient un sous-graphe de la forme $\widetilde A_n$, on prend $x\in\EG$ tel que $x_\gamma=0$ lorsque $\gamma$ n'est pas un élément du sous-graphe $\widetilde A_n$, et $x_\gamma=1$ lorsque $\gamma$ appartient à $\widetilde A_n$. Alors, comme $\widetilde A_n$ contient $n$ sommets et $n$ arêtes, on a $B(x)=n-n=0$ alors que $x$ n'est pas nul. Donc $B$ n'est pas définie positive, ce qui est une contradiction. Supposons maintenant que $\Gamma$ contient un sous-graphe de la forme $\widetilde D_n$, on prend dans ce cas $x\in\EG$ tel que $x_\gamma=0$ dès que $\gamma\notin\widetilde D_n$, $x_\gamma=1$ si $\gamma\in\widetilde D_n$ possède un seul voisin dans $\widetilde D_n$, ou de manière équivalente si $\gamma$ est une des quatre extrémités de $\widetilde D_n$, et $x_\gamma=2$ si $\gamma\in\widetilde D_n$ possède au moins deux voisins dans $\widetilde D_n$, c'est-à-dire si $\gamma$ est un point non extrémal de $\widetilde D_n$. Comme $\widetilde D_n$ possède $n-4$ sommets non extrémaux, de valeurs $2$ dans $x$, $4$ extrémités, de valeurs $1$ dans $x$, la somme sur les sommets dans la définition de $B(x)$ vaut $4(n-4)+4\times1=4(n-3)$. D'autre part $\widetilde D_n$ contient $n-5$ arêtes centrales (c'est-à-dire dont aucune des extrémités de l'arête n'est un point extrémal), et $4$ arêtes extrémales (ou non centrales), ainsi la somme sur les arêtes dans la définition de $B(x)$ vaut $4\times2+4(n-5)=4(n-3)$. D'où $B(x)=4(n-3)-4(n-3)=0$ alors que $x$ est non nul, donc $B$ n'est pas définie positive, ce qui est une contradiction. Ainsi, si $B$ est définie positive, $\Gamma$ est nécessairement de la forme :
+	\begin{center}
+	\begin{tikzpicture}
+    			\foreach \x in {0,...,10}
+			\node[sommet] (\x) at (\x,0) {};
+    			\foreach \x in {11,...,16}
+			\node[sommet] (\x) at (\x-6,1) {};
+    			\foreach \y in {0,1,3,4,5,6,8,9,11,12,14,15}
+			\draw[thick] (\y) -- +(1cm,0);
+			\draw[thick] (5) -- +(0,1cm);
+			\foreach \x in {2,7,13}
+			\draw[dotted, thick] (\x) -- +(1cm,0);
+			\node (a) at (5cm,-0.3cm) {$\alpha$};
+    			\foreach \x in {1,...,3}
+			\node () at (\x-1,-.3cm) {$x_\x$};
+			\node () at (3,-.3cm) {$x_{p-1}$};
+			\node () at (4,-.3cm) {$x_{p}$};
+			\node () at (6,-.3cm) {$x_{q}$};
+			\node () at (7,-.3cm) {$y_{q-1}$};
+			\node () at (8,-.3cm) {$y_{3}$};
+			\node () at (9,-.3cm) {$y_{2}$};
+			\node () at (10,-.3cm) {$y_{1}$};
+			\node () at (5,1.3cm) {$z_{r}$};
+			\node () at (6,1.3cm) {$z_{r-1}$};
+			\node () at (7,1.3cm) {$z_{r-2}$};
+			\node () at (8,1.3cm) {$z_{3}$};
+			\node () at (9,1.3cm) {$z_{2}$};
+			\node () at (10,1.3cm) {$z_{1}$};
+	\end{tikzpicture}
+	\end{center}
+	où $p,q,r\in\mathbb N$ sont des entiers positifs. Posons maintenant, pour un certain entier $p\in\mathbb N$, l'application $C_p$ en $p+1$ variables :
+		\[
+			C_p(x_1,\dots,c_{p+1})=-x_1x_2-x_2x_3-\dots-x_px_{p+1}+x_1^2+\dots+x_p^2+\frac{p}{2(p+1)}x_{p+1}^2,
+	\]
+	et prouvons que $C_p$ est une forme quadratique positive, de noyau de dimension $1$ et qui vérifie que si $x\neq0$ est tel que $C_p(x)=0$ alors $x$ n'a aucune coordonnée nulle. Pour prouver tout cela, nous allons démontrer que 
+	\[
+		C_p(x)=\sum_{i=1}^p\frac{i}{2(i+1)}(x_{i+1}-\frac{i+1}{i}x_i)^2.
+	\]
+	Faisons le calcul :
+	\[
+		\begin{array}{>{\dps}r>{\dps}l>{\dps}l}
+	\sum_{i=1}^p\frac{i}{2(i+1)}(x_{i+1}-\frac{i+1}{i}x_i)^2&=& \sum_{i=1}^p\frac{i}{2(i+1)}(x_{i+1}^2-2\frac{i+1}{i}x_ix_{i+1}+(\frac{i+1}{i}x_i)^2)\\
+	&=& -\sum_{i=1}^px_ix_{i+1}+\sum_{i=1}^p\frac{i}{2(i+1)}x_{i+1}^2+\sum_{i=1}^p\frac{i+1}{2i}x_i^2\\
+	&=& -\sum_{i=1}^px_ix_{i+1}+\frac{p}{2(p+1)}x_{p+1}^2+x_1^2+\sum_{i=2}^p\frac{(i-1)+(i+1)}{2i}x_i^2\\
+	&=& C_p(x),\\
+\end{array}
+	\]
+	ainsi on a bien l'égalité annoncée plus haut. Gr\^ace à cette nouvelle écriture, on a imméditament la positivité de $C_p$
 \end{proof}
 \end{lm}
 %Lignes à ajouter pour faire apparaître notre bibliographie
