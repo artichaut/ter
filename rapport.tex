@@ -917,7 +917,8 @@ Soit $\Gamma$ un graphe ne contenant pas de cycle, et soient $\Lambda,\Lambda'$ 
 			\node (t) at (2.5,-1) {$\widetilde D_n$};
 	\end{tikzpicture}
 	Pour cela, supposons par l'absurde que $\Gamma$ contient un sous-graphe de la forme $\widetilde A_n$ ou $\widetilde D_n$. Si $\Gamma$ contient un sous-graphe de la forme $\widetilde A_n$, on prend $x\in\EG$ tel que $x_\gamma=0$ lorsque $\gamma$ n'est pas un élément du sous-graphe $\widetilde A_n$, et $x_\gamma=1$ lorsque $\gamma$ appartient à $\widetilde A_n$. Alors, comme $\widetilde A_n$ contient $n$ sommets et $n$ arêtes, on a $B(x)=n-n=0$ alors que $x$ n'est pas nul. Donc $B$ n'est pas définie positive, ce qui est une contradiction. Supposons maintenant que $\Gamma$ contient un sous-graphe de la forme $\widetilde D_n$, on prend dans ce cas $x\in\EG$ tel que $x_\gamma=0$ dès que $\gamma\notin\widetilde D_n$, $x_\gamma=1$ si $\gamma\in\widetilde D_n$ possède un seul voisin dans $\widetilde D_n$, ou de manière équivalente si $\gamma$ est une des quatre extrémités de $\widetilde D_n$, et $x_\gamma=2$ si $\gamma\in\widetilde D_n$ possède au moins deux voisins dans $\widetilde D_n$, c'est-à-dire si $\gamma$ est un point non extrémal de $\widetilde D_n$. Comme $\widetilde D_n$ possède $n-4$ sommets non extrémaux, de valeurs $2$ dans $x$, $4$ extrémités, de valeurs $1$ dans $x$, la somme sur les sommets dans la définition de $B(x)$ vaut $4(n-4)+4\times1=4(n-3)$. D'autre part $\widetilde D_n$ contient $n-5$ arêtes centrales (c'est-à-dire dont aucune des extrémités de l'arête n'est un point extrémal), et $4$ arêtes extrémales (ou non centrales), ainsi la somme sur les arêtes dans la définition de $B(x)$ vaut $4\times2+4(n-5)=4(n-3)$. D'où $B(x)=4(n-3)-4(n-3)=0$ alors que $x$ est non nul, donc $B$ n'est pas définie positive, ce qui est une contradiction. Ainsi, si $B$ est définie positive, $\Gamma$ est nécessairement de la forme :
-	\begin{center}
+	\begin{equation}
+		\label{dessin}
 	\begin{tikzpicture}
     			\foreach \x in {0,...,10}
 			\node[sommet] (\x) at (\x,0) {};
@@ -945,7 +946,7 @@ Soit $\Gamma$ un graphe ne contenant pas de cycle, et soient $\Lambda,\Lambda'$ 
 			\node () at (9,1.3cm) {$z_{2}$};
 			\node () at (10,1.3cm) {$z_{1}$};
 	\end{tikzpicture}
-	\end{center}
+	\end{equation}
 	où $p,q,r\in\mathbb N$ sont des entiers positifs. Posons maintenant, pour un certain entier $p\in\mathbb N$, l'application $C_p$ en $p+1$ variables :
 		\[
 			C_p(x_1,\dots,c_{p+1})=-x_1x_2-x_2x_3-\dots-x_px_{p+1}+x_1^2+\dots+x_p^2+\frac{p}{2(p+1)}x_{p+1}^2,
@@ -975,7 +976,7 @@ on a ainsi :
 	\item $\forall x,y,z\in\EG$, $\ps{x+y}{z}=\ps{x}{z}+\ps{y}{z}$
 	\item $\forall x,y\in\EG,\lambda\in\mathbb Q$, $\ps{\lambda x}{y}=\lambda\ps{x}{y}$,
 \end{enumerate}
-ce qui prouve que $C_p$ est bien une forme quadratique. Et on a ainsi prouvé toutes les propriétés annoncées à propos de $C_p$.
+ce qui prouve que $C_p$ est bien une forme quadratique. Et on a ainsi prouvé toutes les propriétés annoncées à propos de $C_p$. Dessin (\ref{dessin}).
 \end{proof}
 \end{lm}
 %Lignes à ajouter pour faire apparaître notre bibliographie
