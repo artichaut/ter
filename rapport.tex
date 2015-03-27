@@ -35,6 +35,7 @@ Travail encadré par Pierre-Guy Plamondon}
 \DeclareMathOperator{\Id}{Id}
 \DeclareMathOperator{\Img}{Im}
 \DeclareMathOperator{\Card}{Card}
+\DeclareMathOperator{\Vect}{Vect}
 %Nouvelles commandes
 \newcommand{\F}[3]{F_{#1}^{#2}(#3)}
 \newcommand{\ps}[2]{\left\langle#1,#2\right\rangle}
@@ -787,8 +788,8 @@ Soit $\Gamma$ un graphe ne contenant pas de cycle, et soient $\Lambda,\Lambda'$ 
 \end{enumerate}
 \end{thm}
 		\clearpage
-	\section{Graphes, groupe de Weyl et transformation de Coxeter}
-		Dans cette section nous définirons un système de racine utile, ainsi que des résultats qui nous permettrons dans la dernière partie de prouver le théorème de Gabriel.
+\section{Graphes, groupe de Weyl et transformation de Coxeter}
+	Dans cette section nous définirons un système de racine utile, ainsi que des résultats qui nous permettrons dans la dernière partie de prouver le théorème de Gabriel.
 		\begin{defi}
 		Soit $\Gamma$ un graphe ne possédant pas de boucles.
 		\begin{enumerate}
@@ -871,7 +872,7 @@ Soit $\Gamma$ un graphe ne contenant pas de cycle, et soient $\Lambda,\Lambda'$ 
 			&=& B(x).
 		\end{array}
 			\]
-		Or $W$ est engendré par les applications $\sigma_\gamma$, on a donc que $W$ préserve la forme quadratique $B$. Le point 4 suit du point 3, nous l'admettrons dans la suite du document.
+			Or $W$ est engendré par les applications $\sigma_\gamma$, on a donc que $W$ préserve la forme quadratique $B$. Enfin, prouvons le point $4$. À cet effet, on pose $B_1=\left\{ x\in\EG : x\text{ est entier et }B(x)=1 \right\}$. Supposons un instant que $B_1$ est un ensemble fini. D'après le point $3$, $W$ est un groupe qui préserve $B_1$, c'est donc un sous-groupe du groupe des permutations des éléments de $B_1$. $W$ est ainsi un sous-groupe d'un groupe fini donc $W$ est un groupe fini. Prouvons maintenant que $B_1$ est fini. On note $\left[ B \right]$ la matrice représentant la forme quadratique $B$. Cette dernière est symétrique, ainsi, d'après le théorème spectral, il existe une base orthonormée $\mathscr B$ dans laquelle $\left[ B \right]$ est diagonale, notons $\lambda_1,\dots,\lambda_n$ ses valeurs propres, elles sont strictement positives car $B$ est définie positive. Soit $v\in B_1$, on note $v_1,\dots,v_n$ ses coordonnées dans $\mathscr B$. On a donc $\lambda_1v_1^2+\dots+\lambda_nv_n^2=1$, d'où $\forall i \in\ent{1}{n},\;|v_i|\leq\frac{1}{\sqrt{\lambda_i}}$. Ainsi les coordonnées des élements de $B_1$ sont bornées dans la base $\mathscr B$, elle sont donc également bornées dans la base canonique de $\EG$, utilisée pour définir les éléments entiers. Ainsi $B_1$ est une sous-partie bornée de $\mathbb Z^n$ donc est finie. Or on a prouvé précédemment que cela implique que $W$ est fini, la preuve est donc complète.
 		\end{proof}
 		\begin{prop}
 		La forme quadratique $B$ est définie positive si et seulement si $\Gamma$ est de la forme $A_n,D_n,E_6,E_7$ ou $E_8$.
@@ -950,9 +951,10 @@ Soit $\Gamma$ un graphe ne contenant pas de cycle, et soient $\Lambda,\Lambda'$ 
 			C_p(x_1,\dots,c_{p+1})=-x_1x_2-x_2x_3-\dots-x_px_{p+1}+x_1^2+\dots+x_p^2+\frac{p}{2(p+1)}x_{p+1}^2,
 	\]
 	et prouvons que $C_p$ est une forme quadratique positive, de noyau de dimension $1$ et qui vérifie que si $x\neq0$ est tel que $C_p(x)=0$ alors $x$ n'a aucune coordonnée nulle. Pour prouver tout cela, nous allons démontrer que 
-	\[
+	\begin{equation}
 		C_p(x)=\sum_{i=1}^p\frac{i}{2(i+1)}(x_{i+1}-\frac{i+1}{i}x_i)^2.
-	\]
+		\label{Cp}
+	\end{equation}
 	Faisons le calcul :
 	\[
 		\begin{array}{>{\dps}r>{\dps}l>{\dps}l}
@@ -962,12 +964,22 @@ Soit $\Gamma$ un graphe ne contenant pas de cycle, et soient $\Lambda,\Lambda'$ 
 	&=& C_p(x),\\
 \end{array}
 	\]
-	ainsi on a bien l'égalité annoncée plus haut. Gr\^ace à cette nouvelle écriture, on a imméditament la positivité de $C_p$
+	ainsi on a bien l'égalité annoncée plus haut. Gr\^ace à cette nouvelle écriture (\ref{Cp}), on a immédiatement la positivité de $C_p$. Soit $x\in\EG$ tel que $C_p(x)=0$, d'après (\ref{Cp}), on a donc $\forall i \in\ent{1}{n},\;x_{i+1}=\frac{i+1}{i}x_i$, d'où $\forall i\in\ent{1}{n},\;x_i=ix_1$ par récurrence. Ainsi $\Ker C_p\subset\Vect\left\{ (1,2,\dots,n) \right\}$, et la réciproque est immédiate. Donc $\Ker C_p=\Vect\left\{ (1,2,\dots,n) \right\}$, et ainsi le noyau de $C_p$ est de dimension $1$. De plus, comme $(1,2,\dots,n)$ ne possède pas de coordonnée nulle, $x\neq0$ et $x\in\Vect\left\{ (1,2,\dots,n) \right\}$ implique $\forall i\in\ent{1}{n},\;x_i\neq0$. Donc si $x\neq0$ et $C_p(x)=0$, alors toutes les coordonnées de $x$ sont non nulles. Enfin prouvons que $C_p$ est une forme quadratique, pour cela posons :
+	\[
+		\ps{x}{y}_p=\sum_{i=1}^p\frac{i}{2(i+1)}(x_{i+1}-\frac{i+1}{i}x_i)(y_{i+1}-\frac{i+1}{i}y_i),
+	\]
+on a ainsi :
+\begin{enumerate}
+	\item $\forall x\in\EG$, $\ps{x}{x}_p=C_p(x)$
+	\item $\forall x,y\in\EG$, $\ps{x}{y}=\ps{y}{x}$
+	\item $\forall x,y,z\in\EG$, $\ps{x+y}{z}=\ps{x}{z}+\ps{y}{z}$
+	\item $\forall x,y\in\EG,\lambda\in\mathbb Q$, $\ps{\lambda x}{y}=\lambda\ps{x}{y}$,
+\end{enumerate}
+ce qui prouve que $C_p$ est bien une forme quadratique. Et on a ainsi prouvé toutes les propriétés annoncées à propos de $C_p$.
 \end{proof}
 \end{lm}
 %Lignes à ajouter pour faire apparaître notre bibliographie
 \clearpage
 \bibliographystyle{unsrt}
 \bibliography{biblio}
-
 \end{document}
