@@ -833,6 +833,7 @@ Soit $\Gamma$ un graphe ne contenant pas de cycle, et soient $\Lambda,\Lambda'$ 
 			\item le groupe $W$ préserve les éléments entiers de $\EG$ et la forme quadratique $B$ ;
 			\item si la forme $B$ est définie positive, alors le groupe $W$ est fini.
 		\end{enumerate}
+\end{lm}
 		\begin{proof}
 			Commençons par prouver le point $1$. Soient $\gamma,\delta\in\Gamma_0$, avec $\gamma\neq\delta$, alors $\ps{\bar\gamma}{\bar\gamma}=B(\bar\gamma)=1$, en effet la somme sur les arêtes vaut 0, et dans la somme sur les sommets, seul le terme en $\gamma$ est non nul et il vaut $1$. Calculons maintenant $\ps{\bar\gamma}{\bar\delta}$, comme $\gamma\neq\delta$, on a $\forall\varepsilon\in\Gamma_0,\;\bar\gamma_\varepsilon\bar\delta_\varepsilon=0$. Ainsi $-2\ps{\bar\gamma}{\bar\delta}=\sum_{l\in\Gamma_1}(\bar\gamma_{e_1(l)}\bar\delta_{e_2(l)}+\bar\gamma_{e_2(l)}\bar\delta_{e_1(l)})$. Notons $\Gamma^\gamma\cap\Gamma^\delta=\left\{ l_1,\dots,l_n \right\}$ les arêtes liant les sommets $\gamma$ et $\delta$. Alors $\forall l\notin\left\{ l_1,\dots,l_n \right\},\;\bar\gamma_{e_1(l)}=\bar\gamma_{e_2(l)}=0$ ou $\bar\delta_{e_1(l)}=\bar\delta_{e_2(l)}=0$, d'où $\bar\gamma_{e_1(l)}\bar\delta_{e_2(l)}+\bar\gamma_{e_2(l)}\bar\delta_{e_1(l)}=0$. Et, $\forall i \in\ent{1}{n}$, soit $\bar\gamma_{e_1(l_i)}\bar\delta_{e_2(l_i)}=1$ et $\bar\gamma_{e_2(l_i)}\bar\delta_{e_1(l_i)}=0$, soit $\bar\gamma_{e_1(l_i)}\bar\delta_{e_2(l_i)}=0$ et $\bar\gamma_{e_2(l_i)}\bar\delta_{e_1(l_i)}=1$. D'où :
 			\[
@@ -929,7 +930,7 @@ Soit $\Gamma$ un graphe ne contenant pas de cycle, et soient $\Lambda,\Lambda'$ 
 			\draw[thick] (5) -- +(0,1cm);
 			\foreach \x in {2,7,13}
 			\draw[dotted, thick] (\x) -- +(1cm,0);
-			\node (a) at (5cm,-0.3cm) {$\alpha$};
+			\node (a) at (5cm,-0.3cm) {$a$};
     			\foreach \x in {1,...,3}
 			\node () at (\x-1,-.3cm) {$x_\x$};
 			\node () at (3,-.3cm) {$x_{p-1}$};
@@ -976,9 +977,36 @@ on a ainsi :
 	\item $\forall x,y,z\in\EG$, $\ps{x+y}{z}=\ps{x}{z}+\ps{y}{z}$
 	\item $\forall x,y\in\EG,\lambda\in\mathbb Q$, $\ps{\lambda x}{y}=\lambda\ps{x}{y}$,
 \end{enumerate}
-ce qui prouve que $C_p$ est bien une forme quadratique. Et on a ainsi prouvé toutes les propriétés annoncées à propos de $C_p$. Dessin (\ref{dessin}).
+ce qui prouve que $C_p$ est bien une forme quadratique. Et on a ainsi prouvé toutes les propriétés annoncées à propos de $C_p$. On place maintenant les nombres $x_1,\dots,x_p,y_1,\dots,y_q,z_1,\dots,z_r$ et $a$ sur le graphe $\Gamma$ comme représenté sur le schéma (\ref{dessin}), formant ainsi un vecteur $t\in\EG$. On a alors :
+\[
+\begin{array}{>{\dps}r>{\dps}l>{\dps}l}
+	B(t)&=& \sum_{\gamma\in\Gamma_0}t_\gamma^2-\sum_{l\in\Gamma_1}t_{e_1(l)}t_{e_2(l)}\\
+	&=& x_1^2+\dots+x_p^2+y_1^2+\dots+y_q^2+\dots+z_1^2+\dots+z_r^2+a^2\\
+	&& -x_1x_2-\dots-x_pa-y_1y_2-\dots-y_qa-\dots-z_1z_2-\dots-z_ra\\
+	&=& C_p(x_1,\dots,x_p,a)+C_q(y_1,\dots,y_q,a)+C_r(z_1,\dots,z_r,a)\\
+	&& +\left(1-\frac{p}{2(p+1)}-\frac{q}{2(q+1)}-\frac{r}{2(r+1)}\right)a^2.\\
+\end{array}
+\]
+Gr\^ace à cette dernière formule, on prouve que $B$ est définie postivie si et seulement si $\frac{p}{2(p+1)}+\frac{q}{2(q+1)}+\frac{r}{2(r+1)}<1$. Supposons que $\frac{p}{2(p+1)}+\frac{q}{2(q+1)}+\frac{r}{2(r+1)}\geq1$, alors on prends $a>0$, $x_i=\frac{i}{p+1}a$, $y_i=\frac{i}{q+1}a$ et $z_i=\frac{i}{r+1}a$, ce qui nous donne que $(x_1,\dots,x_p,a)\in\Ker C_p$, $(y_1,\dots,y_q,a)\in\Ker C_q$, $(z_1,\dots,z_r,a)\in\Ker C_r$, d'où $B(t)\leq0$ et ainsi $B$ n'est pas définie positive. Supposons maintenant que $\frac{p}{2(p+1)}+\frac{q}{2(q+1)}+\frac{r}{2(r+1)}<1$, et qu'on a $B(t)=0$. Comme $B(t)$ est une somme de termes positifs, ils doivent tous être nulles, on obtient ainsi $a=0$, puis, d'après les propriétés des noyaux de $C_p,C_q,C_r$, si l'un des termes est non nul, ils le sont tous, or $a=0$, on a donc $x_1=\dots= x_p=y_1=\dots=y_q=z_1=\dots=z_r=0$. On vient de voir que $B(t)=0$ implique $t=0$ donc $B$ est définie positive. Ainsi $B$ est définie postivie si et seulement si $\frac{p}{2(p+1)}+\frac{q}{2(q+1)}+\frac{r}{2(r+1)}<1$. Cette inégalité équivaut en fait à $\frac{1}{p+1}+\frac{1}{q+1}+\frac{1}{r+1}>1$, en effet les inégalités suivantes sont équivalentes :
+\[
+\begin{array}{>{\dps}r>{\dps}l>{\dps}l}
+	\frac{p}{2(p+1)}+\frac{q}{2(q+1)}+\frac{r}{2(r+1)}&<&1\\
+	\cfrac{\frac{2(p+1)}{2}-1}{2(p+1)}+\cfrac{\frac{2(q+1)}{2}-1}{2(q+1)}+\cfrac{\frac{2(r+1)}{2}-1}{2(r+1)}&<&1\\
+	\frac{3}{2}-1&<&\frac{1}{2(p+1)}+\frac{1}{2(q+1)}+\frac{1}{2(r+1)}\\
+	1&<&\frac{1}{p+1}+\frac{1}{q+1}+\frac{1}{r+1}\\
+\end{array}
+\]
+On peut supposer, quitte à échanger les rôles de $p,q,r$, que $p\leq q\leq r$. On pose $A=\frac{1}{p+1}+\frac{1}{q+1}+\frac{1}{r+1}$ et on étudie si $A>1$ (c'est-à-dire si $B$ est définie positive) :
+\begin{enumerate}
+	\item $p=0$, $q$ et $r$ sont arbitraires, alors $A>1$ et on est dans le cas $A_n$ ;
+	\item $p=1$, $q=1$, et $r$ est arbitraire, alors $A>1$ et on est dans le cas $D_n$ ;
+	\item $p=1$, $q=2$ et $r=2,3,4$, alors $A>1$ et on est dans les cas $E_6,E_7,E_8$ ;
+	\item $p=1$, $q=2$, et $r\geq5$, alors $A\leq1$ ;
+	\item $p=1$, $q\geq3$ et $r\geq3$ alors $A\leq1$ ;
+	\item $p\geq2$, $q\geq2$ et $r\geq2$ alors $A\leq1$ ;
+\end{enumerate}
+On a ainsi énuméré tous les cas possibles pour $p,q,r$ et les seuls graphes pour lequels $A>1$ sont les graphes de type $A_n,D_n,E_6,E_7$ et $E_8$. Donc la forme quadratique $B$ est définie positives si et seulement si $\Gamma$ est de type $A_n,D_n,E_6,E_7$ ou $E_8$.
 \end{proof}
-\end{lm}
 %Lignes à ajouter pour faire apparaître notre bibliographie
 \clearpage
 \bibliographystyle{unsrt}
