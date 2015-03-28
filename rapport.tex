@@ -826,6 +826,7 @@ Soit $\Gamma$ un graphe ne contenant pas de cycle, et soient $\Lambda,\Lambda'$ 
 			Ainsi, l'application $\ps{}{}$ est bilinéaire et symétrique, l'application $B$ est donc une forme quadratique. Prouvons maintenant la seconde partie de la proposition, à cet effet, soient $\gamma\in\Gamma_0$, $x,y\in\EG$ et $a,b\in\mathbb Q$. On a $\forall\delta\neq\gamma,\;(\sigma_\gamma(ax+by))_\delta=ax_\delta+by_\delta=a(\sigma_\gamma x)_\delta+b(\sigma_\gamma y)_\delta$ et $(\sigma_\gamma (ax+by))\gamma=-(ax_\gamma+by_\gamma)+\sum_{l\in\Gamma^\gamma}(ax_{e(l)+}+by_{e(l)})=a(\sigma_\gamma x)_\gamma+b(\sigma_\gamma y)_\gamma$. On a donc bien $\sigma_\gamma(ax+by)=a\sigma_\gamma x+b\sigma_\gamma y$, or le sommet $\gamma\in\Gamma_{0}$ est arbitraire, cela conclut donc la démonstration.
 		\end{proof}
 		\begin{lm}
+			\label{elem}
 		Soit $\Gamma$ un graphe sans boucle, $\gamma,\delta\in\Gamma_0$, $x\in\EG$ :
 		\begin{enumerate}
 			\item $\ps{\bar\gamma,\bar\gamma}=1$, et si $\gamma\neq\delta$, alors $-2\ps{\bar\gamma}{\bar\delta}$ est le nombre d'arêtes liant $\gamma$ et $\delta$;
@@ -1006,6 +1007,34 @@ On peut supposer, quitte à échanger les rôles de $p,q,r$, que $p\leq q\leq r$
 	\item $p\geq2$, $q\geq2$ et $r\geq2$ alors $A\leq1$ ;
 \end{enumerate}
 On a ainsi énuméré tous les cas possibles pour $p,q,r$ et les seuls graphes pour lequels $A>1$ sont les graphes de type $A_n,D_n,E_6,E_7$ et $E_8$. Donc la forme quadratique $B$ est définie positives si et seulement si $\Gamma$ est de type $A_n,D_n,E_6,E_7$ ou $E_8$.
+\end{proof}
+\begin{defi}
+Soit $\Gamma$ un graphe. Un vecteur $x\in\EG$ est appelé racine s'il existe $\gamma\in\Gamma_0$, $w\in W$, tel que $x=w(\bar\gamma)$. Les vecteurs $\bar\gamma$, où $\gamma\in\Gamma_0$, sont appelés racines simples. Une racine $x$ est dite positive si $x>0$.
+\end{defi}
+\begin{lm}
+	\label{lmroot}
+	Soit $\Gamma$ un graphe et $x\in\EG$ un vecteur.
+	\begin{enumerate}
+		\item Si $x$ est une racine, $x$ est entier et $B(x)=1$ ;
+		\item si $x$ est une racine, $-x$ est une racine ;
+		\item si $x$ est une racine, soit $x>0$, soit $-x>0$.
+	\end{enumerate}
+\end{lm}
+\begin{proof}
+	Soit $x\in\EG$ une racine, il existe alors $\gamma\in\Gamma_0$, $w\in W$, tel que $x=w(\bar\gamma)$. $B(\bar\gamma)=1$ et $\bar\gamma$ est entier, ainsi d'après le point $3$ du lemme \ref{elem}, $B(w(\bar\gamma))=B(x)=1$ et $w(\bar\gamma)=x$ est entier, ce qui prouve le point $1$. Le point $2$ suit du fait que $\forall\gamma\in\Gamma_0$, $\sigma_\gamma(\bar\gamma)=-\bar\gamma$, ainsi $w(\sigma_\gamma(\bar\gamma))=-w(\bar\gamma)=-x$, et comme $w\sigma_\gamma\in W$, $-x$ est une racine.
+\end{proof}
+\begin{defi}
+	Soit $\Gamma$ un graphe sans boucle, et soit $\gamma_1,\dots,\gamma_n$ une énumération de ses sommets. Un élément $c=\sigma_{\gamma_n}\dots\sigma_{\gamma_1}\in W$ est appelé transformation de Coxeter, $c$ dépend de l'énumération choisie.
+\end{defi}
+\begin{lm}
+Soit $\Gamma$ un graphe sans boucle, $\gamma_1,\dots,\gamma_n$ une énumération de ses sommets, et supposons que la forme quadratique $B$ est définie positive pour ce graphe $\Gamma$. On note $c=\sigma_{\gamma_n}\dots\sigma_{\gamma_1}$.
+\begin{enumerate}
+	\item La transformation de Coxeter $c$ n'admet aucun point fixe non nul dans $\EG$ ;
+	\item si $x\in\EG$ et $x\neq0$, alors il existe $i\in\mathbb N$ tel que $c^i(x)$ n'est pas positif.
+\end{enumerate}
+\end{lm}
+\begin{proof}
+	Supposons qu'il existe $y\in\EG$ avec $y\neq0$ et $c(y)=y$. Comme les transformations $\sigma_{\gamma_n}$, $\sigma_{\gamma_{n-1}},\dots,\sigma_{\gamma_2}$ ne changent pas la coordonnée en $\gamma_1$ (c'est-à-dire $\forall i\in\ent{2}{n}\;\forall z\in\EG,\;(\sigma_{\gamma_i}(z))_{\gamma_1}=z_{\gamma_1}$), on a $(\sigma_{\gamma_1}(y))_{\gamma_1}=c(y)_{\gamma_1}=y_{\gamma_1}$. Comme $\sigma_{\gamma_1}$ laisse les coordonnées différentes de $\gamma_1$ inchangées, on a $\sigma_{\gamma_1}(y)=y$. Puis, par récurrence, on prouve que $\forall i\in\ent{1}{n}$, $\sigma_{\gamma_i}(y)=y$. De plus, on a $\forall\gamma\in\Gamma_0$, $\sigma_{\gamma}(y)=y=y-2\ps{\bar\gamma}{y}\bar\gamma$, d'où 
 \end{proof}
 %Lignes à ajouter pour faire apparaître notre bibliographie
 \clearpage
