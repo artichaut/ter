@@ -780,6 +780,20 @@ Soit $(\Gamma,\Lambda)$ un carquois et $\beta_1,\dots,\beta_k$ une suite de puit
 	\]
 	D'où $F_{\beta_{i-2}}^{+}\dots F_{\beta_{1}}^{+}(V,f)\approx F_{\beta_{i-1}}^-(L_{\beta_{i}})$, et $F_{\beta_{i-1}}^{-}(L_{\beta_i})$ n'est pas isomorphe à $L_{\beta_{i-2}}$. Sinon, en utilisant le point $5$ du lemme \ref{lemmecrucial} on aurait que $F_{\beta_{i-2}}^{+}\dots F_{\beta_{1}}^{+}(V,f)$ est la représentation nulle, ce qui entre en contradiction avec le choix de $i$. En itérant ce raisonnement il vient $V\approx F_{\beta_{1}}^-F_{\beta_2}^-\dots F_{\beta_{i-1}}^-(L_{\beta_i})$.
 \end{proof}
+\begin{defi}
+  On dit qu'une numérotation $(\gamma_{1}, \dots, \gamma_{n})$ des sommets d'un graphe orienté $(\Gamma,\Lambda)$ est un tri topologique des sommets de $\Gamma$ pour l'orientation $\Lambda$ si pour tout arête $l$ de $\Gamma$ telle que $s(l) = \gamma_{i}$ et $t(l) = \alpha_{j}$ avec  $i,j \in [\![1,n]\!]$ alors $i>j$.
+\end{defi}
+\begin{prop}
+\label{tri-topo}
+Soit $(\Gamma,\Lambda)$ un graphe orienté ne contenant pas de cycle orienté.
+  \begin{enumerate}
+  \item $(\Gamma,\Lambda)$ admet un tri topologique de ces sommets.
+  \item Un tri topologique des sommets de $(\Gamma,\Lambda)$ est une suite de puits suivant l'orientation $\Lambda$.
+  \end{enumerate}
+\end{prop}
+\begin{proof}
+  
+\end{proof}
 \begin{thm}
 Soit $\Gamma$ un graphe ne contenant pas de cycle, et soient $\Lambda,\Lambda'$ deux orientations de ce graphe. 
 \begin{enumerate}
@@ -787,7 +801,18 @@ Soit $\Gamma$ un graphe ne contenant pas de cycle, et soient $\Lambda,\Lambda'$ 
 	\item Soit $\mathscr M$, (respectivement $\mathscr M'$) l'ensemble des représentations indécomposables (à isomorphisme près) de $\mathscr L(\Gamma,\Lambda)$ (respectivement de $\mathscr L(\Gamma,\Lambda)$). 
 \end{enumerate}
 \end{thm}
-		\clearpage
+
+\begin{proof}
+  Montrons qu'il suffit de faire la preuve dans le cas où $\Lambda$ et $\Lambda'$ ne diffère que sur une arête. Pour ce faire, démontrons que l'on peut passer d'une arête à deux arêtes de différence. Le cas général se déduit alors par réccurence. 
+
+Soit $\Lambda$ et $\Lambda'$ différentes sur $l$ et $l'$ deux arêtes distinctes de $\Gamma$. Posons $\widetilde \Lambda$ différent de $\Lambda$ sur $l$ uniquement. Alors on sait qu'il existe par hypothèse une suite de puits $\beta_{1}, \dots, \beta_{k}$ dans $( \Gamma, \Lambda)$ telle que $\sigma_{\beta_{1}}\dots\sigma_{\beta_{k}}\Lambda = \widetilde \Lambda$. De même, il existe une suite de puits $\beta'_{1}, \dots, \beta'_{k'}$ dans $(\Gamma,\widetilde \Lambda)$ telle que $\sigma_{\beta'_{1}}\dots\sigma_{\beta'_{k'}} \widetilde \Lambda = \Lambda'$. Finalement, on a que $\sigma_{\beta'_{1}}\dots\sigma_{\beta'_{k'}}\sigma_{\beta_{1}}\dots\sigma_{\beta_{k}}\Lambda =  \Lambda'$. 
+
+Montrons maintenant l'existence d'une séquence $\beta_{1}, \dots, \beta_{k}$ de puits dans $(\Gamma,\Lambda)$ telle que $\sigma_{\beta_{1}}\dots\sigma_{\beta_{k}}\Lambda = \Lambda'$ lorsque $\Lambda$ et $\Lambda'$ sont deux orientations différents sur une seule arête $l$. Considérons le graphe $\Gamma \setminus l $ , il est scindé en deux composantes connexes car $\Gamma$ ne contient pas de cycle. Nommons $\Gamma_{1}$ la composante contenant le sommet $t(l)$, elle ne contient toujours pas de cycle, donc il existe un tri topologique de ces sommets $\gamma_{1}, \dots, \gamma_{m}$ pour l'orientation $\Lambda$. Montrons alors que $\sigma_{\gamma_{1}}\dots\sigma_{\gamma_{m}} \Lambda = \Lambda'$. En effet l'orientation des arêtes de $\Gamma_{1}$ différentes de $l$ est modifié deux fois donc reste inchangée. Alors que l'orientation de $l$ est modifiée une unique fois. D'après \ref{tri-topo}, $\gamma_{1}, \dots, \gamma_{m}$ est une suite de puit pour orientation $\Lambda$, donc on a le résultat.
+\end{proof}
+
+\clearpage
+
+
 \section{Graphes, groupe de Weyl et transformation de Coxeter}
 	Dans cette section nous définirons un système de racine utile, ainsi que des résultats qui nous permettrons dans la dernière partie de prouver le théorème de Gabriel.
 		\begin{defi}
