@@ -764,6 +764,7 @@ Cela termine la démonstration dans le cas où $\beta$ est un puits.
 	On dit qu'une suite de sommets $\alpha_1,\alpha_2,\dots\alpha_k$ est une suite (-)-accessible, ou une suite de sources, suivant l'orientation $\Lambda$, si $\alpha_1$ est une source suivant l'orientation $\Lambda$, $\alpha_2$ est une source suivant l'orientation $\sigma_{\alpha_1}\Lambda$, $\alpha_3$ est une source suivant l'orientation $\sigma_{\alpha_2}\sigma_{\alpha_1}\Lambda$, et ainsi de suite.
 \end{defi}
 \begin{cor}
+\label{cor-crucial}
 Soit $(\Gamma,\Lambda)$ un carquois et $\beta_1,\dots,\beta_k$ une suite de puits.
 \begin{enumerate}
 	\item $\forall i\in [\![1,k]\!],\;F_{\beta_1}^-\dots F_{\beta_{i-1}}^-(L_{\beta_{i}})$ est soit la représentation nulle, soit une représentation indécomposable de $\mathscr L(\Gamma,\Lambda)$ (ici $L_{\beta_i}\in\mathscr L(\Gamma,\sigma_{\beta_{i-1}}\sigma_{\beta_{i-2}}\dots\sigma_{\beta_{1}}\Lambda)$).
@@ -802,7 +803,7 @@ Montrons finalement le point 2, soit $\gamma_{1}, \dots, \gamma_{n}$ un tri topo
 Soit $\Gamma$ un graphe ne contenant pas de cycle, et soient $\Lambda,\Lambda'$ deux orientations de ce graphe. 
 \begin{enumerate}
 	\item Il existe $\beta_1,\beta_2,\dots,\beta_k$ une suite de puits suivant, $\Lambda$ telle que $\sigma_{\beta_k}\sigma_{\beta_{k-1}}\dots\sigma_{\beta_1}\Lambda=\Lambda'$ ;
-	\item Soit $\mathscr M$, (respectivement $\mathscr M'$) l'ensemble des représentations indécomposables (à isomorphisme près) de $\mathscr L(\Gamma,\Lambda)$ (respectivement de $\mathscr L(\Gamma,\Lambda')$). $\widetilde{ \mathscr M} \subset \mathscr M$ l'ensemble des classes des objets $F^{-}_{\alpha_{1}}F^{-}_{\alpha_{2}} \dots F^{-}_{\alpha_{i-1}}(L_{\alpha_{i}})$ pour $i\in [\![1,k]\!]$ et $\widetilde{ \mathscr M'} \subset \mathscr M' $ l'ensemble des classes d'objets $F^{+}_{\alpha_{k}}F^{+_{\alpha_{k-1}}} \dots F^{+}_{\alpha_{i}}(L_{\alpha_{i}})$ pour $i \in [\![1,k]\!]$, alors le foncteur $F^{+}_{\alpha_{k}}F^{+_{\alpha_{k-1}}} \dots F^{+}_{\alpha_{1}}$ est une bijection entre $\mathscr{ M} \setminus \widetilde{\mathscr M}$ et $\mathscr{ M}' \setminus \widetilde{\mathscr{M}'}$.
+	\item Soit $\mathscr M$, (respectivement $\mathscr M'$) l'ensemble des représentations indécomposables (à isomorphisme près) de $\mathscr L(\Gamma,\Lambda)$ (respectivement de $\mathscr L(\Gamma,\Lambda')$). $\widetilde{ \mathscr M} \subset \mathscr M$ l'ensemble des classes des objets $F^{-}_{\beta_{1}}F^{-}_{\beta_{2}} \dots F^{-}_{\beta_{i-1}}(L_{\beta_{i}})$ pour $i\in [\![1,k]\!]$ et $\widetilde{ \mathscr M'} \subset \mathscr M' $ l'ensemble des classes d'objets $F^{+}_{\beta_{k}}F^{+}_{\beta_{k-1}} \dots F^{+}_{\beta_{i}}(L_{\beta_{i}})$ pour $i \in [\![1,k]\!]$, alors le foncteur $F^{+}_{\beta_{k}}F^{+}_{\beta_{k-1}} \dots F^{+}_{\beta_{1}}$ est une bijection entre $\mathscr{ M} \setminus \widetilde{\mathscr M}$ et $\mathscr{ M}' \setminus \widetilde{\mathscr{M}'}$.
 \end{enumerate}
 \end{thm}
 
@@ -813,9 +814,22 @@ Soit $\Lambda$ et $\Lambda'$ différentes sur $l$ et $l'$ deux arêtes distincte
 
 Montrons maintenant l'existence d'une séquence $\beta_{1}, \dots, \beta_{k}$ de puits dans $(\Gamma,\Lambda)$ telle que $\sigma_{\beta_{1}}\dots\sigma_{\beta_{k}}\Lambda = \Lambda'$ lorsque $\Lambda$ et $\Lambda'$ sont deux orientations différents sur une seule arête $l$. Considérons le graphe $\Gamma \setminus l $ , il est scindé en deux composantes connexes car $\Gamma$ ne contient pas de cycle. Nommons $\Gamma_{1}$ la composante contenant le sommet $t(l)$, elle ne contient toujours pas de cycle, donc il existe un tri topologique de ces sommets $\gamma_{1}, \dots, \gamma_{m}$ pour l'orientation $\Lambda$. Montrons alors que $\sigma_{\gamma_{1}}\dots\sigma_{\gamma_{m}} \Lambda = \Lambda'$. En effet l'orientation des arêtes de $\Gamma_{1}$ différentes de $l$ est modifié deux fois donc reste inchangée. Alors que l'orientation de $l$ est modifiée une unique fois. D'après la propositon \ref{tri-topo}, $\gamma_{1}, \dots, \gamma_{m}$ est une suite de puit pour orientation $\Lambda$, donc on a le résultat.
 
-
+Montrons maintenant le point 2, soit $\beta_{1}, \dots, \beta_{k}$ une suite de puits de $\Gamma$ tels que $\sigma_{\beta_{1}}\dots\sigma_{\beta_{k}}\Lambda =  \Lambda'$ et posons $\Psi^{+} = F^{+}_{\beta_{k}}F^{+}_{\beta_{k-1}} \dots F^{+}_{\beta_{1}}$ et $\Psi^{-} = F^{-}_{\beta_{1}}F^{-}_{\beta_{2}} \dots F^{-}_{\beta_{k}}$. Les foncteurs $\Psi^{+}$ et $\Psi^{-}$ sont respectivements définies de $\mathscr L(\Gamma,\Lambda)$ dans $\mathscr L(\Gamma, \Lambda')$ et $\mathscr L(\Gamma,\Lambda')$ dans $\mathscr L(\Gamma, \Lambda)$ d'après le point 1. D'après le corollaire \ref{cor-crucial}, on sait qu'un élément $V$  de $\mathscr M \mathscr{\widetilde M}$ a pour image par $\Psi^{+}$ un élément de $\mathscr M' \mathscr{\widetilde M'}$. De plus 
 \end{proof}
 
+\begin{defi}
+  Soit $(\Gamma,\Lambda)$ un grpahe orienté sans cycle orienté et $\gamma_{1}, \dots, \gamma_{n}$ un tri topologique sur les sommmet de $\Gamma$ pour l'orientation $\Lambda$. On apelle les foncteurs de Coxeter les foncteurs $\Phi^{+} = F^{+}_{\beta_{k}}F^{+}_{\beta_{k-1}} \dots F^{+}_{\beta_{1}}$ et $\Phi^{-} = F^{-}_{\beta_{1}}F^{-}_{\beta_{2}} \dots F^{-}_{\beta_{k}}$.
+\end{defi}
+
+\begin{lm}
+  \begin{enumerate}
+  \item Les foncteurs $\Phi^{+}$ et $\Phi^{-}$ sont définies de $\mathscr(\Gamma, \Lambda)$ dans lui-même.
+  \item Les foncteurs $\Phi^{+}$ et $\Phi^{-}$ ne sont dépendent du choix du tri topologique choisi.
+  \end{enumerate}
+\end{lm}
+\begin{proof}
+  
+\end{proof}
 \clearpage
 
 
