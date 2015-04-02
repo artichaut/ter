@@ -57,7 +57,7 @@ Travail encadré par Pierre-Guy Plamondon}
 
 \clearpage
 \section*{Quelques notations}
-Rassemblons ici quelques notations que nous utiliserons sans rappel dans la suite du document. Nous noterons $fg$ plutôt que $f\circ g$, la composition entre les fonctions $f$ et $g$, $fg$ ne sera jamais un produit point par point. Si $f$ est une application, on note $\Img f$ son image et $\Ker f$ son noyau. On utilise la flêche $\hookrightarrow$ pour désigner une injection, et la flêche $\twoheadrightarrow$ pour désigner une surjection. Nous utiliserons l'abus de notation $x=0$ où $x$ peut représenter des objets de natures diverses, $0$ désignera alors l'élément nulle correspondant à la nature de l'objet $x$. Lorsqu'il n'y a pas d'ambigüité, ou par souci de simplification, nous noterons $V$ plutôt que $(V,f)$ pour une représentation de carquois. Les espaces vectoriels utilisés sont tous des $\mathbb K$-espaces vectoriels, où $\mathbb K$ est un corps fixé. Si $V$ et $V'$ sont deux espaces vectoriels, on note $V\oplus V'$ leur somme directe. Si $f$ et $g$ sont deux applications linéaires, on note $f\oplus g$ leur somme directe. Si $A$ et $B$ sont deux objets, on note $A/B$ leur quotient, la définition de quotient varie alors en fonction de la nature de $A$ et $B$. Si $X$ est un ensemble, on note $\Id_X$ l'application identité de $X$ dans lui-même.  On note $[\![1,n]\!]$ l'ensemble des entiers naturels compris entre $1$ et $n$. 
+Rassemblons ici quelques notations que nous utiliserons sans rappel dans la suite du document. Nous noterons $fg$ plutôt que $f\circ g$, la composition entre les fonctions $f$ et $g$, $fg$ ne sera jamais un produit point par point. Si $f$ est une application, on note $\Img f$ son image et $\Ker f$ son noyau. On utilise la flèche $\hookrightarrow$ pour désigner une injection, et la flèche $\twoheadrightarrow$ pour désigner une surjection. Nous utiliserons l'abus de notation $x=0$ où $x$ peut représenter des objets de natures diverses, $0$ désignera alors l'élément nul correspondant à la nature de l'objet $x$. Lorsqu'il n'y a pas d'ambigüité, ou par souci de simplification, nous noterons $V$ plutôt que $(V,f)$ pour une représentation de carquois. Les espaces vectoriels utilisés sont tous des $\mathbb K$-espaces vectoriels, où $\mathbb K$ est un corps fixé. Si $V$ et $V'$ sont deux espaces vectoriels, on note $V\oplus V'$ leur somme directe. Si $f$ et $g$ sont deux applications linéaires, on note $f\oplus g$ leur somme directe. Si $A$ et $B$ sont deux objets, on note $A/B$ leur quotient, la définition de quotient varie alors en fonction de la nature de $A$ et $B$. Si $X$ est un ensemble, on note $\Id_X$ l'application identité de $X$ dans lui-même.  On note $[\![1,n]\!]$ l'ensemble des entiers naturels compris entre $1$ et $n$. 
         
 \section{Notions préliminaires}
 Afin de comprendre l'énoncé, puis la preuve, du théorème de Gabriel, nous avons besoin de notions. Dans toute cette partie, nous introduirons les concepts nécessaires à la bonne compréhension du lecteur.
@@ -66,7 +66,7 @@ Afin de comprendre l'énoncé, puis la preuve, du théorème de Gabriel, nous av
 Le théorème de Gabriel donne de très beaux résultats sur les représentations de carquois. Cette notion est donc primordiale pour toute la suite de ce document.
 \begin{defi}[Carquois]
 	\label{carquois}
-	Un carquois $(\Gamma,\Lambda)$ est constitué d'un graphe quelconque non orienté $\Gamma$ et d'une orientation $\Lambda$. On note  $\Gamma_0$ l'ensemble des sommets de $\Gamma$ et $\Gamma_1$ l'ensemble des arêtes non orientées de $\Gamma$. L'orientation $\Lambda$ est un couple de fonctions $(s,t)$ nommées recpectivement source et destination définies de $\Gamma_1$ dans $\Gamma_0$. 
+	Un \emph{carquois} $(\Gamma,\Lambda)$ est constitué d'un graphe quelconque non orienté $\Gamma$ et d'une orientation $\Lambda$. On note  $\Gamma_0$ l'ensemble des sommets de $\Gamma$ et $\Gamma_1$ l'ensemble des arêtes non orientées de $\Gamma$. L'orientation $\Lambda$ est un couple de fonctions $(s,t)$ nommées recpectivement source et destination définies de $\Gamma_1$ dans $\Gamma_0$. 
 \end{defi}
 On considérera seulement des carquois connexes dans les exemples ci dessous.
 	\begin{ex}
@@ -110,29 +110,29 @@ On considérera seulement des carquois connexes dans les exemples ci dessous.
 \subsection{Représentations de carquois}
 Maintenant que nous connaissons la définition d'un carquois, et que nous pouvons nous représenter l'objet, nous sommes capables d'aborder le coeur du sujet : les représentations de carquois. À l'issue de cette partie, nous serons même capables d'énoncer, et comprendre, une partie du théorème de Gabriel.
 \begin{defi}[Représentation de carquois]
-  Une représentation de carquois d'un carquois $(\Gamma,\Lambda)$ est un couple $(V,f)$ où $V$ est une liste indexée sur $\Gamma_0$ d'espaces vectoriels de dimension finie et $f$ est une liste indexée sur $\Gamma_1$ de morphismes d'espace vectoriel tels que pour tout $l \in \Gamma_1, f_l$ est définie de $V_{s(l)}$ dans $V_{t(l)}$.
+	Une \emph{représentation de carquois} d'un carquois $(\Gamma,\Lambda)$ est un couple $(V,f)$ où $V$ est une liste indexée sur $\Gamma_0$ d'espaces vectoriels de dimension finie et $f$ est une liste indexée sur $\Gamma_1$ de morphismes d'espace vectoriel tels que pour tout $l \in \Gamma_1, f_l$ est définie de $V_{s(l)}$ dans $V_{t(l)}$.
 \end{defi}
 \begin{ex}[Une représentation]
 \end{ex}
 \begin{ex}[Une deuxième]
 \end{ex}
 \begin{defi}[Représentation nulle]
-	Soit $(\Gamma,\Lambda)$ un carquois, la représentation nulle de $(\Gamma,\Lambda)$ est la représentation $(V,f)$ où $\forall\gamma\in\Gamma^{0},\;V_{\gamma}=\left\{ 0 \right\}$ et où $\forall l \in\Gamma_{1},\;f_{l}$ est l'application linéaire nulle. On note $(V,f)=0$.
+	Soit $(\Gamma,\Lambda)$ un carquois, la \emph{représentation nulle} de $(\Gamma,\Lambda)$ est la représentation $(V,f)$ où $\forall\gamma\in\Gamma^{0},\;V_{\gamma}=\left\{ 0 \right\}$ et où $\forall l \in\Gamma_{1},\;f_{l}$ est l'application linéaire nulle. On note $(V,f)=0$.
 \end{defi}
-\begin{defi}[Somme de deux représentations de carquois]
-	Soit $(\Gamma,\Lambda)$ un carquois, $(V,f)$ et $(V',f')$ deux représentations de ce carquois. La somme de $(V,f)$ et $(V',f')$ est la représentation $(W,g)$ définie par $\forall\gamma\in\Gamma_{0},\;W_{\gamma}=V_{\gamma}\oplus V_{\gamma}'$ et $\forall l \in\Gamma_{1},\;g_{l}=f_{l}\oplus f_{l}'$. On note $(W,g)=(V,f)\oplus (V',f')$.
+\begin{defi}[Somme directe de deux représentations de carquois]
+	Soit $(\Gamma,\Lambda)$ un carquois, $(V,f)$ et $(V',f')$ deux représentations de ce carquois. La \emph{somme directe} de $(V,f)$ et $(V',f')$ est la représentation $(W,g)$ définie par $\forall\gamma\in\Gamma_{0},\;W_{\gamma}=V_{\gamma}\oplus V_{\gamma}'$ et $\forall l \in\Gamma_{1},\;g_{l}=f_{l}\oplus f_{l}'$. On note $(W,g)=(V,f)\oplus (V',f')$.
 \end{defi}
 \begin{defi}[Représentation indécomposable]
-	Soit $(\Gamma,\Lambda)$ un carquois et $(V,f)$ une représentation non nulle de ce carquois. On dit que $(V,f)$ est une représentation indécomposable si on ne peut pas l'écrire comme somme de deux représentations non nulles. De manière équivalente, on dit que $(V,f)$ est une représentation indécomposable si pour toutes représentations $(V^{1},f^{1})$, $(V^{2},f^{2})$, $(V,f)=(V^{1},f^{1})\oplus(V^{2},f^{2})$ implique $(V^{1},f^{1})=0$ ou $(V^{2},f^{2})=0$.
+	Soit $(\Gamma,\Lambda)$ un carquois et $(V,f)$ une représentation non nulle de ce carquois. On dit que $(V,f)$ est une \emph{représentation indécomposable} si on ne peut pas l'écrire comme somme de deux représentations non nulles. De manière équivalente, on dit que $(V,f)$ est une représentation indécomposable si pour toutes représentations $(V^{1},f^{1})$, $(V^{2},f^{2})$, $(V,f)=(V^{1},f^{1})\oplus(V^{2},f^{2})$ implique $(V^{1},f^{1})=0$ ou $(V^{2},f^{2})=0$.
 \end{defi}
-\begin{ex}[Représentations irréductibles]
+\begin{ex}[Représentations irréductibles associées aux sommets]
 \label{irreductible}
 Soit $(\Gamma,\Lambda)$ un carquois. On appelle représentations irréductibles, et on note $L_\gamma$, où $\gamma\in\Gamma_{0}$, les représentations telles que $\forall\delta\neq\gamma,\;(L_\gamma)_\delta=\left\{ 0 \right\}$,  $(L_\gamma)_\gamma=\mathbb K$ et $\forall l \in\Gamma_1,\;f_l=0$. $L_\gamma$ est alors une représentation indécomposable.
 \end{ex}
 \begin{ex}[Une représentation indécomposable plus grosse]
 \end{ex}
 \begin{defi}[Morphisme de représentation]
-	Soit $(\Gamma,\Lambda)$ un carquois et $(V,f)$,$(W,g)$ deux représentations de ce carquois. On dit que $\varphi=(\varphi_{\gamma})_{\gamma\in\Gamma_{0}}$ est un morphisme de représentations de $(V,f)$ dans $(W,g)$ si, pour tout $l\in\Gamma_{1}$, le diagramme suivant commute :
+	Soit $(\Gamma,\Lambda)$ un carquois et $(V,f)$,$(W,g)$ deux représentations de ce carquois. On dit que $\varphi=(\varphi_{\gamma})_{\gamma\in\Gamma_{0}}$ est un \emph{morphisme de représentations} de $(V,f)$ dans $(W,g)$ si, pour tout $l\in\Gamma_{1}$, le diagramme suivant commute :
 	\[
 	\begin{tikzpicture}
 	\matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
@@ -152,8 +152,10 @@ c'est-à-dire si $\forall l \in\Gamma_{1},\;\varphi_{t(l)}f_{l}=g_{l}\varphi_{s(
 \end{ex}
 \begin{defi}[Représentation quotient]
 \end{defi}
+\begin{defi}[Sous-représentations]
+\end{defi}
 \subsection{Théorie des catégories}
-Avant de traiter la preuve du thérorème de Gabriel, nous introduisons le langage de la théorie des catégories, celui nous aidera au court de la preuve. Les notations utilisées ici sont celle de \cite{A97}, et de plus amples détails sur les catégories peuvent y être trouvées, nous ne donnons ici qu'une brève présentation des notions qui nous serons utiles par la suite.
+Avant de traiter la preuve du thérorème de Gabriel, nous introduisons le langage de la théorie des catégories, qui nous aidera au court de la preuve. Les notations utilisées ici sont celle de \cite{A97}, et de plus amples détails sur les catégories peuvent y être trouvées, nous ne donnons ici qu'une brève présentation des notions qui nous serons utiles par la suite.
 \begin{defi}[Catégorie]
 \end{defi}
 \begin{defi}[Foncteur]
@@ -221,29 +223,29 @@ Nous faisons ici un inventaire de certaines catégories de graphes non orientés
     \draw[thick] (4 cm, 3mm) -- +(0, 1.4 cm);
   \end{tikzpicture}
 \end{center}
-On appelle ces graphes les diagrammes de Dynkin de type $A_n,D_n,E_6,E_7$ et $E_8$.
+On appelle ces graphes les diagrammes de Dynkin de type $A_n,D_n,E_6,E_7$ et $E_8$, ou encore diagrammes de Dynkin simplement lacés.
 \subsection{Système de racines}
-Afin de faire le lien entre les diagrammes de Dynkin et les représentations de carquois, il nous sera utile de savoir ce qu'est un système de racines, l'arrivée des diagrammes de Dynkin et des groupes de Weil nous permettra même de préciser le théorème de Gabriel que nous connaissions jusqu'à maintenant.
+Afin de faire le lien entre les diagrammes de Dynkin simplement lacés et les représentations de carquois, il nous sera utile de savoir ce qu'est un système de racines, l'arrivée des diagrammes de Dynkin et des groupes de Weyl nous permettra de mieux comprendre les outils utilisés lors de la démonstration du théorème de Gabriel.
 
 
 
 \clearpage
-\section{Foncteurs images et foncteur de Coxeter}
+\section{Foncteurs de réflexion et foncteurs de Coxeter}
 Soit $(\Gamma,\Lambda)$ un carquois, on se place dans la catégorie $\mathscr{L}(\Gamma,\Lambda)$. Nous allons construire des foncteurs images, associés aux sommets $\alpha \in \Gamma_{0}$ de $\Gamma$ pour lesquels la direction des flèches le contenant est identique. On note $\Gamma^{\alpha}=\{ l\in \Gamma_{1} : s(l)=\alpha\text{ ou }t(l)=\alpha\}$ l'ensemble des arêtes contenant $\alpha$.
 
 \begin{defi}
-	On dit qu'un sommet $\beta \in \Gamma_{0}$ est un puits, ou qu'il est (+)-accessible, si $\forall l \in \Gamma^{\beta},\; t(l)=\beta$, c'est-à-dire si toutes les arêtes contenant $\beta$ arrivent en $\beta$ et qu'il n'y a pas de boucles de $\beta$ dans lui même.
+	On dit qu'un sommet $\beta \in \Gamma_{0}$ est un \emph{puits}, ou qu'il est (+)-accessible, si $\forall l \in \Gamma^{\beta},\; t(l)=\beta$, c'est-à-dire si toutes les arêtes contenant $\beta$ arrivent en $\beta$ et qu'il n'y a pas de boucles de $\beta$ dans lui même.
 
-On dit de même qu'un sommet $\alpha \in \Gamma_{0}$ est une source, ou qu'il est (-)-accessible, si $\forall l \in \Gamma^{\alpha},\; s(l)=\alpha$, c'est-à-dire si toutes les arêtes contenant $\alpha$ partent de $\alpha$ et qu'il n'y a pas de boucles de $\alpha$ dans lui même.
+	On dit de même qu'un sommet $\alpha \in \Gamma_{0}$ est une \emph{source}, ou qu'il est (-)-accessible, si $\forall l \in \Gamma^{\alpha},\; s(l)=\alpha$, c'est-à-dire si toutes les arêtes contenant $\alpha$ partent de $\alpha$ et qu'il n'y a pas de boucles de $\alpha$ dans lui même.
 \end{defi}
 
 
-Si $\gamma \in \Gamma_0$ est un sommet, on note $\sigma_{\gamma}\Lambda$ l'orientation obtenue à partir de $\Lambda$ en inversant le sens des flêches contenant $\gamma$.
+Si $\gamma \in \Gamma_0$ est un sommet, on note $\sigma_{\gamma}\Lambda$ l'orientation obtenue à partir de $\Lambda$ en inversant le sens des flèches contenant $\gamma$.
 
 Supposons que le sommet $\alpha \in \Gamma_{0}$ soit un puits avec l'orientation $\Lambda$.  Nous allons construire une application qui à un objet $(V,f)$ de $\mathscr{L}(\Gamma,\Lambda)$ associe un objet $(W,g)$ de $\mathscr{L}(\Gamma,\sigma_{\alpha}\Lambda)$. De même si $\beta \in \Gamma_0$ est une source, nous allons construire une autre application qui à un objet de $\mathscr L(\Gamma,\Lambda)$ associe un objet de $\mathscr L(\Gamma,\sigma_{\beta}\Lambda)$. 
 
 \begin{defi}
-	On notera l'application $F_{\beta}^{+}$ et on aura $F_{\beta}^{+}(V,f)=(W,g)$. On pose, $\forall \gamma\neq\beta,\;W_{\gamma}=V_{\gamma}$, et $\forall l \notin \Gamma^{\beta},\; g_{l}=f_{l}$. Ainsi on laisse inchangés tous les sommets différents de $\beta$ et toutes les arêtes ne faisant pas intervenir $\beta$. On considère les arêtes $l_{1},\dots,l_{n}$ qui vont en $\beta$ et on note $h:\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}\rightarrow V_{\beta}$ l'application qui à un vecteur $(v_{1},\dots,v_{n})$ associe la somme $f_{l_{1}}(v_{1})+\dots+f_{l_{n}}(v_{n})$. On pose alors $W_{\beta}=\Ker(h)$. On définie maintenant les applications $g_{l}$ pour $l\in\Gamma^{\beta}$. Soit $i\in[\![1,n]\!]$, alors $g_{l_{i}}$ est la composition de l'injection de $\Ker(h)$ dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}$ et de la projection de $\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}$ dans $V_{s(l_{i})}$. 
+	On notera l'application $F_{\beta}^{+}$ et on aura $F_{\beta}^{+}(V,f)=(W,g)$. On pose, $\forall \gamma\neq\beta,\;W_{\gamma}=V_{\gamma}$, et $\forall l \notin \Gamma^{\beta},\; g_{l}=f_{l}$. Ainsi on laisse inchangés tous les sommets différents de $\beta$ et toutes les arêtes ne faisant pas intervenir $\beta$. On considère les arêtes $l_{1},\dots,l_{n}$ qui vont en $\beta$ et on note $h:\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}\rightarrow V_{\beta}$ l'application qui à un vecteur $(v_{1},\dots,v_{n})$ associe la somme $f_{l_{1}}(v_{1})+\dots+f_{l_{n}}(v_{n})$. On pose alors $W_{\beta}=\Ker(h)$. On définit maintenant les applications $g_{l}$ pour $l\in\Gamma^{\beta}$. Soit $i\in[\![1,n]\!]$, alors $g_{l_{i}}$ est la composition de l'injection de $\Ker(h)$ dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}$ et de la projection de $\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}$ dans $V_{s(l_{i})}$. 
 
 	On notera de même, $F^{-}_{\alpha}$, l'application et on aura $F^{-}_{\alpha}(V,f) = (W,g)$. On pose, $\forall \gamma \neq \alpha, W_\gamma = V_\gamma$, et $\forall l \notin \Gamma_\alpha, f_l = g_l$. En considérant les arêtes $l_1, \dots, l_n$ qui partent de $\alpha$, on note $\widetilde{h} : V_\alpha \rightarrow \overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}$ et qui à un vecteur $v \in V_\alpha$ associe le vecteur $(f_1(v),\dots, f_n(v))$. On pose alors $W_\alpha = \overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}/\Img(\widetilde{h})$. On pose pour $i\in [\![1,n]\!]$, alors $g_{l_i}$ comme la composition de l'inclusion naturelle de $V_{l_i}$ dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}$ et de la projection dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}/\Img(\widetilde h)$.
 
@@ -254,14 +256,14 @@ Supposons que le sommet $\alpha \in \Gamma_{0}$ soit un puits avec l'orientation
 \end{prop}
 
 \begin{proof}
-	On se place dans le même cadre que lors des définitions, ainsi on a $(V,f)\in\mathscr{L}(\Gamma,\Lambda)$ une représentation du carquois $\Gamma$. On note toujours $F_{\beta}^{+}(V,f)=(W,g)\in\mathscr{L}(\Gamma,\sigma_{\beta}\Lambda)$ la représentation image de $(V,f)$ par l'application $F_{\beta}^{+}$. On a déjà la définition de $F_{\beta}^{+}$ sur les objets des catégories $\mathscr{L}(\Gamma,\Lambda)$ et $\mathscr{L}(\Gamma,\sigma_{\beta}\Lambda)$, et pour tout $(\gamma,l)\in\Gamma_{0}\times\Gamma_{1}$, on a bien que $W_{\gamma}$ est un espace vectoriel, et que $g_{l}$ est une application linéaire. Il nous reste donc à définir $F_{\beta}^{+}$ sur les morphismes de représentations pour obtenir son caractère fonctoriel. Ainsi, soient $(V,f)$ et $(V',f')$ deux représentations de $\Gamma$, on note encore $l_{1},\dots,l_{n}\in\Gamma^{\beta}$ les arêtes en direction du puits $\beta$, et soit $\varphi=(\varphi_{\gamma})_{\gamma\in\Gamma_{0}}$ un morphisme de représentation entre $(V,f)$ et $(V',f')$. On note $(W,g)$ et $(W',g')$ les représentations images par $F_{\beta}^{+}$ de $(V,f)$ et $(V',f')$. On note également $\gamma=(\gamma_{\gamma})_{\gamma\in\Gamma_{0}}$ le morphisme image de $\varphi$ par $F_{\beta}^{+}$, qu'il nous faut encore définir. On pose donc :
+	On se place dans le même cadre que lors des définitions, ainsi on a $(V,f)\in\mathscr{L}(\Gamma,\Lambda)$ une représentation du carquois $\Gamma$. On note toujours $F_{\beta}^{+}(V,f)=(W,g)\in\mathscr{L}(\Gamma,\sigma_{\beta}\Lambda)$ la représentation image de $(V,f)$ par l'application $F_{\beta}^{+}$. On a déjà la définition de $F_{\beta}^{+}$ sur les objets des catégories $\mathscr{L}(\Gamma,\Lambda)$ et $\mathscr{L}(\Gamma,\sigma_{\beta}\Lambda)$, et pour tout $(\gamma,l)\in\Gamma_{0}\times\Gamma_{1}$, on a bien que $W_{\gamma}$ est un espace vectoriel, et que $g_{l}$ est une application linéaire. Il nous reste donc à définir $F_{\beta}^{+}$ sur les morphismes de représentations pour obtenir son caractère fonctoriel. Ainsi, soient $(V,f)$ et $(V',f')$ deux représentations de $\Gamma$, on note encore $l_{1},\dots,l_{n}\in\Gamma^{\beta}$ les arêtes en direction du puits $\beta$, et soit $\varphi=(\varphi_{\gamma})_{\gamma\in\Gamma_{0}}$ un morphisme de représentation entre $(V,f)$ et $(V',f')$. On note $(W,g)$ et $(W',g')$ les représentations images par $F_{\beta}^{+}$ de $(V,f)$ et $(V',f')$. On note également $\psi=(\psi_{\gamma})_{\gamma\in\Gamma_{0}}$ le morphisme image de $\varphi$ par $F_{\beta}^{+}$, qu'il nous faut encore définir. On pose donc :
 	\[	
-		\gamma_{\beta}(v_{1},\dots,v_{n})=(\varphi_{s(l_{1})}(v_{1}),\dots,\varphi_{s(l_{n})}(v_{n}))
+		\psi_{\beta}(v_{1},\dots,v_{n})=(\varphi_{s(l_{1})}(v_{1}),\dots,\varphi_{s(l_{n})}(v_{n}))
 	\]
 	\[
-		\forall \gamma\neq\beta,\; \gamma_{\gamma}=\varphi_{\gamma}.
+		\forall \gamma\neq\beta,\; \psi_{\gamma}=\varphi_{\gamma}.
 	\]
-	Assurons nous tout d'abord du caractère bien défini de $\gamma$. Pour tout $\gamma\neq\beta$, on a $V_{\gamma}=W_{\gamma}$, $V'_{\gamma}=W'_{\gamma}$ et $\gamma_{\gamma}=\varphi_{\gamma}$, le morphisme $\gamma$ est donc bien défini pour tout sommet $\gamma\neq\beta$. Il nous reste à vérifier que $\gamma_{\beta}$ est bien défini. Soit $(v_{1},\dots,v_{n})\in\Ker(h)$, il nous faut voir que $\gamma_{\beta}(v_{1},\dots,v_{n})\in\Ker(k)$, où
+	Assurons nous tout d'abord du caractère bien défini de $\psi$. Pour tout $\gamma\neq\beta$, on a $V_{\gamma}=W_{\gamma}$, $V'_{\gamma}=W'_{\gamma}$ et $\psi_{\gamma}=\varphi_{\gamma}$, le morphisme $\psi$ est donc bien défini pour tout sommet $\gamma\neq\beta$. Il nous reste à vérifier que $\psi_{\beta}$ est bien défini. Soit $(v_{1},\dots,v_{n})\in\Ker(h)$, il nous faut voir que $\psi_{\beta}(v_{1},\dots,v_{n})\in\Ker(k)$, où
 	\[
 \begin{array}{lccc}
 	h : & \overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}&\rightarrow & V_{\beta} \\ 
@@ -274,29 +276,29 @@ Supposons que le sommet $\alpha \in \Gamma_{0}$ soit un puits avec l'orientation
 Ainsi :
 \[
 \begin{array}{rl}
-	k(\gamma_{\beta}(v_{1},\dots,v_{n})) & = \underset{i=1}{\overset{n}{\sum}}f'_{l_{i}}(\varphi_{s(l_{i})}(v_{i})) \\ 
+	k(\psi_{\beta}(v_{1},\dots,v_{n})) & = \underset{i=1}{\overset{n}{\sum}}f'_{l_{i}}(\varphi_{s(l_{i})}(v_{i})) \\ 
 	& = \underset{i=1}{\overset{n}{\sum}} \varphi_{\beta}(f_{l_{i}}(v_{i}))\\
 	& = \varphi_{\beta}(\underset{i=1}{\overset{n}{\sum}}f_{l_{i}}(v_{i}))\\
 	& = \varphi_{\beta}(0) \\
 	& = 0 \\
 \end{array}
 \]
-donc $\gamma_{\beta}$ est bien définie. Voyons désormais que $\gamma$ est bien un morphisme de représentations entre $(W,g)$ et $(W',g')$. Comme pour tout $\gamma\neq\beta$, on a $\gamma_{\gamma}=\varphi_{\gamma}$, et pour tout $l\notin\Gamma^{\beta}$, on a $g_{l}=f_{l}$ et $g'_{l}=f'_{l}$, il vient facilement que $g'_{l_{i}}\gamma_{s(l_{i})}=\gamma_{t(l_{i})}g_{l_{i}}$ dès lors que $l\notin\Gamma^{\beta}$. Regardons maintenant le cas où $l\in\Gamma^{\beta}$, il existe alors $i\in[\![1,n]\!]$ tel que $l=l_{i}$, et on a $t(l_{i})=\beta$. Soit $(v_{1},\dots,v_{n})\in W_{\beta}$, il vient, d'une part :
+donc $\psi_{\beta}$ est bien définie. Voyons désormais que $\psi$ est bien un morphisme de représentations entre $(W,g)$ et $(W',g')$. Comme pour tout $\gamma\neq\beta$, on a $\psi_{\gamma}=\varphi_{\gamma}$, et pour tout $l\notin\Gamma^{\beta}$, on a $g_{l}=f_{l}$ et $g'_{l}=f'_{l}$, il vient facilement que $g'_{l_{i}}\psi_{s(l_{i})}=\psi_{t(l_{i})}g_{l_{i}}$ dès lors que $l\notin\Gamma^{\beta}$. Regardons maintenant le cas où $l\in\Gamma^{\beta}$, il existe alors $i\in[\![1,n]\!]$ tel que $l=l_{i}$, et on a $t(l_{i})=\beta$. Soit $(v_{1},\dots,v_{n})\in W_{\beta}$, il vient, d'une part :
 
 \[
 \begin{array}{ll}
-	g'_{l_{i}}\gamma_{\beta}(v_{1},\dots,v_{n})&=g'_{l_{i}}(\varphi_{s(l_{1})}(v_{1}),\dots,\varphi_{s(l_{n})}(v_{n}))\\
+	g'_{l_{i}}\psi_{\beta}(v_{1},\dots,v_{n})&=g'_{l_{i}}(\varphi_{s(l_{1})}(v_{1}),\dots,\varphi_{s(l_{n})}(v_{n}))\\
 	&=\varphi_{s(l_{i})}(v_{i})
 \end{array}
 \]
 et d'autre part :
 \[
 \begin{array}{ll}
-	\gamma_{s(l_{i})}g_{l_{i}}(v_{1},\dots,v_{n})&=\gamma_{s(l_{i})}(v_{i})\\
+	\psi_{s(l_{i})}g_{l_{i}}(v_{1},\dots,v_{n})&=\psi_{s(l_{i})}(v_{i})\\
 	&=\varphi_{s(l_{i})}(v_{i}).
 \end{array}
 \]
-Ainsi, on a bien que $\forall l \in\Gamma_{1},\;g'_{l}\gamma_{t(l)}=\gamma_{s(l)}g_{l}$, ce qui prouve que $\gamma$ est un morphisme de représentations de $(W,g)$ vers $(W',g')$. Il nous reste donc à voir que $F_{\beta}^{+}$ respecte la composition des morphismes et qu'il envoie l'identité sur l'identité. À cet effet, posons $\Id = (\Id_{V_{\gamma}})_{\gamma\in\Gamma_{0}}$ le morphisme idendité de $(V,f)$ dans $(V,f)$, c'est à dire que pour tout sommet $\gamma\in\Gamma_{0}$, $\Id_{V_{\gamma}}$ est l'application identité de $V_{\gamma}$ dans lui-même. On a :
+Ainsi, on a bien que $\forall l \in\Gamma_{1},\;g'_{l}\psi_{t(l)}=\psi_{s(l)}g_{l}$, ce qui prouve que $\psi$ est un morphisme de représentations de $(W,g)$ vers $(W',g')$. Il nous reste donc à voir que $F_{\beta}^{+}$ respecte la composition des morphismes et qu'il envoie l'identité sur l'identité. À cet effet, posons $\Id = (\Id_{V_{\gamma}})_{\gamma\in\Gamma_{0}}$ le morphisme idendité de $(V,f)$ dans $(V,f)$, c'est à dire que pour tout sommet $\gamma\in\Gamma_{0}$, $\Id_{V_{\gamma}}$ est l'application identité de $V_{\gamma}$ dans lui-même. On a :
 \[
 	\forall \gamma\neq\beta,\;F_{\beta}^{+}(\Id)_{\gamma}=\Id_{V_{\gamma}}
 \]
@@ -305,7 +307,7 @@ Ainsi, on a bien que $\forall l \in\Gamma_{1},\;g'_{l}\gamma_{t(l)}=\gamma_{s(l)
 \]
 Le morphisme identité de $(V,f)$ est donc bien envoyé sur le morphisme identité de $F_{\beta}^{+}(V,f)$. Posons désormais $(V,f)$,$(V',f')$ et $(V'',f'')$ trois représentations de $(\Gamma,\Lambda)$, $\varphi$ (respectivement $\varphi '$) un morphisme de représentation de $(V,f)$ dans $(V',f')$ (respectivement de $(V',f')$ dans $(V'',f'')$), ainsi que $(W,g)$, $(W',g')$, $(W'',g'')$, 
 %% à mon avis c'est une erreur de les nommer gamma et gamma'
- $\gamma$ et $\gamma '$ leurs images par $F_{\beta}^{+}$. Il vient :
+ $\psi$ et $\psi '$ leurs images par $F_{\beta}^{+}$. Il vient :
 \[
 	\forall \gamma\neq\beta,\;F_{\beta}^{+}(\varphi')_{\gamma}F_{\beta}^{+}(\varphi)_{\gamma}=\varphi_{\gamma}'\varphi_{\gamma}=F_{\beta}^{+}(\varphi'\varphi)_{\gamma}
 \]
@@ -759,7 +761,7 @@ Il s'agit maintenant de montrer que $\xi$ est un isomorphisme c'est à dire que 
 Cela termine la démonstration dans le cas où $\beta$ est un puits.
 \end{proof}
 \begin{defi}
-	On dit qu'une suite de sommets $\beta_1,\beta_2,\dots\beta_k$ est une suite (+)-accessible, ou une suite de puits, suivant l'orientation $\Lambda$, si $\beta_1$ est un puits suivant l'orientation $\Lambda$, $\beta_2$ est un puits suivant l'orientation $\sigma_{\beta_1}\Lambda$, $\beta_3$ est un puits suivant l'orientation $\sigma_{\beta_2}\sigma_{\beta_1}\Lambda$, et ainsi de suite.
+	On dit qu'une suite de sommets $\beta_1,\beta_2,\dots\beta_k$ est ne suite (+)-accessible, ou une \emph{suite de puits}, suivant l'orientation $\Lambda$, si $\beta_1$ est un puits suivant l'orientation $\Lambda$, $\beta_2$ est un puits suivant l'orientation $\sigma_{\beta_1}\Lambda$, $\beta_3$ est un puits suivant l'orientation $\sigma_{\beta_2}\sigma_{\beta_1}\Lambda$, et ainsi de suite.
 
 	On dit qu'une suite de sommets $\alpha_1,\alpha_2,\dots\alpha_k$ est une suite (-)-accessible, ou une suite de sources, suivant l'orientation $\Lambda$, si $\alpha_1$ est une source suivant l'orientation $\Lambda$, $\alpha_2$ est une source suivant l'orientation $\sigma_{\alpha_1}\Lambda$, $\alpha_3$ est une source suivant l'orientation $\sigma_{\alpha_2}\sigma_{\alpha_1}\Lambda$, et ainsi de suite.
 \end{defi}
@@ -782,7 +784,7 @@ Soit $(\Gamma,\Lambda)$ un carquois et $\beta_1,\dots,\beta_k$ une suite de puit
 	D'où $F_{\beta_{i-2}}^{+}\dots F_{\beta_{1}}^{+}(V,f)\approx F_{\beta_{i-1}}^-(L_{\beta_{i}})$, et $F_{\beta_{i-1}}^{-}(L_{\beta_i})$ n'est pas isomorphe à $L_{\beta_{i-2}}$. Sinon, en utilisant le point $5$ du lemme \ref{lemmecrucial} on aurait que $F_{\beta_{i-2}}^{+}\dots F_{\beta_{1}}^{+}(V,f)$ est la représentation nulle, ce qui entre en contradiction avec le choix de $i$. En itérant ce raisonnement il vient $V\approx F_{\beta_{1}}^-F_{\beta_2}^-\dots F_{\beta_{i-1}}^-(L_{\beta_i})$.
 \end{proof}
 \begin{defi}
-  On dit qu'une numérotation $(\gamma_{1}, \dots, \gamma_{n})$ des sommets d'un graphe orienté $(\Gamma,\Lambda)$ est un tri topologique des sommets de $\Gamma$ pour l'orientation $\Lambda$ si pour tout arête $l$ de $\Gamma$ telle que $s(l) = \gamma_{i}$ et $t(l) = \gamma_{j}$ avec  $i,j \in [\![1,n]\!]$ alors $i>j$.
+	On dit qu'une numérotation $(\gamma_{1}, \dots, \gamma_{n})$ des sommets d'un graphe orienté $(\Gamma,\Lambda)$ est un \emph{tri topologique} des sommets de $\Gamma$ pour l'orientation $\Lambda$ si pour tout arête $l$ de $\Gamma$ telle que $s(l) = \gamma_{i}$ et $t(l) = \gamma_{j}$ avec  $i,j \in [\![1,n]\!]$ alors $i>j$.
 \end{defi}
 \begin{prop}
 \label{tri-topo}
@@ -818,7 +820,7 @@ Montrons maintenant le point 2, soit $\beta_{1}, \dots, \beta_{k}$ une suite de 
 \end{proof}
 
 \begin{defi}
-  Soit $(\Gamma,\Lambda)$ un grpahe orienté sans cycle orienté et $\gamma_{1}, \dots, \gamma_{n}$ un tri topologique sur les sommmet de $\Gamma$ pour l'orientation $\Lambda$. On apelle les foncteurs de Coxeter les foncteurs $\Phi^{+} = F^{+}_{\beta_{k}}F^{+}_{\beta_{k-1}} \dots F^{+}_{\beta_{1}}$ et $\Phi^{-} = F^{-}_{\beta_{1}}F^{-}_{\beta_{2}} \dots F^{-}_{\beta_{k}}$.
+	Soit $(\Gamma,\Lambda)$ un graphe orienté sans cycle orienté et $\gamma_{1}, \dots, \gamma_{n}$ un tri topologique sur les sommmet de $\Gamma$ pour l'orientation $\Lambda$. On apelle les \emph{foncteurs de Coxeter} les foncteurs $\Phi^{+} = F^{+}_{\beta_{k}}F^{+}_{\beta_{k-1}} \dots F^{+}_{\beta_{1}}$ et $\Phi^{-} = F^{-}_{\beta_{1}}F^{-}_{\beta_{2}} \dots F^{-}_{\beta_{k}}$.
 \end{defi}
 
 \begin{lm}
@@ -838,12 +840,12 @@ Montrons maintenant le point 2, soit $\beta_{1}, \dots, \beta_{k}$ une suite de 
 		\begin{defi}
 		Soit $\Gamma$ un graphe ne possédant pas de boucles.
 		\begin{enumerate}
-			\item On note $\mathscr E_{\Gamma}$ le $\mathbb Q$-espace vectoriel $\mathbb Q^{\Gamma_0}$ composé des familles de rationnels $x=(x_\gamma)_{\gamma\in\Gamma_0}$. On associe à chaque sommet $\gamma\in\Gamma_0$, le vecteur $\bar{\gamma}\in\mathscr E_\Gamma$ tel que $(\bar\gamma)_\gamma=1$ et $\forall \delta\neq\gamma,\;(\bar\gamma)_\delta=0$. On dit qu'un vecteur $x$ est entier si $\forall\gamma\in\Gamma_{0},\;x_\gamma\in\mathbb Z$. On dit qu'un vecteur $x$ est positif, et l'on note $x>0$, si $x\neq0$ et si $\forall\gamma\in\Gamma_0,\;x_\gamma\geq0$.
+			\item On note $\mathscr E_{\Gamma}$ le $\mathbb Q$-espace vectoriel $\mathbb Q^{\Gamma_0}$ composé des familles de rationnels $x=(x_\gamma)_{\gamma\in\Gamma_0}$. On associe à chaque sommet $\gamma\in\Gamma_0$, le vecteur $\bar{\gamma}\in\mathscr E_\Gamma$ tel que $(\bar\gamma)_\gamma=1$ et $\forall \delta\neq\gamma,\;(\bar\gamma)_\delta=0$. On dit qu'un vecteur $x$ est \emph{entier} si $\forall\gamma\in\Gamma_{0},\;x_\gamma\in\mathbb Z$. On dit qu'un vecteur $x$ est \emph{positif}, et l'on note $x>0$, si $x\neq0$ et si $\forall\gamma\in\Gamma_0,\;x_\gamma\geq0$.
 			\item On pose :
 				\[
 				\begin{array}{rccc}
-					B:&\mathscr E_{\Gamma}&\rightarrow&\mathbb Q\\
-					&x&\mapsto&\underset{\gamma\in\Gamma_0}{\sum} x_\gamma^2-\underset{l\in\Gamma_1}{\sum}x_{e_1(l)}x_{e_2(l)}\\
+					B:&\mathscr E_{\Gamma}&\longrightarrow&\mathbb Q\\
+					&x&\longmapsto&\underset{\gamma\in\Gamma_0}{\sum} x_\gamma^2-\underset{l\in\Gamma_1}{\sum}x_{e_1(l)}x_{e_2(l)}\\
 				\end{array}
 			\]
 			où $e_1(l)$ et $e_2(l)$ sont les extrémités de $l$.
@@ -859,7 +861,7 @@ Montrons maintenant le point 2, soit $\beta_{1}, \dots, \beta_{k}$ une suite de 
 		\begin{array}{>{\dps}r>{\dps}l>{\dps}l}
 			2\ps{x}{y}&=& \underset{\gamma\in\Gamma_0}{\sum}(x+y)_\gamma^2 -\underset{l\in\Gamma_1}{\sum}(x+y)_{e_1(l)}(x+y)_{e_2(l)}\\
 		&&-\underset{\gamma\in\Gamma_0}{\sum}x_\gamma^2 +\underset{l\in\Gamma_1}{\sum}x_{e_1(l)}x_{e_2(l)}-\underset{\gamma\in\Gamma_0}{\sum}y_\gamma^2 +\underset{l\in\Gamma_1}{\sum}y_{e_1(l)}y_{e_2(l)}\\
-		\text{d'où }\ps{x}{y}&=&  \underset{\gamma\in\Gamma_0}{\sum}x_\gamma y_\gamma -\frac{1}{2}(\underset{l\in\Gamma_1}{\sum}x_{e_1(l)} y_{e_2(l)}+\underset{l\in\Gamma_1}{\sum}y_{e_1(l)} x_{e_2(l)})
+		\text{d'où }\ps{x}{y}&=&  \underset{\gamma\in\Gamma_0}{\sum}x_\gamma y_\gamma -\frac{1}{2}(\underset{l\in\Gamma_1}{\sum}x_{e_1(l)} y_{e_2(l)}+\underset{l\in\Gamma_1}{\sum}y_{e_1(l)} x_{e_2(l)}).
 		\end{array}
 			\]
 			De cette dernière égalité on tire immédiatement :
@@ -874,8 +876,8 @@ Montrons maintenant le point 2, soit $\beta_{1}, \dots, \beta_{k}$ une suite de 
 			\label{elem}
 		Soit $\Gamma$ un graphe sans boucle, $\gamma,\delta\in\Gamma_0$, $x\in\EG$ :
 		\begin{enumerate}
-			\item $\ps{\bar\gamma,\bar\gamma}=1$, et si $\gamma\neq\delta$, alors $-2\ps{\bar\gamma}{\bar\delta}$ est le nombre d'arêtes liant $\gamma$ et $\delta$;
-			\item on a $\sigma_\gamma(x)=x-2\ps{\bar\gamma}{x}\bar\gamma$ et $\sigma_\gamma^2=\Id$, en particulier $W$ est un groupe ;
+			\item $\ps{\bar\gamma}{\bar\gamma}=1$, et si $\gamma\neq\delta$, alors $-2\ps{\bar\gamma}{\bar\delta}$ est le nombre d'arêtes liant $\gamma$ et $\delta$;
+			\item on a $\sigma_\gamma(x)=x-2\ps{\bar\gamma}{x}\bar\gamma$ et $\sigma_\gamma^2=\Id$ ; en particulier $W$ est un groupe ;
 			\item le groupe $W$ préserve les éléments entiers de $\EG$ et la forme quadratique $B$ ;
 			\item si la forme $B$ est définie positive, alors le groupe $W$ est fini.
 		\end{enumerate}
@@ -887,7 +889,7 @@ Montrons maintenant le point 2, soit $\beta_{1}, \dots, \beta_{k}$ une suite de 
 			-2\ps{\bar\gamma}{\bar\delta}&=& \sum_{l\in\Gamma_1}(\bar\gamma_{e_1(l)}\bar\delta_{e_2(l)}+\bar\gamma_{e_2(l)}\bar\delta_{e_1(l)})\\
 			&=& \sum_{i=1}^n(\bar\gamma_{e_1(l_i)}\bar\delta_{e_2(l_i)}+\bar\gamma_{e_2(l_i)}\bar\delta_{e_1(l_i)})\\
 			&=& \sum_{i=1}^n 1\\
-			&=& n
+			&=& n,
 		\end{array}
 			\]
 			ce qui termine la démonstration du premier point, passons au deuxième. Soient $x\in\EG,\gamma\in\Gamma_0$, on a $x=\sum_{\delta\in\Gamma_0}x_\delta\bar\delta$. Ainsi on a $(\sigma_\gamma x)_\delta=x_\delta=(x-2\ps{\bar\gamma}{x}\bar\gamma)_\delta$, dès que $\gamma\neq\delta$ car $\bar\gamma_\delta=0$, et :
@@ -911,7 +913,7 @@ Montrons maintenant le point 2, soit $\beta_{1}, \dots, \beta_{k}$ une suite de 
 			&=& x\\
 		\end{array}
 			\]
-			d'où $\sigma_\gamma^2=\Id$. Ainsi $\Id\in W$, la composition est associative, et tous les éléments de $W$ sont symétrisables. En effet soit $\omega\in W$, alors $\omega$ s'écrit $\omega=\prod_{i=1}^n \sigma_{\gamma_i}$ avec $\gamma_i\in\Gamma_0$ et ainsi $\omega'=\prod_{i=1}^n \sigma_{\gamma_{n+1-i}}$ est l'inverse de $\omega$, les termes s'annulant deux à deux. On a donc que $W$ est un groupe et ceci conclut la preuve du point $2$. Pour prouver le point $3$, soit $x\in\EG$ un vecteur entier et $\gamma\in\Gamma_0$ un sommet de $\Gamma$. On a $(\sigma_\gamma(x))_\delta=x_\delta\in\mathbb Z$ dès que $\delta\neq\gamma$ et $(\sigma_\gamma(x))_\gamma=-x_\gamma+\sum_{l\in\Gamma^\gamma}x_{e(l)}\in\mathbb Z$ car $\forall \delta\in\Gamma_0,\;x_\delta\in\mathbb Z$. Comme les éléments de $W$ sont des compositions des applications $\sigma_\gamma$, on a immédiatement que $W$ préserve les éléments entiers de $\EG$. Voyons maintenant que $W$ préserve $B$ :
+			d'où $\sigma_\gamma^2=\Id$. Ainsi $\Id\in W$, la composition est associative, et tous les éléments de $W$ sont inversibles. En effet soit $\omega\in W$, alors $\omega$ s'écrit $\omega=\prod_{i=1}^n \sigma_{\gamma_i}$ avec $\gamma_i\in\Gamma_0$ et ainsi $\omega'=\prod_{i=1}^n \sigma_{\gamma_{n+1-i}}$ est l'inverse de $\omega$, les termes s'annulant deux à deux. On a donc que $W$ est un groupe et ceci conclut la preuve du point $2$. Pour prouver le point $3$, soit $x\in\EG$ un vecteur entier et $\gamma\in\Gamma_0$ un sommet de $\Gamma$. On a $(\sigma_\gamma(x))_\delta=x_\delta\in\mathbb Z$ dès que $\delta\neq\gamma$ et $(\sigma_\gamma(x))_\gamma=-x_\gamma+\sum_{l\in\Gamma^\gamma}x_{e(l)}\in\mathbb Z$ car $\forall \delta\in\Gamma_0,\;x_\delta\in\mathbb Z$. Comme les éléments de $W$ sont des compositions des applications $\sigma_\gamma$, on a immédiatement que $W$ préserve les éléments entiers de $\EG$. Voyons maintenant que $W$ préserve $B$ :
 			\[
 		\begin{array}{>{\dps}r>{\dps}l>{\dps}l}
 			B(\sigma_\gamma(x))&=& B(x-2\ps{\bar\gamma}{x}\bar\gamma)\\
@@ -1054,7 +1056,7 @@ On peut supposer, quitte à échanger les rôles de $p,q,r$, que $p\leq q\leq r$
 On a ainsi énuméré tous les cas possibles pour $p,q,r$ et les seuls graphes pour lequels $A>1$ sont les graphes de type $A_n,D_n,E_6,E_7$ et $E_8$. Donc la forme quadratique $B$ est définie positives si et seulement si $\Gamma$ est de type $A_n,D_n,E_6,E_7$ ou $E_8$.
 \end{proof}
 \begin{defi}
-Soit $\Gamma$ un graphe. Un vecteur $x\in\EG$ est appelé racine s'il existe $\gamma\in\Gamma_0$, $w\in W$, tel que $x=w(\bar\gamma)$. Les vecteurs $\bar\gamma$, où $\gamma\in\Gamma_0$, sont appelés racines simples. Une racine $x$ est dite positive si $x>0$.
+	Soit $\Gamma$ un graphe. Un vecteur $x\in\EG$ est appelé \emph{racine} s'il existe $\gamma\in\Gamma_0$, $w\in W$, tel que $x=w(\bar\gamma)$. Les vecteurs $\bar\gamma$, où $\gamma\in\Gamma_0$, sont appelés \emph{racines simples}. Une racine $x$ est dite \emph{positive} si $x>0$.
 \end{defi}
 \begin{lm}
 	\label{lmroot}
@@ -1075,7 +1077,7 @@ Soit $\Gamma$ un graphe. Un vecteur $x\in\EG$ est appelé racine s'il existe $\g
 	On a ainsi prouvé le point $3$ dans le cas où $B$ est définie positive, et on se contentera de cette démonstration car on utilisera ce résultat uniquement lorsque $B$ sera définie positive. Pour une preuve dans un cas plus général, on pourra regarder dans \cite{S66}. 
 \end{proof}
 \begin{defi}
-	Soit $\Gamma$ un graphe sans boucle, et soit $\gamma_1,\dots,\gamma_n$ une énumération de ses sommets. Un élément $c=\sigma_{\gamma_n}\dots\sigma_{\gamma_1}\in W$ est appelé transformation de Coxeter, $c$ dépend de l'énumération choisie.
+	Soit $\Gamma$ un graphe sans boucle, et soit $\gamma_1,\dots,\gamma_n$ une énumération de ses sommets. Un élément $c=\sigma_{\gamma_n}\dots\sigma_{\gamma_1}\in W$ est appelé \emph{transformation de Coxeter}, $c$ dépend de l'énumération choisie.
 \end{defi}
 \begin{lm}
 Soit $\Gamma$ un graphe sans boucle, $\gamma_1,\dots,\gamma_n$ une énumération de ses sommets, et supposons que la forme quadratique $B$ est définie positive pour ce graphe $\Gamma$. On note $c=\sigma_{\gamma_n}\dots\sigma_{\gamma_1}$.
