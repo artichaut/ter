@@ -1,4 +1,4 @@
-\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,11pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
@@ -1117,6 +1117,14 @@ Soit $(\Gamma,\Lambda)$ un carquois.
 		\item Soit $\Gamma$ un graphe de Dynkin simplement lacé, c'est-à-dire de type $A_n,D_n,E_6,E_7$, ou $E_8$, et soit $\Lambda$ une orientation quelconque de $\Gamma$. Alors $\mathscr L(\Gamma,\Lambda)$ ne contient, à isomorphisme près, qu'un nombre fini de représentations indécomposables. De plus, l'application $V\mapsto\dim V$ est une bijection entre les classes d'équivalence des représentations indécomposables de $\mathscr L(\Gamma,\Lambda)$ et les racines positives de $\EG$.
 	\end{enumerate}
 \end{thm}
+\begin{proof}
+	On considère les représentations $(V,f)\in\mathscr L(\Gamma,\Lambda)$ dont la dimension $\dim V=m=(m_\alpha)_{\alpha\in\Gamma_0}$ est fixée. Si l'on fixe une base dans chacun des espaces vectoriels $V_\alpha$, alors la représentation $(V,f)$ est entièrement donnée par la famille de matrices $\left\{ A_l \;|\; l\in\Gamma_1 \right\}$, où $A_l$ est la matrice représentative de l'application $f_l:V_{s(l)}\rightarrow V_{t(l)}$ dans les bases choisies. Dans chaque espace vectoriel $V_\alpha$, on peut changer de base au moyen d'une matrice de changement de base $g_\alpha$ (de taille $m_\alpha^2$), les matrices $A_l$ sont alors remplacées par les matrices :
+	\begin{equation}
+		A_l'=g_{t(l)}^{-1}A_lg_{s(l)}.
+		\label{newmatrices}
+	\end{equation}
+Notons $A$ la variété composée de toutes les familles de matrices $A_l$ ($l\in\Gamma_1$) et $G$ le groupe des familles de matrices de changement de base $g_\alpha$ ($\alpha\in\Gamma_0$). 
+\end{proof}
 %Lignes à ajouter pour faire apparaître notre bibliographie
 \clearpage
 \bibliographystyle{unsrt}
