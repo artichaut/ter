@@ -17,11 +17,11 @@ Travail encadré par Pierre-Guy Plamondon}
 
 %Création des labels Théorème, Lemme, etc
 \newtheorem{thm}{Théorème}[section]
-\newtheorem{lm}[]{Lemme}[section]
-\newtheorem{defi}[]{Définition}[section]
-\newtheorem{prop}[]{Proposition}[section]
-\newtheorem{ex}[]{Exemple}[section]
-\newtheorem{cor}{Corollaire}[section]
+\newtheorem{lm}[thm]{Lemme}%[section]
+\newtheorem{defi}[thm]{Définition}%[section]
+\newtheorem{prop}[thm]{Proposition}%[section]
+\newtheorem{ex}[thm]{Exemple}%[section]
+\newtheorem{cor}[thm]{Corollaire}%[section]
 
 %Feuilles de styles Tikz
 \usetikzlibrary{matrix}
@@ -1105,13 +1105,14 @@ Soit $\Gamma$ un graphe sans boucle, $\gamma_1,\dots,\gamma_n$ une énumération
 \begin{proof}
 	Supposons qu'il existe $y\in\EG$ avec $y\neq0$ et $c(y)=y$. Comme les applications $\sigma_{\gamma_n}$, $\sigma_{\gamma_{n-1}},\dots,\sigma_{\gamma_2}$ ne changent pas la coordonnée en $\gamma_1$ (c'est-à-dire $\forall i\in\ent{2}{n}\;\forall z\in\EG,\;(\sigma_{\gamma_i}(z))_{\gamma_1}=z_{\gamma_1}$), on a $(\sigma_{\gamma_1}(y))_{\gamma_1}=c(y)_{\gamma_1}=y_{\gamma_1}$. Comme $\sigma_{\gamma_1}$ laisse les coordonnées différentes de $\gamma_1$ inchangées, on a $\sigma_{\gamma_1}(y)=y$. Puis, par récurrence, on prouve que $\forall i\in\ent{1}{n}$, $\sigma_{\gamma_i}(y)=y$. De plus, on a $\forall\gamma\in\Gamma_0$, $\sigma_{\gamma}(y)=y=y-2\ps{\bar\gamma}{y}\bar\gamma$, d'après le point $2$ du lemme \ref{elem}, d'où $\forall\gamma\in\Gamma_0$, $\ps{\bar\gamma}{y}=0$. Les $\bar\gamma$ formant une base de $\EG$, cela nous donne $\forall x\in\EG$, $\ps{x}{y}=0$, ainsi $y=0$, ce qui est une contradiction. Le point $1$ est ainsi prouvé, passons au point $2$. Comme $B$ est définie positive, on sait d'après le point $4$ du lemme \ref{elem} que le groupe $W$ est finie, ainsi il existe $h\in\mathbb N$ tel que $c^h=\Id$. Soit $x\in\EG$, avec $x\neq0$, et supposons par l'absurde que $\forall i\in\mathbb N$, $c^i(x)>0$, alors les vecteurs $x,c(x),\dots,c^{h-1}(x)$ sont positifs, donc le vecteur $y=x+c(x)+\dots+c^{h-1}(x)$ est positif. Or $c(y)=c(x)+c^2(x)+\dots+c^{h-1}(x)+c^h(x)$, et $c^h(x)=x$, donc $c(y)=y$ et $y$ est non nul car positif, ce qui contredit le point $1$. Le point $2$ est ainsi prouvé.
 \end{proof}
+\clearpage
+\section{Le théorème de Gabriel}
+Soit $(\Gamma,\Lambda)$ un carquois.
+\begin{defi}[vecteur dimension]
+	Pour chaque objet $V\in\mathscr L(\Gamma,\Lambda)$, on note $\dim V\in\EG$ le vecteur $(\dim V_\alpha)_{\alpha\in\Gamma_0}$, qu'on appellera \emph{vecteur dimension}.
+\end{defi}
 %Lignes à ajouter pour faire apparaître notre bibliographie
 \clearpage
 \bibliographystyle{unsrt}
 \bibliography{biblio}
 \end{document}
-
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: t
-%%% End:
