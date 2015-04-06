@@ -57,7 +57,8 @@ Travail encadré par Pierre-Guy Plamondon}
 
 \clearpage
 \section*{Quelques notations}
-Rassemblons ici quelques notations que nous utiliserons sans rappel dans la suite du document. Nous noterons $fg$ plutôt que $f\circ g$, la composition entre les fonctions $f$ et $g$, $fg$ ne sera jamais un produit point par point. Si $f$ est une application, on note $\Img f$ son image et $\Ker f$ son noyau. On utilise la flèche $\hookrightarrow$ pour désigner une injection, et la flèche $\twoheadrightarrow$ pour désigner une surjection. Nous utiliserons l'abus de notation $x=0$ où $x$ peut représenter des objets de natures diverses, $0$ désignera alors l'élément nul correspondant à la nature de l'objet $x$. Lorsqu'il n'y a pas d'ambigüité, ou par souci de simplification, nous noterons $V$ plutôt que $(V,f)$ pour une représentation de carquois. Les espaces vectoriels utilisés sont tous des $\mathbb K$-espaces vectoriels, où $\mathbb K$ est un corps fixé. Si $V$ et $V'$ sont deux espaces vectoriels, on note $V\oplus V'$ leur somme directe. Si $f$ et $g$ sont deux applications linéaires, on note $f\oplus g$ leur somme directe. Si $A$ et $B$ sont deux objets, on note $A/B$ leur quotient, la définition de quotient varie alors en fonction de la nature de $A$ et $B$. Si $X$ est un ensemble, on note $\Id_X$ l'application identité de $X$ dans lui-même.  On note $[\![1,n]\!]$ l'ensemble des entiers naturels compris entre $1$ et $n$. 
+Rassemblons ici quelques notations que nous utiliserons sans rappel dans la suite du document. Nous noterons $fg$ plutôt que $f\circ g$, la composition entre les fonctions $f$ et $g$, $fg$ ne sera jamais un produit point par point. Si $f$ est une application, on note $\Img f$ son image et $\Ker f$ son noyau. On utilise la flèche $\hookrightarrow$ pour désigner une injection, et la flèche $\twoheadrightarrow$ pour désigner une surjection. Nous utiliserons l'abus de notation $x=0$ où $x$ peut représenter des objets de natures diverses, $0$ désignera alors l'élément nul correspondant à la nature de l'o
+bjet $x$. Lorsqu'il n'y a pas d'ambigüité, ou par souci de simplification, nous noterons $V$ plutôt que $(V,f)$ pour une représentation de carquois. Les espaces vectoriels utilisés sont tous des $\mathbb K$-espaces vectoriels, où $\mathbb K$ est un corps fixé. Si $V$ et $V'$ sont deux espaces vectoriels, on note $V\oplus V'$ leur somme directe. Si $f$ et $g$ sont deux applications linéaires, on note $f\oplus g$ leur somme directe. Si $A$ et $B$ sont deux objets, on note $A/B$ leur quotient, la définition de quotient varie alors en fonction de la nature de $A$ et $B$. Si $X$ est un ensemble, on note $\Id_X$ l'application identité de $X$ dans lui-même.  On note $[\![1,n]\!]$ l'ensemble des entiers naturels compris entre $1$ et $n$. 
         
 \section{Notions préliminaires}
 Afin de comprendre l'énoncé, puis la preuve, du théorème de Gabriel, nous avons besoin de notions. Dans toute cette partie, nous introduirons les concepts nécessaires à la bonne compréhension du lecteur.
@@ -205,7 +206,7 @@ Nous faisons ici un inventaire de certaines catégories de graphes non orientés
 			\node[sommet] () at (2,-3.5) {};
 			\draw[thick] (2,-4)--+(0,.5);
 			\node () at (-1,-4) {$E_8$};%Fin E_8
-	\end{tikzpicture}
+                      \end{tikzpicture}
 \end{center}
 On appelle ces graphes les diagrammes de Dynkin de type $A_n,D_n,E_6,E_7$ et $E_8$, ou encore diagrammes de Dynkin simplement lacés.
 \subsection{Système de racines}
@@ -232,6 +233,10 @@ Supposons que le sommet $\alpha \in \Gamma_{0}$ soit un puits avec l'orientation
 	On notera de même, $F^{-}_{\alpha}$, l'application et on aura $F^{-}_{\alpha}(V,f) = (W,g)$. On pose, $\forall \gamma \neq \alpha, W_\gamma = V_\gamma$, et $\forall l \notin \Gamma_\alpha, f_l = g_l$. En considérant les arêtes $l_1, \dots, l_n$ qui partent de $\alpha$, on note $\widetilde{h} : V_\alpha \rightarrow \overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}$ et qui à un vecteur $v \in V_\alpha$ associe le vecteur $(f_1(v),\dots, f_n(v))$. On pose alors $W_\alpha = \overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}/\Img(\widetilde{h})$. On pose pour $i\in [\![1,n]\!]$, alors $g_{l_i}$ comme la composition de l'inclusion naturelle de $V_{l_i}$ dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}$ et de la projection dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}/\Img(\widetilde h)$.
 
 \end{defi}
+
+\begin{ex}[Application des foncteurs sur $L_{\gamma}$]
+  
+\end{ex}
 
 \begin{prop}
 	L'application $F_{\beta}^{+}:\mathscr{L}(\Gamma,\Lambda)\rightarrow\mathscr{L}(\Gamma,\sigma_{\beta}\Lambda)$ est un foncteur. De même l'application $F_{\alpha}^{-}:\mathscr{L}(\Gamma,\Lambda)\rightarrow\mathscr{L}(\Gamma,\sigma_{\alpha}\Lambda)$ est un foncteur.
@@ -784,16 +789,16 @@ Montrons maintenant le point 1 par reccurence sur le nombre de sommets de $\Gamm
 Montrons finalement le point 2, soit $\gamma_{1}, \dots, \gamma_{n}$ un tri topologique de $\Gamma$ pour l'orientation $\Lambda$. On remarque $\gamma_{1}$ est un puit dans $(\Gamma,\Lambda)$ car toute arête de $\Gamma^{\gamma_{1}}$ a pour destination $\gamma_{1}$. Sinon une arête de source $\gamma_{1}$ aura une destination d'indice strictement inférieure à 1, c'est impossible. Soit $i \in [\![2,n]\!]$ montrons que $\gamma_{i}$ est un puit dans $(\Gamma,\sigma_{\gamma_{i-1}} \dots \sigma_{\gamma_{1}} \Lambda)$. Soit $l \in \Gamma^{\gamma_{i}}$ une arête reliant $\gamma_{i-1}$ et $\gamma_{j}$ un autre sommmet. Si $i<j$ alors l'orientation de $l$ dans $\sigma_{\gamma_{i-1}} \dots \sigma_{\gamma_{1}} \Lambda$ est la même que dans $\Lambda$, donc la destination de $l$ est $\gamma_{i}$. Sinon l'orientation de $l$ dans $\sigma_{\gamma_{i-1}} \dots \sigma_{\gamma_{1}} \Lambda$ est l'inverse de celle dans $\Lambda$, donc la destination de $l$ est encore $\gamma_{i}$ pour l'orientation $\sigma_{\gamma_{i-1}} \dots \sigma_{\gamma_{1}} \Lambda$. Finalement $\gamma_{i}$ est toujours un puit dans $(\Gamma,\sigma_{\gamma_{i-1}} \dots \sigma_{\gamma_{1}} \Lambda)$.
 \end{proof}
 \begin{thm}
+\label{thm2}
 Soit $\Gamma$ un graphe ne contenant pas de cycle, et soient $\Lambda,\Lambda'$ deux orientations de ce graphe. 
 \begin{enumerate}
-	\item Il existe $\beta_1,\beta_2,\dots,\beta_k$ une suite de puits suivant, $\Lambda$ telle que $\sigma_{\beta_k}\sigma_{\beta_{k-1}}\dots\sigma_{\beta_1}\Lambda=\Lambda'$ ;
-	\item Soit $\mathscr M$, (respectivement $\mathscr M'$) l'ensemble des représentations indécomposables (à isomorphisme près) de $\mathscr L(\Gamma,\Lambda)$ (respectivement de $\mathscr L(\Gamma,\Lambda')$). $\widetilde{ \mathscr M} \subset \mathscr M$ l'ensemble des classes des objets $F^{-}_{\beta_{1}}F^{-}_{\beta_{2}} \dots F^{-}_{\beta_{i-1}}(L_{\beta_{i}})$ pour $i\in [\![1,k]\!]$ et $\widetilde{ \mathscr M'} \subset \mathscr M' $ l'ensemble des classes d'objets $F^{+}_{\beta_{k}}F^{+}_{\beta_{k-1}} \dots F^{+}_{\beta_{i}}(L_{\beta_{i}})$ pour $i \in [\![1,k]\!]$, alors le foncteur $F^{+}_{\beta_{k}}F^{+}_{\beta_{k-1}} \dots F^{+}_{\beta_{1}}$ est une bijection entre $\mathscr{ M} \setminus \widetilde{\mathscr M}$ et $\mathscr{ M}' \setminus \widetilde{\mathscr{M}'}$.
+\item Il existe $\beta_1,\beta_2,\dots,\beta_k$ une suite de puits suivant, $\Lambda$ telle que $\sigma_{\beta_k}\sigma_{\beta_{k-1}}\dots\sigma_{\beta_1}\Lambda=\Lambda'$ ;
+\item Soit $\mathscr M$, (respectivement $\mathscr M'$) l'ensemble des représentations indécomposables (à isomorphisme près) de $\mathscr L(\Gamma,\Lambda)$ (respectivement de $\mathscr L(\Gamma,\Lambda')$). $\widetilde{ \mathscr M} \subset \mathscr M$ l'ensemble des classes des objets $F^{-}_{\beta_{1}}F^{-}_{\beta_{2}} \dots F^{-}_{\beta_{i-1}}(L_{\beta_{i}})$ pour $i\in [\![1,k]\!]$ et $\widetilde{ \mathscr M'} \subset \mathscr M' $ l'ensemble des classes d'objets $F^{+}_{\beta_{k}}F^{+}_{\beta_{k-1}} \dots F^{+}_{\beta_{i}}(L_{\beta_{i}})$ pour $i \in [\![1,k]\!]$, alors le foncteur $F^{+}_{\beta_{k}}F^{+}_{\beta_{k-1}} \dots F^{+}_{\beta_{1}}$ est une bijection entre $\mathscr{ M} \setminus \widetilde{\mathscr M}$ et $\mathscr{ M}' \setminus \widetilde{\mathscr{M}'}$.
 \end{enumerate}
 \end{thm}
 
 \begin{proof}
   Montrons qu'il suffit de faire la preuve dans le cas où $\Lambda$ et $\Lambda'$ ne diffère que sur une arête. Pour ce faire, démontrons que l'on peut passer d'une arête à deux arêtes de différence. Le cas général se déduit alors par réccurence. 
-
 Soit $\Lambda$ et $\Lambda'$ différentes sur $l$ et $l'$ deux arêtes distinctes de $\Gamma$. Posons $\widetilde \Lambda$ différent de $\Lambda$ sur $l$ uniquement. Alors on sait qu'il existe par hypothèse une suite de puits $\beta_{1}, \dots, \beta_{k}$ dans $( \Gamma, \Lambda)$ telle que $\sigma_{\beta_{1}}\dots\sigma_{\beta_{k}}\Lambda = \widetilde \Lambda$. De même, il existe une suite de puits $\beta'_{1}, \dots, \beta'_{k'}$ dans $(\Gamma,\widetilde \Lambda)$ telle que $\sigma_{\beta'_{1}}\dots\sigma_{\beta'_{k'}} \widetilde \Lambda = \Lambda'$. Finalement, on a que $\sigma_{\beta'_{1}}\dots\sigma_{\beta'_{k'}}\sigma_{\beta_{1}}\dots\sigma_{\beta_{k}}\Lambda =  \Lambda'$. 
 
 Montrons maintenant l'existence d'une séquence $\beta_{1}, \dots, \beta_{k}$ de puits dans $(\Gamma,\Lambda)$ telle que $\sigma_{\beta_{1}}\dots\sigma_{\beta_{k}}\Lambda = \Lambda'$ lorsque $\Lambda$ et $\Lambda'$ sont deux orientations différents sur une seule arête $l$. Considérons le graphe $\Gamma \setminus l $ , il est scindé en deux composantes connexes car $\Gamma$ ne contient pas de cycle. Nommons $\Gamma_{1}$ la composante contenant le sommet $t(l)$, elle ne contient toujours pas de cycle, donc il existe un tri topologique de ces sommets $\gamma_{1}, \dots, \gamma_{m}$ pour l'orientation $\Lambda$. Montrons alors que $\sigma_{\gamma_{1}}\dots\sigma_{\gamma_{m}} \Lambda = \Lambda'$. En effet l'orientation des arêtes de $\Gamma_{1}$ différentes de $l$ est modifié deux fois donc reste inchangée. Alors que l'orientation de $l$ est modifiée une unique fois. D'après la propositon \ref{tri-topo}, $\gamma_{1}, \dots, \gamma_{m}$ est une suite de puit pour orientation $\Lambda$, donc on a le résultat.
@@ -809,6 +814,7 @@ Donc en utilisant le théorème \ref{thm1}, on obtient que $\Psi^{+}(V)$ est ind
 \end{defi}
 
 \begin{lm}
+\label{lem2}
   \begin{enumerate}
   \item Les foncteurs $\Phi^{+}$ et $\Phi^{-}$ sont définies de $\mathscr(\Gamma, \Lambda)$ dans lui-même.
   \item Les foncteurs $\Phi^{+}$ et $\Phi^{-}$ ne sont dépendent du choix du tri topologique choisi.
@@ -832,6 +838,7 @@ Soit $\gamma_{1}, \dots, \gamma_{n}$ et $\gamma'_{1}, \dots , \gamma'_{n}$ deux 
   \end{enumerate}
 \end{defi}
 \begin{thm}
+\label{thm3}
   Soit $(\Gamma,\Lambda)$ un graphe orienté sans cycle orienté.
   \begin{enumerate}
   \item Chaque $V \in \mathscr L(\Gamma,\Lambda)$ indécomposable est soit régulier soit (+) ou (-)-irrégulier.
@@ -842,11 +849,7 @@ Soit $\gamma_{1}, \dots, \gamma_{n}$ et $\gamma'_{1}, \dots , \gamma'_{n}$ deux 
 \begin{proof}
   Démontrons le point 1, on remarque premièrement que $V\in \mathscr L(\Gamma,\Lambda)$ irréductible ne peut être régulier et (+)- ou (-)-irrégulier. En effet, s'il existe un certain  $k$ tel que $(\Phi^{+})^{k}(V) = 0$ ou $(\Phi^{-})^{k}(V) = 0$ alors on ne peut pas avoir $V$, $(\Phi^{-})^{k}(\Phi^{+})^{k}(V)$ et $(\Phi^{+})^{k}(\Phi^{-})^{k}(V)$ isomorphes car l'un des deux derniers est nul et $V$ est indécomposable. Supposons $V$ est non (-)-irrégulier et non (+)-irregulier et $V$ indécomposable, montrons alors que $V$ est régulier. Comme $(\Phi^{+})^{k}(V)$ n'est non nul pour tout $k$ entier, on sait d'après le corollaire \ref{cor-crucial} que $(\Phi^{+})^{k}(V)$ est indécomposable pour tout $k$ entier. Et ainsi, en composant à gauche $k$ fois par $(\Phi^{-})$, on obtient par le théorème \ref{thm1} que $(\Phi^{-})^{k}(\Phi^{+})^{k}(V)$ est isomorphe à $V$. Comme $V$ est (-)-irrégulier et par le même raisonnement, on en déduit que $(\Phi^{+})^{k}(\Phi^{-})^{k}(V)$ est isomorphe à $V$, d'où le résultat espéré.
   Démontrons maintenant le point 2, les $V_{i}$ et les $\widehat{V}_{i}$ sont soit indécomposables, soit nul d'après le corolaire \ref{cor-crucial}. D'où, $\Phi^{+}(V_{i}) =0$ et $\Phi^{-}(\widehat{V}_{i})=0$, si $V_{i}$ et $\widehat{V}_{i}$ sont nuls. S'ils sont indécomposables, $\Phi^{+}(V_{i})$ et $\Phi^{+}(\widehat{V}_{i})$ sont respectivement isomophes à $F^{+}_{\gamma_{n}} \dots F^{+}_{\gamma_{i}}(l_{\gamma_{i}}$ et $F^{-}_{\gamma_{1}} \dots F^{-}_{\gamma_{i}}(L_{\gamma_{i}}$, tous deux isomorphes à 0. Par une utilisation directe du deuxième point du corolaire \ref{cor-crucial}, si $V$ est indécomposable, $\Phi^{+}(V) = 0$ implique que $V$ est isomorphe à l'un des $V_{i}$ et  $\Phi^{-}(V)=0$ implique que $V$ est isomorphe à l'un des $\widehat{V}_{i}$.
-Démontrons le point 3,  soit $k$ l'entier minimal tel que $\Phi^{+-}_{k}(V) = 0$ on pose $W = \Phi^{+-}_{k-1}(V)$ est indécomposable et on utilise le point précédent.
-
-
-
- remarquons qu'aucun des $V_{i}$ et $\widehat V_{i}$ ne peut être nul, car pour tout $j$ entier strictement inférieur à $i$ $\gamma_{j}$ est différent de $\gamma_{i}$. Ainsi $(V_{i})_{\gamma_{i}} = (V)_{\gamma_{i}}$ d'après l'action des fonctions $F^{-}_{\gamma_{j}}$. De même, $\widehat V_{i}$ est non nul pour les même raisons. Donc les $V_{i}$ et $\widehat V_{i}$ sont tous indécomposables, et finalement .
+Démontrons le point 3, soit $V$ un objet indécomposable et $k$ l'entier minimal tel que $(\Phi^{+})^{k}(V) = 0$, c'est à dire tel que $(\Phi^{+})^{k-1}(V) \neq 0$. On pose $W = \Phi^{+}_{k-1}(V)$, $W$ est indécomposable et $\Phi^{+}(W) = 0$. D'après le point précédent, $W$ est isomorphe à un $V_{i}$ et en plus, $V$ est isomorphe à $(\Phi^{-})^{k-1}(W)$, d'où le résultat pour (+)-irrégulier. Et on procède de même pour obtenir le résultat pour les (-)-irrégulier. 
 \end{proof}
 \clearpage
 
@@ -1116,7 +1119,6 @@ Soit $(\Gamma,\Lambda)$ un carquois.
 \bibliographystyle{unsrt}
 \bibliography{biblio}
 \end{document}
-
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
