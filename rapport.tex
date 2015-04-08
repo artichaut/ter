@@ -50,15 +50,14 @@ Travail encadré par Pierre-Guy Plamondon}
 
 %Le résumé de l'article
 \begin{abstract} 
-	Ce mémoire a été écrit dans le cadre des Travaux Encadrés de Recherche (TER) au cours du M1 Mathématiques Fondamentales et Appliquées (MFA) de l'université Paris-Sud. Nous y démontrons un théorème dû à Pierre Gabriel datant de 1972, cependant, la preuve utilisée ici n'est pas la preuve orginale de Gabriel, nous suivons la preuve de Bernstein, Gel'Fand et Ponomarev issue de \cite{BGP72}. On introduit tout d'abord des notions fondamentales à la compréhension de cette preuve, comme les représentations de carquois, la thérorie des catégories, et les systèmes de racines. Puis on met en place des outils, tels que foncteur de Coxeter. Ces outils nous permettront, finalement, de prouver le théorème de Gabriel.
+	Ce mémoire a été écrit dans le cadre des Travaux Encadrés de Recherche (TER) au cours du M1 Mathématiques Fondamentales et Appliquées (MFA) de l'université Paris-Sud. Nous y démontrons un théorème dû à Pierre Gabriel datant de 1972 ; cependant, la preuve utilisée ici n'est pas la preuve orginale de Gabriel, nous suivons la preuve de Bernstein, Gel'Fand et Ponomarev issue de \cite{BGP72}. On introduit tout d'abord des notions fondamentales à la compréhension de cette preuve, comme les représentations de carquois, la thérorie des catégories, et les systèmes de racines. Puis on met en place des outils, tels que foncteurs de Coxeter. Ces outils nous permettront, finalement, de prouver le théorème de Gabriel.
 \end{abstract}
 
 \tableofcontents
 
 \clearpage
 \section*{Quelques notations}
-Rassemblons ici quelques notations que nous utiliserons sans rappel dans la suite du document. Nous noterons $fg$ plutôt que $f\circ g$, la composition entre les fonctions $f$ et $g$, $fg$ ne sera jamais un produit point par point. Si $f$ est une application, on note $\Img f$ son image et $\Ker f$ son noyau. On utilise la flèche $\hookrightarrow$ pour désigner une injection, et la flèche $\twoheadrightarrow$ pour désigner une surjection. Nous utiliserons l'abus de notation $x=0$ où $x$ peut représenter des objets de natures diverses, $0$ désignera alors l'élément nul correspondant à la nature de l'o
-bjet $x$. Lorsqu'il n'y a pas d'ambigüité, ou par souci de simplification, nous noterons $V$ plutôt que $(V,f)$ pour une représentation de carquois. Les espaces vectoriels utilisés sont tous des $\mathbb K$-espaces vectoriels, où $\mathbb K$ est un corps fixé. Si $V$ et $V'$ sont deux espaces vectoriels, on note $V\oplus V'$ leur somme directe. Si $f$ et $g$ sont deux applications linéaires, on note $f\oplus g$ leur somme directe. Si $A$ et $B$ sont deux objets, on note $A/B$ leur quotient, la définition de quotient varie alors en fonction de la nature de $A$ et $B$. Si $X$ est un ensemble, on note $\Id_X$ l'application identité de $X$ dans lui-même.  On note $[\![1,n]\!]$ l'ensemble des entiers naturels compris entre $1$ et $n$. 
+Rassemblons ici quelques notations que nous utiliserons sans rappel dans la suite du document. Nous noterons $fg$ plutôt que $f\circ g$, la composition entre les fonctions $f$ et $g$ ; $fg$ ne sera jamais un produit point par point. Si $f$ est une application, on note $\Img f$ son image et $\Ker f$ son noyau. On utilise la flèche $\hookrightarrow$ pour désigner une injection, et la flèche $\twoheadrightarrow$ pour désigner une surjection. Nous utiliserons l'abus de notation $x=0$ où $x$ peut représenter des objets de natures diverses, $0$ désignera alors l'élément nul correspondant à la nature de l'objet $x$. Lorsqu'il n'y a pas d'ambigüité, ou par souci de simplification, nous noterons $V$ plutôt que $(V,f)$ pour une représentation de carquois. Les espaces vectoriels utilisés sont tous des $\mathbb K$-espaces vectoriels, où $\mathbb K$ est un corps fixé. Si $V$ et $V'$ sont deux espaces vectoriels, on note $V\oplus V'$ leur somme directe. Si $f$ et $g$ sont deux applications linéaires, on note $f\oplus g$ leur somme directe. Si $A$ et $B$ sont deux objets, on note $A/B$ leur quotient, la définition de quotient varie alors en fonction de la nature de $A$ et $B$. Si $X$ est un ensemble, on note $\Id_X$ l'application identité de $X$ dans lui-même.  On note $[\![1,n]\!]$ l'ensemble des entiers naturels compris entre $1$ et $n$. 
         
 \section{Notions préliminaires}
 Afin de comprendre l'énoncé, puis la preuve, du théorème de Gabriel, nous avons besoin de notions. Dans toute cette partie, nous introduirons les concepts nécessaires à la bonne compréhension du lecteur.
@@ -69,7 +68,7 @@ Le théorème de Gabriel donne de très beaux résultats sur les représentation
 	\label{carquois}
 	Un \emph{carquois} $(\Gamma,\Lambda)$ est constitué d'un graphe quelconque non orienté $\Gamma$ et d'une orientation $\Lambda$. On note  $\Gamma_0$ l'ensemble des sommets de $\Gamma$ et $\Gamma_1$ l'ensemble des arêtes non orientées de $\Gamma$. L'orientation $\Lambda$ est un couple de fonctions $(s,t)$ nommées recpectivement source et destination définies de $\Gamma_1$ dans $\Gamma_0$. 
 \end{defi}
-On considérera seulement des carquois connexes dans les exemples ci dessous.
+On considérera seulement des carquois connexes dans les exemples ci-dessous.
 	\begin{ex}
 		\begin{tikzpicture}
 			\node[sommet] (A) at (0,0) {};
@@ -118,22 +117,22 @@ Maintenant que nous connaissons la définition d'un carquois, et que nous pouvon
 \begin{ex}[Une deuxième]
 \end{ex}
 \begin{defi}[Représentation nulle]
-	Soit $(\Gamma,\Lambda)$ un carquois, la \emph{représentation nulle} de $(\Gamma,\Lambda)$ est la représentation $(V,f)$ où $\forall\gamma\in\Gamma^{0},\;V_{\gamma}=\left\{ 0 \right\}$ et où $\forall l \in\Gamma_{1},\;f_{l}$ est l'application linéaire nulle. On note $(V,f)=0$.
+	Soit $(\Gamma,\Lambda)$ un carquois, la \emph{représentation nulle} de $(\Gamma,\Lambda)$ est la représentation $(V,f)$ où $\forall\gamma\in\Gamma_{0},\;V_{\gamma}=\left\{ 0 \right\}$ et où $\forall l \in\Gamma_{1},\;f_{l}$ est l'application linéaire nulle. On note $(V,f)=0$.
 \end{defi}
 \begin{defi}[Somme directe de deux représentations de carquois]
 	Soit $(\Gamma,\Lambda)$ un carquois, $(V,f)$ et $(V',f')$ deux représentations de ce carquois. La \emph{somme directe} de $(V,f)$ et $(V',f')$ est la représentation $(W,g)$ définie par $\forall\gamma\in\Gamma_{0},\;W_{\gamma}=V_{\gamma}\oplus V_{\gamma}'$ et $\forall l \in\Gamma_{1},\;g_{l}=f_{l}\oplus f_{l}'$. On note $(W,g)=(V,f)\oplus (V',f')$.
 \end{defi}
 \begin{defi}[Représentation indécomposable]
-	Soit $(\Gamma,\Lambda)$ un carquois et $(V,f)$ une représentation non nulle de ce carquois. On dit que $(V,f)$ est une \emph{représentation indécomposable} si on ne peut pas l'écrire comme somme de deux représentations non nulles. De manière équivalente, on dit que $(V,f)$ est une représentation indécomposable si pour toutes représentations $(V^{1},f^{1})$, $(V^{2},f^{2})$, $(V,f)=(V^{1},f^{1})\oplus(V^{2},f^{2})$ implique $(V^{1},f^{1})=0$ ou $(V^{2},f^{2})=0$.
+	Soit $(\Gamma,\Lambda)$ un carquois et $(V,f)$ une représentation non nulle de ce carquois. On dit que $(V,f)$ est une \emph{représentation indécomposable} si on ne peut pas l'écrire comme somme directe de deux représentations non nulles. De manière équivalente, on dit que $(V,f)$ est une représentation indécomposable si pour toutes représentations $(V^{1},f^{1})$, $(V^{2},f^{2})$, $(V,f)=(V^{1},f^{1})\oplus(V^{2},f^{2})$ implique $(V^{1},f^{1})=0$ ou $(V^{2},f^{2})=0$.
 \end{defi}
 \begin{ex}[Représentations irréductibles associées aux sommets]
 \label{irreductible}
-Soit $(\Gamma,\Lambda)$ un carquois. On appelle représentations irréductibles, et on note $L_\gamma$, où $\gamma\in\Gamma_{0}$, les représentations telles que $\forall\delta\neq\gamma,\;(L_\gamma)_\delta=\left\{ 0 \right\}$,  $(L_\gamma)_\gamma=\mathbb K$ et $\forall l \in\Gamma_1,\;f_l=0$. $L_\gamma$ est alors une représentation indécomposable.
+Soit $(\Gamma,\Lambda)$ un carquois. On appelle \emph{représentations irréductibles associées aux sommets}, et on note $L_\gamma$, où $\gamma\in\Gamma_{0}$, les représentations telles que $\forall\delta\neq\gamma,\;(L_\gamma)_\delta=\left\{ 0 \right\}$,  $(L_\gamma)_\gamma=\mathbb K$ et $\forall l \in\Gamma_1,\;f_l=0$. $L_\gamma$ est alors une représentation indécomposable.
 \end{ex}
 \begin{ex}[Une représentation indécomposable plus grosse]
 \end{ex}
-\begin{defi}[Morphisme de représentation]
-	Soit $(\Gamma,\Lambda)$ un carquois et $(V,f)$,$(W,g)$ deux représentations de ce carquois. On dit que $\varphi=(\varphi_{\gamma})_{\gamma\in\Gamma_{0}}$ est un \emph{morphisme de représentations} de $(V,f)$ dans $(W,g)$ si, pour tout $l\in\Gamma_{1}$, le diagramme suivant commute :
+\begin{defi}[Morphisme de représentations]
+	Soit $(\Gamma,\Lambda)$ un carquois et $(V,f)$,$(W,g)$ deux représentations de ce carquois. On dit que $\varphi=(\varphi_{\gamma})_{\gamma\in\Gamma_{0}}$ est un \emph{morphisme de représentations} de $(V,f)$ dans $(W,g)$ si, pour tout $\gamma\in\Gamma_0$, $\varphi_\gamma$ est une application linéaire de $V_\gamma$ dans $W_\gamma$, et pour tout $l\in\Gamma_{1}$, le diagramme suivant commute :
 	\[
 	\begin{tikzpicture}
 	\matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
@@ -151,18 +150,20 @@ c'est-à-dire si $\forall l \in\Gamma_{1},\;\varphi_{t(l)}f_{l}=g_{l}\varphi_{s(
 \end{defi}
 \begin{ex}[Morphisme de représentation]
 \end{ex}
+\begin{defi}[Isomorphisme de représentation]
+\end{defi}
 \begin{defi}[Représentation quotient]
 \end{defi}
 \begin{defi}[Sous-représentations]
 \end{defi}
 \subsection{Théorie des catégories}
-Avant de traiter la preuve du thérorème de Gabriel, nous introduisons le langage de la théorie des catégories, qui nous aidera au court de la preuve. Les notations utilisées ici sont celle de \cite{A97}, et de plus amples détails sur les catégories peuvent y être trouvées, nous ne donnons ici qu'une brève présentation des notions qui nous serons utiles par la suite.
+Avant de traiter la preuve du thérorème de Gabriel, nous introduisons le langage de la théorie des catégories, qui nous aidera au cours de la preuve. Les notations utilisées ici sont celles de \cite{A97}, et de plus amples détails sur les catégories peuvent y être trouvés, nous ne donnons ici qu'une brève présentation des notions qui nous serons utiles par la suite.
 \begin{defi}[Catégorie]
 \end{defi}
 \begin{defi}[Foncteur]
 \end{defi}
 \subsection{Diagrammes de Dynkin}
-Nous faisons ici un inventaire de certaines catégories de graphes non orientés et sans boucles, qui joueront un rôle fondamental dans le théorème de Gabriel. L'indice de ces graphes correspond au nombre de sommets qu'ils contiennent. 
+Nous faisons ici un inventaire de graphes non orientés et sans boucles, qui joueront un rôle fondamental dans le théorème de Gabriel. L'indice de ces graphes correspond au nombre de sommets qu'ils contiennent. 
 \begin{center}
 	\begin{tikzpicture}
     			\foreach \x in {0,...,5}
@@ -214,7 +215,7 @@ Afin de faire le lien entre les diagrammes de Dynkin simplement lacés et les re
 
 \clearpage
 \section{Foncteurs de réflexion et foncteurs de Coxeter}
-Soit $(\Gamma,\Lambda)$ un carquois, on se place dans la catégorie $\mathscr{L}(\Gamma,\Lambda)$. Nous allons construire des foncteurs images, associés aux sommets $\alpha \in \Gamma_{0}$ de $\Gamma$ pour lesquels la direction des flèches le contenant est identique. On note $\Gamma^{\alpha}=\{ l\in \Gamma_{1} : s(l)=\alpha\text{ ou }t(l)=\alpha\}$ l'ensemble des arêtes contenant $\alpha$.
+Soit $(\Gamma,\Lambda)$ un carquois, on se place dans la catégorie $\mathscr{L}(\Gamma,\Lambda)$. Nous allons construire des foncteurs de réflexion, associés aux sommets $\alpha \in \Gamma_{0}$ de $\Gamma$ pour lesquels la direction des flèches le contenant est identique. On note $\Gamma^{\alpha}=\{ l\in \Gamma_{1} : s(l)=\alpha\text{ ou }t(l)=\alpha\}$ l'ensemble des arêtes contenant $\alpha$.
 
 \begin{defi}
 	On dit qu'un sommet $\beta \in \Gamma_{0}$ est un \emph{puits}, ou qu'il est (+)-accessible, si $\forall l \in \Gamma^{\beta},\; t(l)=\beta$, c'est-à-dire si toutes les arêtes contenant $\beta$ arrivent en $\beta$ et qu'il n'y a pas de boucles de $\beta$ dans lui même.
@@ -227,8 +228,8 @@ Si $\gamma \in \Gamma_0$ est un sommet, on note $\sigma_{\gamma}\Lambda$ l'orien
 
 Supposons que le sommet $\alpha \in \Gamma_{0}$ soit un puits avec l'orientation $\Lambda$.  Nous allons construire une application qui à un objet $(V,f)$ de $\mathscr{L}(\Gamma,\Lambda)$ associe un objet $(W,g)$ de $\mathscr{L}(\Gamma,\sigma_{\alpha}\Lambda)$. De même si $\beta \in \Gamma_0$ est une source, nous allons construire une autre application qui à un objet de $\mathscr L(\Gamma,\Lambda)$ associe un objet de $\mathscr L(\Gamma,\sigma_{\beta}\Lambda)$. 
 
-\begin{defi}
-	On notera l'application $F_{\beta}^{+}$ et on aura $F_{\beta}^{+}(V,f)=(W,g)$. On pose, $\forall \gamma\neq\beta,\;W_{\gamma}=V_{\gamma}$, et $\forall l \notin \Gamma^{\beta},\; g_{l}=f_{l}$. Ainsi on laisse inchangés tous les sommets différents de $\beta$ et toutes les arêtes ne faisant pas intervenir $\beta$. On considère les arêtes $l_{1},\dots,l_{n}$ qui vont en $\beta$ et on note $h:\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}\rightarrow V_{\beta}$ l'application qui à un vecteur $(v_{1},\dots,v_{n})$ associe la somme $f_{l_{1}}(v_{1})+\dots+f_{l_{n}}(v_{n})$. On pose alors $W_{\beta}=\Ker(h)$. On définit maintenant les applications $g_{l}$ pour $l\in\Gamma^{\beta}$. Soit $i\in[\![1,n]\!]$, alors $g_{l_{i}}$ est la composition de l'injection de $\Ker(h)$ dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}$ et de la projection de $\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}$ dans $V_{s(l_{i})}$. 
+\begin{defi}[Foncteur de réflexion]
+	Soit $\beta$ un puits, on appelle \emph{foncteur de réflexion} l'application $F_{\beta}^{+}$ définie comme suit. En notant $F_{\beta}^{+}(V,f)=(W,g)$, on pose, $\forall \gamma\neq\beta,\;W_{\gamma}=V_{\gamma}$, et $\forall l \notin \Gamma^{\beta},\; g_{l}=f_{l}$. Ainsi on laisse inchangés tous les sommets différents de $\beta$ et toutes les arêtes ne faisant pas intervenir $\beta$. On considère les arêtes $l_{1},\dots,l_{n}$ qui vont en $\beta$ et on note $h:\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}\rightarrow V_{\beta}$ l'application qui à un vecteur $(v_{1},\dots,v_{n})$ associe la somme $f_{l_{1}}(v_{1})+\dots+f_{l_{n}}(v_{n})$. On pose alors $W_{\beta}=\Ker(h)$. On définit maintenant les applications $g_{l}$ pour $l\in\Gamma^{\beta}$. Soit $i\in[\![1,n]\!]$, alors $g_{l_{i}}$ est la composition de l'injection de $\Ker(h)$ dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}$ et de la projection de $\overset{n}{\underset{j=1}{\bigoplus}}V_{s(l_{j})}$ dans $V_{s(l_{i})}$. 
 
 	On notera de même, $F^{-}_{\alpha}$, l'application et on aura $F^{-}_{\alpha}(V,f) = (W,g)$. On pose, $\forall \gamma \neq \alpha, W_\gamma = V_\gamma$, et $\forall l \notin \Gamma_\alpha, f_l = g_l$. En considérant les arêtes $l_1, \dots, l_n$ qui partent de $\alpha$, on note $\widetilde{h} : V_\alpha \rightarrow \overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}$ et qui à un vecteur $v \in V_\alpha$ associe le vecteur $(f_1(v),\dots, f_n(v))$. On pose alors $W_\alpha = \overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}/\Img(\widetilde{h})$. On pose pour $i\in [\![1,n]\!]$, alors $g_{l_i}$ comme la composition de l'inclusion naturelle de $V_{l_i}$ dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}$ et de la projection dans $\overset{n}{\underset{j=1}{\bigoplus}}V_{t(l_{j})}/\Img(\widetilde h)$.
 
@@ -243,7 +244,7 @@ Supposons que le sommet $\alpha \in \Gamma_{0}$ soit un puits avec l'orientation
 \end{prop}
 
 \begin{proof}
-	On se place dans le même cadre que lors des définitions, ainsi on a $(V,f)\in\mathscr{L}(\Gamma,\Lambda)$ une représentation du carquois $\Gamma$. On note toujours $F_{\beta}^{+}(V,f)=(W,g)\in\mathscr{L}(\Gamma,\sigma_{\beta}\Lambda)$ la représentation image de $(V,f)$ par l'application $F_{\beta}^{+}$. On a déjà la définition de $F_{\beta}^{+}$ sur les objets des catégories $\mathscr{L}(\Gamma,\Lambda)$ et $\mathscr{L}(\Gamma,\sigma_{\beta}\Lambda)$, et pour tout $(\gamma,l)\in\Gamma_{0}\times\Gamma_{1}$, on a bien que $W_{\gamma}$ est un espace vectoriel, et que $g_{l}$ est une application linéaire. Il nous reste donc à définir $F_{\beta}^{+}$ sur les morphismes de représentations pour obtenir son caractère fonctoriel. Ainsi, soient $(V,f)$ et $(V',f')$ deux représentations de $\Gamma$, on note encore $l_{1},\dots,l_{n}\in\Gamma^{\beta}$ les arêtes en direction du puits $\beta$, et soit $\varphi=(\varphi_{\gamma})_{\gamma\in\Gamma_{0}}$ un morphisme de représentation entre $(V,f)$ et $(V',f')$. On note $(W,g)$ et $(W',g')$ les représentations images par $F_{\beta}^{+}$ de $(V,f)$ et $(V',f')$. On note également $\psi=(\psi_{\gamma})_{\gamma\in\Gamma_{0}}$ le morphisme image de $\varphi$ par $F_{\beta}^{+}$, qu'il nous faut encore définir. On pose donc :
+	On se place dans le même cadre que lors des définitions, ainsi on a $(V,f)\in\mathscr{L}(\Gamma,\Lambda)$ une représentation du carquois $\Gamma$. On note toujours $F_{\beta}^{+}(V,f)=(W,g)\in\mathscr{L}(\Gamma,\sigma_{\beta}\Lambda)$ la représentation image de $(V,f)$ par l'application $F_{\beta}^{+}$. On a déjà la définition de $F_{\beta}^{+}$ sur les objets des catégories $\mathscr{L}(\Gamma,\Lambda)$ et $\mathscr{L}(\Gamma,\sigma_{\beta}\Lambda)$, et pour tout $(\gamma,l)\in\Gamma_{0}\times\Gamma_{1}$, on a bien que $W_{\gamma}$ est un espace vectoriel, et que $g_{l}$ est une application linéaire. Il nous reste donc à définir $F_{\beta}^{+}$ sur les morphismes de représentations pour obtenir son caractère fonctoriel. Ainsi, soient $(V,f)$ et $(V',f')$ deux représentations de $\Gamma$, on note encore $l_{1},\dots,l_{n}\in\Gamma^{\beta}$ les arêtes en direction du puits $\beta$, et soit $\varphi=(\varphi_{\gamma})_{\gamma\in\Gamma_{0}}$ un morphisme de représentations entre $(V,f)$ et $(V',f')$. On note $(W,g)$ et $(W',g')$ les représentations images par $F_{\beta}^{+}$ de $(V,f)$ et $(V',f')$. On note également $\psi=(\psi_{\gamma})_{\gamma\in\Gamma_{0}}$ le morphisme image de $\varphi$ par $F_{\beta}^{+}$, qu'il nous faut encore définir. On pose donc :
 	\[	
 		\psi_{\beta}(v_{1},\dots,v_{n})=(\varphi_{s(l_{1})}(v_{1}),\dots,\varphi_{s(l_{n})}(v_{n}))
 	\]
@@ -285,7 +286,7 @@ et d'autre part :
 	&=\varphi_{s(l_{i})}(v_{i}).
 \end{array}
 \]
-Ainsi, on a bien que $\forall l \in\Gamma_{1},\;g'_{l}\psi_{t(l)}=\psi_{s(l)}g_{l}$, ce qui prouve que $\psi$ est un morphisme de représentations de $(W,g)$ vers $(W',g')$. Il nous reste donc à voir que $F_{\beta}^{+}$ respecte la composition des morphismes et qu'il envoie l'identité sur l'identité. À cet effet, posons $\Id = (\Id_{V_{\gamma}})_{\gamma\in\Gamma_{0}}$ le morphisme idendité de $(V,f)$ dans $(V,f)$, c'est à dire que pour tout sommet $\gamma\in\Gamma_{0}$, $\Id_{V_{\gamma}}$ est l'application identité de $V_{\gamma}$ dans lui-même. On a :
+Ainsi, on a bien que $\forall l \in\Gamma_{1},\;g'_{l}\psi_{t(l)}=\psi_{s(l)}g_{l}$, ce qui prouve que $\psi$ est un morphisme de représentations de $(W,g)$ vers $(W',g')$. Il nous reste donc à voir que $F_{\beta}^{+}$ respecte la composition des morphismes et qu'il envoie l'identité sur l'identité. À cet effet, posons $\Id = (\Id_{V_{\gamma}})_{\gamma\in\Gamma_{0}}$ le morphisme identité de $(V,f)$ dans $(V,f)$, c'est à dire que pour tout sommet $\gamma\in\Gamma_{0}$, $\Id_{V_{\gamma}}$ est l'application identité de $V_{\gamma}$ dans lui-même. On a :
 \[
 	\forall \gamma\neq\beta,\;F_{\beta}^{+}(\Id)_{\gamma}=\Id_{V_{\gamma}}
 \]
@@ -307,9 +308,9 @@ Le morphisme identité de $(V,f)$ est donc bien envoyé sur le morphisme identit
 
 	\end{array}
 \]
-Ainsi la composition de deux morphismes est bien respectée par $F_{\beta}^{+}$, et cela conclue la preuve pour cette application.
+Ainsi la composition de deux morphismes est bien respectée par $F_{\beta}^{+}$, et cela conlut la preuve pour cette application.
 
-On a déjà défini l'action de $F_{\alpha}^{-}$ sur les représentations de la catégorie $\mathscr L(\Gamma,\Lambda)$ à valeurs dans la catégorie $\mathscr L(\Gamma,\sigma_{\alpha}\Lambda)$. Il s'agit maintenant de définir l'action de $F_{\alpha}^{-}$ sur les morphismes de représentations. Soit $(V,f)$ et $(V',f')$ deux représentations et $\varphi = (\varphi_{\gamma})_{\gamma \in \Gamma_{0}}$ un morphisme entre ces deux représentations dans $\mathscr L(\Gamma,\Lambda)$. Posons pout tout $\gamma \neq \alpha, F_{\alpha}^{-}(\varphi)_{\gamma} = \varphi_{\gamma}$, car $F_{\alpha}^{-}$ laisse inchangé les espaces vectoriels associés aux sommets différents de $\alpha$. On définie alors l'action de  $F^{-}_{\alpha}(\varphi)_{\alpha}$ sur $\oplus_{l \in \Gamma^{\alpha}} V_{t(l)} / \Img \widetilde{h}$  dans $\oplus_{l \in \Gamma^{\alpha}} V'_{t(l)} / \Img \widetilde{h'}$ avec $\widetilde{h'}$ la fonction de $V_{\alpha}$ dans  $\oplus_{l \in \Gamma^{\alpha}} V'_{t(l)}$ qui à $v$ associe $(f'_{1}(v), \dots , f'_{n}(v))$ par : 
+On a déjà défini l'action de $F_{\alpha}^{-}$ sur les représentations de la catégorie $\mathscr L(\Gamma,\Lambda)$ à valeurs dans la catégorie $\mathscr L(\Gamma,\sigma_{\alpha}\Lambda)$. Il s'agit maintenant de définir l'action de $F_{\alpha}^{-}$ sur les morphismes de représentations. Soit $(V,f)$ et $(V',f')$ deux représentations et $\varphi = (\varphi_{\gamma})_{\gamma \in \Gamma_{0}}$ un morphisme entre ces deux représentations dans $\mathscr L(\Gamma,\Lambda)$. Posons pout tout $\gamma \neq \alpha, F_{\alpha}^{-}(\varphi)_{\gamma} = \varphi_{\gamma}$, car $F_{\alpha}^{-}$ laisse inchangés les espaces vectoriels associés aux sommets différents de $\alpha$. On définit alors l'action de  $F^{-}_{\alpha}(\varphi)_{\alpha}$ sur $\oplus_{l \in \Gamma^{\alpha}} V_{t(l)} / \Img \widetilde{h}$  dans $\oplus_{l \in \Gamma^{\alpha}} V'_{t(l)} / \Img \widetilde{h'}$ avec $\widetilde{h'}$ la fonction de $V_{\alpha}$ dans  $\oplus_{l \in \Gamma^{\alpha}} V'_{t(l)}$ qui à $v$ associe $(f'_{1}(v), \dots , f'_{n}(v))$ par : 
 \[
 \forall(y_{1}, \dots, y_{n})+ \Img \widetilde{h} \in  \oplus_{ i=1}^{n} V_{t(l_{i})} / \Img \widetilde{h}, \\ 
 F_{\alpha}^{-}(\varphi)_{\alpha}((y_{1}, \dots, y_{n}) +\Img \widetilde{h}) = (\varphi_{t(l_{1})}(y_{1}), \dots , \varphi_{t(l_{n})}(y_{n})) + \Img \widetilde{h'}
@@ -347,7 +348,7 @@ Montrons dès à présent que la composition des morphismes de représentations 
 \]
  On a bien montré que $F^{-}_{\alpha}(\varphi' \varphi) = F^{-}_{\alpha}(\varphi') F^{-}_{\alpha}(\varphi)$.
 
- Il reste à voir $\Id$ le morphisme identité d'une représentation $(V,f)$ est envoyé sur le morphisme identité de $F^{-}_{\alpha}((V,f))$ par $F^{-}_{\alpha}$. Pour tout $\gamma \neq \alpha$, on a $F^{-}_{\alpha}(\Id)_{\gamma} = Id_{\gamma}$ et : 
+ Il reste à voir $\Id$ le morphisme identité d'une représentation $(V,f)$ est envoyé sur le morphisme identité de $F^{-}_{\alpha}((V,f))$ par $F^{-}_{\alpha}$. Pour tout $\gamma \neq \alpha$, on a $F^{-}_{\alpha}(\Id)_{\gamma} =\Id_{\gamma}$ et : 
 
 \[
 \begin{array}{rl}
@@ -624,7 +625,7 @@ Le morphisme $p_{V}^{\alpha}$ est quant à lui surjectif, car pour tout $\gamma 
 	\]
 	la surjectivité de $(i_{V}^{\beta})_{\beta}$ est donc prouvée. Ainsi $i_{V}^{\beta}$ est surjectif, puis bijectif, donc est un isomorphisme.
 
-        De manière similaire, montrons que $p_{V}^{\alpha}$ est un isomorphisme c'est à dire que $(p_{V}^{\alpha})_{\alpha}$ est injective, dans le cas où $(V,f) = F_{\alpha}^{+}(W,g)$. Écrivons $\Gamma^{\alpha} = \{l_{1}, \dots, l_{n}\}$, on sait que $V_{\alpha} = \left\{ (v_{1}, \dots, v_{n}) \in \oplus_{i=1}^{n}  V_{t(l_{i})}\right\}$, et que $\forall j \in [\![1,n]\!] , f_{l(j)}$ est la composition de l'inclusion de $V_{\alpha}$ dans $\oplus_{i=1}^{n}V_{t(l_{i})}$ et la projection sur $V_{t(l_{j})}$. Donc soit $v= (v_{1}, \dots, v_{n}) \in V_{\alpha}$, on a $ f_{l_{j}}(v) = v_{j}$. Or si $(p_{V}^{\alpha})_{\alpha}(v) = 0 $ c'est à dire $(f_{l_{1}}(v), \dots, f_{l_{n}}(v)) = 0 $ alors $v = 0$ donc $(p_{V}^{\alpha})_{\alpha}$ est injective.
+        De manière similaire, montrons que $p_{V}^{\alpha}$ est un isomorphisme, c'est-à-dire que $(p_{V}^{\alpha})_{\alpha}$ est injective, dans le cas où $(V,f) = F_{\alpha}^{+}(W,g)$. Écrivons $\Gamma^{\alpha} = \{l_{1}, \dots, l_{n}\}$, on sait que $V_{\alpha} = \left\{ (v_{1}, \dots, v_{n}) \in \oplus_{i=1}^{n}  V_{t(l_{i})}\right\}$, et que $\forall j \in [\![1,n]\!] , f_{l(j)}$ est la composition de l'inclusion de $V_{\alpha}$ dans $\oplus_{i=1}^{n}V_{t(l_{i})}$ et la projection sur $V_{t(l_{j})}$. Donc soit $v= (v_{1}, \dots, v_{n}) \in V_{\alpha}$, on a $ f_{l_{j}}(v) = v_{j}$. Or si $(p_{V}^{\alpha})_{\alpha}(v) = 0 $ c'est à dire $(f_{l_{1}}(v), \dots, f_{l_{n}}(v)) = 0 $ alors $v = 0$ donc $(p_{V}^{\alpha})_{\alpha}$ est injective.
 
 
 	Enfin, prouvons le point 6. Notons $\widetilde V=V/\Img i_{V}^{\beta}$, il nous faut alors prouver que $V$ est isomorphe à $F_{\beta}^{-}F_{\beta}^{+}(V)\oplus\widetilde V$. Notons également $\varphi_{\beta}':V_\beta\twoheadrightarrow \widetilde V_\beta$ la projection de $V_\beta$ dans $\widetilde V_\beta$. Cette représentation admet une section, c'est-à-dire une application $\varphi_\beta:\widetilde V_\beta\rightarrow V_\beta$ telle que $\varphi_\beta'\varphi_\beta=\Id_{\widetilde V_\beta}$ : en effet il suffit d'envoyer chaque classe d'équivalence dans $\widetilde V_\beta$ sur un unique représentant de cette classe dans $V_\beta$. On posera également, pour tout $\gamma\neq\beta,\;\varphi_\gamma=0$, ce qui fait de $\varphi=(\varphi_\gamma)_{\gamma\in\Gamma_{0}}$ un morphisme de $V/\Img i_{V}^{\beta}$ dans $V$. En effet, le diagramme suivant commute :
@@ -679,7 +680,7 @@ où les $e_l$ sont les morphismes de $F_\beta^-F_\beta^+(V,f)$. Soit $(x,y)\in\l
 	&=& f_l\xi_{s(l)}(x,y)\\
 \end{array}
 \]
-ainsi $\xi$ est bien un morphisme. Prouvons son injectivité. Celle-ci est immédiatement vérifiée dans le cas où $\gamma\neq\beta$, vérifions qu'elle l'est aussi pour $\gamma=\beta$. Soient $(x,y),(x',y')\in\widetilde V_\beta\oplus F_\beta^-F_\beta^+(V,f)_\beta$ tels que $\xi_\beta(x,y)=\xi_\beta(x',y')$, a fortiori on $\varphi_\beta(\xi_\beta(x,y))=\varphi_\beta(\xi_\beta(x',y'))$, d'où $x=y$. Ainsi $(i_V^\beta)_\beta(y)=(i_V^\beta)_\beta(y')$, mais par injectivité de $i_V^\beta$, il vient $y=y'$. Ainsi $(x,y)=(x',y')$ et $\xi$ est injective. Prouvons donc la sujectivité de $\xi$, une fois encore, elle est immédiate dès que $\gamma\neq\beta$, nous nous intéressons donc au cas $\gamma=\beta$. Soit donc $v\in V_\beta$, on a alors $v=\varphi_\beta\varphi_\beta'(v)+v-\varphi_\beta\varphi_\beta'(v)$, d'où il vient immédiatement que $\varphi_\beta\varphi_\beta'(v)\in\Img \varphi_\beta$. Il nous reste donc à voir que . De plus, comme $\varphi_\beta'\varphi_\beta=\Id_{\widetilde V_\beta}$, on sait que $\varphi_\beta'(v)=\varphi_\beta'\varphi_\beta\varphi_\beta'(v)$ d'où $v-\varphi_\beta\varphi_\beta'(v)\in\Img\left[ (i_V^\beta)_\beta \right]$. On a donc la surjectivité de $xi_\beta$, donc la surjectivité de $\xi$ et la bijectivité de $\xi$, qui est un morphisme. On a donc prouvé que $\xi$ est un isomorphisme, et ainsi $(V,f)$ est isomorphe à $F_\beta^-F_\beta^+(V,f)\oplus V/\Img i_V^\beta$.
+ainsi $\xi$ est bien un morphisme. Prouvons son injectivité. Celle-ci est immédiatement vérifiée dans le cas où $\gamma\neq\beta$, vérifions qu'elle l'est aussi pour $\gamma=\beta$. Soient $(x,y),(x',y')\in\widetilde V_\beta\oplus F_\beta^-F_\beta^+(V,f)_\beta$ tels que $\xi_\beta(x,y)=\xi_\beta(x',y')$, a fortiori on $\varphi_\beta(\xi_\beta(x,y))=\varphi_\beta(\xi_\beta(x',y'))$, d'où $x=y$. Ainsi $(i_V^\beta)_\beta(y)=(i_V^\beta)_\beta(y')$, mais par injectivité de $i_V^\beta$, il vient $y=y'$. Ainsi $(x,y)=(x',y')$ et $\xi$ est injective. Prouvons donc la sujectivité de $\xi$, une fois encore, elle est immédiate dès que $\gamma\neq\beta$, nous nous intéressons donc au cas $\gamma=\beta$. Soit donc $v\in V_\beta$, on a alors $v=\varphi_\beta\varphi_\beta'(v)+v-\varphi_\beta\varphi_\beta'(v)$, d'où il vient immédiatement que $\varphi_\beta\varphi_\beta'(v)\in\Img \varphi_\beta$. De plus, comme $\varphi_\beta'\varphi_\beta=\Id_{\widetilde V_\beta}$, on sait que $\varphi_\beta'(v)=\varphi_\beta'\varphi_\beta\varphi_\beta'(v)$ d'où $v-\varphi_\beta\varphi_\beta'(v)\in\Img\left[ (i_V^\beta)_\beta \right]$. On a donc la surjectivité de $\xi_\beta$, donc la surjectivité de $\xi$ et la bijectivité de $\xi$, qui est un morphisme. On a donc prouvé que $\xi$ est un isomorphisme, et ainsi $(V,f)$ est isomorphe à $F_\beta^-F_\beta^+(V,f)\oplus V/\Img i_V^\beta$.
 
 
 Considérons la représentation $(\widetilde V, \widetilde f)$ où $\widetilde V = \Ker p_{V}^{\alpha}$ et $\widetilde{f}$ est formée :
@@ -745,12 +746,12 @@ Il s'agit maintenant de montrer que $\xi$ est un isomorphisme c'est à dire que 
 		\item Cas $1$. $V\approx V/\Img i_V^\beta$ : alors $\forall \gamma\neq\beta,\;V_\gamma=\left\{ 0 \right\}$, $\forall l\in\Gamma_1,\;f_l=0$ et $V_\beta=\mathbb K$, car $(V,f)$ est indécomposable, et si on avait $\dim V_\beta>1$, on pourrait décomposer $(V,f)$ en $\dim V_\beta$ copies de $L_\beta$. Ainsi $V\approx L_\beta$.
 		\item Cas $2$. $V\approx F_\beta^-F_\beta^+(V,f)$ : autrement dit, $i_V^\beta$ est un isomorphisme. Ainsi, d'après le point $3$ du lemme \ref{lemmecrucial}, on a les égalités sur les dimensions des espaces vectoriels. Montrons à présent que $(W,g)=F_\beta^+(V,f)$ est indécomposable, pour cela supposons qu'il existe $(W_1,g_1)$ et $(W_2,g_2)$ des représentations telles que $(W,g)=(W_1,g_1)\oplus(W_2,g_2)$. On a alors, d'après le point $1$ du lemme \ref{lemmecrucial} que $(V,f)\approx F_\beta^-(W_1,g_1)\oplus F_\beta^-(W_2,g_2)$. Comme $(V,f)$ est indécomposable, un des termes est la représentation nulle, supposons, sans perte de généralité, que $F_\beta^-(W_2,g_2)=0$. D'après la forme de $W$ et le point $5$ du lemme \ref{lemmecrucial}, on sait que $p_V^\beta:(W,g)\rightarrow F_\beta^+F_\beta^-(W,g)$ est un isomorphisme, or $p_V^\beta(W_2,g_2)\subset F_\beta^+F_\beta^-(W_2,g_2)=0$, d'où $(W_2,g_2)=0$. Ainsi $F_\beta^+(V)$ est indécomposable. 
 	\end{itemize}
-Cela termine la démonstration dans le cas où $\beta$ est un puits.
+Cela termine la démonstration dans le cas où $\beta$ est un puits. Le cas d'une source est similaire.
 \end{proof}
 \begin{defi}
-	On dit qu'une suite de sommets $\beta_1,\beta_2,\dots\beta_k$ est ne suite (+)-accessible, ou une \emph{suite de puits}, suivant l'orientation $\Lambda$, si $\beta_1$ est un puits suivant l'orientation $\Lambda$, $\beta_2$ est un puits suivant l'orientation $\sigma_{\beta_1}\Lambda$, $\beta_3$ est un puits suivant l'orientation $\sigma_{\beta_2}\sigma_{\beta_1}\Lambda$, et ainsi de suite.
+	On dit qu'une suite de sommets $\beta_1,\beta_2,\dots\beta_k$ est une suite (+)-accessible, ou une \emph{suite de puits}, suivant l'orientation $\Lambda$, si $\beta_1$ est un puits suivant l'orientation $\Lambda$, $\beta_2$ est un puits suivant l'orientation $\sigma_{\beta_1}\Lambda$, $\beta_3$ est un puits suivant l'orientation $\sigma_{\beta_2}\sigma_{\beta_1}\Lambda$, et ainsi de suite.
 
-	On dit qu'une suite de sommets $\alpha_1,\alpha_2,\dots\alpha_k$ est une suite (-)-accessible, ou une suite de sources, suivant l'orientation $\Lambda$, si $\alpha_1$ est une source suivant l'orientation $\Lambda$, $\alpha_2$ est une source suivant l'orientation $\sigma_{\alpha_1}\Lambda$, $\alpha_3$ est une source suivant l'orientation $\sigma_{\alpha_2}\sigma_{\alpha_1}\Lambda$, et ainsi de suite.
+	On dit qu'une suite de sommets $\alpha_1,\alpha_2,\dots\alpha_k$ est une suite (-)-accessible, ou une \emph{suite de sources}, suivant l'orientation $\Lambda$, si $\alpha_1$ est une source suivant l'orientation $\Lambda$, $\alpha_2$ est une source suivant l'orientation $\sigma_{\alpha_1}\Lambda$, $\alpha_3$ est une source suivant l'orientation $\sigma_{\alpha_2}\sigma_{\alpha_1}\Lambda$, et ainsi de suite.
 \end{defi}
 \begin{cor}
 \label{cor-crucial}
@@ -825,9 +826,9 @@ Donc en utilisant le théorème \ref{thm1}, on obtient que $\Psi^{+}(V)$ est ind
 
   Passons au point 2, et remarquons d'abord que si $\delta_{1}$ et $\delta_{2}$ sont deux puits de $(\Gamma,\widetilde \Lambda)$ pour $\widetilde \Lambda$ une certaine orientation, non joints par une arête alors $F^{+}_{\delta_{1}}$ et $F^{+}_{\delta_{2}}$ commutent. 
 Soit $\gamma_{1}, \dots, \gamma_{n}$ et $\gamma'_{1}, \dots , \gamma'_{n}$ deux tris topologiques sur les sommets de $\Gamma$ pour l'orientation $\Lambda$, et soit $m \in [\![1,n]\!]$ tel que $\gamma_{1}= \gamma'_{m}$. Montrons que $\gamma_{1} = \gamma'_{m}$ n'est joint à aucun des sommets $\gamma_{1},\dots, \gamma_{m-1}$. En effet, si $i \in [\![1,m-1]\!]$, il n'existe pas d'arête de $\gamma'_{i}$ vers $\gamma'_{m}$ car $i<m$ et si $j \in [\![2,n]\!]$ tel que $\gamma_{j} = \gamma'_{i}$ alors il n'existe pas d'arête de $\gamma_{j}$ vers $\gamma_{1}$ car $1<j$. Avec la remarque ci-dessus, on obtient $F_{\gamma'_{m}}$ et $F_{\gamma'_{i}}$ commutent pour $i \in [\![1,m-1]\!]$ et $F^{+}_{\gamma'_{m}}F^{+}_{\gamma'_{m-1}}\dots F^{+}_{\gamma'_{1}} = F^{+}_{\gamma'_{m-1}}\dots F^{+}_{\gamma'_{1}} F^{+}_{\gamma'_{m}} = F^{+}_{\gamma'_{m-1}}\dots F^{+}_{\gamma'_{1}}F^{+}_{\gamma_{1}}$. En utilisant sucessivement, le même argument pour $\gamma_{2}$ puis $\gamma_{3}$ et ainsi de suite. On obtient : 
-\begin{eqnarray}%% je ne sais plus comment on supprime la numérotation
+\begin{eqnarray*}%% je ne sais plus comment on supprime la numérotation
   F_{\gamma'_{n}}\dots F_{\gamma'_{1}} = F_{\gamma_{n}} \dots F_{\gamma_{1}}
-\end{eqnarray}
+\end{eqnarray*}
 \end{proof}
 
 \begin{defi}
@@ -847,7 +848,7 @@ Soit $\gamma_{1}, \dots, \gamma_{n}$ et $\gamma'_{1}, \dots , \gamma'_{n}$ deux 
   \end{enumerate}
 \end{thm}
 \begin{proof}
-  Démontrons le point 1, on remarque premièrement que $V\in \mathscr L(\Gamma,\Lambda)$ irréductible ne peut être régulier et (+)- ou (-)-irrégulier. En effet, s'il existe un certain  $k$ tel que $(\Phi^{+})^{k}(V) = 0$ ou $(\Phi^{-})^{k}(V) = 0$ alors on ne peut pas avoir $V$, $(\Phi^{-})^{k}(\Phi^{+})^{k}(V)$ et $(\Phi^{+})^{k}(\Phi^{-})^{k}(V)$ isomorphes car l'un des deux derniers est nul et $V$ est indécomposable. Supposons $V$ est non (-)-irrégulier et non (+)-irregulier et $V$ indécomposable, montrons alors que $V$ est régulier. Comme $(\Phi^{+})^{k}(V)$ n'est non nul pour tout $k$ entier, on sait d'après le corollaire \ref{cor-crucial} que $(\Phi^{+})^{k}(V)$ est indécomposable pour tout $k$ entier. Et ainsi, en composant à gauche $k$ fois par $\Phi^{-}$, on obtient par le théorème \ref{thm1} que $(\Phi^{-})^{k}(\Phi^{+})^{k}(V)$ est isomorphe à $V$. Comme $V$ est (-)-irrégulier et par le même raisonnement, on en déduit que $(\Phi^{+})^{k}(\Phi^{-})^{k}(V)$ est isomorphe à $V$, d'où le résultat espéré.
+  Démontrons le point 1, on remarque premièrement que $V\in \mathscr L(\Gamma,\Lambda)$ irréductible ne peut être régulier et (+)- ou (-)-irrégulier. En effet, s'il existe un certain  $k$ tel que $(\Phi^{+})^{k}(V) = 0$ ou $(\Phi^{-})^{k}(V) = 0$ alors on ne peut pas avoir $V$, $(\Phi^{-})^{k}(\Phi^{+})^{k}(V)$ et $(\Phi^{+})^{k}(\Phi^{-})^{k}(V)$ isomorphes car l'un des deux derniers est nul et $V$ est indécomposable. Supposons $V$ est non (-)-irrégulier et non (+)-irrégulier et $V$ indécomposable, montrons alors que $V$ est régulier. Comme $(\Phi^{+})^{k}(V)$ n'est non nul pour tout $k$ entier, on sait d'après le corollaire \ref{cor-crucial} que $(\Phi^{+})^{k}(V)$ est indécomposable pour tout $k$ entier. Et ainsi, en composant à gauche $k$ fois par $\Phi^{-}$, on obtient par le théorème \ref{thm1} que $(\Phi^{-})^{k}(\Phi^{+})^{k}(V)$ est isomorphe à $V$. Comme $V$ est (-)-irrégulier et par le même raisonnement, on en déduit que $(\Phi^{+})^{k}(\Phi^{-})^{k}(V)$ est isomorphe à $V$, d'où le résultat espéré.
 
   Démontrons maintenant le point 2, les $V_{i}$ et les $\widehat{V}_{i}$ sont soit indécomposables, soit nuls d'après le corolaire \ref{cor-crucial}. D'où, $\Phi^{+}(V_{i}) =0$ et $\Phi^{-}(\widehat{V}_{i})=0$, si $V_{i}$ et $\widehat{V}_{i}$ sont nuls. S'ils sont indécomposables, $\Phi^{+}(V_{i})$ et $\Phi^{+}(\widehat{V}_{i})$ sont respectivement isomophes à $F^{+}_{\gamma_{n}} \dots F^{+}_{\gamma_{i}}(L_{\gamma_{i}})$ et $F^{-}_{\gamma_{1}} \dots F^{-}_{\gamma_{i}}(L_{\gamma_{i}})$, tous deux isomorphes à 0. Par une utilisation directe du deuxième point du corolaire \ref{cor-crucial}, si $V$ est indécomposable, $\Phi^{+}(V) = 0$ implique que $V$ est isomorphe à l'un des $V_{i}$ et  $\Phi^{-}(V)=0$ implique que $V$ est isomorphe à l'un des $\widehat{V}_{i}$.
 
@@ -856,15 +857,19 @@ Démontrons le point 3, soit $V$ un objet indécomposable et $k$ l'entier minima
 \clearpage
 
 
-\section{Graphes, groupe de Weyl et transformation de Coxeter}
+\section{Graphes, groupe de Weyl et transformations de Coxeter}
 	Dans cette section nous définirons un système de racine utile, ainsi que des résultats qui nous permettrons dans la dernière partie de prouver le théorème de Gabriel.
 		\begin{defi}
 		Soit $\Gamma$ un graphe ne possédant pas de boucles.
 		\begin{enumerate}
 			\item On note $\mathscr E_{\Gamma}$ le $\mathbb Q$-espace vectoriel $\mathbb Q^{\Gamma_0}$ composé des familles de rationnels $x=(x_\gamma)_{\gamma\in\Gamma_0}$. On associe à chaque sommet $\gamma\in\Gamma_0$, le vecteur $\bar{\gamma}\in\mathscr E_\Gamma$ tel que $(\bar\gamma)_\gamma=1$ et $\forall \delta\neq\gamma,\;(\bar\gamma)_\delta=0$. On dit qu'un vecteur $x$ est \emph{entier} si $\forall\gamma\in\Gamma_{0},\;x_\gamma\in\mathbb Z$. On dit qu'un vecteur $x$ est \emph{positif}, et l'on note $x>0$, si $x\neq0$ et si $\forall\gamma\in\Gamma_0,\;x_\gamma\geq0$.
 			\item On pose :
+			%	\begin{eqnarray*}
+			%		B:\mathscr E_{\Gamma}&\longrightarrow&\mathbb Q\\
+			%		x&\longmapsto&\underset{\gamma\in\Gamma_0}{\sum} x_\gamma^2-\underset{l\in\Gamma_1}{\sum}x_{e_1(l)}x_{e_2(l)}\\
+			%	\end{eqnarray*}
 				\[
-				\begin{array}{rccc}
+					\begin{array}{rcc>{\dps}l}
 					B:&\mathscr E_{\Gamma}&\longrightarrow&\mathbb Q\\
 					&x&\longmapsto&\underset{\gamma\in\Gamma_0}{\sum} x_\gamma^2-\underset{l\in\Gamma_1}{\sum}x_{e_1(l)}x_{e_2(l)}\\
 				\end{array}
@@ -914,8 +919,7 @@ Démontrons le point 3, soit $V$ un objet indécomposable et $k$ l'entier minima
 		\end{array}
 			\]
 			ce qui termine la démonstration du premier point, passons au deuxième. Soient $x\in\EG,\gamma\in\Gamma_0$, on a $x=\sum_{\delta\in\Gamma_0}x_\delta\bar\delta$. Ainsi on a $(\sigma_\gamma x)_\delta=x_\delta=(x-2\ps{\bar\gamma}{x}\bar\gamma)_\delta$, dès que $\gamma\neq\delta$ car $\bar\gamma_\delta=0$, et :
-			\[
-		\begin{array}{>{\dps}r>{\dps}l>{\dps}l}
+		\begin{eqnarray*}
 			(x-2\ps{\bar\gamma}{x}\bar\gamma)_{\gamma}&=& x_\gamma-2\ps{\bar\gamma}{x}\\
 			&=& x_\gamma-2\ps{\bar\gamma}{\sum_{\delta\in\Gamma_0}x_\delta\bar\delta}\\
 			&=& x_\gamma-2\ps{\bar\gamma}{\bar\gamma}x_\gamma+\sum_{\delta\in\Gamma_0,\delta\neq\gamma}-2\ps{\bar\gamma}{\bar\delta}x_\delta\\
@@ -923,8 +927,7 @@ Démontrons le point 3, soit $V$ un objet indécomposable et $k$ l'entier minima
 			&=& -x_\gamma+\sum_{\delta\in \mathscr V_\gamma}\sum_{l\in\Gamma^\delta\cap\Gamma^\gamma}x_{e(l)}\\
 			&=& -x_\gamma+\sum_{l\in\Gamma^\gamma}x_{e(l)}\\
 			&=& (\sigma_\gamma x)_\gamma
-		\end{array}
-			\]
+		\end{eqnarray*}
 			où $\mathscr V_\gamma$ est l'ensemble des sommets voisins de $\gamma$. Ainsi on a $\sigma_\gamma x=x-2\ps{\bar\gamma}{x}\bar\gamma$. Calculons maintenant $\sigma_\gamma^2$ :
 			\[
 		\begin{array}{>{\dps}r>{\dps}l>{\dps}l}
@@ -945,7 +948,7 @@ Démontrons le point 3, soit $V$ un objet indécomposable et $k$ l'entier minima
 			Or $W$ est engendré par les applications $\sigma_\gamma$, on a donc que $W$ préserve la forme quadratique $B$. Enfin, prouvons le point $4$. À cet effet, on pose $B_1=\left\{ x\in\EG : x\text{ est entier et }B(x)=1 \right\}$. Supposons un instant que $B_1$ est un ensemble fini. D'après le point $3$, $W$ est un groupe qui préserve $B_1$, c'est donc un sous-groupe du groupe des permutations des éléments de $B_1$. $W$ est ainsi un sous-groupe d'un groupe fini donc $W$ est un groupe fini. Prouvons maintenant que $B_1$ est fini. On note $\left[ B \right]$ la matrice représentant la forme quadratique $B$. Cette dernière est symétrique, ainsi, d'après le théorème spectral, il existe une base orthonormée $\mathscr B$ dans laquelle $\left[ B \right]$ est diagonale, notons $\lambda_1,\dots,\lambda_n$ ses valeurs propres, elles sont strictement positives car $B$ est définie positive. Soit $v\in B_1$, on note $v_1,\dots,v_n$ ses coordonnées dans $\mathscr B$. On a donc $\lambda_1v_1^2+\dots+\lambda_nv_n^2=1$, d'où $\forall i \in\ent{1}{n},\;|v_i|\leq\frac{1}{\sqrt{\lambda_i}}$. Ainsi les coordonnées des élements de $B_1$ sont bornées dans la base $\mathscr B$, elle sont donc également bornées dans la base canonique de $\EG$, utilisée pour définir les éléments entiers. Ainsi $B_1$ est une sous-partie bornée de $\mathbb Z^n$ donc est finie. Or on a prouvé précédemment que cela implique que $W$ est fini, la preuve est donc complète.
 		\end{proof}
 		\begin{prop}
-		La forme quadratique $B$ est définie positive si et seulement si $\Gamma$ est de la forme $A_n,D_n,E_6,E_7$ ou $E_8$.
+Soit $\Gamma$ un graphe connexe, alors la forme quadratique $B$ est définie positive si et seulement si $\Gamma$ est de la forme $A_n,D_n,E_6,E_7$ ou $E_8$.
 		\end{prop}
 		\begin{proof}
 			Soit $\Gamma$ un graphe. On va d'abord prouver que si $B$ est définie positive, $\Gamma$ est nécessairement de la forme $A_n,D_n,E_6,E_7$ ou $E_8$. Tout d'abord, remarquons que $\Gamma$ ne peut contenir de sous-graphe d'une des formes suivantes : $\widetilde A_n$ ou $\widetilde D_n$, où $n$ représente le nombre de sommets. $\widetilde A_n$ est défini pour $n\geq 2$ et $\widetilde D_n$ est défini pour $n\geq 5$.
@@ -1019,7 +1022,7 @@ Démontrons le point 3, soit $V$ un objet indécomposable et $k$ l'entier minima
 	\end{equation}
 	où $p,q,r\in\mathbb N$ sont des entiers positifs. Posons maintenant, pour un certain entier $p\in\mathbb N$, l'application $C_p$ en $p+1$ variables :
 		\[
-			C_p(x_1,\dots,c_{p+1})=-x_1x_2-x_2x_3-\dots-x_px_{p+1}+x_1^2+\dots+x_p^2+\frac{p}{2(p+1)}x_{p+1}^2,
+			C_p(x_1,\dots,x_{p+1})=-x_1x_2-x_2x_3-\dots-x_px_{p+1}+x_1^2+\dots+x_p^2+\frac{p}{2(p+1)}x_{p+1}^2,
 	\]
 	et prouvons que $C_p$ est une forme quadratique positive, de noyau de dimension $1$ et qui vérifie que si $x\neq0$ est tel que $C_p(x)=0$ alors $x$ n'a aucune coordonnée nulle. Pour prouver tout cela, nous allons démontrer que 
 	\begin{equation}
@@ -1056,7 +1059,7 @@ ce qui prouve que $C_p$ est bien une forme quadratique. Et on a ainsi prouvé to
 	&& +\left(1-\frac{p}{2(p+1)}-\frac{q}{2(q+1)}-\frac{r}{2(r+1)}\right)a^2.\\
 \end{array}
 \]
-Gr\^ace à cette dernière formule, on prouve que $B$ est définie postivie si et seulement si $\frac{p}{2(p+1)}+\frac{q}{2(q+1)}+\frac{r}{2(r+1)}<1$. Supposons que $\frac{p}{2(p+1)}+\frac{q}{2(q+1)}+\frac{r}{2(r+1)}\geq1$, alors on prends $a>0$, $x_i=\frac{i}{p+1}a$, $y_i=\frac{i}{q+1}a$ et $z_i=\frac{i}{r+1}a$, ce qui nous donne que $(x_1,\dots,x_p,a)\in\Ker C_p$, $(y_1,\dots,y_q,a)\in\Ker C_q$, $(z_1,\dots,z_r,a)\in\Ker C_r$, d'où $B(t)\leq0$ et ainsi $B$ n'est pas définie positive. Supposons maintenant que $\frac{p}{2(p+1)}+\frac{q}{2(q+1)}+\frac{r}{2(r+1)}<1$, et qu'on a $B(t)=0$. Comme $B(t)$ est une somme de termes positifs, ils doivent tous être nulles, on obtient ainsi $a=0$, puis, d'après les propriétés des noyaux de $C_p,C_q,C_r$, si l'un des termes est non nul, ils le sont tous, or $a=0$, on a donc $x_1=\dots= x_p=y_1=\dots=y_q=z_1=\dots=z_r=0$. On vient de voir que $B(t)=0$ implique $t=0$ donc $B$ est définie positive. Ainsi $B$ est définie postivie si et seulement si $\frac{p}{2(p+1)}+\frac{q}{2(q+1)}+\frac{r}{2(r+1)}<1$. Cette inégalité équivaut en fait à $\frac{1}{p+1}+\frac{1}{q+1}+\frac{1}{r+1}>1$, en effet les inégalités suivantes sont équivalentes :
+Gr\^ace à cette dernière formule, on prouve que $B$ est définie postivie si et seulement si $\frac{p}{2(p+1)}+\frac{q}{2(q+1)}+\frac{r}{2(r+1)}<1$. Supposons que $\frac{p}{2(p+1)}+\frac{q}{2(q+1)}+\frac{r}{2(r+1)}\geq1$, alors on prend $a>0$, $x_i=\frac{i}{p+1}a$, $y_i=\frac{i}{q+1}a$ et $z_i=\frac{i}{r+1}a$, ce qui nous donne que $(x_1,\dots,x_p,a)\in\Ker C_p$, $(y_1,\dots,y_q,a)\in\Ker C_q$, $(z_1,\dots,z_r,a)\in\Ker C_r$, d'où $B(t)\leq0$ et ainsi $B$ n'est pas définie positive. Supposons maintenant que $\frac{p}{2(p+1)}+\frac{q}{2(q+1)}+\frac{r}{2(r+1)}<1$, et qu'on a $B(t)=0$. Comme $B(t)$ est une somme de termes positifs, ils doivent tous être nulles, on obtient ainsi $a=0$, puis, d'après les propriétés des noyaux de $C_p,C_q,C_r$, si l'un des termes est non nul, ils le sont tous, or $a=0$, on a donc $x_1=\dots= x_p=y_1=\dots=y_q=z_1=\dots=z_r=0$. On vient de voir que $B(t)=0$ implique $t=0$ donc $B$ est définie positive. Ainsi $B$ est définie postivie si et seulement si $\frac{p}{2(p+1)}+\frac{q}{2(q+1)}+\frac{r}{2(r+1)}<1$. Cette inégalité équivaut en fait à $\frac{1}{p+1}+\frac{1}{q+1}+\frac{1}{r+1}>1$, en effet les inégalités suivantes sont équivalentes :
 \[
 \begin{array}{>{\dps}r>{\dps}l>{\dps}l}
 	\frac{p}{2(p+1)}+\frac{q}{2(q+1)}+\frac{r}{2(r+1)}&<&1\\
@@ -1093,7 +1096,7 @@ On a ainsi énuméré tous les cas possibles pour $p,q,r$ et les seuls graphes p
 	\begin{itemize}
 		\item si $2\ps{\bar\gamma}{y}\leq0$, alors $\sigma_\gamma(y)=y-2\ps{\bar\gamma}{y}\bar\gamma$ est positif car $y$ est positif et $-2\ps{\bar\gamma}{y}\bar\gamma$ est positif ou nul ;
 		\item si $2\ps{\bar\gamma}{y}=1$, alors $1=2\ps{\bar\gamma}{y}=2y_\gamma-\sum_{l\in\Gamma^\gamma}y_{e(l)}$ et ainsi $y_\gamma>0$ (sinon $2\ps{\bar\gamma}{y}\leq0$) d'où $y_\gamma\geq1$ comme $y$ est entier. Ainsi, $\sigma_\gamma(y)=y-\bar\gamma$ est positif (on ne peut pas avoir $y=\bar\gamma$ car sinon $2\ps{\bar\gamma}{y}=2$) ;
-		\item si $2\ps{\bar\gamma}{y}=2$, alors $\ps{\bar\gamma-y}{\bar\gamma-y}=\ps{\bar\gamma}{\bar\gamma}-2\ps{\bar\gamma}{y}+\ps{y}{y}=1-2+1=0$, ainsi, si $B$ est définie positive, on conclue que $\bar\gamma-y=0$, donc $y=\bar\gamma$ et $-\sigma_\gamma(y)=-(-\gamma)=\gamma>0$.
+		\item si $2\ps{\bar\gamma}{y}=2$, alors $\ps{\bar\gamma-y}{\bar\gamma-y}=\ps{\bar\gamma}{\bar\gamma}-2\ps{\bar\gamma}{y}+\ps{y}{y}=1-2+1=0$, ainsi, si $B$ est définie positive, on conlut que $\bar\gamma-y=0$, donc $y=\bar\gamma$ et $-\sigma_\gamma(y)=-(-\gamma)=\gamma>0$.
 	\end{itemize}
 	On a ainsi prouvé le point $3$ dans le cas où $B$ est définie positive, et on se contentera de cette démonstration car on utilisera ce résultat uniquement lorsque $B$ sera définie positive. Pour une preuve dans un cas plus général, on pourra regarder dans \cite{S66}. 
 \end{proof}
@@ -1108,7 +1111,7 @@ Soit $\Gamma$ un graphe sans boucle, $\gamma_1,\dots,\gamma_n$ une énumération
 \end{enumerate}
 \end{lm}
 \begin{proof}
-	Supposons qu'il existe $y\in\EG$ avec $y\neq0$ et $c(y)=y$. Comme les applications $\sigma_{\gamma_n}$, $\sigma_{\gamma_{n-1}},\dots,\sigma_{\gamma_2}$ ne changent pas la coordonnée en $\gamma_1$ (c'est-à-dire $\forall i\in\ent{2}{n}\;\forall z\in\EG,\;(\sigma_{\gamma_i}(z))_{\gamma_1}=z_{\gamma_1}$), on a $(\sigma_{\gamma_1}(y))_{\gamma_1}=c(y)_{\gamma_1}=y_{\gamma_1}$. Comme $\sigma_{\gamma_1}$ laisse les coordonnées différentes de $\gamma_1$ inchangées, on a $\sigma_{\gamma_1}(y)=y$. Puis, par récurrence, on prouve que $\forall i\in\ent{1}{n}$, $\sigma_{\gamma_i}(y)=y$. De plus, on a $\forall\gamma\in\Gamma_0$, $\sigma_{\gamma}(y)=y=y-2\ps{\bar\gamma}{y}\bar\gamma$, d'après le point $2$ du lemme \ref{elem}, d'où $\forall\gamma\in\Gamma_0$, $\ps{\bar\gamma}{y}=0$. Les $\bar\gamma$ formant une base de $\EG$, cela nous donne $\forall x\in\EG$, $\ps{x}{y}=0$, ainsi $y=0$, ce qui est une contradiction. Le point $1$ est ainsi prouvé, passons au point $2$. Comme $B$ est définie positive, on sait d'après le point $4$ du lemme \ref{elem} que le groupe $W$ est finie, ainsi il existe $h\in\mathbb N$ tel que $c^h=\Id$. Soit $x\in\EG$, avec $x\neq0$, et supposons par l'absurde que $\forall i\in\mathbb N$, $c^i(x)>0$, alors les vecteurs $x,c(x),\dots,c^{h-1}(x)$ sont positifs, donc le vecteur $y=x+c(x)+\dots+c^{h-1}(x)$ est positif. Or $c(y)=c(x)+c^2(x)+\dots+c^{h-1}(x)+c^h(x)$, et $c^h(x)=x$, donc $c(y)=y$ et $y$ est non nul car positif, ce qui contredit le point $1$. Le point $2$ est ainsi prouvé.
+	Supposons qu'il existe $y\in\EG$ avec $y\neq0$ et $c(y)=y$. Comme les applications $\sigma_{\gamma_n}$, $\sigma_{\gamma_{n-1}},\dots,\sigma_{\gamma_2}$ ne changent pas la coordonnée en $\gamma_1$ (c'est-à-dire $\forall i\in\ent{2}{n}\;\forall z\in\EG,\;(\sigma_{\gamma_i}(z))_{\gamma_1}=z_{\gamma_1}$), on a $(\sigma_{\gamma_1}(y))_{\gamma_1}=c(y)_{\gamma_1}=y_{\gamma_1}$. Comme $\sigma_{\gamma_1}$ laisse les coordonnées différentes de $\gamma_1$ inchangées, on a $\sigma_{\gamma_1}(y)=y$. Puis, par récurrence, on prouve que $\forall i\in\ent{1}{n}$, $\sigma_{\gamma_i}(y)=y$. De plus, on a $\forall\gamma\in\Gamma_0$, $\sigma_{\gamma}(y)=y=y-2\ps{\bar\gamma}{y}\bar\gamma$, d'après le point $2$ du lemme \ref{elem}, d'où $\forall\gamma\in\Gamma_0$, $\ps{\bar\gamma}{y}=0$. Les $\bar\gamma$ formant une base de $\EG$, cela nous donne $\forall x\in\EG$, $\ps{x}{y}=0$, ainsi $y=0$, ce qui est une contradiction. Le point $1$ est ainsi prouvé, passons au point $2$. Comme $B$ est définie positive, on sait d'après le point $4$ du lemme \ref{elem} que le groupe $W$ est fini, ainsi il existe $h\in\mathbb N$ tel que $c^h=\Id$. Soit $x\in\EG$, avec $x\neq0$, et supposons par l'absurde que $\forall i\in\mathbb N$, $c^i(x)>0$, alors les vecteurs $x,c(x),\dots,c^{h-1}(x)$ sont positifs, donc le vecteur $y=x+c(x)+\dots+c^{h-1}(x)$ est positif. Or $c(y)=c(x)+c^2(x)+\dots+c^{h-1}(x)+c^h(x)$, et $c^h(x)=x$, donc $c(y)=y$ et $y$ est non nul car positif, ce qui contredit le point $1$. Le point $2$ est ainsi prouvé.
 \end{proof}
 \clearpage
 \section{Le théorème de Gabriel}
@@ -1116,7 +1119,7 @@ Soit $(\Gamma,\Lambda)$ un carquois.
 \begin{defi}[vecteur dimension]
 	Pour chaque objet $V\in\mathscr L(\Gamma,\Lambda)$, on note $\dim V\in\EG$ le vecteur $(\dim V_\alpha)_{\alpha\in\Gamma_0}$, qu'on appellera \emph{vecteur dimension} de V.
 \end{defi}
-\begin{thm}[Gabriel \cite{G72}]
+\begin{thm}[Gabriel \cite{G72}] Supposons que $\Gamma$ est un graphe connexe.
 	\begin{enumerate}
 		\item Si $\mathscr L(\Gamma,\Lambda)$ ne contient, à isomorphisme près, qu'un nombre fini de représentations indécomposables, alors $\Gamma$ est un graphe de Dynkin simplement lacé, c'est-à-dire un graphe de type $A_n,D_n,E_6,E_7$, ou $E_8$.
 		\item Soit $\Gamma$ un graphe de Dynkin simplement lacé, c'est-à-dire de type $A_n,D_n,E_6,E_7$, ou $E_8$, et soit $\Lambda$ une orientation quelconque de $\Gamma$. Alors $\mathscr L(\Gamma,\Lambda)$ ne contient, à isomorphisme près, qu'un nombre fini de représentations indécomposables. De plus, l'application $V\mapsto\dim V$ est une bijection entre les classes d'équivalence des représentations indécomposables de $\mathscr L(\Gamma,\Lambda)$ et les racines positives de $\EG$.
