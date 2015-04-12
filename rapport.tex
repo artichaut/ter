@@ -78,6 +78,7 @@ On considérera seulement des carquois connexes dans les exemples ci-dessous.
 		\end{tikzpicture}
 	\end{ex}
 	\begin{ex}
+		\label{carquois_boucle}
 		\begin{tikzpicture}
 			\node[sommet] (A) at (0,0) {};
 			\node[sommet] (B) at (2,0) {};
@@ -145,6 +146,30 @@ Maintenant que nous connaissons la définition d'un carquois, et que nous pouvon
 
 \end{ex}
 \begin{ex}[Une deuxième représentation]
+	Soit
+	\begin{tikzpicture}
+			\node[sommet] (A) at (0,0) {};
+			\node[sommet] (B) at (2,0) {};
+			\draw[fleche] (A) to[bend left] (B);
+			\draw[fleche] (B) to[bend left] (A);
+			\draw[fleche] (A.north) arc (0:348:.5);
+		\end{tikzpicture}
+		le carquois de l'exemple \ref{carquois_boucle}. Si l'on numérote les sommets de $1$ à $2$ de la gauche vers la droite, on pose $V_1=\mathbb R^2$ et $V_2=\mathbb R$, vus comme des $\mathbb R$-espaces vectoriels. On choisi pour bases de $V_1$ et $V_2$ les bases canoniques, afin d'exprimer les applications linéaires à l'aide de matrices. La figure ci-dessous est alors une représentation du carquois dessiné à l'exemple \ref{carquois_boucle}.
+		\begin{center}
+	\begin{tikzpicture}
+			\node[sommet] (A) at (0,0) {};
+			\node () at (.1,-.5) {$\mathbb R^2$};
+			\node[sommet] (B) at (2,0) {};
+			\node () at (2.1,-.5) {$\mathbb R$};
+			\draw[fleche] (A) to[bend left] (B);
+			\node () at (1,.6) {$\begin{pmatrix}1&2\end{pmatrix}$};
+			\draw[fleche] (B) to[bend left] (A);
+			\node () at (1,-.85) {$\begin{pmatrix}0\\1\end{pmatrix}$};
+			\draw[fleche] (A.north) arc (0:348:.5);
+			\node () at (-2,0) {$\begin{pmatrix}-1&1\\-3&-1\end{pmatrix}$};
+		\end{tikzpicture}
+	\end{center}
+
 \end{ex}
 \begin{defi}[Représentation nulle]
 	Soit $(\Gamma,\Lambda)$ un carquois, la \emph{représentation nulle} de $(\Gamma,\Lambda)$ est la représentation $(V,f)$ où $\forall\gamma\in\Gamma_{0},\;V_{\gamma}=\left\{ 0 \right\}$ et où $\forall l \in\Gamma_{1},\;f_{l}$ est l'application linéaire nulle. On note $(V,f)=0$.
