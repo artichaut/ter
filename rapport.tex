@@ -185,6 +185,41 @@ Maintenant que nous connaissons la définition d'un carquois, et que nous pouvon
 Soit $(\Gamma,\Lambda)$ un carquois. On appelle \emph{représentations irréductibles associées aux sommets}, et on note $L_\gamma$, où $\gamma\in\Gamma_{0}$, les représentations telles que $\forall\delta\neq\gamma,\;(L_\gamma)_\delta=\left\{ 0 \right\}$,  $(L_\gamma)_\gamma=\mathbb K$ et $\forall l \in\Gamma_1,\;f_l=0$. $L_\gamma$ est alors une représentation indécomposable.
 \end{ex}
 \begin{ex}[Une représentation indécomposable plus grosse]
+	Soit $(V,f)$ la représentation donnée par le dessin suivant, où l'on a $\mathbb R$, considéré comme un $\mathbb R$-espace vectoriel, muni de se base canonique, et où $\lambda\in\mathbb R$ est un réel quelconque. Nous allons prouver qu'elle est indécomposable.
+	\begin{center}
+	\begin{tikzpicture}
+			\node[sommet] (A) at (0,0) {};
+			\node () at (0,-.35) {$\mathbb R$};
+			\node[sommet] (B) at (2,0) {};
+			\node () at (2,-.35) {$\mathbb R$};
+			\draw[fleche] (A) to[bend left] (B);
+			\node () at (1,.5) {$1$};
+			\draw[fleche] (A) to[bend right] (B);
+			\node () at (1,-.5) {$\lambda$};
+		\end{tikzpicture}
+	\end{center}
+	Supposons que $(V,f)$ s'écrit comme somme directe de deux représentations non nulles $(V_1,f_1)$ et $(V_2,f_2)$. Si les espaces vectoriels aux sommets de $(V_1,f_1)$ sont $\mathbb R$ et $\mathbb R$, alors ceux aux sommets de $(V_2,f_2)$ sont $\left\{ 0 \right\}$ et $\left\{ 0 \right\}$, et alors $(V_2,f_2)$ est la représentation nulle. Ainsi $(V_1,f_1)$ et $(V_2,f_2)$ sont les deux représentations :
+\begin{center}
+	\begin{tikzpicture}
+			\node[sommet] (A) at (0,0) {};
+			\node () at (0,-.35) {$\mathbb R$};
+			\node[sommet] (B) at (2,0) {};
+			\node () at (2,-.35) {$\left\{ 0 \right\}$};
+			\draw[fleche] (A) to[bend left] (B);
+			\node () at (1,.5) {$0$};
+			\draw[fleche] (A) to[bend right] (B);
+			\node () at (1,-.5) {$0$};
+			\node[sommet] (C) at (4,0) {};
+			\node () at (4,-.35) {$\left\{ 0 \right\}$};
+			\node[sommet] (D) at (6,0) {};
+			\node () at (6,-.35) {$\mathbb R$};
+			\draw[fleche] (C) to[bend left] (D);
+			\node () at (5,.5) {$0$};
+			\draw[fleche] (C) to[bend right] (D);
+			\node () at (5,-.5) {$0$};
+		\end{tikzpicture},
+	\end{center}
+dont la somme directe n'est pas égale à $(V,f)$. Ainsi $(V,f)$ est une représentation indécomposable.
 \end{ex}
 \begin{defi}[Morphisme de représentations]
 	Soit $(\Gamma,\Lambda)$ un carquois et $(V,f)$,$(W,g)$ deux représentations de ce carquois. On dit que $\varphi=(\varphi_{\gamma})_{\gamma\in\Gamma_{0}}$ est un \emph{morphisme de représentations} de $(V,f)$ dans $(W,g)$ si, pour tout $\gamma\in\Gamma_0$, $\varphi_\gamma$ est une application linéaire de $V_\gamma$ dans $W_\gamma$, et pour tout $l\in\Gamma_{1}$, le diagramme suivant commute :
