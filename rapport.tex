@@ -174,6 +174,71 @@ Maintenant que nous connaissons la définition d'un carquois, et que nous pouvon
 \begin{defi}[Représentation nulle]
 	Soit $(\Gamma,\Lambda)$ un carquois, la \emph{représentation nulle} de $(\Gamma,\Lambda)$ est la représentation $(V,f)$ où $\forall\gamma\in\Gamma_{0},\;V_{\gamma}=\left\{ 0 \right\}$ et où $\forall l \in\Gamma_{1},\;f_{l}$ est l'application linéaire nulle. On note $(V,f)=0$.
 \end{defi}
+\begin{defi}[Morphisme de représentations]
+	Soit $(\Gamma,\Lambda)$ un carquois et $(V,f)$,$(W,g)$ deux représentations de ce carquois. On dit que $\varphi=(\varphi_{\gamma})_{\gamma\in\Gamma_{0}}$ est un \emph{morphisme de représentations} de $(V,f)$ dans $(W,g)$ si, pour tout $\gamma\in\Gamma_0$, $\varphi_\gamma$ est une application linéaire de $V_\gamma$ dans $W_\gamma$, et pour tout $l\in\Gamma_{1}$, le diagramme suivant commute :
+	\[
+	\begin{tikzpicture}
+	\matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
+	  {
+		  V_{s(l)} & V_{t(l)} \\
+		  W_{s(l)} & W_{t(l)} \\};
+	\path[-stealth]
+	(m-1-1) edge node [left] {$\varphi_{s(l)}$} (m-2-1)
+		edge node [above] {$f_{l}$} (m-1-2)
+	(m-2-1) edge node [below] {$g_{l}$} (m-2-2)
+	(m-1-2) edge node [right] {$\varphi_{t(l)}$} (m-2-2);
+	\end{tikzpicture}
+\]
+c'est-à-dire si $\forall l \in\Gamma_{1},\;\varphi_{t(l)}f_{l}=g_{l}\varphi_{s(l)}$.
+\end{defi}
+\begin{ex}[Morphisme de représentations]
+\end{ex}
+\begin{defi}[Isomorphisme de représentation]
+	Soit $(\Gamma,\Lambda)$ un carquois et $(V,f)$,$(W,g)$ deux représentations de ce carquois. Soit $\varphi$ un morphisme de représentations de $(V,f)$ dans $(W,g)$. On dit que $\varphi$ est un isomorphisme de représentations entre $(V,f)$ et $(W,g)$ si $\forall\gamma\in\Gamma_0$, $\varphi_\gamma$ est inversible. Si on note $\varphi^{-1}=(\varphi_\gamma^{-1})_{\gamma\in\Gamma_0}$, on a que $\varphi^{-1}$ est un morphisme de $(W,g)$ dans $(V,f)$. En effet, $\varphi$ étant un morphisme de $(V,f)$ dans $(W,g)$ on a $\forall l \in\Gamma_{1},\;\varphi_{t(l)}g_{l}=f_{l}\varphi_{s(l)}$, cette inégalité s'écrit également $\forall l \in\Gamma_{1},\;\varphi^{-1}_{t(l)}f_{l}=g_{l}\varphi^{-1}_{s(l)}$, donc on a bien que $\varphi^{-1}$ est un morphisme de $(W,g)$ dans $(V,f)$.
+\end{defi}
+\begin{ex}[Condition nécessaire et suffisante d'isomorphisme entre deux représentations simples] On considère les deux représentations suivantes, où l'on a les espaces vectoriels $\mathbb R$ à chaque sommet, et où $\lambda,\mu\in\mathbb R$ sont des constantes. 
+\label{cnsiso}
+
+\begin{center}
+	\begin{tikzpicture}
+			\node[sommet] (A) at (0,0) {};
+			\node () at (0,-.35) {$\mathbb R$};
+			\node[sommet] (B) at (2,0) {};
+			\node () at (2,-.35) {$\mathbb R$};
+			\draw[fleche] (A) to[bend left] (B);
+			\node () at (1,.5) {$1$};
+			\draw[fleche] (A) to[bend right] (B);
+			\node () at (1,-.5) {$\lambda$};
+			\node[sommet] (C) at (4,0) {};
+			\node () at (4,-.35) {$\mathbb R$};
+			\node[sommet] (D) at (6,0) {};
+			\node () at (6,-.35) {$\mathbb R$};
+			\draw[fleche] (C) to[bend left] (D);
+			\node () at (5,.5) {$1$};
+			\draw[fleche] (C) to[bend right] (D);
+			\node () at (5,-.5) {$\mu$};
+		\end{tikzpicture}
+	\end{center}
+Supposons que les deux représentations ci-dessus soient isomorphes. Les applications linéaires entre de $\mathbb R$ dans $\mathbb R$ peuvent être représentées par de simples constantes. Ainsi il existe $a$ et $b$ deux constantes non nulles telles que :
+\[
+\left\{
+\begin{array}{ccc}
+	1\times b&=&a\times1\\
+	b\lambda&=&\mu a 
+\end{array}
+\right.
+\]
+d'où :
+\[
+\left\{
+\begin{array}{ccc}
+	a&=&b\\
+	\lambda&=&\mu. 
+\end{array}
+\right.
+\]
+Ainsi les deux représentations sont isomorphes seulement si $\lambda=\mu$. Si l'on suppose maintenant que $\lambda=\mu$, les représentations sont égales donc a fortiori isomorphes. On a donc prouvé que les deux représentations sont isomorphes si et seulement si $\lambda=\mu$.
+\end{ex}
 \begin{defi}[Somme directe de deux représentations de carquois]
 	Soit $(\Gamma,\Lambda)$ un carquois, $(V,f)$ et $(V',f')$ deux représentations de ce carquois. La \emph{somme directe} de $(V,f)$ et $(V',f')$ est la représentation $(W,g)$ définie par $\forall\gamma\in\Gamma_{0},\;W_{\gamma}=V_{\gamma}\oplus V_{\gamma}'$ et $\forall l \in\Gamma_{1},\;g_{l}=f_{l}\oplus f_{l}'$. On note $(W,g)=(V,f)\oplus (V',f')$.
 \end{defi}
@@ -184,7 +249,7 @@ Maintenant que nous connaissons la définition d'un carquois, et que nous pouvon
 \label{irreductible}
 Soit $(\Gamma,\Lambda)$ un carquois. On appelle \emph{représentations irréductibles associées aux sommets}, et on note $L_\gamma$, où $\gamma\in\Gamma_{0}$, les représentations telles que $\forall\delta\neq\gamma,\;(L_\gamma)_\delta=\left\{ 0 \right\}$,  $(L_\gamma)_\gamma=\mathbb K$ et $\forall l \in\Gamma_1,\;f_l=0$. $L_\gamma$ est alors une représentation indécomposable.
 \end{ex}
-\begin{ex}[Une représentation indécomposable plus grosse]
+\begin{ex}[Infinité des classes d'isomorphismes de représentations indécomposables dans un carquois simple]
 	Soit $(V,f)$ la représentation donnée par le dessin suivant, où l'on a $\mathbb R$, considéré comme un $\mathbb R$-espace vectoriel, muni de se base canonique, et où $\lambda\in\mathbb R$ est un réel quelconque. Nous allons prouver qu'elle est indécomposable.
 	\begin{center}
 	\begin{tikzpicture}
@@ -219,29 +284,15 @@ Soit $(\Gamma,\Lambda)$ un carquois. On appelle \emph{représentations irréduct
 			\node () at (5,-.5) {$0$};
 		\end{tikzpicture},
 	\end{center}
-dont la somme directe n'est pas égale à $(V,f)$. Ainsi $(V,f)$ est une représentation indécomposable.
+	dont la somme directe n'est pas isomorphe à $(V,f)$. Ainsi $(V,f)$ est une représentation indécomposable. En cumulant ce résultat avec celui de l'exemple \ref{cnsiso}, on obtient que le carquois
+		\begin{tikzpicture}
+			\node[sommet] (A) at (0,0) {};
+			\node[sommet] (B) at (2,0) {};
+			\draw[fleche] (A) to[bend left] (B);
+			\draw[fleche] (A) to[bend right] (B);
+		\end{tikzpicture}
+		possède une infinité non dénombrable de représentations indécomposable, même à isomorphisme près. Le théorème de Gabriel (numéroté \ref{thmGabriel} dans ce document) permet de classifier tous les carquois possédant un nombre fini, à isomorphisme près, de représentations indécomposables.
 \end{ex}
-\begin{defi}[Morphisme de représentations]
-	Soit $(\Gamma,\Lambda)$ un carquois et $(V,f)$,$(W,g)$ deux représentations de ce carquois. On dit que $\varphi=(\varphi_{\gamma})_{\gamma\in\Gamma_{0}}$ est un \emph{morphisme de représentations} de $(V,f)$ dans $(W,g)$ si, pour tout $\gamma\in\Gamma_0$, $\varphi_\gamma$ est une application linéaire de $V_\gamma$ dans $W_\gamma$, et pour tout $l\in\Gamma_{1}$, le diagramme suivant commute :
-	\[
-	\begin{tikzpicture}
-	\matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
-	  {
-		  V_{s(l)} & V_{t(l)} \\
-		  W_{s(l)} & W_{t(l)} \\};
-	\path[-stealth]
-	(m-1-1) edge node [left] {$\varphi_{s(l)}$} (m-2-1)
-		edge node [above] {$f_{l}$} (m-1-2)
-	(m-2-1) edge node [below] {$g_{l}$} (m-2-2)
-	(m-1-2) edge node [right] {$\varphi_{t(l)}$} (m-2-2);
-	\end{tikzpicture}
-\]
-c'est-à-dire si $\forall l \in\Gamma_{1},\;\varphi_{t(l)}f_{l}=g_{l}\varphi_{s(l)}$.
-\end{defi}
-\begin{ex}[Morphisme de représentations]
-\end{ex}
-\begin{defi}[Isomorphisme de représentation]
-\end{defi}
 \begin{defi}[Représentation quotient]
 \end{defi}
 \begin{defi}[Sous-représentations]
@@ -1210,7 +1261,9 @@ Soit $(\Gamma,\Lambda)$ un carquois.
 \begin{defi}[vecteur dimension]
 	Pour chaque objet $V\in\mathscr L(\Gamma,\Lambda)$, on note $\dim V\in\EG$ le vecteur $(\dim V_\gamma)_{\gamma\in\Gamma_0}$, qu'on appellera \emph{vecteur dimension} de V.
 \end{defi}
-\begin{thm}[Gabriel \cite{G72}] Supposons que $\Gamma$ est un graphe connexe.
+\begin{thm}[Gabriel \cite{G72}]
+	\label{thmGabriel}
+	Supposons que $\Gamma$ est un graphe connexe.
 	\begin{enumerate}
 		\item Si $\mathscr L(\Gamma,\Lambda)$ ne contient, à isomorphisme près, qu'un nombre fini de représentations indécomposables, alors $\Gamma$ est un graphe de Dynkin simplement lacé, c'est-à-dire un graphe de type $A_n,D_n,E_6,E_7$, ou $E_8$.
 		\item Soit $\Gamma$ un graphe de Dynkin simplement lacé, c'est-à-dire de type $A_n,D_n,E_6,E_7$, ou $E_8$, et soit $\Lambda$ une orientation quelconque de $\Gamma$. Alors $\mathscr L(\Gamma,\Lambda)$ ne contient, à isomorphisme près, qu'un nombre fini de représentations indécomposables. De plus, l'application $V\mapsto\dim V$ est une bijection entre les classes d'équivalence des représentations indécomposables de $\mathscr L(\Gamma,\Lambda)$ et les racines positives de $\EG$.
