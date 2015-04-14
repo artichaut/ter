@@ -300,6 +300,16 @@ Soit $(\Gamma,\Lambda)$ un carquois. On appelle \emph{représentations irréduct
 \subsection{Théorie des catégories}
 Avant de traiter la preuve du thérorème de Gabriel, nous introduisons le langage de la théorie des catégories, qui nous aidera au cours de la preuve. Les notations utilisées ici sont celles de \cite{A97}, et de plus amples détails sur les catégories peuvent y être trouvés, nous ne donnons ici qu'une brève présentation des notions qui nous serons utiles par la suite.
 \begin{defi}[Catégorie]
+Une \emph{catégorie} $C$ est définie par :
+\begin{enumerate}
+\item  une classe $\mathcal C_{0}$, appelée classe des objets de $\mathcal C$;
+\item  pour chaque paire $(X,Y)$ d'objects de $\mathcal C$, un ensemble noté $\mathrm{Hom}(X,Y)$ dont les éléments sont appelés les morphismes de $X$ vers $Y$, tel que si $(X,Y) \neq (X',Y')$ alors $\mathrm{Hom}(X,Y) \cap \mathrm{Hom}(X,Y) = \emptyset$;
+\item  pour chaque triplet $X,Y,Z$ d'objets de $\mathcal C$, il existe $\circ$ définie $ \mathrm{Hom}(X,Y) \times \mathrm{Hom}(Y,Z)$ dans $ \mathrm{Hom}(X,Z) $ satisfaisant :
+  \begin{enumerate}
+  \item  Pour $f \in \mathrm{Hom}(U,V)$, $g \in \mathrm{Hom}(V,W)$ et $h \in \mathrm{Hom}(W,X)$ : $(f\circ g) \circ h = f \circ (g \circ h)$;
+  \item  Pour $X \in \mathcal C_{0}$, il existe $1_{X} \in \mathrm{Hom}(X,X)$ tel que pour tout $g \in \mathrm{Hom(W,X)}, 1_{X} \circ g = g$ et $h \in \mathrm{Hom(X,Y)}, h \circ 1_{X} = h$.
+  \end{enumerate}
+\end{enumerate}
 \end{defi}
 \begin{defi}[Foncteur]
 \end{defi}
@@ -1289,3 +1299,8 @@ Soit $(\Gamma,\Lambda)$ un carquois.
 \bibliographystyle{unsrt}
 \bibliography{biblio}
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
