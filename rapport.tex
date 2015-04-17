@@ -199,10 +199,12 @@ c'est-à-dire si $\forall l \in\Gamma_{1},\;\varphi_{t(l)}f_{l}=g_{l}\varphi_{s(
 			\node (B) at (2,0) {$\mathbb R$};
 			\draw[fleche] (A) to (B);
 			\node () at (1,0.25) {$1$};
+			\node () at (1,-0.5) {$(V,f)$};
 			\node (C) at (4,0) {$\mathbb R^2$};
 			\node (D) at (6,0) {$\mathbb R^3$};
 			\draw[fleche] (C) to (D);
 			\node () at (4.85,1) {$\begin{pmatrix}1&0\\0&1\\1&1\end{pmatrix}$};
+			\node () at (5,-0.5) {$(W,g)$};
 		\end{tikzpicture}
 	\end{center}
 En appelant $1$ le sommet de gauche et $2$ celui de droite, on pose $\varphi$ définie par $\forall x\in\mathbb R,\;\varphi_1(x)=(x,x),\varphi_2(x)=(x,x,2x)$. Ainsi, on exprime $\varphi_1$ et $\varphi_2$ sous forme matricielle, et comme $\begin{pmatrix}1&0\\0&1\\1&1\end{pmatrix}$ $\begin{pmatrix}1\\1\end{pmatrix}$=$\begin{pmatrix}1\\1\\2\end{pmatrix}$, le diagramme suivant commute :
@@ -234,8 +236,8 @@ En appelant $1$ le sommet de gauche et $2$ celui de droite, on pose $\varphi$ d�
 	(m-2-1) edge node [below] {$\begin{pmatrix}1&0\\0&1\\1&1\end{pmatrix}$} (m-2-2)
 	(m-1-2) edge node [right] {$\begin{pmatrix}1\\1\\2\end{pmatrix}$} (m-2-2);
 	\end{tikzpicture}
-\]
-
+,\]
+et ainsi $\varphi$ est un morphisme de représentations de $(V,f)$ dans $(W,g)$.
 \end{ex}
 \begin{defi}[Isomorphisme de représentations]
 	Soit $(\Gamma,\Lambda)$ un carquois et $(V,f)$,$(W,g)$ deux représentations de ce carquois. Soit $\varphi$ un morphisme de représentations de $(V,f)$ dans $(W,g)$. On dit que $\varphi$ est un isomorphisme de représentations entre $(V,f)$ et $(W,g)$ si $\forall\gamma\in\Gamma_0$, $\varphi_\gamma$ est inversible. Si on note $\varphi^{-1}=(\varphi_\gamma^{-1})_{\gamma\in\Gamma_0}$, on a que $\varphi^{-1}$ est un morphisme de $(W,g)$ dans $(V,f)$. En effet, $\varphi$ étant un morphisme de $(V,f)$ dans $(W,g)$ on a $\forall l \in\Gamma_{1},\;\varphi_{t(l)}g_{l}=f_{l}\varphi_{s(l)}$, cette inégalité s'écrit également $\forall l \in\Gamma_{1},\;\varphi^{-1}_{t(l)}f_{l}=g_{l}\varphi^{-1}_{s(l)}$, donc on a bien que $\varphi^{-1}$ est un morphisme de $(W,g)$ dans $(V,f)$.
