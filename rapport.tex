@@ -398,8 +398,8 @@ Nous faisons ici un inventaire de graphes non orientés et sans boucles, qui jou
 \end{center}
 On appelle ces graphes les diagrammes de Dynkin de type $A_n,D_n,E_6,E_7$ et $E_8$, ou encore diagrammes de Dynkin simplement lacés.
 \subsection{Système de racines}
-Afin de faire le lien entre les diagrammes de Dynkin simplement lacés et les représentations de carquois, il nous sera utile de savoir ce qu'est un système de racines, l'arrivée des diagrammes de Dynkin et des groupes de Weyl nous permettra de mieux comprendre les outils utilisés lors de la démonstration du théorème de Gabriel.
-
+\label{syst_root}
+Dans la section \ref{rootz}, on définie des objets tels que \emph{racines}, \emph{racines simples}, ou encore \emph{racines positives}, qui possèdent de belles propriétés. Ces résultats serviront finalement pour prouver le théorème de Gabriel, dans la partie \ref{Gab}. Toutes ces propriétés sont valables dans un cas très général, dont on peut faire une étude détaillée : il s'agit de la théorie sur les \emph{systèmes de racines}, que l'on pourra par exemple étudier dans \cite{S66}.
 \clearpage
 \section{Foncteurs de réflexion et foncteurs de Coxeter}
 Soit $(\Gamma,\Lambda)$ un carquois, on se place dans la catégorie $\mathscr{L}(\Gamma,\Lambda)$. Nous allons construire des foncteurs de réflexion, associés aux sommets $\alpha \in \Gamma_{0}$ de $\Gamma$ pour lesquels la direction des flèches le contenant est identique. On note $\Gamma^{\alpha}=\{ l\in \Gamma_{1} : s(l)=\alpha\text{ ou }t(l)=\alpha\}$ l'ensemble des arêtes contenant $\alpha$.
@@ -1045,7 +1045,8 @@ Démontrons le point 3, soit $V$ un objet indécomposable et $k$ l'entier minima
 
 
 \section{Graphes, groupe de Weyl et transformations de Coxeter}
-	Dans cette section nous définirons un système de racine utile, ainsi que des résultats qui nous permettrons dans la dernière partie de prouver le théorème de Gabriel.
+\label{rootz}
+Dans cette section nous définirons un \emph{système de racine} utile, ainsi que des résultats qui nous permettrons dans la dernière partie de prouver le théorème de Gabriel. Il n'est pas nécessaire de connaître la théorie sur les systèmes de racine pour comprendre cette partie, néanmoins les résultats obtenus ici sont très généraux et sont traités dans \cite{S66}. On aurait donc pu traiter les systèmes de racines de manière générale dans la partie \ref{syst_root} puis prouver qu'on a bien affaire à un système de racine ici, afin d'en déduire tous les résultats voulus.
 		\begin{defi}
 		Soit $\Gamma$ un graphe ne possédant pas de boucles.
 		\begin{enumerate}
@@ -1303,6 +1304,7 @@ Soit $\Gamma$ un graphe sans boucle, $\gamma_1,\dots,\gamma_n$ une énumération
 \end{proof}
 \clearpage
 \section{Le théorème de Gabriel}
+\label{Gab}
 Soit $(\Gamma,\Lambda)$ un carquois.
 \begin{defi}[vecteur dimension]
 	Pour chaque objet $V\in\mathscr L(\Gamma,\Lambda)$, on note $\dim V\in\EG$ le vecteur $(\dim V_\gamma)_{\gamma\in\Gamma_0}$, qu'on appellera \emph{vecteur dimension} de V.
@@ -1328,7 +1330,22 @@ Soit $(\Gamma,\Lambda)$ un carquois.
 	\end{eqnarray*}
 	or $\forall l\in\Gamma_1$,$x_{s(l)}x_{t(l)}\leq|x|_{s(l)}|x|_{t(l)}$, d'où $-\sum_{l\in\Gamma_1}\left(x_{s(l)}x_{t(l)}-|x|_{s(l)}|x|_{t(l)}\right)\geq0$ et ainsi $B(x)\geq B(|x|)$. On a ainsi prouvé que $B$ était définie positive sur les vecteurs entiers de signe quelconque de $\EG$. Soit maintenant $x\in\EG$ un vecteur quelconque, on a $\forall\gamma\in\Gamma_0$, $x_{\gamma}\in\mathbb Q$, on écrit alors $x_\gamma=\frac{p_\gamma}{q_\gamma}$ et notons $k$ le plus petit commun multiple des dénominateurs $q_\gamma$, de sorte que $kx$ soit un vecteur entier de $\EG$. Alors $B(kx)=k^2B(x)$, et comme $k\neq0$, on a que $B(kx)=0$ si et seulement si $B(x)=0$, or $kx$ est entier donc $B(x)=0$ équivaut à $kx=0$, $B$ étant définie positive sur les vecteurs entiers de $\EG$. Puis $kx=0$ équivaut à $x=0$ car $k\neq0$ ; finalement, on a prouvé que $B(x)=0$ si et seulement si $x=0$, et $B(x)$ est du signe de $B(kx)$ qui est positif, donc $B$ est définie positive sur $\EG$. Ainsi, on a prouvé que s'il y a, à isomorphisme près, un nombre fini de représentations indécomposables dans $\mathscr L(\Gamma,\Lambda)$, alors $B$ est définie positive. Donc, d'après la proposition \ref{defpos}, cela prouve que $\Gamma$ est de la forme $A_n,B_n,E_6,E_7$, ou $E_8$.
 
-	Prouvons maintenant la seconde partie du théorème.
+	Prouvons maintenant la seconde partie du théorème. On se place donc dans le cas où le graphe $\Gamma$ est du type $A_n,D_n,E_6,E_7$ ou $E_8$, c'est-à-dire un diagramme de Dynkin simplement lacé. Donnons pour commencer un lemme.
+	\begin{lm}
+		\label{lmbidon}
+		Soit $(\Gamma,\Lambda)$ un carquois, $\beta\in\Gamma_0$ un puits suivant l'orientation $\Lambda$, et $V\in\mathscr L(\Gamma,\Lambda)$ une représentation indécomposable du carquois $(\Gamma,\Lambda)$. Alors :
+		\begin{itemize}
+			\item soit $F_\beta^+(V)$ est une représentation indécomposable, et $\dim F_\beta^+(V)=\sigma_\beta(\dim V)$ ;
+			\item soit $V=L_\beta$, $F_\beta^+(V)=0$, et $\dim F_\beta^+(V)\neq\sigma_\beta(\dim V)<0$.
+		\end{itemize}
+On a un résultat similaire pour $\alpha\in\Gamma_0$ une source et le foncteur $F_\alpha^-$.
+	\end{lm}
+	\begin{proof}[Démonstration du lemme \ref{lmbidon}]
+		Il s'agit en réalité d'une réécriture du théorème \ref{thm1}, en utilisant le formalisme introduit dans la partie \ref{rootz}. En effet les formules concernant les dimensions des espaces vectoriels données dans le théorème \ref{thm1} correspondent exactement à la définition de $\sigma_\beta$. Le seul point nouveau est que lorsque $V=L_\beta$, on a $\dim F_\beta^+(V)\neq\sigma_\beta(\dim V)<0$, prouvons donc cela. On a $\dim (L_\beta)=\bar\beta$, et $\sigma_\beta(\bar\beta)=-\bar\beta<0$, or $\dim F_\beta^+(V)$ est un vecteur dimension, donc ne peut pas être négatif, ainsi on a bien prouvé que $\dim F_\beta^+(V)\neq\sigma_\beta(\dim V)<0$.
+	\end{proof}
+	\begin{cor}
+bla
+	\end{cor}
 \end{proof}
 %Lignes à ajouter pour faire apparaître notre bibliographie
 \clearpage
