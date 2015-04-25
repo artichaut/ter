@@ -904,7 +904,7 @@ Il s'agit maintenant de montrer que $\xi$ est un isomorphisme, c'est-à-dire que
 		Soit $(\Gamma,\Lambda)$ un carquois.
 	\item Soit $\beta\in\Gamma_0 $ un puits suivant l'orientation $\Lambda$. Soit $(V,f)\in\mathscr L(\Gamma,\Lambda)$ une représentation indécomposable. On a alors deux cas possibles :
 			\begin{enumerate}
-				\item $V\approx L_\beta$ (où $L_\beta$ a été défini à l'exemple \ref{irreductible}) ;
+				\item $V\approx L_\beta$ (où $L_\beta$ a été défini à l'exemple \ref{irreductible}) et $F_{\beta}^+(V,f)=0$ ;
 				\item $F_\beta^+(V,f)$ est indécomposable, $F_\beta^-F_\beta^+(V,f)=(V,f)$ et les dimensions des espaces $F_\beta^+(V,f)_\gamma$ sont données par :
 					\[
 \begin{array}{>{\dps}r>{\dps}l>{\dps}l}
@@ -915,7 +915,7 @@ Il s'agit maintenant de montrer que $\xi$ est un isomorphisme, c'est-à-dire que
 			\end{enumerate}
 		\item Soit $\alpha\in\Gamma_0 $ un source suivant l'orientation $\Lambda$. Soit $(V,f)\in\mathscr L(\Gamma,\Lambda)$ une représentation indécomposable. On a alors deux cas possibles :
 			\begin{enumerate}
-				\item $V\approx L_\alpha$ (où $L_\alpha$ a été défini à l'exemple \ref{irreductible}) ;
+				\item $V\approx L_\alpha$ (où $L_\alpha$ a été défini à l'exemple \ref{irreductible}) et $F_\alpha^-(V,f)=0$ ;
 				\item $F_\alpha^-(V,f)$ est indécomposable, $F_\alpha^+F_\alpha^-(V,f)=(V,f)$ et les dimensions des espaces $F_\alpha^-(V,f)_\gamma$ sont données par :
 					\[
 \begin{array}{>{\dps}r>{\dps}l>{\dps}l}
@@ -1348,8 +1348,9 @@ On a un résultat similaire pour $\alpha\in\Gamma_0$ une source et le foncteur $
 	Soit $(\Gamma,\Lambda)$ un carquois, $\beta_1,\dots,\beta_k$ une suite de puits suivant l'orientation $\Lambda$, et $V\in\mathscr L(\Gamma,\Lambda)$ une représentation indécomposable. On note, pour $j\in\ent{1}{k}$,  $V_j=F_{\beta_j}^+\dots F_{\beta_1}^+(V)$, $m_j=\sigma_j\dots\sigma_1(\dim V)$, $V_0=V$ et $m_0=\dim V$. On pose $i\in\ent{0}{n}$ le plus grand entier tel que $\forall j\leq i$, $m_j>0$. Alors, pour $j\leq i$, $V_j$ est indécomposable et $V=F_{\beta_1}^-\dots F_{\beta_j}^-(V_j)$. De plus, si $i<k$, alors $V_{i+1}=V_{i+2}=\dots=V_{k}=0$, $V_i=L_{i+1}$ et $V=F_{\beta_1}^-\dots F_{\beta_{i}}^-(L_{i+1})$. On a des résultats similaires avec une suite de sources.
 	\end{cor}
 	\begin{proof}[Démonstration du corollaire \ref{cor3.1}]
-bla
+		On reprends les même notations que dans le corollaire \ref{cor3.1}. L'indice $i$ existe car l'indice $0$ vérifie les propriétés souhaitées. Supposons par l'absurde que $A=\{j\in\mathbb N, j\leq i : V_j$ est une représentation non indécomposable$\}$ est non vide. C'est une sous-partie non vide de $\mathbb N$ donc elle admet un minimum, qu'on notera $j_0=\min A$. On a $j_0\geq 1$ car $V_0=V$ est indécomposable par hypothèse, ainsi on sait que $V_{j_0}$ n'est pas indécomposable alors que $V_{j_0-1}$ est indécomposable. D'après le lemme \ref{lmbidon}, on sait donc que $m_{j_0}$ n'est pas positif, ce qui est une contradiction avec la définition de $i$. On a donc prouvé que $\forall j\leq i$, $V_j$ est indécomposable. De plus, pour tout entier $j\leq i$, on a $V_j=F_{\beta_j}^+\dots F_{\beta_1}^+(V)=F_{\beta_j}^+(V_{j-1})$, avec $V_{j-1}$ indécomposable, ainsi d'après le théorème \ref{thm1}, comme $V_j$ n'est pas nul, on a $F_{\beta_j}^-F_{\beta_j}^+(V_{j-1})=V_{j-1}$. On en tire donc $F_{\beta_j}^+(V_j)=V_{j-1}$ ; et, par récurrence, il vient $V=F_{\beta_1}^-\dots F_{\beta_j}^-(V_j)$. Supposons à présent que $i<k$, comme on sait que $V_i$ est indécomposable et que $V_{i+1}$ ne l'est pas, on a d'après le lemme \ref{lmbidon} que $V_i=L_{\beta_{i+1}}$, donc que $V=F_{\beta_1}^-\dots F_{\beta_i}^-(L_{\beta_{i+1}})$, et que $F_{\beta_{i+1}}^+(V_i)=0=V_{i+1}$. Puis, pour tout puits $\beta\in\Gamma_0$, on a $F_\beta^+(0)=0$, donc $V_{i+2}=\dots=V_k=0$, ce qui conclue la démonstration du corollaire.
 	\end{proof}
+	Reprennons la démonstration du théorème de Gabriel.
 \end{proof}
 %Lignes à ajouter pour faire apparaître notre bibliographie
 \clearpage
