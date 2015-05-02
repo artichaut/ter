@@ -425,7 +425,22 @@ Supposons que le sommet $\alpha \in \Gamma_{0}$ soit un puits avec l'orientation
 \end{defi}
 
 \begin{ex}[Application des foncteurs sur $L_{\gamma}$]
-  
+	Soit $(\Gamma,\Lambda)$ le carquois définie à l'exemple \ref{carquois_simple} par 
+		\begin{tikzpicture}
+			\node[sommet] (A) at (0,0) {};
+			\node[sommet] (B) at (2,0) {};
+			\draw[fleche] (A) to (B);
+		\end{tikzpicture}
+		, on note $1$ et $2$ les sommets de gauche à droite et on considère la représentation $L_{2}$.
+		\begin{center}
+		\begin{tikzpicture}
+			\node (A) at (0,0) {$\left\{ 0 \right\}$};
+			\node (B) at (2,0) {$\mathbb R$};
+			\draw[fleche] (A) to (B);
+			\node () at (1.0,.25) {$0$};
+		\end{tikzpicture}
+	\end{center}
+	On va donc appliquer le foncteur $F_2^+$ à cette représentation. Les sommets autres que $2$ ne changent pas, le sens des flèches est inversé, et le sommet $2$ est $\Ker f$ où $f:\left\{ 0 \right\}\longrightarrow \mathbb R$ est l'application nulle. Ainsi on a $\Ker f=\left\{ 0 \right\}$, et l'application de l'arête $2\rightarrow 1$ est la composée de l'injection de $\left\{ 0 \right\}$ dans $\left\{ 0 \right\}$ et de la projection sur la première coordonnée (mais il n'y en a qu'une), donc c'est l'application nulle. Ainsi $F_2^+(L_2)=0$, c'est la représentation nulle. On utilisera d'ailleurs ce résultat dans le théorème \ref{thm1}.
 \end{ex}
 
 \begin{prop}
@@ -1359,8 +1374,3 @@ On a un résultat similaire pour $\alpha\in\Gamma_0$ une source et le foncteur $
 \bibliographystyle{unsrt}
 \bibliography{biblio}
 \end{document}
-
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: t
-%%% End:
