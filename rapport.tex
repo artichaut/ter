@@ -124,8 +124,8 @@ Maintenant que nous connaissons la définition d'un carquois, et que nous pouvon
 	le carquois dessiné dans l'exemple \ref{carquois_simple}. Si l'on numérote les sommets de $1$ à $2$ de la gauche vers la droite, on pose $V_1=\mathbb R^2$ et $V_2=\mathbb R^3$, que l'on voit comme des $\mathbb R$-espaces vectoriels. Posons une application linéaire $f$ de $V_1$ dans $V_2$, par exemple $f:(x,y)\mapsto(x,y,x+y)$. On obtient alors la représentation suivante.
 	\begin{center}
 		\begin{tikzpicture}
-			\node (A) at (0,0) {$\mathbb R$};
-			\node (B) at (2,0) {$\mathbb R$};
+			\node (A) at (0,0) {$\mathbb R^2$};
+			\node (B) at (2,0) {$\mathbb R^3$};
 			\draw[fleche] (A) to (B);
 			\node () at (1.0,.25) {$f$};
 		\end{tikzpicture}
@@ -240,7 +240,7 @@ En appelant $1$ le sommet de gauche et $2$ celui de droite, on pose $\varphi$ d�
 et ainsi $\varphi$ est un morphisme de représentations de $(V,f)$ dans $(W,g)$.
 \end{ex}
 \begin{defi}[Isomorphisme de représentations]
-	Soit $(\Gamma,\Lambda)$ un carquois et $(V,f)$,$(W,g)$ deux représentations de ce carquois. Soit $\varphi$ un morphisme de représentations de $(V,f)$ dans $(W,g)$. On dit que $\varphi$ est un isomorphisme de représentations entre $(V,f)$ et $(W,g)$ si $\forall\gamma\in\Gamma_0$, $\varphi_\gamma$ est inversible. Si on note $\varphi^{-1}=(\varphi_\gamma^{-1})_{\gamma\in\Gamma_0}$, on a que $\varphi^{-1}$ est un morphisme de $(W,g)$ dans $(V,f)$. En effet, $\varphi$ étant un morphisme de $(V,f)$ dans $(W,g)$ on a $\forall l \in\Gamma_{1},\;\varphi_{t(l)}g_{l}=f_{l}\varphi_{s(l)}$, cette inégalité s'écrit également $\forall l \in\Gamma_{1},\;\varphi^{-1}_{t(l)}f_{l}=g_{l}\varphi^{-1}_{s(l)}$, donc on a bien que $\varphi^{-1}$ est un morphisme de $(W,g)$ dans $(V,f)$.
+	Soit $(\Gamma,\Lambda)$ un carquois et $(V,f)$,$(W,g)$ deux représentations de ce carquois. Soit $\varphi$ un morphisme de représentations de $(V,f)$ dans $(W,g)$. On dit que $\varphi$ est un isomorphisme de représentations entre $(V,f)$ et $(W,g)$ si $\forall\gamma\in\Gamma_0$, $\varphi_\gamma$ est inversible. Si on note $\varphi^{-1}=(\varphi_\gamma^{-1})_{\gamma\in\Gamma_0}$, on a que $\varphi^{-1}$ est un morphisme de $(W,g)$ dans $(V,f)$. En effet, $\varphi$ étant un morphisme de $(V,f)$ dans $(W,g)$ on a $\forall l \in\Gamma_{1},\;\varphi_{t(l)}f_{l}=g_{l}\varphi_{s(l)}$, cette inégalité s'écrit également $\forall l \in\Gamma_{1},\;\varphi^{-1}_{t(l)}g_{l}=f_{l}\varphi^{-1}_{s(l)}$, donc on a bien que $\varphi^{-1}$ est un morphisme de $(W,g)$ dans $(V,f)$.
 \end{defi}
 \begin{ex}[Condition nécessaire et suffisante d'isomorphisme entre deux représentations simples] On considère les deux représentations suivantes, où l'on a les espaces vectoriels $\mathbb R$ à chaque sommet, et où $\lambda,\mu\in\mathbb R$ sont des constantes. 
 \label{cnsiso}
@@ -261,7 +261,7 @@ et ainsi $\varphi$ est un morphisme de représentations de $(V,f)$ dans $(W,g)$.
 			\node () at (5,-.65) {$\mu$};
 		\end{tikzpicture}
 	\end{center}
-Supposons que les deux représentations ci-dessus soient isomorphes. Les applications linéaires entre de $\mathbb R$ dans $\mathbb R$ peuvent être représentées par de simples constantes. Ainsi il existe $a$ et $b$ deux constantes non nulles telles que :
+Supposons que les deux représentations ci-dessus soient isomorphes. Les applications linéaires de $\mathbb R$ dans $\mathbb R$ peuvent être représentées par de simples constantes. Ainsi il existe $a$ et $b$ deux constantes non nulles telles que :
 \[
 \left\{
 \begin{array}{ccc}
@@ -341,8 +341,8 @@ Avant de traiter la preuve du thérorème de Gabriel, nous introduisons le langa
 Une \emph{catégorie} $C$ est définie par :
 \begin{enumerate}
 \item  une classe $\mathcal C_{0}$, appelée classe des objets de $\mathcal C$;
-\item  pour chaque paire $(X,Y)$ d'objects de $\mathcal C$, un ensemble noté $\mathrm{Hom}(X,Y)$ dont les éléments sont appelés les morphismes de $X$ vers $Y$, tel que si $(X,Y) \neq (X',Y')$ alors $\mathrm{Hom}(X,Y) \cap \mathrm{Hom}(X,Y) = \emptyset$;
-\item  pour chaque triplet $X,Y,Z$ d'objets de $\mathcal C$, il existe $\circ$ définie $ \mathrm{Hom}(X,Y) \times \mathrm{Hom}(Y,Z)$ dans $ \mathrm{Hom}(X,Z) $ satisfaisant :
+\item  pour chaque paire $(X,Y)$ d'objets de $\mathcal C$, un ensemble noté $\mathrm{Hom}(X,Y)$ dont les éléments sont appelés les morphismes de $X$ vers $Y$, tel que si $(X,Y) \neq (X',Y')$ alors $\mathrm{Hom}(X,Y) \cap \mathrm{Hom}(X',Y') = \emptyset$;
+\item  pour chaque triplet $X,Y,Z$ d'objets de $\mathcal C$, il existe $\circ$ définie de $ \mathrm{Hom}(X,Y) \times \mathrm{Hom}(Y,Z)$ dans $ \mathrm{Hom}(X,Z) $ satisfaisant :
   \begin{enumerate}
   \item  Pour $f \in \mathrm{Hom}(U,V)$, $g \in \mathrm{Hom}(V,W)$ et $h \in \mathrm{Hom}(W,X)$ : $(f\circ g) \circ h = f \circ (g \circ h)$;
   \item  Pour $X \in \mathcal C_{0}$, il existe $1_{X} \in \mathrm{Hom}(X,X)$ tel que pour tout $g \in \mathrm{Hom(W,X)}, 1_{X} \circ g = g$ et $h \in \mathrm{Hom(X,Y)}, h \circ 1_{X} = h$.
@@ -409,12 +409,12 @@ On appelle ces graphes les diagrammes de Dynkin de type $A_n,D_n,E_6,E_7$ et $E_
 %Dans la section \ref{rootz}, on définit des objets tels que \emph{racines}, \emph{racines simples}, ou encore \emph{racines positives}, qui possèdent de belles propriétés. Ces résultats serviront finalement pour prouver le théorème de Gabriel, dans la partie \ref{Gab}. Toutes ces propriétés sont valables dans un cas très général, dont on peut faire une étude détaillée : il s'agit de la théorie sur les \emph{systèmes de racines}, que l'on pourra par exemple étudier dans \cite{S66}.
 \clearpage
 \section{Foncteurs de réflexion et foncteurs de Coxeter}
-Soit $(\Gamma,\Lambda)$ un carquois, on se place dans la catégorie $\mathscr{L}(\Gamma,\Lambda)$. Nous allons construire des foncteurs de réflexion, associés aux sommets $\alpha \in \Gamma_{0}$ de $\Gamma$ pour lesquels la direction des flèches le contenant est identique. On note $\Gamma^{\alpha}=\{ l\in \Gamma_{1} : s(l)=\alpha\text{ ou }t(l)=\alpha\}$ l'ensemble des arêtes contenant $\alpha$.
+Soit $(\Gamma,\Lambda)$ un carquois, on se place dans la catégorie $\mathscr{L}(\Gamma,\Lambda)$. Nous allons construire des foncteurs de réflexion, associés aux sommets $\gamma \in \Gamma_{0}$ de $\Gamma$ pour lesquels la direction des flèches le contenant est identique. On note $\Gamma^{\gamma}=\{ l\in \Gamma_{1} : s(l)=\gamma\text{ ou }t(l)=\gamma\}$ l'ensemble des arêtes contenant $\gamma$.
 
-\begin{defi}
-	On dit qu'un sommet $\beta \in \Gamma_{0}$ est un \emph{puits}, ou qu'il est (+)-accessible, si $\forall l \in \Gamma^{\beta},\; t(l)=\beta$, c'est-à-dire si toutes les arêtes contenant $\beta$ arrivent en $\beta$ et qu'il n'y a pas de boucles de $\beta$ dans lui même.
+\begin{defi}[Puits et sources]
+	On dit qu'un sommet $\beta \in \Gamma_{0}$ est un \emph{puits}, ou qu'il est (+)-accessible, si $\forall l \in \Gamma^{\beta},\; t(l)=\beta$ et $s(l)\neq\beta$, c'est-à-dire si toutes les arêtes contenant $\beta$ arrivent en $\beta$ et qu'il n'y a pas de boucles de $\beta$ dans lui même.
 
-	On dit de même qu'un sommet $\alpha \in \Gamma_{0}$ est une \emph{source}, ou qu'il est (-)-accessible, si $\forall l \in \Gamma^{\alpha},\; s(l)=\alpha$, c'est-à-dire si toutes les arêtes contenant $\alpha$ partent de $\alpha$ et qu'il n'y a pas de boucles de $\alpha$ dans lui même.
+	On dit de même qu'un sommet $\alpha \in \Gamma_{0}$ est une \emph{source}, ou qu'il est (-)-accessible, si $\forall l \in \Gamma^{\alpha},\; s(l)=\alpha$ et $t(l)\neq\alpha$, c'est-à-dire si toutes les arêtes contenant $\alpha$ partent de $\alpha$ et qu'il n'y a pas de boucles de $\alpha$ dans lui même.
 \end{defi}
 
 
@@ -453,7 +453,7 @@ Supposons que le sommet $\alpha \in \Gamma_{0}$ soit un puits avec l'orientation
 \end{prop}
 
 \begin{proof}
-	On se place dans le même cadre que lors des définitions, ainsi on a $(V,f)\in\mathscr{L}(\Gamma,\Lambda)$ une représentation du carquois $\Gamma$. On note toujours $F_{\beta}^{+}(V,f)=(W,g)\in\mathscr{L}(\Gamma,\sigma_{\beta}\Lambda)$ la représentation image de $(V,f)$ par l'application $F_{\beta}^{+}$. On a déjà la définition de $F_{\beta}^{+}$ sur les objets des catégories $\mathscr{L}(\Gamma,\Lambda)$ et $\mathscr{L}(\Gamma,\sigma_{\beta}\Lambda)$, et pour tout $(\gamma,l)\in\Gamma_{0}\times\Gamma_{1}$, on a bien que $W_{\gamma}$ est un espace vectoriel, et que $g_{l}$ est une application linéaire. Il nous reste donc à définir $F_{\beta}^{+}$ sur les morphismes de représentations pour obtenir son caractère fonctoriel. Ainsi, soient $(V,f)$ et $(V',f')$ deux représentations de $\Gamma$, on note encore $l_{1},\dots,l_{n}\in\Gamma^{\beta}$ les arêtes en direction du puits $\beta$, et soit $\varphi=(\varphi_{\gamma})_{\gamma\in\Gamma_{0}}$ un morphisme de représentations entre $(V,f)$ et $(V',f')$. On note $(W,g)$ et $(W',g')$ les représentations images par $F_{\beta}^{+}$ de $(V,f)$ et $(V',f')$. On note également $\psi=(\psi_{\gamma})_{\gamma\in\Gamma_{0}}$ le morphisme image de $\varphi$ par $F_{\beta}^{+}$, qu'il nous faut encore définir. On pose donc :
+	On se place dans le même cadre que lors des définitions, ainsi on a $(V,f)\in\mathscr{L}(\Gamma,\Lambda)$ une représentation du carquois $(\Gamma,\Lambda)$. On note toujours $F_{\beta}^{+}(V,f)=(W,g)\in\mathscr{L}(\Gamma,\sigma_{\beta}\Lambda)$ la représentation image de $(V,f)$ par l'application $F_{\beta}^{+}$. On a déjà la définition de $F_{\beta}^{+}$ sur les objets des catégories $\mathscr{L}(\Gamma,\Lambda)$ et $\mathscr{L}(\Gamma,\sigma_{\beta}\Lambda)$, et pour tout $(\gamma,l)\in\Gamma_{0}\times\Gamma_{1}$, on a bien que $W_{\gamma}$ est un espace vectoriel, et que $g_{l}$ est une application linéaire. Il nous reste donc à définir $F_{\beta}^{+}$ sur les morphismes de représentations pour obtenir son caractère fonctoriel. Ainsi, soient $(V,f)$ et $(V',f')$ deux représentations de $\Gamma$, on note encore $l_{1},\dots,l_{n}\in\Gamma^{\beta}$ les arêtes en direction du puits $\beta$, et soit $\varphi=(\varphi_{\gamma})_{\gamma\in\Gamma_{0}}$ un morphisme de représentations entre $(V,f)$ et $(V',f')$. On note $(W,g)$ et $(W',g')$ les représentations images par $F_{\beta}^{+}$ de $(V,f)$ et $(V',f')$. On note également $\psi=(\psi_{\gamma})_{\gamma\in\Gamma_{0}}$ le morphisme image de $\varphi$ par $F_{\beta}^{+}$, qu'il nous faut encore définir. On pose donc :
 	\[	
 		\psi_{\beta}(v_{1},\dots,v_{n})=(\varphi_{s(l_{1})}(v_{1}),\dots,\varphi_{s(l_{n})}(v_{n}))
 	\]
