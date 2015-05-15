@@ -292,7 +292,7 @@ Ainsi les deux représentations sont isomorphes seulement si $\lambda=\mu$. Si l
 Soit $(\Gamma,\Lambda)$ un carquois. On appelle \emph{représentations irréductibles associées aux sommets}, et on note $L_\gamma$, où $\gamma\in\Gamma_{0}$, les représentations telles que $\forall\delta\neq\gamma,\;(L_\gamma)_\delta=\left\{ 0 \right\}$,  $(L_\gamma)_\gamma=\mathbb K$ et $\forall l \in\Gamma_1,\;f_l=0$. $L_\gamma$ est alors une représentation indécomposable.
 \end{ex}
 \begin{ex}[Infinité des classes d'isomorphismes de représentations indécomposables dans un carquois simple]
-	Soit $(V,f)$ la représentation donnée par le dessin suivant, où l'on a $\mathbb R$, considéré comme un $\mathbb R$-espace vectoriel, muni de se base canonique, et où $\lambda\in\mathbb R$ est un réel quelconque. Nous allons prouver qu'elle est indécomposable.
+	Soit $(V,f)$ la représentation donnée par le dessin suivant, où l'on a $\mathbb R$, considéré comme un $\mathbb R$-espace vectoriel, muni de sa base canonique, et où $\lambda\in\mathbb R$ est un réel quelconque. Nous allons prouver qu'elle est indécomposable.
 	\begin{center}
 	\begin{tikzpicture}
 			\node (A) at (0,0) {$\mathbb R$};
@@ -303,7 +303,7 @@ Soit $(\Gamma,\Lambda)$ un carquois. On appelle \emph{représentations irréduct
 			\node () at (1,-.65) {$\lambda$};
 		\end{tikzpicture}
 	\end{center}
-	Supposons que $(V,f)$ s'écrit comme somme directe de deux représentations non nulles $(V_1,f_1)$ et $(V_2,f_2)$. Si les espaces vectoriels aux sommets de $(V_1,f_1)$ sont $\mathbb R$ et $\mathbb R$, alors ceux aux sommets de $(V_2,f_2)$ sont $\left\{ 0 \right\}$ et $\left\{ 0 \right\}$, et alors $(V_2,f_2)$ est la représentation nulle. Ainsi $(V_1,f_1)$ et $(V_2,f_2)$ sont les deux représentations :
+	Supposons que $(V,f)$ s'écrit comme somme directe de deux représentations non nulles $(V^{1},f^{1})$ et $(V^{2},f^{2})$. Si les espaces vectoriels aux sommets de $(V^{1},f^{1})$ sont $\mathbb R$ et $\mathbb R$, alors ceux aux sommets de $(V^{2},f^{2})$ sont $\left\{ 0 \right\}$ et $\left\{ 0 \right\}$, et alors $(V^{2},f^{2})$ est la représentation nulle. Ainsi $(V^{1},f^{1})$ et $(V^{2},f^{2})$ sont les deux représentations :
 \begin{center}
 	\begin{tikzpicture}
 			\node (A) at (0,0) {$\mathbb R$};
@@ -412,9 +412,9 @@ On appelle ces graphes les diagrammes de Dynkin de type $A_n,D_n,E_6,E_7$ et $E_
 Soit $(\Gamma,\Lambda)$ un carquois, on se place dans la catégorie $\mathscr{L}(\Gamma,\Lambda)$. Nous allons construire des foncteurs de réflexion, associés aux sommets $\gamma \in \Gamma_{0}$ de $\Gamma$ pour lesquels la direction des flèches le contenant est identique. On note $\Gamma^{\gamma}=\{ l\in \Gamma_{1} : s(l)=\gamma\text{ ou }t(l)=\gamma\}$ l'ensemble des arêtes contenant $\gamma$.
 
 \begin{defi}[Puits et sources]
-	On dit qu'un sommet $\beta \in \Gamma_{0}$ est un \emph{puits}, ou qu'il est (+)-accessible, si $\forall l \in \Gamma^{\beta},\; t(l)=\beta$ et $s(l)\neq\beta$, c'est-à-dire si toutes les arêtes contenant $\beta$ arrivent en $\beta$ et qu'il n'y a pas de boucles de $\beta$ dans lui même.
+	On dit qu'un sommet $\beta \in \Gamma_{0}$ est un \emph{puits}, ou qu'il est (+)-accessible, si $\forall l \in \Gamma^{\beta},\; t(l)=\beta$ et $s(l)\neq\beta$, c'est-à-dire si toutes les arêtes contenant $\beta$ arrivent en $\beta$ et qu'il n'y a pas de boucles de $\beta$ dans lui-même.
 
-	On dit de même qu'un sommet $\alpha \in \Gamma_{0}$ est une \emph{source}, ou qu'il est (-)-accessible, si $\forall l \in \Gamma^{\alpha},\; s(l)=\alpha$ et $t(l)\neq\alpha$, c'est-à-dire si toutes les arêtes contenant $\alpha$ partent de $\alpha$ et qu'il n'y a pas de boucles de $\alpha$ dans lui même.
+	On dit de même qu'un sommet $\alpha \in \Gamma_{0}$ est une \emph{source}, ou qu'il est (-)-accessible, si $\forall l \in \Gamma^{\alpha},\; s(l)=\alpha$ et $t(l)\neq\alpha$, c'est-à-dire si toutes les arêtes contenant $\alpha$ partent de $\alpha$ et qu'il n'y a pas de boucles de $\alpha$ dans lui-même.
 \end{defi}
 
 
@@ -779,7 +779,7 @@ où :
 	d'où $(v_{1}-v_{1}',\dots,v_{n}-v_{n}')\in\Ker h$, donc $a=b$, et on a l'injectivité de $(i_{V}^{\beta})_{\beta}$ puis de $i_{V}^{\beta}$.
 
 
-Le morphisme $p_{V}^{\alpha}$ est quant à lui surjectif, car pour tout $\gamma \neq \alpha, (p_{V}^{\alpha})_{\gamma} = \Id_{V_{\gamma}}$ est surjective et $ \Img (p_{V}^{\alpha})_{\alpha} = \Img \widetilde{h}$ donc $ (p_{V}^{\alpha})_{\alpha}$ est surjective.  
+Le morphisme $p_{V}^{\alpha}$ est quant à lui surjectif, car pour tout $\gamma \neq \alpha, (p_{V}^{\alpha})_{\gamma} = \Id_{V_{\gamma}}$ est surjective. On a montré que $\Ker(h) = \Img \widetilde{h} $, on observe que $ \Img (p_{V}^{\alpha})_{\alpha} = \Img \widetilde{h}$ et que $F^{+}_{\alpha}F^{-}_{\alpha}(V)_{\alpha} = \Ker(h)$, donc $ (p_{V}^{\alpha})_{\alpha}$ est surjective.  
 
 	Prouvons maintenant le point $3$. Supposons que $i_{V}^{\beta}$ est un isomorphisme, en particulier, $(i_{V}^{\beta})_{\beta}$ est un isomorphisme et on a $\oplus_{l\in\Gamma^{\beta}}V_{s(l)}/\Ker h\cong V_{\beta}$. On a égalité entre les dimensions d'espaces vectoriels isomorphes, et ainsi il vient :
 	\[
@@ -794,7 +794,7 @@ Le morphisme $p_{V}^{\alpha}$ est quant à lui surjectif, car pour tout $\gamma 
 
         Si $p_{V}^{\alpha}$ est un isomorphisme alors : 
         \[
-        \forall \gamma \neq \beta, \dim F_{\alpha}^{-}(V)_{\gamma} = \dim V_{\gamma}
+        \forall \gamma \neq \alpha, \dim F_{\alpha}^{-}(V)_{\gamma} = \dim V_{\gamma}
         \]
         Comme on a $V_{\alpha} \simeq \Img \widetilde{h}$,
         \[
