@@ -408,7 +408,10 @@ On appelle ces graphes les diagrammes de Dynkin de type $A_n,D_n,E_6,E_7$ et $E_
 %\label{syst_root}
 %Dans la section \ref{rootz}, on définit des objets tels que \emph{racines}, \emph{racines simples}, ou encore \emph{racines positives}, qui possèdent de belles propriétés. Ces résultats serviront finalement pour prouver le théorème de Gabriel, dans la partie \ref{Gab}. Toutes ces propriétés sont valables dans un cas très général, dont on peut faire une étude détaillée : il s'agit de la théorie sur les \emph{systèmes de racines}, que l'on pourra par exemple étudier dans \cite{S66}.
 \clearpage
+
+
 \section{Foncteurs de réflexion et foncteurs de Coxeter}
+\subsection{Foncteurs de réflexion}
 Soit $(\Gamma,\Lambda)$ un carquois, on se place dans la catégorie $\mathscr{L}(\Gamma,\Lambda)$. Nous allons construire des foncteurs de réflexion, associés aux sommets $\gamma \in \Gamma_{0}$ de $\Gamma$ pour lesquels la direction des flèches le contenant est identique. On note $\Gamma^{\gamma}=\{ l\in \Gamma_{1} : s(l)=\gamma\text{ ou }t(l)=\gamma\}$ l'ensemble des arêtes contenant $\gamma$.
 
 \begin{defi}[Puits et sources]
@@ -750,7 +753,7 @@ Supposons maintenant que $\alpha$ est un source dans $(\Gamma,\Lambda)$, $(V,f)$
 	&=&  F_{\alpha}^{-}(V,f)_{\gamma}\oplus F_{\alpha}^{-}(V',f')_{\gamma}\\
 	&&\\
 	F_{\alpha}^{-}((V,f)\oplus(V',f'))_{\alpha}&=&\oplus_{i=1}^{n}\left(V_{l_{i}} \oplus V'_{l_{i}}\right)/ \Img \widetilde{h}_{\oplus} \\
-	&\simeq& \left( \oplus_{i=1}^{n}V_{t(l_{i})} / \Img \widetilde{h} \right) \oplus  \left( \oplus_{i=1}^{n}V'_{t(l_{i})} / \Img \widetilde{h'} \right)\\
+	&\cong& \left( \oplus_{i=1}^{n}V_{t(l_{i})} / \Img \widetilde{h} \right) \oplus  \left( \oplus_{i=1}^{n}V'_{t(l_{i})} / \Img \widetilde{h'} \right)\\
 	&=&  F_{\alpha}^{-}(V,f)_{\alpha}\oplus F_{\alpha}^{-}(V',f')_{\alpha}\\
 \end{array}
 \] 
@@ -796,7 +799,7 @@ Le morphisme $p_{V}^{\alpha}$ est quant à lui surjectif, car pour tout $\gamma 
         \[
         \forall \gamma \neq \alpha, \dim F_{\alpha}^{-}(V)_{\gamma} = \dim V_{\gamma}
         \]
-        Comme on a $V_{\alpha} \simeq \Img \widetilde{h}$,
+        Comme on a $V_{\alpha} \cong \Img \widetilde{h}$,
         \[
         \begin{array}{rl}
         \dim F_{\alpha}^{-}(V)_{\alpha} &= \dim\left( \oplus_{i=1}^{n} V_{l_{i}} / \Img \widetilde{h} \right) \\ \\
@@ -898,7 +901,7 @@ Considérons la représentation $(\widetilde V, \widetilde f)$ où $\widetilde V
 \item  $\widetilde{f}_{l}$ est un morphisme de $\widetilde V _{\alpha}$ dans l'espace nul, lorsque $l \in \Gamma^{\alpha}$,. 
 \end{itemize}
 
- On construit $\varphi$, le morphisme de $(V,f)$ dans $(\widetilde{V},\widetilde{f})$ défini tel que $\forall \gamma \in \Gamma_{0} \setminus \{\alpha\} $, on ait $\varphi_{\gamma}(V_{\gamma}) = \widetilde{V}_{\gamma} = \{0\}$ et $\varphi_{\alpha}(V_{\alpha}) = \widetilde{V}_{\alpha}$ c'est-à-dire que $\varphi_{\alpha}$ est la projection de $\widetilde{V}_{\alpha} $ dans $V_{\alpha}$. On vérifie alors que le diagramme suivant commute quel que soit $l \in \Gamma_{1}$.
+ On construit $\varphi$, le morphisme de $(V,f)$ dans $(\widetilde{V},\widetilde{f})$ défini tel que $\forall \gamma \in \Gamma_{0} \setminus \{\alpha\} $, on ait $\varphi_{\gamma}(V_{\gamma}) = \widetilde{V}_{\gamma} = \{0\}$ et $\varphi_{\alpha}(V_{\alpha}) = \widetilde{V}_{\alpha}$ c'est-à-dire que $\varphi_{\alpha}$ est la projection de $\widetilde{V}_{\alpha} $ dans $V_{\alpha}$. On vérifie alors que le diagramme suivant commute quelque soit $l \in \Gamma_{1}$.
 \[
 	\begin{tikzpicture}
 	\matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em]
@@ -916,7 +919,7 @@ Considérons la représentation $(\widetilde V, \widetilde f)$ où $\widetilde V
 
 On construit alors le morphisme $\xi$ de $(V,f)$ dans $(Z,e) \oplus (\widetilde{V},\widetilde{f})$ en sommant l'action des morphismes $p^{V}_{\alpha}$ et $\varphi$, c'est-à-dire que pour tout $\gamma \in \Gamma_{0}, \xi_{\gamma}(V,f) = p_{V}^{\alpha}(V,f) \oplus \varphi_{\gamma}(V,f)$. Comme $p_{V}^{\alpha}$ et $\varphi$ sont respectivement  des morphismes de $(V,f)$ dans $(Z,e)$ et de $(V,f)$ dans $(\widetilde V, \widetilde f)$, alors $\xi$ est un morphisme de $(V,f)$ dans $(Z,e) \oplus (\widetilde V, \widetilde f)$.
 
-Il s'agit maintenant de montrer que $\xi$ est un isomorphisme, c'est-à-dire que pour tout $\gamma \in \Gamma_{0}$, $\xi_{\gamma}$ est un isomorphisme d'espace vectoriel. Lorsque $\gamma \in \Gamma_{0} \setminus {\alpha}, (p_{V}^{\alpha})_{\gamma} = \Id_{V_{\gamma}}$ et $\varphi_{\gamma}$ est l'application nulle, donc $\xi_{\gamma}$ est un isomorphime de $V_{\gamma}$ dans $V_{\gamma}\oplus \{0\}$. Le morphisme $\xi_{\alpha}$ est un isomorphisme, en effet il est surjectif, car $p_{V}^{\alpha}$ et $\varphi_{\alpha}$ sont surjectifs d'après ce qui précède et parce que $\varphi_{\alpha}$ est une projection. De plus, $\xi_{\alpha}$ est injectif, soit $v \in V_{\alpha}$ tel que $((p_{V}^{\alpha})_{\alpha}(v),\varphi_{\alpha}(v)) = 0$, alors $v$ appartient  à $(\Ker p_{V}^{\alpha})_{\alpha}$, donc $\varphi_{\alpha}(v) =v$ d'où $v= 0$. Donc $\xi$ est bien un isomorphisme et $(V,f) \simeq (Z,e) \oplus (\widetilde V, \widetilde f)$.
+Il s'agit maintenant de montrer que $\xi$ est un isomorphisme, c'est-à-dire que pour tout $\gamma \in \Gamma_{0}$, $\xi_{\gamma}$ est un isomorphisme d'espace vectoriel. Lorsque $\gamma \in \Gamma_{0} \setminus {\alpha}, (p_{V}^{\alpha})_{\gamma} = \Id_{V_{\gamma}}$ et $\varphi_{\gamma}$ est l'application nulle, donc $\xi_{\gamma}$ est un isomorphime de $V_{\gamma}$ dans $V_{\gamma}\oplus \{0\}$. Le morphisme $\xi_{\alpha}$ est un isomorphisme, en effet il est surjectif, car $p_{V}^{\alpha}$ et $\varphi_{\alpha}$ sont surjectifs d'après ce qui précède et parce que $\varphi_{\alpha}$ est une projection. De plus, $\xi_{\alpha}$ est injectif, soit $v \in V_{\alpha}$ tel que $((p_{V}^{\alpha})_{\alpha}(v),\varphi_{\alpha}(v)) = 0$, alors $v$ appartient  à $(\Ker p_{V}^{\alpha})_{\alpha}$, donc $\varphi_{\alpha}(v) =v$ d'où $v= 0$. Donc $\xi$ est bien un isomorphisme et $(V,f) \cong (Z,e) \oplus (\widetilde V, \widetilde f)$.
 
 
 \end{proof}
@@ -980,6 +983,7 @@ Soit $(\Gamma,\Lambda)$ un carquois et $\beta_1,\dots,\beta_k$ une suite de puit
 	\]
 	D'où $F_{\beta_{i-2}}^{+}\dots F_{\beta_{1}}^{+}(V,f)\cong F_{\beta_{i-1}}^-(L_{\beta_{i}})$, et $F_{\beta_{i-1}}^{-}(L_{\beta_i})$ n'est pas isomorphe à $L_{\beta_{i-2}}$. Sinon, en utilisant le point $5$ du lemme \ref{lemmecrucial} on aurait que $F_{\beta_{i-2}}^{+}\dots F_{\beta_{1}}^{+}(V,f)$ est la représentation nulle, ce qui entre en contradiction avec le choix de $i$. En itérant ce raisonnement il vient $V\cong F_{\beta_{1}}^-F_{\beta_2}^-\dots F_{\beta_{i-1}}^-(L_{\beta_i})$.
 \end{proof}
+\subsection{Foncteurs de Coxeter}
 \begin{defi}
 	On dit qu'une numérotation $(\gamma_{1}, \dots, \gamma_{n})$ des sommets d'un carquois $(\Gamma,\Lambda)$ est un \emph{tri topologique} des sommets de $\Gamma$ pour l'orientation $\Lambda$ si pour toute arête $l$ de $\Gamma$ telle que $s(l) = \gamma_{i}$ et $t(l) = \gamma_{j}$ avec  $i,j \in [\![1,n]\!]$ alors $i>j$.
 \end{defi}
